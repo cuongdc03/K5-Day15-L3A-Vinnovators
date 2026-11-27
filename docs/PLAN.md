@@ -17,18 +17,18 @@ Lát cắt: *một dân văn phòng · chọn quán ăn trưa local gần chỗ 
 | Người | Vai | Việc chính | Ra file | Xong khi |
 |---|---|---|---|---|
 | **Cường** | PM, tech lead | Chốt schema và review PR · danh sách `chain_registry` (100–150 chuỗi) · pipeline `features` (chuẩn hoá tên, đếm chi nhánh, khớp OSM với Google) · agent và công cụ gọi AI thật · ghép demo 3D · slide | `data/schema/`, `data/processed/chain_registry.csv`, `data/processed/features.csv`, `codebase/` | Agent đọc `places` + `features` và trả nhãn kèm lý do |
-| **Đức** | Crawl A | Lấy khung quán 4 quận từ **OpenStreetMap (Overpass)** · làm giàu bằng **Google Places API** (chi tiết, giá, giờ, tối đa 5 review) cho mẫu 300–500 quán · ghi `crawl_log` | `crawl/overpass.py`, `crawl/places_api.py`, `data/processed/places.csv` | `validate.py` báo OK · mỗi quận có ≥60 quán |
-| **Thái** | Crawl B | Review và tín hiệu: review đã rút gọn từ Places API · bình luận YouTube và bài báo ẩm thực công khai cho quán nổi bật · phát hiện ngôn ngữ · nguồn cho `chain_registry` (trang cửa hàng công khai của chuỗi) | `crawl/reviews.py`, `data/processed/reviews.csv` | `validate.py` báo OK · ≥3 review cho 150 quán |
-| **Trường** | Bằng chứng và đánh giá | Khảo sát ≥20 người và phỏng vấn ≥3 người (`evidence/`) · gán nhãn `L2` (Cường gán `L1`) · `eval/benchmark.csv` 20–30 câu · `metric_spec.yaml` · báo cáo đánh giá | `evidence/`, `data/processed/labels.csv`, `eval/` | Có số đầu cho dòng 4 của canvas · ≥20 câu thử có nhãn `final` |
+| **Đức** | Crawl A, đánh giá | Lấy khung quán 4 quận từ **OpenStreetMap (Overpass)** · làm giàu bằng **Google Places API** (chi tiết, giá, giờ, tối đa 5 review) cho mẫu 300–500 quán · ghi `crawl_log` · sau crawl: gán nhãn `L2` (Cường gán `L1`) · `eval/benchmark.csv` 20–30 câu · `metric_spec.yaml` · báo cáo đánh giá | `crawl/overpass.py`, `crawl/places_api.py`, `data/processed/places.csv`, `data/processed/labels.csv`, `eval/` | `validate.py` báo OK · mỗi quận ≥60 quán · ≥20 câu thử có nhãn `final` |
+| **Thái** | Crawl B, bằng chứng | Khảo sát ≥20 người và phỏng vấn ≥3 người (`evidence/`) · review và tín hiệu: review đã rút gọn từ Places API · bình luận YouTube và bài báo ẩm thực công khai cho quán nổi bật · phát hiện ngôn ngữ · nguồn cho `chain_registry` (trang cửa hàng công khai của chuỗi) | `crawl/reviews.py`, `data/processed/reviews.csv`, `evidence/` | `validate.py` báo OK · ≥3 review cho 150 quán · có số đầu cho dòng 4 của canvas |
+| **Trường** | UI | Hoàn thiện `web-demo/`: bản đồ, thẻ quán có nhãn và lý do, trạng thái "chưa chắc", nút "báo sai"; đọc JSON do agent xuất | `web-demo/` | Chạy trên dữ liệu thật 4 quận, đủ bốn trạng thái nhãn |
 
 **Việc không có người thuộc về, chia khi tới:** mô phỏng chi phí (`cost/`) giao cho Thái sau khi crawl xong, và `DATA_CARD.md` do Đức và Thái điền cho phần data của mình.
 
 ## Thứ tự phụ thuộc
 
-1. **Ngay bây giờ, song song:** Cường merge schema · Đức chạy Overpass · Thái viết bộ phát hiện ngôn ngữ và thu nguồn chuỗi · Trường gửi khảo sát.
+1. **Ngay bây giờ, song song:** Cường merge schema · Đức chạy Overpass · Thái viết bộ phát hiện ngôn ngữ và thu nguồn chuỗi · Thái gửi khảo sát · Trường dựng khung UI trên dữ liệu mẫu.
 2. Đức có `places.csv` → Thái lấy review cho mẫu đó · Cường chạy `features`.
-3. Có `features` → Cường và Trường chọn 30–60 quán để gán nhãn độc lập, rồi bàn lại thành `final`.
-4. Có nhãn `final` → Trường dựng `benchmark.csv`, Cường chạy agent lượt 1.
+3. Có `features` → Cường và Đức chọn 30–60 quán để gán nhãn độc lập, rồi bàn lại thành `final`.
+4. Có nhãn `final` → Đức dựng `benchmark.csv`, Cường chạy agent lượt 1.
 
 ## Quy ước làm việc
 

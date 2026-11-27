@@ -11,10 +11,10 @@
 
 | STT | Họ và tên | Mã học viên | Vai trò | Phần việc chính |
 |---|---|---|---|---|
-| 1 | Đỗ Cao Cường | 2A202603612 | Đội trưởng | Điều phối, giao diện bản đồ 3D, slide |
-| 2 | Đậu Phúc Đức | 2A202603580 | Thành viên | Bản chạy thử gọi AI thật và bộ công cụ |
-| 3 | Trần Xuân Trường | 2A202603617 | Thành viên | Bộ câu thử, metric và báo cáo đánh giá |
-| 4 | Hà Huy Thái | 2A202603682 | Thành viên | Bằng chứng pain (khảo sát, phỏng vấn) và mô phỏng chi phí |
+| 1 | Đỗ Cao Cường | 2A202603612 | Đội trưởng | Điều phối, schema, agent và công cụ, slide |
+| 2 | Đậu Phúc Đức | 2A202603580 | Thành viên | Crawl OSM và Google Places, bộ câu thử, metric và báo cáo đánh giá |
+| 3 | Trần Xuân Trường | 2A202603617 | Thành viên | Giao diện web-demo (bản đồ, thẻ quán) |
+| 4 | Hà Huy Thái | 2A202603682 | Thành viên | Crawl review, bằng chứng pain (khảo sát, phỏng vấn) và mô phỏng chi phí |
 
 **Quy tắc điền**
 - **Lớp:** `L3A` hoặc `L3B`. **Track:** một chữ `A` (EdTech), `B` (Y tế), `C` (Du lịch), `D` (Thương mại điện tử), `E` (Tài chính) hoặc `F` (Làn khác). **Link repo:** link GitHub công khai của nhóm.
