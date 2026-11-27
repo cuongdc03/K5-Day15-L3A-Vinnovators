@@ -1,0 +1,5 @@
+place_id,labeler,label,reason,labeled_at
+p_00000001,L1,local,Một địa chỉ và review nói về món,2026-11-27T12:00:00+07:00
+p_00000001,L2,local,Quán độc lập bán bún chả,2026-11-27T12:05:00+07:00
+p_00000001,final,local,Hai người cùng nhãn,2026-11-27T12:10:00+07:00
+p_00000002,final,chain,Có trong chain_registry,2026-11-27T12:10:00+07:00
