@@ -1,0 +1,496 @@
+<title>Sổ thực địa Ocean Park</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Bố cục: một cột cho điện thoại, đọc được ngoài nắng. Đầu trang dính: khu + tiến độ + người đi kiểm.
+   Danh sách quán → bấm vào quán mở phiếu kiểm. Màu nhấn lấy từ mặt nước biển hồ (lagoon). */
+:root {
+  --bg: #F3F6F5; --surface: #FFFFFF; --ink: #0F1F1E; --muted: #52625F; --line: #D5DEDB;
+  --accent: #0B6E78; --accent-ink: #FFFFFF; --accent-soft: #DCEFF0;
+  --ok: #1D7A46; --ok-soft: #DDF1E4; --bad: #B3261E; --bad-soft: #F8E0DD;
+  --warn: #8A5A00; --warn-soft: #F6EBCF; --none: #5E6B68; --none-soft: #E6EBEA;
+  --display: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --body: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --r: 12px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0E1716; --surface: #15211F; --ink: #E7EFED; --muted: #9DB0AC; --line: #2A3A37;
+  --accent: #4FC2CC; --accent-ink: #062226; --accent-soft: #163B3F;
+  --ok: #63C98D; --ok-soft: #173326; --bad: #F08B82; --bad-soft: #3A1C1A;
+  --warn: #E5B654; --warn-soft: #3A2E12; --none: #A3B1AE; --none-soft: #243230; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0E1716; --surface: #15211F; --ink: #E7EFED; --muted: #9DB0AC; --line: #2A3A37;
+  --accent: #4FC2CC; --accent-ink: #062226; --accent-soft: #163B3F;
+  --ok: #63C98D; --ok-soft: #173326; --bad: #F08B82; --bad-soft: #3A1C1A;
+  --warn: #E5B654; --warn-soft: #3A2E12; --none: #A3B1AE; --none-soft: #243230; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+header.top .wrap { padding-block: 12px 10px; display: grid; gap: 10px; }
+.brand { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h1 { font: 800 1.15rem/1.2 var(--display); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.who { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: .85rem; }
+select, input, textarea, button { font: inherit; color: inherit; }
+select, input[type=text], input[type=search], input[type=number], input[type=url], textarea {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; width: 100%; min-height: 44px; }
+textarea { min-height: 72px; resize: vertical; }
+.who select { width: auto; min-height: 36px; padding: 4px 8px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.tabs { display: flex; gap: 6px; overflow-x: auto; }
+.tab { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 14px; min-height: 36px; white-space: nowrap; cursor: pointer; font-weight: 600; font-size: .88rem; }
+.tab[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.progress { display: grid; gap: 4px; }
+.progress .bar { height: 8px; border-radius: 99px; background: var(--none-soft); overflow: hidden; }
+.progress .bar i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+.progress small { color: var(--muted); font-variant-numeric: tabular-nums; }
+main .wrap { padding-block: 14px 120px; display: grid; gap: 12px; }
+.filters { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.list { display: grid; gap: 8px; }
+.card { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; text-align: left; width: 100%; background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; cursor: pointer; }
+.card:hover { border-color: var(--accent); }
+.card b { font-weight: 700; min-width: 0; overflow-wrap: anywhere; }
+.card .meta { grid-column: 1 / -1; color: var(--muted); font-size: .85rem; min-width: 0; overflow-wrap: anywhere; }
+.pill { justify-self: end; align-self: start; font-size: .75rem; font-weight: 700; padding: 2px 10px; border-radius: 99px; white-space: nowrap; border: 1px solid transparent; }
+.pill.todo { border-color: var(--line); color: var(--muted); background: transparent; }
+.pill.open { background: var(--ok-soft); color: var(--ok); }
+.pill.closed { background: var(--bad-soft); color: var(--bad); }
+.pill.moved { background: var(--warn-soft); color: var(--warn); }
+.pill.not_found { background: var(--none-soft); color: var(--none); }
+.src { font-family: var(--mono); font-size: .72rem; color: var(--muted); }
+.note { background: var(--surface); border: 1px dashed var(--line); border-radius: var(--r); padding: 16px; color: var(--muted); }
+.note strong { color: var(--ink); }
+.fab { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 6;
+  background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 99px; padding: 14px 20px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.btn { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 10px 16px; min-height: 44px; cursor: pointer; font-weight: 600; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn:disabled { opacity: .55; cursor: default; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.back { background: none; border: 0; color: var(--accent); font-weight: 700; padding: 8px 0; cursor: pointer; }
+.sheet { display: grid; gap: 14px; }
+.sheet h2 { font: 800 1.35rem/1.25 var(--display); margin: 0; text-wrap: balance; overflow-wrap: anywhere; }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; margin: 0; }
+.facts dt { color: var(--muted); font-size: .85rem; }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.facts a, .history a { color: var(--accent); }
+fieldset { border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px 14px; margin: 0; display: grid; gap: 12px; background: var(--surface); min-width: 0; }
+legend { font-weight: 800; padding: 0 6px; }
+label.f { display: grid; gap: 4px; font-weight: 600; font-size: .9rem; min-width: 0; }
+label.f small { color: var(--muted); font-weight: 400; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.status { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.status label { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; min-height: 44px; cursor: pointer; font-weight: 600; }
+.status input { accent-color: var(--accent); width: 18px; height: 18px; }
+.status label:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.dish { display: grid; grid-template-columns: 1fr 96px 40px; gap: 6px; }
+.dish button { border: 1px solid var(--line); background: var(--surface); border-radius: 10px; cursor: pointer; }
+.thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 8px; }
+.thumbs figure { margin: 0; position: relative; aspect-ratio: 1; max-width: 100%; border-radius: 10px; overflow: hidden; background: var(--none-soft); }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumbs figcaption { position: absolute; inset: auto 0 0; font-size: .7rem; background: rgba(0,0,0,.55); color: #fff; padding: 2px 6px; }
+.history { display: grid; gap: 6px; font-size: .88rem; }
+.history div { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; overflow-wrap: anywhere; }
+.err { color: var(--bad); font-weight: 600; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(84px + env(safe-area-inset-bottom, 0px)); background: var(--ink); color: var(--bg);
+  padding: 10px 18px; border-radius: 99px; font-weight: 600; z-index: 20; max-width: calc(100% - 32px); }
+.mono { font-family: var(--mono); font-size: .8rem; }
+footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; display: grid; gap: 8px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <h1>Sổ thực địa Ocean Park</h1>
+      <label class="who" for="visitor">Người đi kiểm
+        <select id="visitor">
+          <option value="">chọn tên</option>
+          <option value="cuong">Cường</option>
+          <option value="duc">Đức</option>
+          <option value="truong">Trường</option>
+          <option value="thai">Thái</option>
+          <option value="other">Người khác</option>
+        </select>
+      </label>
+    </div>
+    <div class="tabs" role="group" aria-label="Khu">
+      <button class="tab" type="button" data-area="ocean_park_1" aria-pressed="true">Ocean Park 1</button>
+      <button class="tab" type="button" data-area="ocean_park_2" aria-pressed="false">Ocean Park 2</button>
+      <button class="tab" type="button" data-area="" aria-pressed="false">Cả hai</button>
+    </div>
+    <div class="progress" aria-live="polite">
+      <div class="bar"><i id="bar"></i></div>
+      <small id="progressText">Đang tải danh sách quán…</small>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap" id="view"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row"><button class="btn" type="button" id="exportBtn">Tải phiếu kiểm (CSV)</button></div>
+    <span>Không chụp mặt người, biển số xe. Không ghi tên chủ quán hay khách. Số điện thoại chỉ ghi số của quán in trên biển hoặc menu.</span>
+  </div>
+</footer>
+<button class="fab" type="button" id="addBtn">+ Thêm quán mới</button>
+
+<script>
+(() => {
+  const AREA_NAMES = { ocean_park_1: "Ocean Park 1", ocean_park_2: "Ocean Park 2" };
+  const AREA_DISTRICT = { ocean_park_1: "gia_lam", ocean_park_2: "van_giang" };
+  const STATUS = { open: "Đang mở", closed: "Đã đóng cửa", moved: "Chuyển chỗ", not_found: "Không tìm thấy" };
+  const CATEGORY = { restaurant: "Nhà hàng, quán ăn", cafe: "Cà phê, trà, tráng miệng", fast_food: "Đồ ăn nhanh",
+    street_food: "Ăn vặt, vỉa hè", bakery: "Tiệm bánh", other: "Khác" };
+  const VISITORS = { cuong: "Cường", duc: "Đức", truong: "Trường", thai: "Thái", other: "Người khác" };
+
+  const S = { places: new Map(), visits: [], area: "ocean_park_1", filter: "todo", q: "", view: "list", placeId: null,
+    loaded: false, slow: false, error: "", canWrite: true, caps: {} };
+
+  // ---------- tiện ích ----------
+  const $ = (s) => document.querySelector(s);
+  function h(tag, props, ...kids) {
+    const el = document.createElement(tag);
+    for (const [k, v] of Object.entries(props || {})) {
+      if (v == null || v === false) continue;
+      if (k === "class") el.className = v;
+      else if (k === "text") el.textContent = v;
+      else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+      else el.setAttribute(k, v === true ? "" : v);
+    }
+    for (const kid of kids.flat()) if (kid != null && kid !== false) el.append(kid.nodeType ? kid : String(kid));
+    return el;
+  }
+  const norm = (t) => String(t || "").replace(/đ/g, "d").replace(/Đ/g, "D").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const isHttps = (u) => /^https:\/\/[^\s]+$/i.test(String(u || "").trim());
+  const rid = (p) => p + Array.from(crypto.getRandomValues(new Uint8Array(4)), (b) => b.toString(16).padStart(2, "0")).join("");
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+    del(k) { try { localStorage.removeItem(k); } catch {} },
+  };
+  function toast(msg) {
+    const t = h("div", { class: "toast", role: "status", text: msg });
+    document.body.append(t); setTimeout(() => t.remove(), 2600);
+  }
+  const fmtTime = (iso) => { try { return new Date(iso).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" }); } catch { return iso; } };
+  const mapsLink = (p) => `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`;
+
+  // ---------- người đi kiểm ----------
+  const visitorSel = $("#visitor");
+  visitorSel.value = store.get("visitor") || "";
+  visitorSel.addEventListener("change", () => store.set("visitor", visitorSel.value));
+
+  // ---------- khu ----------
+  document.querySelectorAll(".tab").forEach((b) => b.addEventListener("click", () => {
+    S.area = b.dataset.area;
+    document.querySelectorAll(".tab").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    store.set("area", S.area); render();
+  }));
+  const savedArea = store.get("area");
+  if (savedArea !== null) document.querySelector(`.tab[data-area="${savedArea}"]`)?.click();
+
+  // ---------- hiển thị ----------
+  let raf = 0;
+  const render = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); };
+
+  function inArea(p) { return !S.area || p.area === S.area; }
+
+  function drawProgress() {
+    const all = [...S.places.values()].filter(inArea);
+    const done = all.filter((p) => p.last).length;
+    $("#bar").style.width = all.length ? (100 * done / all.length).toFixed(1) + "%" : "0";
+    if (!S.loaded) { $("#progressText").textContent = S.slow ? "Chưa kết nối được kho dữ liệu, đang thử lại…" : "Đang tải danh sách quán…"; return; }
+    $("#progressText").textContent = `Đã kiểm ${done}/${all.length} quán ở ${S.area ? AREA_NAMES[S.area] : "hai khu"}`;
+  }
+
+  let drawnView = "";
+  function draw() {
+    drawProgress();
+    const view = $("#view");
+    if (S.view === "list" && drawnView === "list" && document.getElementById("list") && !S.error) { renderListOnly(); return; }
+    drawnView = S.view;
+    view.replaceChildren(S.view === "place" ? drawPlace() : S.view === "new" ? drawNew() : drawList());
+    $("#addBtn").hidden = S.view !== "list" || !S.canWrite;
+  }
+
+  function pillFor(p) {
+    const st = p.last?.status;
+    return h("span", { class: "pill " + (st || "todo"), text: st ? STATUS[st] : "Chưa kiểm" });
+  }
+
+  function drawList() {
+    const frag = h("div", { class: "sheet" });
+    if (S.error) frag.append(h("div", { class: "note err", text: S.error }));
+    const search = h("input", { type: "search", id: "q", placeholder: "Tìm tên quán, món, địa chỉ", value: S.q, "aria-label": "Tìm quán",
+      oninput: (e) => { S.q = e.target.value; clearTimeout(drawList.t); drawList.t = setTimeout(() => { renderListOnly(); }, 120); } });
+    const filter = h("select", { id: "filter", "aria-label": "Lọc theo trạng thái", onchange: (e) => { S.filter = e.target.value; renderListOnly(); } },
+      h("option", { value: "todo", text: "Chưa kiểm" }), h("option", { value: "done", text: "Đã kiểm" }), h("option", { value: "all", text: "Tất cả" }));
+    filter.value = S.filter;
+    frag.append(h("div", { class: "filters" }, search, filter), h("div", { class: "list", id: "list" }));
+    queueMicrotask(renderListOnly);
+    return frag;
+  }
+
+  function renderListOnly() {
+    const list = document.getElementById("list");
+    if (!list) return;
+    if (!S.loaded && !S.places.size) { list.replaceChildren(h("div", { class: "note", text: S.slow ? "Chưa tải được danh sách. Kiểm tra mạng rồi để trang tự thử lại." : "Đang tải danh sách quán…" })); return; }
+    if (!S.places.size) {
+      list.replaceChildren(h("div", { class: "note" }, h("strong", { text: "Chưa có quán nào trong danh sách. " }),
+        "Danh sách quán crawl từ OSM và Foody sẽ hiện ở đây khi được nạp. Gặp quán chưa có thì bấm “Thêm quán mới”."));
+      return;
+    }
+    const q = norm(S.q).trim();
+    let rows = [...S.places.values()].filter(inArea);
+    if (S.filter === "todo") rows = rows.filter((p) => !p.last);
+    if (S.filter === "done") rows = rows.filter((p) => p.last);
+    if (q) rows = rows.filter((p) => norm([p.name, p.address, p.cuisine].join(" ")).includes(q));
+    rows.sort((a, b) => (!!a.last - !!b.last) || norm(a.name).localeCompare(norm(b.name)));
+    if (!rows.length) { list.replaceChildren(h("div", { class: "note", text: "Không có quán nào khớp. Thử bỏ bộ lọc hoặc đổi khu." })); return; }
+    list.replaceChildren(...rows.slice(0, 300).map((p) => h("button", { class: "card", type: "button", onclick: () => openPlace(p.id) },
+      h("b", { text: p.name }), pillFor(p),
+      h("span", { class: "meta" }, [CATEGORY[p.category] || "Khác", p.address].filter(Boolean).join(" · "), " ", h("span", { class: "src", text: "· " + (p.sources || "") })))));
+    if (rows.length > 300) list.append(h("div", { class: "note", text: `Đang hiện 300/${rows.length} quán. Gõ tên để thu hẹp.` }));
+  }
+
+  function openPlace(id) { S.view = "place"; S.placeId = id; render(); scrollTo(0, 0); }
+  function backToList() { S.view = "list"; S.placeId = null; render(); }
+
+  // ---------- phiếu kiểm một quán ----------
+  function drawPlace() {
+    const p = S.places.get(S.placeId);
+    if (!p) return h("div", { class: "sheet" }, h("button", { class: "back", type: "button", onclick: backToList, text: "← Danh sách" }), h("div", { class: "note", text: "Không tìm thấy quán này nữa." }));
+    const links = [h("a", { href: mapsLink(p), target: "_blank", rel: "noopener", text: "Chỉ đường (Google Maps)" })];
+    if (isHttps(p.foody_url)) links.push(" · ", h("a", { href: p.foody_url, target: "_blank", rel: "noopener", text: "Trang Foody" }));
+    const facts = h("dl", { class: "facts" },
+      h("dt", { text: "Khu" }), h("dd", { text: AREA_NAMES[p.area] || "—" }),
+      h("dt", { text: "Loại" }), h("dd", { text: CATEGORY[p.category] || "Khác" }),
+      h("dt", { text: "Địa chỉ" }), h("dd", { text: p.address || "chưa có" }),
+      p.cuisine ? [h("dt", { text: "Món" }), h("dd", { text: p.cuisine.replace(/;/g, ", ").replace(/_/g, " ") })] : null,
+      h("dt", { text: "Nguồn" }), h("dd", { class: "mono", text: p.sources || "" }),
+      h("dt", { text: "Mở" }), h("dd", {}, links));
+    const past = S.visits.filter((v) => v.place_id === p.id).sort((a, b) => b.visited_at.localeCompare(a.visited_at));
+    const history = past.length ? h("div", { class: "history" }, h("strong", { text: `Đã kiểm ${past.length} lần` }), past.map((v) => h("div", {},
+      `${fmtTime(v.visited_at)} · ${VISITORS[v.visitor] || v.visitor} · ${STATUS[v.status] || v.status}`,
+      v.price_min_k ? ` · ${v.price_min_k}–${v.price_max_k || "?"}k` : "",
+      (v.photo_ids || []).length ? ` · ${(v.photo_ids || []).length} ảnh` : "", v.notes ? ` · ${v.notes}` : ""))) : null;
+    return h("div", { class: "sheet" },
+      h("button", { class: "back", type: "button", onclick: backToList, text: "← Danh sách" }),
+      h("div", { class: "row" }, h("h2", { text: p.name }), pillFor(p)),
+      facts, history, S.canWrite ? visitForm(p) : h("div", { class: "note", text: "Bạn đang xem ở quyền chỉ đọc nên không ghi phiếu được. Nhờ chủ trang chia sẻ với quyền Contributor." }));
+  }
+
+  function visitForm(p) {
+    const key = "draft:" + p.id;
+    const d = store.get(key) || { status: "", price_min_k: "", price_max_k: "", dishes: [{ name: "", price_k: "" }], hours_text: "", phone: "",
+      facebook_url: "", tiktok_url: "", photo_ids: [], photo_links: "", notes: "" };
+    const save = () => store.set(key, d);
+    const bind = (el, k) => { el.value = d[k] ?? ""; el.addEventListener("input", () => { d[k] = el.value; save(); }); return el; };
+
+    const status = h("div", { class: "status", role: "radiogroup", "aria-label": "Trạng thái quán" },
+      Object.entries(STATUS).map(([v, t]) => h("label", {}, h("input", { type: "radio", name: "st", value: v, checked: d.status === v,
+        onchange: () => { d.status = v; save(); } }), t)));
+
+    const dishBox = h("div", { style: "display:grid;gap:6px" });
+    const drawDishes = () => {
+      dishBox.replaceChildren(...d.dishes.map((x, i) => h("div", { class: "dish" },
+        h("input", { type: "text", placeholder: "Tên món", "aria-label": `Món ${i + 1}`, value: x.name, oninput: (e) => { x.name = e.target.value; save(); } }),
+        h("input", { type: "number", inputmode: "numeric", min: "0", placeholder: "giá k", "aria-label": `Giá món ${i + 1} (nghìn đồng)`, value: x.price_k, oninput: (e) => { x.price_k = e.target.value; save(); } }),
+        h("button", { type: "button", "aria-label": "Bỏ món này", text: "×", onclick: () => { d.dishes.splice(i, 1); if (!d.dishes.length) d.dishes.push({ name: "", price_k: "" }); save(); drawDishes(); } }))),
+        d.dishes.length < 5 ? h("button", { class: "btn", type: "button", text: "+ Thêm món", onclick: () => { d.dishes.push({ name: "", price_k: "" }); save(); drawDishes(); } }) : null);
+    };
+    drawDishes();
+
+    const thumbs = h("div", { class: "thumbs" });
+    const drawThumbs = () => thumbs.replaceChildren(...d.photo_ids.map((id) => h("figure", {}, h("img", { src: "/_blob/" + id, alt: "Ảnh đã tải lên", loading: "lazy" }))));
+    drawThumbs();
+    const photoStatus = h("small", { "aria-live": "polite" });
+    const photoInput = h("input", { type: "file", accept: "image/*", capture: "environment", multiple: true, id: "photo-" + p.id,
+      onchange: async (e) => {
+        const files = [...e.target.files]; e.target.value = "";
+        for (const [i, f] of files.entries()) {
+          photoStatus.textContent = `Đang nén và tải ảnh ${i + 1}/${files.length}…`;
+          try {
+            const blob = await shrink(f);
+            const r = await S.caps.assets.upload(blob, { type: "image/jpeg" });
+            d.photo_ids.push(r.id); save(); drawThumbs();
+          } catch (err) { photoStatus.textContent = "Không tải được ảnh: " + (err?.code || err?.message || err) + ". Dán link Drive ở ô bên dưới thay thế."; return; }
+        }
+        photoStatus.textContent = files.length ? `Đã tải ${files.length} ảnh.` : "";
+      } });
+    const photoBlock = S.caps.assets
+      ? h("label", { class: "f" }, "Ảnh mặt tiền, menu, món", h("small", { text: "Mở camera hoặc chọn từ máy. Ảnh được nén còn khoảng 1600 px." }), photoInput, photoStatus, thumbs)
+      : h("div", { class: "note", text: "Tài khoản này chưa được tải ảnh trực tiếp. Chụp bằng điện thoại, đưa lên thư mục Drive của nhóm rồi dán link ở ô bên dưới." });
+
+    const errBox = h("p", { class: "err", role: "alert" });
+    const submit = h("button", { class: "btn primary", type: "submit", text: "Lưu phiếu kiểm" });
+
+    const form = h("form", { class: "sheet", novalidate: true, onsubmit: async (e) => {
+      e.preventDefault(); errBox.textContent = "";
+      const problems = [];
+      if (!visitorSel.value) problems.push("chọn tên người đi kiểm ở đầu trang");
+      if (!d.status) problems.push("chọn trạng thái quán");
+      const lo = d.price_min_k === "" ? null : Number(d.price_min_k), hi = d.price_max_k === "" ? null : Number(d.price_max_k);
+      if ((lo != null && !(Number.isInteger(lo) && lo >= 0)) || (hi != null && !(Number.isInteger(hi) && hi >= 0))) problems.push("giá phải là số nghìn đồng, ví dụ 45");
+      if (lo != null && hi != null && lo > hi) problems.push("giá thấp nhất đang lớn hơn giá cao nhất");
+      if (lo != null && lo > 2000) problems.push("giá tính bằng nghìn đồng: 45 nghĩa là 45.000đ");
+      for (const k of ["facebook_url", "tiktok_url"]) if (d[k] && !isHttps(d[k])) problems.push("link phải bắt đầu bằng https://");
+      const links = d.photo_links.split(/\s+/).filter(Boolean);
+      if (links.some((u) => !isHttps(u))) problems.push("link ảnh phải bắt đầu bằng https://");
+      if (problems.length) { errBox.textContent = "Cần sửa: " + [...new Set(problems)].join("; ") + "."; return; }
+      submit.disabled = true; submit.textContent = "Đang lưu…";
+      const vid = rid("v_");
+      const visit = { place_id: p.id, visitor: visitorSel.value, by: S.uid || null, visited_at: new Date().toISOString(), status: d.status,
+        price_min_k: lo, price_max_k: hi,
+        dishes: d.dishes.filter((x) => x.name.trim()).map((x) => ({ name: x.name.trim(), price_k: x.price_k === "" ? null : Number(x.price_k) })),
+        hours_text: d.hours_text.trim(), phone: d.phone.trim(), facebook_url: d.facebook_url.trim(), tiktok_url: d.tiktok_url.trim(),
+        photo_ids: d.photo_ids.slice(), photo_links: links, notes: d.notes.trim() };
+      try {
+        await S.caps.db.collection("visits").doc(vid).set(visit);
+        await S.caps.db.collection("places").doc(p.id).update({ last: { visit_id: vid, status: visit.status, visited_at: visit.visited_at,
+          visitor: visit.visitor, price_min_k: lo, price_max_k: hi } });
+        store.del(key); toast("Đã lưu phiếu cho " + p.name); backToList();
+      } catch (err) {
+        submit.disabled = false; submit.textContent = "Lưu phiếu kiểm";
+        if (err?.code === "invalid_argument") { errBox.textContent = "Tài khoản này không có quyền ghi. Nhờ chủ trang chia sẻ với quyền Contributor. Phiếu vẫn giữ trên máy."; }
+        else if (err?.code === "quota_exceeded") { errBox.textContent = "Kho dữ liệu đã đầy. Báo Đức. Phiếu vẫn giữ trên máy."; }
+        else errBox.textContent = "Chưa lưu được (" + (err?.code || "lỗi mạng") + "). Phiếu vẫn giữ trên máy, thử lại khi có sóng.";
+      }
+    } },
+      h("fieldset", {}, h("legend", { text: "Quán còn ở đây không?" }), status),
+      h("fieldset", {}, h("legend", { text: "Giá theo menu (nghìn đồng)" }),
+        h("div", { class: "two" },
+          h("label", { class: "f" }, "Thấp nhất", bind(h("input", { type: "number", inputmode: "numeric", min: "0", placeholder: "vd 35", id: "lo-" + p.id }), "price_min_k")),
+          h("label", { class: "f" }, "Cao nhất", bind(h("input", { type: "number", inputmode: "numeric", min: "0", placeholder: "vd 80", id: "hi-" + p.id }), "price_max_k"))),
+        h("div", { class: "f" }, h("strong", { text: "Món tiêu biểu (tối đa 5)" }), dishBox)),
+      h("fieldset", {}, h("legend", { text: "Ảnh" }), photoBlock,
+        h("label", { class: "f" }, "Link ảnh khác", h("small", { text: "Mỗi link cách nhau bằng dấu cách. Không bắt buộc." }),
+          bind(h("input", { type: "text", inputmode: "url", placeholder: "https://drive.google.com/…", id: "pl-" + p.id }), "photo_links"))),
+      h("fieldset", {}, h("legend", { text: "Thông tin thêm" }),
+        h("label", { class: "f" }, "Giờ mở cửa", bind(h("input", { type: "text", placeholder: "vd 6:30–14:00, 17:00–21:00", id: "hr-" + p.id }), "hours_text")),
+        h("label", { class: "f" }, "Số điện thoại của quán", h("small", { text: "Chỉ số in trên biển hoặc menu." }), bind(h("input", { type: "text", inputmode: "tel", id: "ph-" + p.id }), "phone")),
+        h("label", { class: "f" }, "Fanpage Facebook của quán", bind(h("input", { type: "url", placeholder: "https://facebook.com/…", id: "fb-" + p.id }), "facebook_url")),
+        h("label", { class: "f" }, "Video review TikTok", bind(h("input", { type: "url", placeholder: "https://www.tiktok.com/@…/video/…", id: "tt-" + p.id }), "tiktok_url")),
+        h("label", { class: "f" }, "Ghi chú", bind(h("textarea", { placeholder: "vd: chỉ bán sáng, có chỗ ngồi máy lạnh, đã đổi tên thành…", id: "nt-" + p.id }), "notes"))),
+      errBox, h("div", { class: "row" }, submit, h("button", { class: "btn", type: "button", text: "Huỷ", onclick: backToList })),
+      h("small", { class: "mono", style: "color:var(--muted)", text: "Phiếu đang nhập được giữ trên máy này đến khi lưu." }));
+    return form;
+  }
+
+  async function shrink(file, max = 1600) {
+    const bmp = await createImageBitmap(file);
+    const k = Math.min(1, max / Math.max(bmp.width, bmp.height));
+    const c = document.createElement("canvas");
+    c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+    c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+    bmp.close?.();
+    return await new Promise((res, rej) => c.toBlob((b) => b ? res(b) : rej(new Error("không nén được ảnh")), "image/jpeg", 0.82));
+  }
+
+  // ---------- thêm quán mới ----------
+  function parseCoords(text) {
+    const t = String(text || "");
+    const m = t.match(/@(-?\d+\.\d+),\s*(-?\d+\.\d+)/) || t.match(/[?&]q(?:uery)?=(-?\d+\.\d+),\s*(-?\d+\.\d+)/) || t.match(/(-?\d{1,2}\.\d{3,})\s*,\s*(-?\d{2,3}\.\d{3,})/);
+    if (!m) return null;
+    const lat = Number(m[1]), lng = Number(m[2]);
+    return lat > 20.8 && lat < 21.3 && lng > 105.6 && lng < 106.1 ? { lat, lng } : null;
+  }
+
+  function drawNew() {
+    const d = store.get("draft:new") || { name: "", area: S.area || "ocean_park_1", category: "restaurant", address: "", coords: "", near: "" };
+    const save = () => store.set("draft:new", d);
+    const bind = (el, k) => { el.value = d[k] ?? ""; el.addEventListener("input", () => { d[k] = el.value; save(); }); el.addEventListener("change", () => { d[k] = el.value; save(); }); return el; };
+    const nearOpts = [...S.places.values()].filter((p) => p.area === d.area).sort((a, b) => norm(a.name).localeCompare(norm(b.name)));
+    const errBox = h("p", { class: "err", role: "alert" });
+    const submit = h("button", { class: "btn primary", type: "submit", text: "Thêm quán" });
+    return h("form", { class: "sheet", novalidate: true, onsubmit: async (e) => {
+      e.preventDefault(); errBox.textContent = "";
+      const problems = [];
+      if (!visitorSel.value) problems.push("chọn tên người đi kiểm ở đầu trang");
+      if (!d.name.trim()) problems.push("nhập tên quán");
+      let pos = parseCoords(d.coords);
+      if (!pos && d.near) { const n = S.places.get(d.near); if (n) pos = { lat: n.lat, lng: n.lng }; }
+      if (!pos) problems.push("dán link Google Maps của quán, hoặc chọn một quán ngay cạnh");
+      if (problems.length) { errBox.textContent = "Cần sửa: " + problems.join("; ") + "."; return; }
+      submit.disabled = true;
+      const id = rid("p_");
+      try {
+        await S.caps.db.collection("places").doc(id).set({ name: d.name.trim(), area: d.area, district: AREA_DISTRICT[d.area], category: d.category,
+          address: d.address.trim(), cuisine: "", lat: pos.lat, lng: pos.lng, sources: "field", foody_url: "",
+          added_in_field: true, coords_from: parseCoords(d.coords) ? "link" : "near:" + d.near, created_by: visitorSel.value, created_at: new Date().toISOString(), last: null });
+        store.del("draft:new"); toast("Đã thêm " + d.name.trim() + ". Ghi phiếu kiểm luôn nhé."); openPlace(id);
+      } catch (err) {
+        submit.disabled = false;
+        errBox.textContent = err?.code === "invalid_argument" ? "Tài khoản này không có quyền ghi." : "Chưa lưu được (" + (err?.code || "lỗi mạng") + "). Thử lại khi có sóng.";
+      }
+    } },
+      h("button", { class: "back", type: "button", onclick: backToList, text: "← Danh sách" }),
+      h("h2", { text: "Thêm quán chưa có trong danh sách" }),
+      h("p", { style: "margin:0;color:var(--muted)", text: "Tìm trong danh sách trước để tránh thêm trùng. Quán đổi tên thì ghi vào phiếu của quán cũ." }),
+      h("fieldset", {}, h("legend", { text: "Quán" }),
+        h("label", { class: "f" }, "Tên trên biển", bind(h("input", { type: "text", id: "nw-name", placeholder: "vd Bún chả Hương Liên" }), "name")),
+        h("div", { class: "two" },
+          h("label", { class: "f" }, "Khu", bind(h("select", { id: "nw-area", onchange: () => setTimeout(render) }, Object.entries(AREA_NAMES).map(([v, t]) => h("option", { value: v, text: t }))), "area")),
+          h("label", { class: "f" }, "Loại", bind(h("select", { id: "nw-cat" }, Object.entries(CATEGORY).map(([v, t]) => h("option", { value: v, text: t }))), "category"))),
+        h("label", { class: "f" }, "Địa chỉ", h("small", { text: "Mã căn hoặc toà, vd S2.05 hoặc SH-12 Sao Biển." }), bind(h("input", { type: "text", id: "nw-addr" }), "address"))),
+      h("fieldset", {}, h("legend", { text: "Vị trí" }),
+        h("label", { class: "f" }, "Link Google Maps hoặc toạ độ", h("small", { text: "Trong Google Maps: giữ tay lên vị trí quán → chép toạ độ hoặc Chia sẻ → Sao chép link (link đầy đủ có @vĩ độ,kinh độ)." }),
+          bind(h("input", { type: "text", id: "nw-coords", placeholder: "20.99331, 105.94170" }), "coords")),
+        h("label", { class: "f" }, "Hoặc: ngay cạnh quán", bind(h("select", { id: "nw-near" }, h("option", { value: "", text: "chọn quán bên cạnh" }), nearOpts.map((p) => h("option", { value: p.id, text: p.name }))), "near"))),
+      errBox, h("div", { class: "row" }, submit, h("button", { class: "btn", type: "button", text: "Huỷ", onclick: backToList })));
+  }
+
+  $("#addBtn").addEventListener("click", () => { S.view = "new"; render(); scrollTo(0, 0); });
+
+  // ---------- xuất CSV ----------
+  const csvCell = (v) => { const s = v == null ? "" : String(v); return /[",\n;]/.test(s) || /^[=+\-@]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  $("#exportBtn").addEventListener("click", async () => {
+    const cols = ["visit_id", "place_id", "visitor", "visited_at", "status", "price_min_k", "price_max_k", "dishes", "hours_text", "phone",
+      "facebook_url", "tiktok_url", "photo_urls", "lat", "lng", "notes"];
+    const lines = [cols.join(",")];
+    for (const v of S.visits) {
+      const row = { ...v, dishes: (v.dishes || []).map((x) => x.name + (x.price_k != null ? ":" + x.price_k : "")).join(";"),
+        photo_urls: [...(v.photo_ids || []).map((id) => "asset:" + id), ...(v.photo_links || [])].join(";"), lat: "", lng: "" };
+      lines.push(cols.map((c) => csvCell(row[c])).join(","));
+    }
+    const dl = S.caps.downloads;
+    if (!dl) { toast("Trang này không tải file xuống được ở đây."); return; }
+    try { await dl.save({ filename: "field_visits.csv", data: "﻿" + lines.join("\n") + "\n" }); toast(`Đã xuất ${S.visits.length} phiếu.`); }
+    catch (err) { if (err?.code !== "declined") toast("Chưa tải được file (" + (err?.code || "lỗi") + ")."); }
+  });
+
+  // ---------- kết nối dữ liệu ----------
+  async function boot() {
+    const C = window.claude;
+    if (!C?.use) { S.error = "Trang cần mở trong claude.ai để đọc và ghi dữ liệu chung của nhóm."; S.loaded = true; render(); return; }
+    const [db, user, assets, downloads] = await Promise.all(["db", "user", "assets", "downloads"].map((n) => C.use(n).catch(() => null)));
+    S.caps = { db, user, assets, downloads };
+    if (!db) { S.error = "Chưa kết nối được kho dữ liệu chung. Hãy đăng nhập claude.ai rồi mở lại trang."; S.loaded = true; render(); return; }
+    if (user) {
+      S.uid = await user.id();
+      const w = await user.can("data.write");
+      if (w === false) S.canWrite = false;
+    }
+    const timer = setTimeout(() => { S.slow = true; render(); }, 10000);
+    db.collection("places").onSnapshot((snap) => {
+      S.places = new Map(snap.docs.map((d) => [d.id, { id: d.id, ...d.data() }]));
+      if (!snap.metadata.fromCache) { S.loaded = true; S.slow = false; clearTimeout(timer); }
+      if (S.view === "list") render(); else drawProgress();
+    }, (err) => { clearTimeout(timer); S.loaded = true; S.error = "Mất kết nối kho dữ liệu (" + err.code + "). Tải lại trang."; render(); });
+    db.collection("visits").onSnapshot((snap) => {
+      S.visits = snap.docs.map((d) => ({ visit_id: d.id, ...d.data() }));
+      if (S.view === "list") render();
+    }, () => {});
+    render();
+  }
+  render();
+  boot();
+})();
+</script>
