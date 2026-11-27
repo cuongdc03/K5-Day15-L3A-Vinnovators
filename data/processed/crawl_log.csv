@@ -1,0 +1,9 @@
+run_id,source,scope,started_at,n_rows,status,script,notes
+run_0001,overpass,ocean_park_1,2026-11-27T16:44:12+07:00,10,ok,crawl/overpass.py,server https://overpass-api.de/api/interpreter
+run_0002,overpass,ocean_park_2,2026-11-27T16:44:12+07:00,28,ok,crawl/overpass.py,server https://overpass-api.de/api/interpreter
+run_0003,foody,ocean_park_1,2026-11-27T16:46:07+07:00,300,ok,crawl/foody.py,"130 request, 804 quán gặp, 38 từ khoá; lỗi: 0"
+run_0004,foody,ocean_park_2,2026-11-27T16:46:07+07:00,36,ok,crawl/foody.py,"130 request, 804 quán gặp, 38 từ khoá; lỗi: 0"
+run_0005,foody,ocean_park_1,2026-11-27T16:56:58+07:00,354,partial,crawl/foody.py,"181 request, 898 quán gặp, 66 từ khoá; lỗi: 1"
+run_0006,foody,ocean_park_2,2026-11-27T16:56:58+07:00,37,partial,crawl/foody.py,"181 request, 898 quán gặp, 66 từ khoá; lỗi: 1"
+run_0007,foody,ocean_park_1,2026-11-27T17:29:04+07:00,358,ok,crawl/foody.py,"183 request, 902 quán gặp, 66 từ khoá; lỗi: 0"
+run_0008,foody,ocean_park_2,2026-11-27T17:29:04+07:00,37,ok,crawl/foody.py,"183 request, 902 quán gặp, 66 từ khoá; lỗi: 0"
