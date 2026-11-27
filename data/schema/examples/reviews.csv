@@ -1,0 +1,3 @@
+review_id,place_id,source,rating,text_excerpt,lang,published_at,url,fetched_at
+r_00000001,p_00000001,google,5,Nước chấm vừa miệng. Trưa phải xếp hàng.,vi,2026-10,https://example.com/nguon-vi-du,2026-11-27T10:00:00+07:00
+r_00000002,p_00000002,google,3,Same menu as everywhere else.,en,2026-09,https://example.com/nguon-vi-du,2026-11-27T10:00:00+07:00
