@@ -10,7 +10,7 @@ CREATE TABLE places (
   google_place_id  TEXT,                      -- chỉ giữ id, không giữ nội dung Google ngoài các trường dưới
   name             TEXT NOT NULL,
   name_norm        TEXT NOT NULL,             -- chữ thường, bỏ dấu, bỏ ký tự thừa, gộp khoảng trắng
-  district         TEXT NOT NULL CHECK (district IN ('cau_giay','hai_ba_trung','hoang_mai','gia_lam','hoan_kiem')),
+  district         TEXT NOT NULL CHECK (district IN ('cau_giay','hai_ba_trung','hoang_mai','gia_lam','hoan_kiem','van_giang')),
   address_text     TEXT,
   lat              REAL NOT NULL,
   lng              REAL NOT NULL,
@@ -24,8 +24,10 @@ CREATE TABLE places (
   hours_text       TEXT,
   brand            TEXT,                      -- thẻ brand của OSM nếu có
   brand_wikidata   TEXT,
-  sources          TEXT NOT NULL,             -- một hoặc nhiều của 'osm;google;manual'
-  fetched_at       TEXT NOT NULL              -- ISO 8601
+  sources          TEXT NOT NULL,             -- một hoặc nhiều của 'osm;google;manual;foody;field'
+  fetched_at       TEXT NOT NULL,             -- ISO 8601
+  area             TEXT CHECK (area IN ('ocean_park_1','ocean_park_2')),  -- khu đô thị, trống nếu ngoài Ocean Park
+  foody_url        TEXT                       -- link trang quán trên Foody nếu có
 );
 CREATE INDEX idx_places_name_norm ON places(name_norm);
 CREATE INDEX idx_places_district ON places(district);
@@ -42,6 +44,27 @@ CREATE TABLE reviews (
   fetched_at    TEXT NOT NULL
 );
 CREATE INDEX idx_reviews_place ON reviews(place_id);
+
+-- Dữ liệu đội đi thực địa ghi bằng form trên điện thoại. Mỗi lần đến quán một dòng.
+CREATE TABLE field_visits (
+  visit_id      TEXT PRIMARY KEY,
+  place_id      TEXT NOT NULL REFERENCES places(place_id),
+  visitor       TEXT NOT NULL,                -- thành viên nhóm đi kiểm (vd 'duc'), không phải khách
+  visited_at    TEXT NOT NULL,                -- ISO 8601
+  status        TEXT NOT NULL CHECK (status IN ('open','closed','moved','not_found')),
+  price_min_k   INTEGER,                      -- nghìn đồng, theo menu tại quán
+  price_max_k   INTEGER,
+  dishes        TEXT,                         -- 'tên món:giá k;tên món:giá k'
+  hours_text    TEXT,
+  phone         TEXT,                         -- số của quán (in trên biển / menu), không phải số cá nhân
+  facebook_url  TEXT,                         -- fanpage của quán
+  tiktok_url    TEXT,                         -- video review công khai
+  photo_urls    TEXT,                         -- link ảnh, cách nhau ';'
+  lat           REAL,                         -- vị trí đứng trước quán, nếu có
+  lng           REAL,
+  notes         TEXT
+);
+CREATE INDEX idx_field_visits_place ON field_visits(place_id);
 
 CREATE TABLE chain_registry (
   brand_id        TEXT PRIMARY KEY,           -- vd 'kfc'

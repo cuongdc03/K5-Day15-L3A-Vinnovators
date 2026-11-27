@@ -1,0 +1,2 @@
+visit_id,place_id,visitor,visited_at,status,price_min_k,price_max_k,dishes,hours_text,phone,facebook_url,tiktok_url,photo_urls,lat,lng,notes
+v_00000001,p_00000001,duc,2026-11-28T11:30:00+07:00,open,35,60,VÍ DỤ bún chả:45;VÍ DỤ nem:15,07:00-14:00,,,,,21.0333,105.7900,dòng ví dụ

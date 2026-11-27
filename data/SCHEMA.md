@@ -1,6 +1,6 @@
 # Schema dữ liệu: quán local ở 4 quận Hà Nội
 
-Phạm vi thu: **Cầu Giấy, Hai Bà Trưng, Hoàng Mai, Gia Lâm**. Quận `hoan_kiem` chỉ dùng lấy mẫu **bẫy du lịch** cho bộ câu thử (tối đa khoảng 15 quán), không crawl cả quận.
+Phạm vi thu: **Cầu Giấy, Hai Bà Trưng, Hoàng Mai, Gia Lâm**, thêm hai khu đô thị **Vinhomes Ocean Park 1** (Gia Lâm) và **Ocean Park 2 / The Empire** (Văn Giang, Hưng Yên). Ranh giới hai khu lấy từ OSM, ở `crawl/areas.geojson`. Quận `hoan_kiem` chỉ dùng lấy mẫu **bẫy du lịch** cho bộ câu thử (tối đa khoảng 15 quán), không crawl cả quận.
 
 Nguồn sự thật cho máy: [schema/validate.py](schema/validate.py). Bản SQLite: [schema/schema.sql](schema/schema.sql). File CSV để trao đổi nằm ở `data/processed/`, dùng đúng tên cột và **đúng thứ tự cột** dưới đây. Ví dụ đúng format: [schema/examples/](schema/examples/) (dòng ví dụ ghi "VÍ DỤ", không phải dữ liệu thật).
 
@@ -13,6 +13,7 @@ python data/schema/validate.py data/processed     # chạy trước mỗi lần 
 | Tầng | Bảng | Ai ghi | Ghi bằng gì |
 |---|---|---|---|
 | Thu về | `places`, `reviews`, `crawl_log` | Đức, Thái | Script crawl trong `crawl/` |
+| Thực địa | `field_visits` | Cả nhóm khi đi kiểm quán | Form trên điện thoại, xuất về bằng `crawl/field_visits.py` |
 | Danh mục tay | `chain_registry` | Cường (Thái bổ sung nguồn) | Nhập tay, kèm `source_url` |
 | Suy ra và gán nhãn | `features`, `labels` | Pipeline của Cường · Trường và Cường gán nhãn | `features` do script sinh, không sửa tay |
 
@@ -22,10 +23,10 @@ Dữ liệu thô (`data/raw/`) không commit. Chỉ commit CSV đã chuẩn hoá
 
 | Cột | Kiểu | Ghi chú |
 |---|---|---|
-| `place_id` | text, khoá | `p_` + 8 ký tự đầu sha1 của `osm_id` hoặc `google_place_id` |
-| `osm_id`, `google_place_id` | text | Một trong hai bắt buộc phải có. Chỉ giữ id của Google |
+| `place_id` | text, khoá | `p_` + 8 ký tự đầu sha1 của `osm_id`, nếu không có thì `google_place_id`, rồi `foody/<id>` |
+| `osm_id`, `google_place_id` | text | Cần ít nhất một trong `osm_id`, `google_place_id`, `foody_url` (quán đội tự thêm khi đi thực địa có nguồn `field` thì miễn). Chỉ giữ id của Google |
 | `name`, `name_norm` | text | `name_norm`: chữ thường, bỏ dấu, bỏ ký tự thừa, gộp khoảng trắng. Dùng để nhận ra chi nhánh |
-| `district` | enum | `cau_giay` · `hai_ba_trung` · `hoang_mai` · `gia_lam` · `hoan_kiem` (chỉ mẫu bẫy du lịch) |
+| `district` | enum | `cau_giay` · `hai_ba_trung` · `hoang_mai` · `gia_lam` · `hoan_kiem` (chỉ mẫu bẫy du lịch) · `van_giang` (Ocean Park 2) |
 | `address_text`, `lat`, `lng` | | `lat` trong 20.8–21.3, `lng` trong 105.6–106.1 |
 | `category` | enum | `restaurant` · `cafe` · `fast_food` · `street_food` · `bakery` · `other` |
 | `cuisine` | text | Thẻ cách nhau `;`, vd `pho;bun_cha` |
@@ -34,8 +35,16 @@ Dữ liệu thô (`data/raw/`) không commit. Chỉ commit CSV đã chuẩn hoá
 | `rating`, `rating_count` | | Sao trung bình và số lượt |
 | `hours_text` | text | Nguyên văn |
 | `brand`, `brand_wikidata` | text | Thẻ của OSM nếu có |
-| `sources` | text | Một hoặc nhiều của `osm`, `google`, `manual`, cách nhau `;` |
+| `sources` | text | Một hoặc nhiều của `osm`, `google`, `manual`, `foody`, `field`, cách nhau `;` |
 | `fetched_at` | ISO 8601 | Thời điểm lấy |
+| `area` | enum | `ocean_park_1` · `ocean_park_2`; trống nếu quán ngoài hai khu |
+| `foody_url` | text | Link trang quán trên Foody. Chỉ lấy thông tin quán, không lấy review hay người dùng Foody |
+
+## field_visits: mỗi lần đội đến quán một dòng
+
+`visit_id` · `place_id` (phải có trong `places`) · `visitor` (thành viên nhóm, vd `duc`) · `visited_at` · `status` (`open` · `closed` · `moved` · `not_found`) · `price_min_k`, `price_max_k` (nghìn đồng, theo menu) · `dishes` (`tên món:giá;…`) · `hours_text` · `phone` (số của quán) · `facebook_url` (fanpage quán) · `tiktok_url` (video review công khai) · `photo_urls` (cách nhau `;`) · `lat`, `lng` · `notes`.
+
+Không chụp mặt người, biển số xe; không ghi tên chủ quán hay khách. Lần đến mới nhất của quán ghi đè giá, giờ mở trong `places` khi chạy `crawl/merge.py`.
 
 ## reviews: tối đa 5 đoạn rút gọn mỗi quán
 

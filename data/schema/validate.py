@@ -10,19 +10,29 @@ import re
 import sys
 from pathlib import Path
 
-DISTRICTS = {"cau_giay", "hai_ba_trung", "hoang_mai", "gia_lam", "hoan_kiem"}
+DISTRICTS = {"cau_giay", "hai_ba_trung", "hoang_mai", "gia_lam", "hoan_kiem", "van_giang"}
+AREAS = {"ocean_park_1", "ocean_park_2"}
 
 # Cột theo đúng thứ tự trong schema.sql. 'req' là cột không được để trống.
 SCHEMA = {
     "places": {
         "cols": ["place_id", "osm_id", "google_place_id", "name", "name_norm", "district", "address_text", "lat", "lng",
                  "category", "cuisine", "price_level", "price_min_k", "price_max_k", "rating", "rating_count",
-                 "hours_text", "brand", "brand_wikidata", "sources", "fetched_at"],
+                 "hours_text", "brand", "brand_wikidata", "sources", "fetched_at", "area", "foody_url"],
         "req": ["place_id", "name", "name_norm", "district", "lat", "lng", "category", "sources", "fetched_at"],
-        "enum": {"district": DISTRICTS, "category": {"restaurant", "cafe", "fast_food", "street_food", "bakery", "other"}},
-        "multi": {"sources": {"osm", "google", "manual"}},
+        "enum": {"district": DISTRICTS, "area": AREAS,
+                 "category": {"restaurant", "cafe", "fast_food", "street_food", "bakery", "other"}},
+        "multi": {"sources": {"osm", "google", "manual", "foody", "field"}},
         "int": ["price_level", "price_min_k", "price_max_k", "rating_count"],
         "float": ["lat", "lng", "rating"],
+    },
+    "field_visits": {
+        "cols": ["visit_id", "place_id", "visitor", "visited_at", "status", "price_min_k", "price_max_k", "dishes",
+                 "hours_text", "phone", "facebook_url", "tiktok_url", "photo_urls", "lat", "lng", "notes"],
+        "req": ["visit_id", "place_id", "visitor", "visited_at", "status"],
+        "enum": {"status": {"open", "closed", "moved", "not_found"}},
+        "int": ["price_min_k", "price_max_k"],
+        "float": ["lat", "lng"],
     },
     "reviews": {
         "cols": ["review_id", "place_id", "source", "rating", "text_excerpt", "lang", "published_at", "url", "fetched_at"],
@@ -57,10 +67,12 @@ SCHEMA = {
     },
 }
 RANGE = {("places", "lat"): (20.8, 21.3), ("places", "lng"): (105.6, 106.1),
+         ("field_visits", "lat"): (20.8, 21.3), ("field_visits", "lng"): (105.6, 106.1),
          ("places", "price_level"): (0, 4), ("places", "rating"): (1, 5), ("reviews", "rating"): (1, 5),
          ("features", "foreign_lang_ratio"): (0, 1)}
 FORBIDDEN_REVIEW_COLS = {"author", "author_name", "user", "username", "reviewer", "profile", "avatar", "author_url"}
-FK = [("reviews", "place_id", "places", "place_id"), ("features", "place_id", "places", "place_id"),
+FK = [("reviews", "place_id", "places", "place_id"), ("field_visits", "place_id", "places", "place_id"),
+      ("features", "place_id", "places", "place_id"),
       ("labels", "place_id", "places", "place_id"), ("features", "chain_id", "chain_registry", "brand_id")]
 
 
@@ -126,6 +138,9 @@ def main(folder):
                     errors.append(f"{where}: text_excerpt dài {len(t)} ký tự, tối đa 300")
                 if sentences(t) > 2:
                     errors.append(f"{where}: text_excerpt quá 2 câu")
+            if table == "places" and not (row["osm_id"] or row["google_place_id"] or row["foody_url"]
+                                          or "field" in row["sources"].split(";")):
+                errors.append(f"{where}: cần ít nhất một trong osm_id, google_place_id, foody_url (hoặc nguồn field)")
             key = tuple(row[c] for c in (("place_id", "labeler") if table == "labels" else (spec["cols"][0],)))
             if key in seen:
                 errors.append(f"{where}: khoá {key} bị trùng")
