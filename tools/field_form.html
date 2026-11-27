@@ -159,8 +159,10 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
     closed: "Đã đóng cửa (theo Maps)", auto_verified: "Google xác nhận còn mở", uncertain: "Chưa chắc, cần kiểm",
     unverified: "Chưa đối chiếu" };
   // Kiểm tại bàn: người kiểm mở Google Maps của quán rồi ghi lại những gì thấy
-  const MAPS_STATUS = { open: "Còn hoạt động", closed_temporarily: "Tạm đóng cửa", closed_permanently: "Đóng cửa vĩnh viễn", not_found: "Không thấy trên Maps" };
-  const MAPS_PILL = { open: "open", closed_temporarily: "moved", closed_permanently: "closed", not_found: "not_found" };
+  // needs_field_check: Maps có quán nhưng không đủ thông tin để kết luận → đưa vào danh sách đi thực địa
+  const MAPS_STATUS = { open: "Còn hoạt động", closed_permanently: "Đóng cửa vĩnh viễn", not_found: "Không thấy trên Maps",
+    needs_field_check: "Chưa xác thực được (cần thực địa)" };
+  const MAPS_PILL = { open: "open", closed_permanently: "closed", not_found: "not_found", needs_field_check: "moved" };
   const NEWEST = { lt_1m: "Dưới 1 tháng", lt_6m: "1–6 tháng", older: "Hơn 6 tháng", none: "Chưa có review" };
 
   const S = { places: new Map(), visits: [], deskChecks: [], mode: "field", area: "ocean_park_1", filter: "route", q: "", view: "list",
@@ -381,7 +383,8 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
       const cnt = nf || d.maps_review_count === "" ? null : Number(d.maps_review_count);
       if (!visitorSel.value) problems.push("chọn tên người kiểm ở đầu trang");
       if (!d.maps_status) problems.push("chọn trạng thái trên Maps");
-      if (!nf && d.maps_status && !d.newest_review) problems.push("chọn review mới nhất cách đây bao lâu");
+      // Chỉ "Còn hoạt động" mới cần độ mới của review (luật desk_verified trong crawl/verify.py)
+      if (d.maps_status === "open" && !d.newest_review) problems.push("chọn review mới nhất cách đây bao lâu");
       if (cnt != null && !(Number.isInteger(cnt) && cnt >= 0)) problems.push("số review phải là số nguyên");
       if (problems.length) { errBox.textContent = "Cần sửa: " + problems.join("; ") + "."; return; }
       submit.disabled = true; submit.textContent = "Đang lưu…";

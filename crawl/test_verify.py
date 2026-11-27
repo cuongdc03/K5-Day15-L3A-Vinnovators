@@ -61,8 +61,8 @@ class StatusRulesTest(unittest.TestCase):
     def test_desk_not_found_is_uncertain(self):
         self.assertEqual(status_of(desk_row=desk("not_found", "", "")), "uncertain")
 
-    def test_desk_closed_temporarily_is_uncertain(self):
-        self.assertEqual(status_of(desk_row=desk("closed_temporarily", "lt_1m")), "uncertain")
+    def test_desk_needs_field_check_is_uncertain(self):
+        self.assertEqual(status_of(desk_row=desk("needs_field_check", "", "")), "uncertain")
 
     def test_auto_verified_by_fresh_review_or_many_ratings(self):
         self.assertEqual(status_of(google_entry(rating_count=3)), "auto_verified")

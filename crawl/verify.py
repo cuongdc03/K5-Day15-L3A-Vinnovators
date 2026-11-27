@@ -52,8 +52,8 @@ EXCERPT_MAX_SENTENCES = 2
 FOODY_NO_PHOTO = ("no-image", "noimage", "default")  # ảnh giữ chỗ của Foody, không phải ảnh quán
 DESK_FRESH = {"lt_1m", "lt_6m"}  # review mới nhất trên Maps trong vòng 6 tháng (khớp FRESH_REVIEW_DAYS)
 NEWEST_REVIEW_VI = {"lt_1m": "dưới 1 tháng", "lt_6m": "dưới 6 tháng", "older": "trên 6 tháng", "none": "không có"}
-DESK_STATUS_VI = {"open": "đang mở", "closed_permanently": "đóng cửa vĩnh viễn", "closed_temporarily": "tạm đóng cửa",
-                  "not_found": "không tìm thấy"}
+DESK_STATUS_VI = {"open": "đang mở", "closed_permanently": "đóng cửa vĩnh viễn", "not_found": "không tìm thấy",
+                  "needs_field_check": "chưa xác thực được, cần thực địa"}
 
 
 # ---------- Trạng thái ----------
@@ -83,7 +83,7 @@ STATUS_RULES = [
      or e.desk_status == "closed_permanently"),
     ("desk_verified", lambda e: e.desk_status == "open" and e.desk_newest_review in DESK_FRESH),
     ("auto_verified", lambda e: e.google_matched and e.business_status == "OPERATIONAL" and has_recent_activity(e)),
-    # Xem tay thấy mở nhưng review cũ/không có, tạm đóng, không tìm thấy; hoặc khớp API nhưng cũ, tạm đóng.
+    # Xem tay thấy mở nhưng review cũ/không có, không tìm thấy, chưa xác thực được; hoặc khớp API nhưng cũ, tạm đóng.
     ("uncertain", lambda e: bool(e.desk_status) or e.google_matched),
     ("unverified", lambda e: True),  # chưa xem tay, chưa có dữ liệu Google API (hoặc API không có quán khớp)
 ]

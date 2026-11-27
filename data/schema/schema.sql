@@ -72,7 +72,7 @@ CREATE TABLE desk_checks (
   place_id           TEXT NOT NULL REFERENCES places(place_id),
   checker            TEXT NOT NULL,           -- thành viên nhóm đã xem (vd 'duc')
   checked_at         TEXT NOT NULL,           -- ISO 8601
-  maps_status        TEXT NOT NULL CHECK (maps_status IN ('open','closed_permanently','closed_temporarily','not_found')),
+  maps_status        TEXT NOT NULL CHECK (maps_status IN ('open','closed_permanently','not_found','needs_field_check')),
   maps_review_count  INTEGER,                 -- số review hiện trên Maps, trống nếu không thấy
   newest_review      TEXT CHECK (newest_review IN ('lt_1m','lt_6m','older','none')),
   has_menu_photo     INTEGER CHECK (has_menu_photo IN (0,1)),

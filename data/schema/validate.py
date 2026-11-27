@@ -38,7 +38,7 @@ SCHEMA = {
         "cols": ["check_id", "place_id", "checker", "checked_at", "maps_status", "maps_review_count", "newest_review",
                  "has_menu_photo", "notes"],
         "req": ["check_id", "place_id", "checker", "checked_at", "maps_status"],
-        "enum": {"maps_status": {"open", "closed_permanently", "closed_temporarily", "not_found"},
+        "enum": {"maps_status": {"open", "closed_permanently", "not_found", "needs_field_check"},
                  "newest_review": {"lt_1m", "lt_6m", "older", "none"}, "has_menu_photo": {"0", "1"}},
         "int": ["maps_review_count"],
     },
