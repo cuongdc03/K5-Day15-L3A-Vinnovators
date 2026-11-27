@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quán Thật Hà Nội — Quán ăn local, lọc chuỗi &amp; bẫy du lịch</title>
+  <meta name="description" content="Phân loại quán ăn tại Hà Nội (Cầu Giấy, Hai Bà Trưng, Hoàng Mai, Gia Lâm) kèm nguồn kiểm chứng. AI gợi ý, bạn quyết." />
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Patrick+Hand&family=Lora:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./landing.css" />
+</head>
+<body>
+
+<!-- =========================================================
+     TRANH VẼ DÙNG LẠI (symbol): phố ăn uống + dải nhà cổ Hà Nội
+     ========================================================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- bộ lọc làm nét mực hơi run như vẽ tay -->
+    <filter id="rough" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="4" result="n" />
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3" />
+    </filter>
+
+    <!-- ===== LỚP XA: Nhà hát Lớn · nhà ống · dây điện · Tháp Rùa · Chùa Một Cột ===== -->
+    <symbol id="skyline" viewBox="0 0 1600 360">
+      <!-- Nhà hát Lớn -->
+      <g transform="translate(90 0)">
+        <path class="ln f-sand" d="M0 300V200h300v100" />
+        <path class="ln f-sand" d="M15 200 150 150 285 200z" />
+        <path class="ln" d="M30 205v95M70 205v95M110 205v95M150 205v95M190 205v95M230 205v95M270 205v95" />
+        <path class="ln f-sea" d="M100 156V124Q150 62 200 124V156z" />
+        <path class="ln" d="M150 70V44M142 46h16M150 44l16 6-16 6" />
+        <path class="ln" d="M-10 300h320M0 292h300M10 284h280" />
+        <path class="ln thin" d="M45 245q12-16 24 0M125 245q12-16 24 0M205 245q12-16 24 0" />
+      </g>
+
+      <!-- cột điện + dây chằng chịt -->
+      <path class="ln" d="M424 300V68M404 82h42M408 96h34" />
+      <path class="ln" d="M906 300V64M886 78h42M890 92h34" />
+      <path class="ln" d="M446 82Q650 136 886 78M446 96Q660 152 886 92M928 78Q1050 124 1180 84" />
+      <path class="ln" d="M404 82Q330 120 250 100" />
+      <path class="ln" d="M1180 84V300M1164 98h32" />
+      <!-- chim én đậu trên dây -->
+      <g class="ln f-olive"><ellipse cx="648" cy="108" rx="9" ry="6" /><path d="M640 108 628 114M657 105l7 2-7 3" /></g>
+      <g class="ln f-olive"><ellipse cx="690" cy="112" rx="9" ry="6" /><path d="M682 112 670 118M699 109l7 2-7 3" /></g>
+      <g class="ln f-olive"><ellipse cx="1040" cy="106" rx="9" ry="6" /><path d="M1032 106 1020 112M1049 103l7 2-7 3" /></g>
+
+      <!-- dãy nhà ống (cửa chớp xanh, mái ngói) -->
+      <g>
+        <path class="ln f-mustard" d="M440 300V112h70v188" /><path class="ln f-terra" d="M434 112 475 84 516 112z" />
+        <rect class="ln f-sea" x="449" y="138" width="18" height="32" /><rect class="ln f-sea" x="483" y="138" width="18" height="32" />
+        <path class="ln" d="M436 206h78M440 206v14M452 206v14M464 206v14M476 206v14M488 206v14M500 206v14M512 206v14" />
+        <rect class="ln f-white" x="448" y="256" width="54" height="44" />
+      </g>
+      <g>
+        <path class="ln f-sea" d="M520 300V154h60v146" /><path class="ln f-terra" d="M514 154 550 128 586 154z" />
+        <rect class="ln f-white" x="530" y="176" width="16" height="28" /><rect class="ln f-white" x="554" y="176" width="16" height="28" />
+        <path class="ln" d="M516 226h68" /><rect class="ln f-mustard" x="528" y="256" width="44" height="44" />
+        <path class="ln" d="M584 160v40M590 160h14v36h-14" /><rect class="ln f-red" x="590" y="160" width="14" height="36" />
+      </g>
+      <g>
+        <path class="ln f-terra" d="M610 300V94h82v206" /><path class="ln f-sand" d="M602 94 651 62 700 94z" />
+        <rect class="ln f-sea" x="620" y="116" width="20" height="36" /><rect class="ln f-sea" x="662" y="116" width="20" height="36" />
+        <rect class="ln f-sea" x="620" y="176" width="20" height="36" /><rect class="ln f-sea" x="662" y="176" width="20" height="36" />
+        <path class="ln" d="M606 228h90M610 228v14M622 228v14M634 228v14M646 228v14M658 228v14M670 228v14M682 228v14M694 228v14" />
+        <rect class="ln f-white" x="620" y="258" width="62" height="42" />
+      </g>
+      <g>
+        <path class="ln f-sand" d="M714 300V146h64v154" /><path class="ln f-terra" d="M708 146 746 118 784 146z" />
+        <rect class="ln f-sea" x="724" y="170" width="18" height="30" /><rect class="ln f-sea" x="752" y="170" width="18" height="30" />
+        <rect class="ln f-white" x="724" y="256" width="46" height="44" /><path class="ln" d="M730 240h34" />
+      </g>
+      <g>
+        <path class="ln f-olive" d="M798 300V122h78v178" /><path class="ln f-terra" d="M792 122 837 92 882 122z" />
+        <rect class="ln f-white" x="808" y="146" width="18" height="32" /><rect class="ln f-white" x="846" y="146" width="18" height="32" />
+        <path class="ln" d="M794 204h86M798 204v14M810 204v14M822 204v14M834 204v14M846 204v14M858 204v14M870 204v14" />
+        <rect class="ln f-mustard" x="808" y="256" width="58" height="44" />
+      </g>
+
+      <!-- Hồ Gươm: Tháp Rùa + liễu -->
+      <g>
+        <path class="ln f-olive" d="M980 300Q1020 270 1070 270T1160 300z" />
+        <rect class="ln f-sand" x="1050" y="228" width="42" height="42" />
+        <path class="ln" d="M1060 270v-20q6-10 12 0v20M1074 270v-20q6-10 12 0v20" />
+        <rect class="ln f-sand" x="1058" y="198" width="26" height="30" /><path class="ln" d="M1066 228v-14q5-8 10 0v14" />
+        <rect class="ln f-sand" x="1063" y="172" width="16" height="26" />
+        <path class="ln f-terra" d="M1046 228 1071 210 1096 228zM1054 198 1071 184 1088 198zM1059 172 1071 158 1083 172z" />
+        <path class="ln" d="M1071 158V140M1071 140l12 4-12 5" />
+        <path class="ln thin" d="M950 296q10-6 20 0t20 0t20 0M1150 296q10-6 20 0t20 0" />
+      </g>
+      <g>
+        <path class="ln" d="M1226 300V214q-6-26 12-44" />
+        <path class="ln thin" d="M1238 170q-44 20-52 100M1238 170q-24 24-24 100M1238 170q4 40 4 100M1238 170q32 20 40 90M1238 170q48 10 62 80" />
+      </g>
+
+      <!-- Chùa Một Cột -->
+      <g>
+        <path class="ln thin" d="M1330 298q10-6 20 0t20 0t20 0t20 0t20 0t20 0t20 0t20 0" />
+        <rect class="ln f-sand" x="1388" y="246" width="24" height="54" />
+        <rect class="ln f-white" x="1372" y="214" width="56" height="32" />
+        <path class="ln" d="M1384 246v-32M1400 246v-32M1416 246v-32" />
+        <path class="ln f-terra" d="M1354 216Q1400 172 1446 216Q1400 200 1354 216z" />
+        <path class="ln" d="M1400 190v-14M1394 178h12" />
+      </g>
+
+      <path class="ln" d="M0 300H1600" />
+    </symbol>
+
+    <!-- ===== LỚP GẦN: phố bán hàng — mỗi quán một nhãn phán quyết ===== -->
+    <symbol id="street" viewBox="0 0 1600 360">
+      <!-- vỉa hè + mặt đường -->
+      <rect x="0" y="300" width="1600" height="60" fill="rgba(214,180,120,.35)" />
+      <path class="ln" d="M0 300H1600" />
+      <path class="ln thin" d="M0 336H1600" stroke-dasharray="30 44" />
+      <path class="ln thin" d="M90 316l14 4M280 318l12-3M520 316l14 4M760 319l12-3M980 316l14 4M1200 318l12-3M1420 316l14 4" />
+
+      <!-- cột đèn + cây bàng -->
+      <g><path class="ln" d="M352 300V120q0-14 18-14h14" /><path class="ln f-mustard" d="M370 106h26l-6 14h-14z" /></g>
+      <g><path class="ln" d="M662 300V220" /><path class="ln f-olive" d="M662 232q-44-6-44-44t44-40q44 2 44 40t-44 44z" /><path class="ln thin" d="M642 200q8 10 20 6M672 190q10 6 18 0" /></g>
+      <g><path class="ln" d="M1262 300V224" /><path class="ln f-olive" d="M1262 236q-40-6-40-40t40-38q40 2 40 38t-40 40z" /></g>
+
+      <!-- 1 · PHỞ -->
+      <g transform="translate(50 0)">
+        <path class="ln" d="M12 190V300M268 190V300" />
+        <path class="ln f-terra" d="M0 190 30 128H250L280 190z" />
+        <path class="ln" d="M70 128 55 190M110 128 105 190M150 128 150 190M190 128 195 190M230 128 245 190" />
+        <path class="ln f-white" d="M0 190q14 20 28 0q14 20 28 0q14 20 28 0q14 20 28 0q14 20 28 0q14 20 28 0q14 20 28 0q14 20 28 0q14 20 28 0q14 20 28 0z" />
+        <rect class="ln f-white" x="100" y="84" width="80" height="32" rx="4" />
+        <path class="ln" d="M118 116 110 128M162 116 170 128" />
+        <text x="140" y="108" text-anchor="middle" class="t-serif" font-size="22">PHỞ</text>
+        <path class="ln f-sand" d="M24 250H256V300H24z" />
+        <path class="ln f-white" d="M96 250V222Q140 206 184 222V250" /><path class="ln" d="M92 222h96" />
+        <path class="steam" d="M118 212q-8-14 0-26t0-26" /><path class="steam" d="M140 212q-8-14 0-26t0-26" /><path class="steam" d="M162 212q-8-14 0-26t0-26" />
+        <path class="ln f-white" d="M200 250q14 20 28 0z" /><path class="ln f-white" d="M36 250q14 20 28 0z" />
+        <rect class="ln f-mustard" x="-14" y="280" width="30" height="8" /><path class="ln" d="M-10 288v12M12 288v12" />
+      </g>
+
+      <!-- 2 · BÚN CHẢ -->
+      <g transform="translate(400 0)">
+        <path class="ln" d="M140 130V300" />
+        <path class="ln f-sea" d="M10 170Q140 56 270 170z" />
+        <path class="ln" d="M140 108V170M80 138 100 170M200 138 180 170M44 160 60 170M236 160 220 170" />
+        <path class="ln f-white" d="M10 170q15 14 30 0q15 14 30 0q15 14 30 0q15 14 30 0q15 14 30 0q15 14 30 0q15 14 30 0q15 14 30 0q15 14 30 0z" />
+        <rect class="ln f-white" x="96" y="186" width="88" height="28" rx="4" />
+        <text x="140" y="206" text-anchor="middle" class="t-serif" font-size="17">BÚN CHẢ</text>
+        <path class="ln f-sand" d="M40 252H240V300H40z" />
+        <path class="ln f-slate" d="M70 252V238H210V252z" />
+        <path class="ln" d="M80 244h120M92 238l-6 14M116 238l-6 14M140 238l-6 14M164 238l-6 14M188 238l-6 14" />
+        <path class="flame ln f-red" d="M104 238q-6-16 4-24 2 10 8 8-2 8-2 16zM150 238q-6-18 4-28 3 10 9 8-3 10-1 20z" />
+        <path class="steam" d="M110 210q-10-16 0-30t0-30" /><path class="steam" d="M150 206q-10-16 0-30t0-30" /><path class="steam" d="M190 210q-10-16 0-30t0-30" />
+        <rect class="ln f-mustard" x="-12" y="280" width="30" height="8" /><path class="ln" d="M-8 288v12M14 288v12" />
+      </g>
+
+      <!-- 3 · CÀ PHÊ VỈA HÈ (ca xám: chưa chắc) -->
+      <g transform="translate(730 0)">
+        <path class="ln f-sand" d="M0 300V140h220v160" />
+        <path class="ln f-terra" d="M-8 140 110 100 228 140z" />
+        <rect class="ln f-sea" x="14" y="162" width="38" height="56" /><path class="ln" d="M14 176h38M14 190h38M14 204h38" />
+        <rect class="ln f-sea" x="168" y="162" width="38" height="56" /><path class="ln" d="M168 176h38M168 190h38M168 204h38" />
+        <rect class="ln f-white" x="70" y="156" width="80" height="30" rx="4" />
+        <text x="110" y="177" text-anchor="middle" class="t-serif" font-size="18">CÀ PHÊ</text>
+        <rect class="ln f-white" x="64" y="226" width="92" height="74" /><path class="ln" d="M110 226v74" />
+        <path class="ln f-mustard" d="M-28 284h26v-10h-26zM-20 284v16M-8 284v16" />
+        <path class="ln f-mustard" d="M232 284h26v-10h-26zM240 284v16M252 284v16" />
+        <path class="ln f-white" d="M-8 252h40v6h-40zM12 258v26" />
+        <path class="ln f-white" d="M-2 240h12l-2 12h-8z" /><path class="steam" d="M4 234q-6-8 0-16" />
+      </g>
+
+      <!-- 4 · BÁNH MÌ (xe đẩy) -->
+      <g transform="translate(1010 0)">
+        <path class="ln" d="M120 120V250" />
+        <path class="ln f-terra" d="M20 150Q120 70 220 150z" />
+        <path class="ln" d="M120 100V150M70 124 84 150M170 124 156 150" />
+        <path class="ln f-white" d="M20 150q12 14 25 0q12 14 25 0q12 14 25 0q12 14 25 0q12 14 25 0q12 14 25 0q12 14 25 0q12 14 25 0z" />
+        <rect class="ln f-white" x="82" y="76" width="76" height="26" rx="4" />
+        <text x="120" y="95" text-anchor="middle" class="t-serif" font-size="16">BÁNH MÌ</text>
+        <rect class="ln f-white" x="30" y="196" width="180" height="76" rx="3" />
+        <path class="ln f-sand" d="M44 258q16-18 36-8t-4 12zM96 254q16-18 36-8t-4 12zM148 258q16-18 36-8t-4 12z" />
+        <path class="ln thin" d="M30 214h180" />
+        <rect class="ln f-sand" x="30" y="272" width="180" height="12" />
+        <circle class="ln f-white" cx="64" cy="292" r="12" /><circle class="ln f-white" cx="176" cy="292" r="12" />
+        <path class="ln" d="M210 214l24-10M234 204v-14" />
+      </g>
+
+      <!-- 5 · CHÈ + NƯỚC (hàng nước vỉa hè) -->
+      <g transform="translate(1310 0)">
+        <path class="ln f-sea" d="M20 140 40 100H240L260 140z" />
+        <path class="ln" d="M20 140V300M260 140V300M80 100 70 140M140 100V140M200 100 210 140" />
+        <rect class="ln f-white" x="86" y="60" width="108" height="30" rx="4" />
+        <path class="ln" d="M104 90 100 100M176 90 180 100" />
+        <text x="140" y="82" text-anchor="middle" class="t-serif" font-size="19">CHÈ · NƯỚC</text>
+        <path class="ln f-sand" d="M40 232H240V300H40z" />
+        <path class="ln f-white" d="M62 232V200Q86 190 110 200V232zM130 232V204Q154 194 178 204V232z" />
+        <path class="ln" d="M58 200h56M126 204h56" />
+        <path class="ln f-mustard" d="M196 232V214h14v18zM216 232V220h12v12z" />
+        <path class="steam" d="M86 192q-6-10 0-20" /><path class="steam" d="M154 196q-6-10 0-20" />
+        <rect class="ln f-mustard" x="-14" y="282" width="30" height="8" /><path class="ln" d="M-10 290v10M12 290v10" />
+        <rect class="ln f-mustard" x="262" y="282" width="30" height="8" /><path class="ln" d="M266 290v10M288 290v10" />
+      </g>
+    </symbol>
+
+    <!-- hoa, lá, nón lá dùng nhỏ -->
+    <symbol id="leaf" viewBox="0 0 30 40"><path d="M15 2C3 12 2 28 15 38 28 28 27 12 15 2z" fill="currentColor" stroke="#2a2622" stroke-width="1.6" stroke-linejoin="round" /><path d="M15 6V36" stroke="#2a2622" stroke-width="1.2" fill="none" /></symbol>
+    <symbol id="nonla" viewBox="0 0 120 70"><path class="ln f-sand" d="M4 58Q60 -6 116 58z" /><path class="ln thin" d="M30 44 22 58M44 34 40 58M60 28V58M76 34 80 58M90 44 98 58" /><path class="ln thin" d="M14 52 106 52M26 42 94 42" /></symbol>
+  </defs>
+</svg>
+
+<!-- =========================================================
+     TEMPLATE: người gánh hàng rong (dùng ở hero và thanh cuộn)
+     ========================================================= -->
+<template id="tpl-walker">
+  <svg class="walker" viewBox="0 0 170 160" role="img" aria-label="Người gánh hàng rong đang đi">
+    <ellipse cx="85" cy="152" rx="42" ry="4" fill="rgba(42,38,34,.16)" />
+    <g class="wk-body">
+      <!-- chân: quần trắng + dép -->
+      <g class="leg a">
+        <path class="ln" stroke-width="10" d="M80 110V140" /><path d="M80 110V140" stroke="#f1e6cc" stroke-width="6.4" stroke-linecap="round" fill="none" />
+        <path class="ln f-mustard" d="M70 143h18q3 6-2 7H72q-4-1-2-7z" />
+      </g>
+      <g class="leg b">
+        <path class="ln" stroke-width="10" d="M91 110V140" /><path d="M91 110V140" stroke="#f1e6cc" stroke-width="6.4" stroke-linecap="round" fill="none" />
+        <path class="ln f-mustard" d="M82 143h18q3 6-2 7H84q-4-1-2-7z" />
+      </g>
+      <!-- áo bà ba -->
+      <path class="ln f-terra" d="M70 68Q86 60 102 68L106 114Q86 122 66 114z" />
+      <path class="ln thin" d="M86 66V116" />
+      <!-- đòn gánh + hai thúng -->
+      <g class="wk-pole">
+        <path class="ln" d="M8 72Q85 52 162 72" />
+        <path class="ln" d="M24 68 10 114M24 68 38 114M146 68 132 114M146 68 160 114" />
+        <path class="ln f-mustard" d="M4 114h38q-4 26-19 26t-19-26z" /><ellipse class="ln f-sand" cx="23" cy="114" rx="19" ry="4" />
+        <path class="ln f-olive" d="M12 112q4-12 10-6t10-6" />
+        <path class="ln f-terra" d="M128 114h38q-4 26-19 26t-19-26z" /><ellipse class="ln f-sand" cx="147" cy="114" rx="19" ry="4" />
+        <path class="ln f-white" d="M136 112q11-14 22 0z" />
+        <path class="steam" d="M147 104q-6-10 0-18" />
+      </g>
+      <!-- tay đỡ đòn gánh -->
+      <path class="ln" d="M72 74Q58 76 56 64M100 74Q114 76 116 64" />
+      <!-- đầu, nón lá -->
+      <circle class="ln f-sand" cx="86" cy="52" r="9" />
+      <circle cx="82.5" cy="52" r="1.2" fill="#2a2622" /><circle cx="89.5" cy="52" r="1.2" fill="#2a2622" />
+      <path class="ln thin" d="M83 57q3 2 6 0" />
+      <path class="ln f-sand" d="M52 49Q86 4 120 49Q86 42 52 49z" />
+      <path class="ln thin" d="M70 32 62 46M86 24V44M102 32l8 14" />
+      <path class="ln thin" d="M78 48 79 60M94 48 93 60" />
+    </g>
+  </svg>
+</template>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+<header class="top">
+  <div class="wrap">
+    <a href="#hero" class="brand" aria-label="Quán Thật Hà Nội — về đầu trang">
+      <svg viewBox="0 0 120 70" aria-hidden="true"><use href="#nonla" /></svg>
+      Quán Thật Hà Nội
+    </a>
+    <nav class="nav" aria-label="Mục chính">
+      <a href="#vi-sao">Vì sao dùng</a>
+      <a href="#cach-loc">Cách lọc quán</a>
+      <a href="#minh-bach">Minh bạch</a>
+    </nav>
+    <div class="top-right">
+      <span class="chip"><span class="dot"></span>AI gợi ý, bạn quyết</span>
+      <a class="btn" href="./index.html">Mở bản đồ
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO: đi dạo qua phố ăn Hà Nội ================= -->
+  <section id="hero" class="hero" data-section>
+    <div class="leaves" aria-hidden="true">
+      <span class="leaf" style="color:#c9a227"><svg viewBox="0 0 30 40"><use href="#leaf" /></svg></span>
+      <span class="leaf" style="color:#c2410c"><svg viewBox="0 0 30 40"><use href="#leaf" /></svg></span>
+      <span class="leaf" style="color:#8a9a3b"><svg viewBox="0 0 30 40"><use href="#leaf" /></svg></span>
+      <span class="leaf" style="color:#c9a227"><svg viewBox="0 0 30 40"><use href="#leaf" /></svg></span>
+      <span class="leaf" style="color:#d97a3a"><svg viewBox="0 0 30 40"><use href="#leaf" /></svg></span>
+      <span class="leaf" style="color:#8a9a3b"><svg viewBox="0 0 30 40"><use href="#leaf" /></svg></span>
+    </div>
+
+    <div class="scene" role="img" aria-label="Tranh vẽ tay: người gánh hàng rong đi qua các quán ăn trên phố Hà Nội">
+      <div class="sun" aria-hidden="true"></div>
+      <svg class="cloud" viewBox="0 0 120 50" aria-hidden="true"><path class="ln f-white" d="M20 42q-16 0-16-12t16-12q4-14 24-12 12-8 28 2 22-2 24 16 12 2 12 10t-14 8z" /></svg>
+      <svg class="cloud" viewBox="0 0 120 50" aria-hidden="true"><path class="ln f-white" d="M20 42q-16 0-16-12t16-12q4-14 24-12 12-8 28 2 22-2 24 16 12 2 12 10t-14 8z" /></svg>
+
+      <div class="lane lane-far" aria-hidden="true">
+        <svg viewBox="0 0 1600 360"><use href="#skyline" width="1600" height="360" /></svg>
+        <svg viewBox="0 0 1600 360"><use href="#skyline" width="1600" height="360" /></svg>
+      </div>
+      <div class="lane lane-mid" aria-hidden="true">
+        <svg viewBox="0 0 1600 360"><use href="#street" width="1600" height="360" /></svg>
+        <svg viewBox="0 0 1600 360"><use href="#street" width="1600" height="360" /></svg>
+      </div>
+
+      <div class="hero-walker" id="heroWalker" aria-hidden="true"></div>
+
+      <div class="bike" aria-hidden="true">
+        <svg viewBox="0 -30 160 130">
+          <g class="wheel"><circle class="ln" cx="35" cy="72" r="24" /><path class="ln thin" d="M35 48V96M11 72H59M18 55 52 89M52 55 18 89" /></g>
+          <g class="wheel"><circle class="ln" cx="125" cy="72" r="24" /><path class="ln thin" d="M125 48V96M101 72H149M108 55 142 89M142 55 108 89" /></g>
+          <path class="ln" d="M35 72 68 72 90 42 125 72M68 72 80 42H92M80 42 76 34h14M108 44l17 28M102 38h16" />
+          <rect class="ln f-white" x="4" y="32" width="44" height="18" rx="2" /><path class="ln" d="M8 52h38" />
+          <circle class="ln f-pink" cx="14" cy="26" r="9" /><circle class="ln f-mustard" cx="28" cy="20" r="9" /><circle class="ln f-terra" cx="42" cy="26" r="9" />
+          <path class="ln f-olive" d="M20 32q-8 4-14 0M36 32q8 4 14 0" />
+          <path class="ln f-olive" d="M62 40Q70 30 80 40L86 70H62z" />
+          <circle class="ln f-sand" cx="72" cy="16" r="7" />
+          <path class="ln f-sand" d="M56 14Q72 -12 90 14z" />
+          <path class="ln" d="M80 38l24 4" />
+        </svg>
+      </div>
+      <p class="scene-note">Rê chuột vào để dừng lại ngắm phố</p>
+    </div>
+
+    <div class="wrap hero-copy">
+      <div>
+        <div class="chips reveal">
+          <span class="chip"><span class="dot"></span>Cầu Giấy · Hai Bà Trưng</span>
+          <span class="chip">Hoàng Mai · Gia Lâm</span>
+        </div>
+        <h1 class="reveal">
+          Quán ăn ngon <span class="scribble">local.</span>
+          <em>Không chuỗi. Không bẫy du lịch.</em>
+        </h1>
+      </div>
+      <div class="hero-aside reveal">
+        <p>Mỗi quán kèm căn cứ kiểm lại được.<br />Thiếu tín hiệu thì báo <b>Chưa chắc</b>.</p>
+        <a class="btn" href="./index.html">Mở bản đồ quán
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= Một quán trên bản đồ ================= -->
+  <section class="sec" data-section>
+    <div class="wrap demo">
+      <figure class="polaroid reveal" style="--rot:-2deg">
+        <img src="./assets/hero-bun-cha.jpg" alt="Mâm bún chả quán ăn local Hà Nội trong nắng sớm" />
+        <figcaption>mâm bún chả nắng sớm · minh hoạ</figcaption>
+      </figure>
+      <div class="reveal">
+        <p class="eyebrow">Một quán trên bản đồ trông thế này</p>
+        <div class="verdict">
+          <span class="chip" style="background:#dfe8c8;color:var(--olive)">● Local · 1 chi nhánh HN</span>
+          <h3>Bún Chả Quanh Trâu Quỳ <small>(minh hoạ)</small></h3>
+          <p>Mẫu thẻ quán local: 1 địa chỉ độc lập · 100% review tiếng Việt · có nguồn kiểm lại.</p>
+          <div class="row">
+            <span class="price">35k – 50k</span>
+            <span class="chip">0.85× giá trung vị quận</span>
+          </div>
+        </div>
+        <div class="note">
+          <svg viewBox="0 0 56 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M52 28C30 32 14 24 8 8M8 8l-1 12M8 8l12 3" /></svg>
+          mỗi nhãn đều có lý do để bạn kiểm lại
+        </div>
+        <p style="margin-top:22px"><a class="btn btn-ghost" href="./index.html">Vào bản đồ 3D</a></p>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 420 40" aria-hidden="true"><path class="ln" d="M4 20H170M250 20H416" /><g transform="translate(180 6)"><use href="#nonla" width="60" height="28" /></g></svg>
+
+  <!-- ================= 01 · VÌ SAO ================= -->
+  <section id="vi-sao" class="sec" data-section>
+    <div class="wrap why">
+      <figure class="polaroid why-img reveal">
+        <img src="./assets/hanoi-corner.jpg" alt="Góc phố Hà Nội cửa chớp xanh nắng sớm" data-parallax="10" />
+        <figcaption>góc phố cửa chớp xanh</figcaption>
+        <div class="stamp-note">Mỗi lần tìm quán: <b>5–10 phút</b> lọc review</div>
+      </figure>
+      <div>
+        <div class="reveal">
+          <p class="eyebrow">01 · Vì sao dùng</p>
+          <h2>Số sao cao không phân biệt được quán local với chuỗi.</h2>
+        </div>
+        <div class="points">
+          <div class="point reveal" style="transition-delay:80ms">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" /></svg></span>
+            <div><b>Lẫn chuỗi &amp; quán chăng khách</b><span>Bản đồ hiện tại xếp theo độ nổi tiếng, không có bộ lọc quán độc lập.</span></div>
+          </div>
+          <div class="point reveal" style="transition-delay:150ms">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg></span>
+            <div><b>Mất thời gian chọn quán</b><span>Sinh viên và người đi làm phải tự mở đọc review từng quán.</span></div>
+          </div>
+          <div class="point reveal" style="transition-delay:220ms">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /></svg></span>
+            <div><b>Không gắn nhãn oan quán nhỏ</b><span>Mọi phán quyết đều kèm tín hiệu có nguồn, thiếu căn cứ thì dừng.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02 · CÁCH LỌC ================= -->
+  <section id="cach-loc" class="sec band" data-section>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <p class="eyebrow">02 · Cách lọc quán</p>
+          <h2>Bốn nhãn rõ ràng, kiểm chứng được.</h2>
+        </div>
+        <span class="chip">Hình + chữ + màu</span>
+      </div>
+
+      <div class="sign-grid">
+        <figure class="polaroid pho-img reveal">
+          <img src="./assets/pho-local.jpg" alt="Bát phở bò Hà Nội trên bàn gạch hoa cổ" />
+          <figcaption>review trích ≤ 2 câu · ẩn danh · có link nguồn</figcaption>
+        </figure>
+
+        <div class="signs">
+          <div class="sign reveal"><span class="tg local">● Local</span><strong>≤ 3 địa chỉ</strong><span>Quán độc lập tại Hà Nội, bán món Việt.</span></div>
+          <div class="sign reveal" style="transition-delay:80ms"><span class="tg chain">■ Chuỗi</span><strong>≥ 5 địa chỉ</strong><span>Hoặc nằm trong danh sách chuỗi đã xác thực.</span></div>
+          <div class="sign reveal" style="transition-delay:160ms"><span class="tg trap">◆ Bẫy du lịch</span><strong>≥ 2 / 4 tín hiệu</strong><span>Menu song ngữ · giá ≥ 1.7× · review ngoại · chèo kéo.</span></div>
+          <div class="sign unsure reveal" style="transition-delay:240ms"><span class="tg unsure">◎ Chưa chắc</span><strong>4 địa chỉ / &lt; 3 review</strong><span>Chuyển người kiểm, không đoán bừa.</span></div>
+          <div class="promise reveal">
+            <span><b>Nút Báo sai</b> chỉ lưu bản nháp</span>
+            <span><b>Từ chối</b> chấm ATTP &amp; viết review xấu</span>
+            <span>Không thu vị trí</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 03 · MINH BẠCH ================= -->
+  <section id="minh-bach" class="sec" data-section>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <p class="eyebrow">03 · Minh bạch</p>
+          <h2>Kiểm chứng công khai, không cảm tính.</h2>
+        </div>
+        <span style="font-size:13px;color:var(--muted)">Ngưỡng kiểm thử chất lượng của hệ thống</span>
+      </div>
+      <div class="stamps">
+        <div class="stamp reveal"><div class="n">4 + 1</div><b>Quận phủ dữ liệu</b><span>Cầu Giấy, HBT, Hoàng Mai, Gia Lâm + Hoàn Kiếm</span></div>
+        <div class="stamp reveal" style="transition-delay:80ms"><div class="n">≥ <span data-count="75">75</span>%</div><b>Khớp nhãn độc lập</b><span>Hai người chấm chéo đối chứng</span></div>
+        <div class="stamp reveal" style="transition-delay:160ms"><div class="n">≥ <span data-count="90">90</span>%</div><b>Chuyển người ca chưa chắc</b><span>Không đoán khi thiếu căn cứ</span></div>
+        <div class="stamp reveal" style="transition-delay:240ms"><div class="n"><span data-count="100">100</span>%</div><b>Từ chối ngoài phạm vi</b><span>Không chấm ATTP hay viết review xấu</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA: cửa hàng cuối phố ================= -->
+  <footer id="vao-app" class="foot" data-section>
+    <svg class="foot-sky" viewBox="0 0 1600 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#skyline" width="1600" height="360" /></svg>
+    <div class="wrap">
+      <a class="shop reveal" href="./index.html">
+        <div class="awning"></div><div class="scallop"></div>
+        <div class="shop-door">
+          <div>
+            <small>Tiếp theo · mời vào quán</small>
+            <h3>Mở bản đồ &amp; danh sách quán ăn</h3>
+          </div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></span>
+        </div>
+      </a>
+      <div class="credits">
+        <div><b>Vinnovators</b> · Quán Thật Hà Nội</div>
+        <div>OSM · Google Places · AI gợi ý, bạn quyết</div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- người gánh đi theo thanh cuộn -->
+<div class="rail" id="rail" aria-hidden="true">
+  <div id="railWalker" class="rail-walker"></div>
+</div>
+
+<script src="./landing.js"></script>
+</body>
+</html>
