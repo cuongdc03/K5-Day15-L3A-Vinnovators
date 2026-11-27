@@ -1,267 +1,256 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Quán local Hà Nội</title>
-<meta name="description" content="Chọn quán ăn local ở Hoàn Kiếm: AI loại chuỗi và quán chăng khách du lịch, nói rõ vì sao, và nói thẳng khi chưa chắc.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap" rel="stylesheet">
-<style>
-/* Palette lấy từ phố: nền tường xám xanh, mực xanh rêu đậm, xanh cửa chớp = local,
-   đỏ biển tôn = chuỗi, vàng taxi = bẫy du lịch, xanh thép = chưa chắc. */
-:root{
-  --ground:#E9EEE7; --paper:#FAFBF8; --ink:#14231C; --muted:#56655D; --line:#D3DBD0;
-  --local:#1E6B49; --local-bg:#DCEEE3;
-  --chain:#B2302A; --chain-bg:#F5DCD9;
-  --tourist:#7A5C00; --tourist-bg:#F7E8AE;
-  --unsure:#41536B; --unsure-bg:#E0E6EE;
-  --r:10px;
-  --head:'Bricolage Grotesque','Be Vietnam Pro',system-ui,sans-serif;
-  --body:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-}
-*{box-sizing:border-box}
-html,body{margin:0}
-body{background:var(--ground);color:var(--ink);font:400 15px/1.55 var(--body);-webkit-font-smoothing:antialiased}
-button,input{font:inherit;color:inherit}
-:focus-visible{outline:3px solid #1E6B49;outline-offset:2px;border-radius:6px}
-.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:50}
-.skip:focus{top:12px}
-
-.app{display:grid;grid-template-columns:minmax(380px,460px) 1fr;height:100vh;height:100dvh}
-.side{display:flex;flex-direction:column;min-height:0;background:var(--paper);border-right:1px solid var(--line)}
-.side-top{padding:22px 24px 14px;border-bottom:1px solid var(--line)}
-.brand{font:600 13px/1 var(--body);color:var(--muted);margin:0 0 14px}
-h1{font:700 27px/1.15 var(--head);letter-spacing:-.01em;margin:0 0 16px;max-width:19em}
-.ask{display:flex;gap:8px}
-.ask input{flex:1;min-width:0;height:44px;padding:0 14px;border:1.5px solid var(--line);border-radius:var(--r);background:#fff}
-.ask input:focus{border-color:var(--local);outline:none;box-shadow:0 0 0 3px #1E6B4933}
-.chips{display:flex;gap:6px;margin:10px 0 0;flex-wrap:wrap}
-.chip{min-height:36px;padding:0 13px;border:1.5px solid var(--line);border-radius:99px;background:#fff;cursor:pointer;font-size:14px;transition:background .15s,border-color .15s,transform .1s}
-.chip:hover{border-color:var(--ink)}
-.chip:active{transform:scale(.97)}
-.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
-.toggles{display:flex;gap:18px;margin:14px 0 0;flex-wrap:wrap}
-.tg{display:flex;align-items:center;gap:9px;cursor:pointer;min-height:44px;font-size:14px}
-.tg input{position:absolute;opacity:0}
-.tg i{width:38px;height:22px;border-radius:99px;background:#BAC4BB;position:relative;transition:background .18s;flex:none}
-.tg i::after{content:"";position:absolute;left:3px;top:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .18s}
-.tg input:checked+i{background:var(--local)}
-.tg input:checked+i::after{transform:translateX(16px)}
-.tg input:focus-visible+i{outline:3px solid var(--local);outline-offset:2px}
-
-.summary{padding:12px 24px;font-size:14px;color:var(--muted);border-bottom:1px solid var(--line)}
-.summary b{color:var(--ink);font-weight:600}
-.list{flex:1;overflow:auto;padding:14px 16px 24px;display:flex;flex-direction:column;gap:10px}
-.card{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:var(--r);padding:14px 16px;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s}
-.card:hover{transform:translateY(-2px);border-color:#9DB0A3}
-.card[aria-expanded=true]{border-color:var(--ink);box-shadow:0 6px 18px #14231C1A}
-.row1{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-.name{font:700 17px/1.25 var(--head);margin:0}
-.meta{margin:2px 0 0;color:var(--muted);font-size:13.5px}
-.verdict{flex:none;display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:13px;line-height:1;padding:7px 10px;border-radius:7px}
-.verdict svg{width:12px;height:12px;flex:none}
-.v-local{background:var(--local-bg);color:var(--local)}
-.v-chain{background:var(--chain-bg);color:var(--chain)}
-.v-tourist{background:var(--tourist-bg);color:var(--tourist)}
-.v-unsure{background:var(--unsure-bg);color:var(--unsure)}
-.why1{margin:10px 0 0;font-size:14px}
-.detail{margin:12px 0 0;padding:12px 0 0;border-top:1px dashed var(--line);display:none}
-.card[aria-expanded=true] .detail{display:block}
-.sig{display:grid;grid-template-columns:92px 1fr;gap:4px 12px;margin:0 0 10px;font-size:13.5px}
-.sig dt{color:var(--muted)}
-.sig dd{margin:0}
-.conf{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
-.bar{flex:1;height:6px;border-radius:4px;background:var(--line);overflow:hidden;max-width:160px}
-.bar span{display:block;height:100%;background:var(--ink);border-radius:4px}
-.ask-human{margin:10px 0 0;padding:9px 11px;background:var(--unsure-bg);color:var(--unsure);border-radius:8px;font-size:13.5px}
-
-details.hidden{margin-top:6px;border-top:1px solid var(--line);padding-top:10px}
-details.hidden summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600;font-size:14px}
-.hrow{display:flex;justify-content:space-between;gap:10px;padding:9px 2px;border-bottom:1px solid var(--line);font-size:13.5px}
-.hrow span:last-child{color:var(--muted);text-align:right}
-.empty{padding:22px 6px;color:var(--muted)}
-.note{margin:18px 2px 0;color:var(--muted);font-size:12.5px}
-
-/* Bản đồ 3D */
-.mapwrap{position:relative;min-height:0;overflow:hidden;background:radial-gradient(85% 75% at 50% 46%,#F6F9F1 0%,#E3ECDF 62%,#D4E0D0 100%)}
-.mapwrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab}
-.mapwrap.no-gl::after{content:"Trình duyệt này không hiện được bản đồ 3D. Danh sách bên cạnh vẫn dùng bình thường.";position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;color:var(--muted)}
-.zonecard{position:absolute;left:18px;top:18px;max-width:300px;padding:13px 16px;background:#FAFBF8F2;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 10px 28px #14231C26;opacity:0;transform:translateY(-6px);transition:opacity .2s,transform .2s;pointer-events:none}
-.zonecard.on{opacity:1;transform:none}
-.zonecard b{display:block;font:700 17px/1.2 var(--head)}
-.zonecard span{display:block;margin-top:3px;color:var(--muted);font-size:13.5px}
-.hint{position:absolute;left:50%;top:18px;transform:translateX(-50%);padding:9px 16px;border-radius:99px;background:#14231CE6;color:#F3F6EF;font-size:13.5px;white-space:nowrap;pointer-events:none;transition:opacity .4s}
-.hint.off{opacity:0}
-.zonecard.on~.hint{opacity:0}
-.legend{position:absolute;left:16px;bottom:16px;background:#FAFBF8EE;border:1px solid var(--line);border-radius:var(--r);padding:10px 14px;display:flex;gap:14px;flex-wrap:wrap;font-size:13px;max-width:calc(100% - 32px)}
-.legend span{display:inline-flex;gap:6px;align-items:center}
-.legend svg{width:14px;height:14px}
-@media (prefers-reduced-motion:reduce){
-  *{transition:none!important;animation:none!important}
-}
-@media (max-width:860px){
-  .app{display:flex;flex-direction:column;height:auto}
-  .mapwrap{order:-1;height:56vh;min-height:340px}
-  .side{border-right:0;overflow:visible}
-  .list{overflow:visible}
-  .side-top{padding:18px 16px 12px}
-  .summary{padding:12px 16px}
-  h1{font-size:23px}
-  .legend{font-size:12px;gap:8px 12px}
-  .zonecard{left:12px;top:12px;max-width:min(260px,calc(100% - 24px))}
-  .hint{top:12px;font-size:12.5px;white-space:normal;width:max-content;max-width:calc(100% - 24px);text-align:center}
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Quán Thật Hà Nội — Bản đồ &amp; danh sách quán ăn local</title>
+  <meta name="description" content="Phân loại quán ăn local tại 4 quận Hà Nội (Gia Lâm · VinUni/OCP, Cầu Giấy, Hai Bà Trưng, Hoàng Mai) và Hoàn Kiếm kèm nguồn kiểm chứng." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Patrick+Hand&family=Lora:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <link rel="stylesheet" href="styles.css?v=23" />
 </head>
 <body>
-<a class="skip" href="#list">Bỏ qua tới danh sách quán</a>
-<div class="app" id="demo">
-  <section class="side" aria-label="Danh sách quán">
-    <div class="side-top">
-      <p class="brand">Quán local Hà Nội · khu Hoàn Kiếm</p>
-      <h1>Quán ăn local ở Hoàn Kiếm, không chuỗi, không bẫy khách du lịch</h1>
-      <form class="ask" role="search" onsubmit="return false">
-        <input id="q" type="search" placeholder="Bạn muốn ăn gì? ví dụ: bún chả" aria-label="Món bạn muốn ăn" autocomplete="off">
-      </form>
-      <div class="chips" role="group" aria-label="Ngân sách">
-        <button class="chip" data-b="all" aria-pressed="true">Mọi giá</button>
-        <button class="chip" data-b="50" aria-pressed="false">Dưới 50k</button>
-        <button class="chip" data-b="100" aria-pressed="false">50k đến 100k</button>
+  <a class="skip" href="#list">Bỏ qua tới danh sách quán</a>
+
+  <!-- Biểu tượng Nón Lá y hệt landing.html -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="nonla" viewBox="0 0 120 70">
+        <path class="ln f-sand" d="M4 58Q60 -6 116 58z" />
+        <path class="ln thin" d="M30 44 22 58M44 34 40 58M60 28V58M76 34 80 58M90 44 98 58" />
+        <path class="ln thin" d="M14 52 106 52M26 42 94 42" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Thanh điều khiển nổi khi xem khung Mobile trên màn hình Desktop -->
+  <div class="mobile-preview-bar" role="region" aria-label="Chuyển chế độ hiển thị">
+    <span class="mpb-label">Giao diện di động</span>
+    <div class="view-switcher" role="group" aria-label="Chuyển giao diện Desktop hoặc Mobile">
+      <button type="button" class="vs-btn" data-view="desktop" aria-pressed="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Desktop
+      </button>
+      <button type="button" class="vs-btn" data-view="mobile" aria-pressed="false">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        Mobile
+      </button>
+    </div>
+  </div>
+
+  <div class="app-shell" id="appShell">
+    <!-- Thanh trạng thái & Dynamic Island (chỉ hiện trong khung iPhone 18 Pro Max trên Desktop) -->
+    <div class="iphone-statusbar" aria-hidden="true">
+      <span class="sb-time">9:41</span>
+      <span class="sb-island"><i class="sb-cam"></i></span>
+      <span class="sb-icons">5G · 100%</span>
+    </div>
+    <!-- HEADER Y HỆT landing.html -->
+    <header class="top">
+      <div class="top-wrap">
+        <a href="./landing.html" class="brand" aria-label="Quán Thật Hà Nội — về trang giới thiệu">
+          <svg viewBox="0 0 120 70" aria-hidden="true"><use href="#nonla" /></svg>
+          <span>Quán Thật Hà Nội</span>
+        </a>
+        <nav class="nav" aria-label="Mục chính">
+          <a href="./landing.html#vi-sao">Vấn đề</a>
+          <a href="./landing.html#cach-loc">Cách lựa quán</a>
+          <a href="./landing.html#minh-bach">Kết quả</a>
+        </nav>
+        <div class="top-right">
+          <div class="view-switcher header-view-switcher is-compact" role="group" aria-label="Chuyển giao diện Desktop hoặc Mobile">
+            <button type="button" class="vs-btn" data-view="desktop" aria-pressed="true" aria-label="Giao diện Desktop" title="Giao diện Desktop">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </button>
+            <button type="button" class="vs-btn" data-view="mobile" aria-pressed="false" aria-label="Giao diện Mobile" title="Giao diện Mobile">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </button>
+          </div>
+          <span class="top-chip"><span class="dot"></span>AI gợi ý, bạn quyết</span>
+          <a class="btn-sketch btn-ghost top-back" href="./landing.html">← Giới thiệu</a>
+        </div>
       </div>
-      <div class="toggles">
-        <label class="tg"><input type="checkbox" id="hideChain" checked><i></i>Ẩn chuỗi</label>
-        <label class="tg"><input type="checkbox" id="hideTourist" checked><i></i>Ẩn bẫy du lịch</label>
+      <!-- Dải tin cậy gọn gàng trên giao diện di động -->
+      <div class="mobile-trust-strip" aria-label="Cam kết minh bạch">
+        <span class="mts-pill"><span class="dot"></span>AI gợi ý, bạn quyết</span>
+        <span class="mts-sub">4 quận Hà Nội &amp; Hoàn Kiếm</span>
+      </div>
+    </header>
+
+    <div class="app" id="demo" data-mtab="list">
+      <section class="side" aria-label="Danh sách quán ăn">
+        <!-- Thanh chọn 5 khu vực: underline tabs trên Desktop, pill bar cuộn ngang 1 ngón trên Mobile -->
+        <div class="district-tabs" role="group" aria-label="Chọn quận">
+          <button type="button" class="d-chip" data-d="gia_lam" aria-pressed="true">Gia Lâm · VinUni</button>
+          <button type="button" class="d-chip" data-d="hoan_kiem" aria-pressed="false">Hoàn Kiếm</button>
+          <button type="button" class="d-chip" data-d="cau_giay" aria-pressed="false">Cầu Giấy</button>
+          <button type="button" class="d-chip" data-d="hai_ba_trung" aria-pressed="false">Hai Bà Trưng</button>
+          <button type="button" class="d-chip" data-d="hoang_mai" aria-pressed="false">Hoàng Mai</button>
+        </div>
+
+        <div class="side-top">
+          <!-- Hàng tìm kiếm gọn + nút mở bộ lọc trên Mobile -->
+          <div class="search-bar-row">
+            <form class="ask" role="search" onsubmit="return false">
+              <svg class="ask-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input id="q" type="search" placeholder="Tìm món, tên quán ăn…" aria-label="Tìm quán ăn hoặc món" autocomplete="off" />
+              <button type="button" id="qClear" class="ask-clear" hidden aria-label="Xoá từ khoá">×</button>
+            </form>
+            <button type="button" id="filterToggle" class="filter-toggle-btn" aria-expanded="false" aria-controls="filterPanel">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+              <span>Lọc</span>
+              <span id="filterBadge" class="filter-badge" hidden>0</span>
+            </button>
+          </div>
+
+          <div id="filterPanel" class="filter-panel">
+            <!-- Gợi ý thử nhanh gọn nhẹ -->
+            <div class="quick-tests">
+              <span>Thử nhanh:</span>
+              <button type="button" class="qt-btn" data-quick="Quán này có an toàn thực phẩm không?">ATTP?</button>
+              <button type="button" class="qt-btn" data-quick="Viết review xấu cho quán">Review xấu</button>
+              <button type="button" class="qt-btn" data-quick="Bún bò Đông Anh">Quán ngoài vùng</button>
+            </div>
+
+            <!-- Ngân sách + Công tắc ẩn chuỗi / bẫy -->
+            <div class="filter-row">
+              <div class="chips" role="group" aria-label="Ngân sách">
+                <button type="button" class="chip" data-b="all" aria-pressed="true">Mọi giá</button>
+                <button type="button" class="chip" data-b="50" aria-pressed="false">&lt; 50k</button>
+                <button type="button" class="chip" data-b="100" aria-pressed="false">50k–100k</button>
+              </div>
+              <div class="toggles">
+                <label class="tg"><input type="checkbox" id="hideChain" checked /><i></i>Ẩn chuỗi</label>
+                <label class="tg"><input type="checkbox" id="hideTourist" checked /><i></i>Ẩn bẫy</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tóm tắt + Nút mở Hàng đợi Báo sai -->
+        <div class="summary-bar">
+          <span id="summary" aria-live="polite"></span>
+          <button type="button" id="queueToggle" class="queue-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+            Hàng đợi (<span id="queueCount">0</span>)
+          </button>
+        </div>
+
+        <!-- Lớp phủ nền cho Bottom-sheet Hàng đợi trên Mobile -->
+        <div id="queueBackdrop" class="sheet-backdrop" hidden></div>
+
+        <!-- Khay xem Hàng đợi Báo sai (inline trên Desktop, bottom-sheet trên Mobile) -->
+        <div id="queueDrawer" class="queue-drawer" hidden role="region" aria-label="Hàng đợi báo sai">
+          <div class="sheet-handle" aria-hidden="true"></div>
+          <div class="queue-head">
+            <span>Hàng đợi báo sai (bản nháp chờ duyệt)</span>
+            <button type="button" id="queueClose" class="queue-close-btn">Đóng</button>
+          </div>
+          <p class="queue-sub">Góp ý của bạn được lưu thành bản nháp chờ người duyệt — nhãn gốc của quán giữ nguyên.</p>
+          <div id="queueItems" class="queue-items"></div>
+          <div class="queue-foot">
+            <button type="button" id="queueNewReport" class="btn-primary queue-new-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+              Báo sai một quán
+            </button>
+          </div>
+        </div>
+
+        <div class="list" id="list" tabindex="-1"></div>
+      </section>
+
+      <!-- Cột phải: Bản đồ 2D (Leaflet) + Mô hình 3D 5 quận -->
+      <section class="mapwrap" id="mapwrap" data-mapmode="real" aria-label="Bản đồ quán ăn Hà Nội">
+        <div id="realMap" class="real-map" aria-label="Bản đồ 2D các quận Hà Nội"></div>
+        <canvas id="gl" role="img" aria-label="Bản đồ 3D minh hoạ các khu vực Hà Nội."></canvas>
+        <div class="zonecard" id="zonecard" aria-hidden="true"></div>
+        <div class="hint" id="hint">Rê chuột vào một khu để nâng lên và xem quán. Kéo để xoay.</div>
+
+        <div class="map-switcher" role="group" aria-label="Chế độ bản đồ">
+          <button type="button" class="ms-btn" data-mode="real" aria-pressed="true">Bản đồ 2D</button>
+          <button type="button" class="ms-btn" data-mode="3d" aria-pressed="false">Bản đồ 3D</button>
+        </div>
+
+        <div class="legend" aria-label="Chú giải">
+          <span><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="#4d6b1f"/></svg>Local</span>
+          <span><svg viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="2" fill="#9a2f1f"/></svg>Chuỗi</span>
+          <span><svg viewBox="0 0 14 14"><path d="M7 .5 13.5 7 7 13.5.5 7Z" fill="#e0a526"/></svg>Bẫy du lịch</span>
+          <span><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" fill="#fffaf0" stroke="#3b4c63" stroke-width="2"/></svg>Chưa chắc</span>
+        </div>
+        <div class="map-district-pill" id="mapDistrictPill"></div>
+      </section>
+    </div>
+
+    <!-- Thanh điều hướng đáy cố định cho Mobile (4 tab đồng bộ landing.html, icon SVG đồng nhất) -->
+    <nav class="mobile-bottom-nav" id="mobileBottomNav" role="tablist" aria-label="Điều hướng di động">
+      <a class="bnav-btn bnav-link" href="./landing.html?view=mobile">
+        <span class="bnav-ico" aria-hidden="true">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7"/><path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10"/><path d="M9 21v-6h6v6"/></svg>
+        </span>
+        <span class="bnav-lbl">Trang chủ</span>
+      </a>
+      <button type="button" class="bnav-btn" data-mtab="list" role="tab" aria-selected="true">
+        <span class="bnav-ico" aria-hidden="true">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg>
+        </span>
+        <span class="bnav-lbl">Danh sách</span>
+      </button>
+      <button type="button" class="bnav-btn" data-mtab="map" role="tab" aria-selected="false">
+        <span class="bnav-ico" aria-hidden="true">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+        </span>
+        <span class="bnav-lbl">Bản đồ</span>
+      </button>
+      <button type="button" class="bnav-btn" data-mtab="report" role="tab" aria-selected="false">
+        <span class="bnav-ico-wrap" aria-hidden="true">
+          <span class="bnav-ico">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+          </span>
+          <span class="bnav-badge" id="mobileQueueBadge">0</span>
+        </span>
+        <span class="bnav-lbl">Báo sai</span>
+      </button>
+    </nav>
+
+    <!-- CHÂN TRANG MÁI HIÊN PHỐ CỔ ĐỒNG BỘ landing.html -->
+    <footer class="app-foot">
+      <div class="awning-bar" aria-hidden="true"></div>
+      <div class="scallop-bar" aria-hidden="true"></div>
+      <div class="foot-wrap">
+        <div><b>Vinnovators</b> · Quán Thật Hà Nội</div>
+        <div>OSM · Google Places · AI gợi ý, bạn quyết</div>
+      </div>
+    </footer>
+
+    <!-- Modal Báo sai (chỉ ghi hàng đợi bản nháp, giữ nguyên nhãn gốc) -->
+    <div id="reportModal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-card">
+        <div class="sheet-handle" aria-hidden="true"></div>
+        <h2 id="modalTitle" class="modal-title">Báo sai nhãn quán ăn</h2>
+        <p class="modal-sub" id="modalPlaceName"></p>
+        <select id="reportPlaceSelect" class="modal-field" hidden aria-label="Chọn quán ăn muốn báo sai"></select>
+        <p class="modal-sub">Góp ý sẽ ghi vào <b>hàng đợi bản nháp</b> chờ người duyệt — nhãn gốc tạm giữ nguyên.</p>
+        <select id="reportSuggest" class="modal-field" aria-label="Đề xuất nhãn">
+          <option value="local">Đề xuất: Local (độc lập ≤ 3 địa chỉ)</option>
+          <option value="chain">Đề xuất: Chuỗi (≥ 5 địa chỉ / thuộc chuỗi)</option>
+          <option value="tourist">Đề xuất: Bẫy du lịch (≥ 2 tín hiệu)</option>
+          <option value="unsure">Đề xuất: Chưa chắc — cần kiểm lại</option>
+        </select>
+        <input id="reportNote" class="modal-field" type="text" placeholder="Lý do hoặc link kiểm chứng (tuỳ chọn)…" />
+        <div class="modal-actions">
+          <button type="button" id="reportCancel" class="btn-ghost">Huỷ</button>
+          <button type="button" id="reportSubmit" class="btn-primary">Lưu hàng đợi</button>
+        </div>
       </div>
     </div>
-    <div class="summary" id="summary" aria-live="polite"></div>
-    <div class="list" id="list" tabindex="-1"></div>
-  </section>
 
-  <section class="mapwrap" id="mapwrap" aria-label="Bản đồ 3D khu Hoàn Kiếm">
-    <canvas id="gl" role="img" aria-label="Bản đồ 3D minh hoạ khu Hoàn Kiếm. Chọn quán trong danh sách bên cạnh."></canvas>
-    <div class="zonecard" id="zonecard" aria-hidden="true"></div>
-    <div class="hint" id="hint">Rê chuột vào một khu để nâng nó lên và xem quán. Kéo để xoay.</div>
-    <div class="legend" aria-label="Chú giải">
-      <span><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="#1E6B49"/></svg>Local</span>
-      <span><svg viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12" rx="2" fill="#B2302A"/></svg>Chuỗi</span>
-      <span><svg viewBox="0 0 14 14"><path d="M7 0.5 13.5 7 7 13.5 0.5 7Z" fill="#E3B21A"/></svg>Bẫy du lịch</span>
-      <span><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" fill="#fff" stroke="#41536B" stroke-width="2"/></svg>Chưa chắc</span>
-    </div>
-  </section>
-</div>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <div class="iphone-homebar" aria-hidden="true"><span></span></div>
+  </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
-/* Dữ liệu mẫu tự dựng cho bản giao diện đầu. Tên quán local là tên dựng,
-   chưa gọi AI thật: các phán quyết bên dưới là kết quả giả lập.
-   x, y là vị trí trên sơ đồ 640x640; bản đồ 3D đổi sang toạ độ thế giới. */
-const PLACES = [
-  {id:1,name:'Bún chả Ngõ Nhỏ',dish:'Bún chả',street:'Phố Hàng Mành',price:55,v:'local',conf:92,x:232,y:176,
-   sig:[['Chuỗi','Một địa chỉ, tên không nằm trong danh sách chuỗi'],['Review','Nói về mùi than hoa, nước chấm, giờ trưa phải xếp hàng'],['Giá, menu','55k, thực đơn ba món']]},
-  {id:2,name:'Bánh cuốn Cô Ba',dish:'Bánh cuốn nóng',street:'Phố Hàng Cót',price:40,v:'local',conf:88,x:338,y:128,
-   sig:[['Chuỗi','Một địa chỉ'],['Review','Khen bánh tráng tại chỗ, chả quế, ăn sáng'],['Giá, menu','40k, chỉ bán buổi sáng']]},
-  {id:3,name:'Chả cá Lão Mạnh',dish:'Chả cá',street:'Phố Chả Cá',price:120,v:'local',conf:81,x:178,y:262,
-   sig:[['Chuỗi','Một địa chỉ'],['Review','Khách Việt và khách nước ngoài đan xen, cùng khen món'],['Giá, menu','120k, cao hơn mặt bằng nhưng một món duy nhất']]},
-  {id:4,name:'Xôi Yến Phố',dish:'Xôi',street:'Phố Nguyễn Hữu Huân',price:25,v:'local',conf:90,x:250,y:300,
-   sig:[['Chuỗi','Một địa chỉ'],['Review','Dân văn phòng ghé mua sáng, mang đi'],['Giá, menu','25k']]},
-  {id:5,name:'Bún đậu Mắm Tôm Ngõ 7',dish:'Bún đậu',street:'Phố Hàng Khay',price:60,v:'local',conf:84,x:450,y:210,
-   sig:[['Chuỗi','Một địa chỉ'],['Review','Khen mẹt đậu chiên nóng, mắm tôm pha tại chỗ'],['Giá, menu','60k, menu dán trên tường']]},
-  {id:6,name:'Phở Gia Truyền Cầu Gỗ',dish:'Phở bò',street:'Phố Cầu Gỗ',price:55,v:'unsure',conf:52,x:312,y:206,branches:3,
-   sig:[['Chuỗi','Ba chi nhánh, đúng ngưỡng ba của định nghĩa local'],['Review','Nhắc "gia truyền" nhưng không nói chủ quán là ai'],['Giá, menu','55k, hai loại phở']]},
-  {id:7,name:'Hanoi Authentic Pho House',dish:'Phở bò',street:'Phố Tạ Hiện',price:130,v:'tourist',conf:87,x:396,y:168,
-   sig:[['Chuỗi','Một địa chỉ'],['Review','Phần lớn viết bằng tiếng nước ngoài, nhắc chỗ chụp ảnh nhiều hơn món'],['Giá, menu','130k, gấp đôi phở quanh đó, menu song ngữ']]},
-  {id:8,name:'Bún Chả Show Phố Cổ',dish:'Bún chả',street:'Phố Hàng Bạc',price:150,v:'tourist',conf:78,x:120,y:150,
-   sig:[['Chuỗi','Một địa chỉ'],['Review','Nhiều người nhắc nhân viên mời khách ngoài cửa'],['Giá, menu','150k, bảng giá in tiếng Anh, không niêm yết từng món']]},
-  {id:9,name:'KFC',dish:'Gà rán',street:'Phố Tràng Tiền',price:70,v:'chain',conf:99,x:402,y:420,
-   sig:[['Chuỗi','Có trong danh sách chuỗi quốc tế']]},
-  {id:10,name:'Highlands Coffee',dish:'Cà phê',street:'Phố Hàng Khay',price:55,v:'chain',conf:99,x:484,y:352,
-   sig:[['Chuỗi','Có trong danh sách chuỗi trong nước']]},
-  {id:11,name:'Phúc Long',dish:'Trà, cà phê',street:'Phố Đinh Tiên Hoàng',price:60,v:'chain',conf:98,x:540,y:150,
-   sig:[['Chuỗi','Có trong danh sách chuỗi trong nước']]},
-  {id:12,name:'Lotteria',dish:'Gà rán, burger',street:'Phố Lê Thái Tổ',price:65,v:'chain',conf:97,x:240,y:420,
-   sig:[['Chuỗi','Có trong danh sách chuỗi quốc tế']]},
-  {id:13,name:'Cà phê Cộng',dish:'Cà phê cốt dừa',street:'Phố Nhà Thờ',price:50,v:'chain',conf:90,x:130,y:350,
-   sig:[['Chuỗi','Gốc Hà Nội nhưng xuất hiện ở hơn năm địa chỉ, vượt ngưỡng chuỗi'],['Ghi chú','Ca xám: bạn có thể bật lại bằng công tắc Ẩn chuỗi']]},
-];
-const LABEL={local:'Local',chain:'Chuỗi',tourist:'Bẫy du lịch',unsure:'Chưa chắc'};
-const ICON={
-  local:'<svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="currentColor"/></svg>',
-  chain:'<svg viewBox="0 0 12 12"><rect x="1" y="1" width="10" height="10" rx="2" fill="currentColor"/></svg>',
-  tourist:'<svg viewBox="0 0 12 12"><path d="M6 .5 11.5 6 6 11.5.5 6Z" fill="currentColor"/></svg>',
-  unsure:'<svg viewBox="0 0 12 12"><circle cx="6" cy="6" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>'
-};
-const state={q:'',budget:'all',hideChain:true,hideTourist:true,sel:null};
-const $=s=>document.querySelector(s);
-
-function strip(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').toLowerCase()}
-function hiddenReason(p){
-  if(p.v==='chain'&&state.hideChain)return 'Chuỗi';
-  if(p.v==='tourist'&&state.hideTourist)return 'Bẫy du lịch';
-  return null;
-}
-function matches(p){
-  if(state.q&&!strip(p.name+' '+p.dish).includes(strip(state.q)))return false;
-  if(state.budget==='50'&&p.price>=50)return false;
-  if(state.budget==='100'&&(p.price<50||p.price>100))return false;
-  return true;
-}
-function one(p){
-  const first=p.sig[0];
-  return p.v==='local'?p.sig[1][1]:p.v==='unsure'?'AI không chắc đây là quán local. '+p.sig[0][1]:p.v==='tourist'?p.sig[1][1]:first[1];
-}
-function cardHTML(p){
-  const open=state.sel===p.id;
-  const sig=p.sig.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('');
-  const human=p.v==='unsure'?'<p class="ask-human">Cần người kiểm: AI chuyển ca này cho bạn thay vì đoán.</p>':'';
-  return `<button class="card" data-id="${p.id}" aria-expanded="${open}">
-    <span class="row1"><span><h3 class="name">${p.name}</h3><p class="meta">${p.dish} · ${p.street} · ${p.price}k</p></span>
-    <span class="verdict v-${p.v}">${ICON[p.v]}${LABEL[p.v]}</span></span>
-    <p class="why1">${one(p)}</p>
-    <span class="detail"><dl class="sig">${sig}</dl>
-      <span class="conf"><span>AI chắc ${p.conf}%</span><span class="bar"><span style="width:${p.conf}%"></span></span></span>${human}</span>
-  </button>`;
-}
-function render(){
-  const pool=PLACES.filter(matches);
-  const shown=pool.filter(p=>!hiddenReason(p)).sort((a,b)=>(a.v==='unsure')-(b.v==='unsure')||b.conf-a.conf);
-  const hid=pool.filter(p=>hiddenReason(p));
-  const nChain=hid.filter(p=>p.v==='chain').length, nT=hid.filter(p=>p.v==='tourist').length;
-  $('#summary').innerHTML=`Hiện <b>${shown.length}</b> quán`+(hid.length?`, đã ẩn <b>${nChain}</b> chuỗi và <b>${nT}</b> bẫy du lịch`:'');
-  let html=shown.length?shown.map(cardHTML).join(''):'<p class="empty">Không có quán local nào khớp. Thử bỏ bớt từ khoá hoặc chọn "Mọi giá".</p>';
-  if(hid.length){
-    html+=`<details class="hidden"><summary>Đã ẩn (${hid.length}) và lý do</summary>${hid.map(p=>`<div class="hrow"><span>${p.name}</span><span>${hiddenReason(p)}: ${p.sig[0][1]}</span></div>`).join('')}</details>`;
-  }
-  html+='<p class="note">Dữ liệu mẫu tự dựng, chưa gọi AI thật. Bản đồ 3D là mô hình minh hoạ, không đo thật.</p>';
-  $('#list').innerHTML=html;
-  if(window.Map3D)Map3D.sync();
-}
-function select(id){
-  state.sel=state.sel===id?null:id;
-  render();
-  if(state.sel){const el=document.querySelector(`.card[data-id="${id}"]`);el&&el.scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})}
-}
-$('#list').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)select(+c.dataset.id)});
-$('#q').addEventListener('input',e=>{state.q=e.target.value.trim();render()});
-document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
-  state.budget=b.dataset.b;
-  document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===b));
-  render();
-}));
-$('#hideChain').addEventListener('change',e=>{state.hideChain=e.target.checked;render()});
-$('#hideTourist').addEventListener('change',e=>{state.hideTourist=e.target.checked;render()});
-if(matchMedia('(hover:none)').matches)$('#hint').textContent='Chạm vào một khu để nâng nó lên và xem quán.';
-render();
-</script>
-<script>
-/* Chờ font tải xong (tối đa 1,2 giây) để nhãn 3D vẽ đúng chữ tiếng Việt. */
-(function(){
-  const go=()=>{const s=document.createElement('script');s.src='map3d.js';document.body.appendChild(s)};
-  let done=false;const once=()=>{if(!done){done=true;go()}};
-  try{Promise.all([document.fonts.load('700 40px "Bricolage Grotesque"','Phở Bún Chả'),document.fonts.load('500 28px "Be Vietnam Pro"','Bún chả')]).then(once,once)}catch(e){once()}
-  setTimeout(once,1200);
-})();
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="ui.js?v=14"></script>
 </body>
 </html>

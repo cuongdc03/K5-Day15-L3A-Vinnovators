@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Patrick+Hand&family=Lora:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./landing.css" />
+  <link rel="stylesheet" href="./landing.css?v=22" />
 </head>
 <body>
 
@@ -251,6 +251,27 @@
   </svg>
 </template>
 
+<!-- Thanh điều khiển nổi khi xem khung Mobile trên màn hình Desktop -->
+<div class="mobile-preview-bar" role="region" aria-label="Chuyển chế độ hiển thị">
+  <span class="mpb-label">Giao diện di động</span>
+  <div class="view-switcher" role="group" aria-label="Chuyển giao diện Desktop hoặc Mobile">
+    <button type="button" class="vs-btn" data-view="desktop" aria-pressed="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      Desktop
+    </button>
+    <button type="button" class="vs-btn" data-view="mobile" aria-pressed="false">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      Mobile
+    </button>
+  </div>
+</div>
+
+<div class="landing-shell" id="landingShell">
+  <div class="iphone-statusbar" aria-hidden="true">
+    <span class="sb-time">9:41</span>
+    <span class="sb-island"><i class="sb-cam"></i></span>
+    <span class="sb-icons">5G · 100%</span>
+  </div>
 <!-- =========================================================
      HEADER
      ========================================================= -->
@@ -258,14 +279,22 @@
   <div class="wrap">
     <a href="#hero" class="brand" aria-label="Quán Thật Hà Nội — về đầu trang">
       <svg viewBox="0 0 120 70" aria-hidden="true"><use href="#nonla" /></svg>
-      Quán Thật Hà Nội
+      <span>Quán Thật Hà Nội</span>
     </a>
     <nav class="nav" aria-label="Mục chính">
-      <a href="#vi-sao">Vì sao dùng</a>
-      <a href="#cach-loc">Cách lọc quán</a>
-      <a href="#minh-bach">Minh bạch</a>
+      <a href="#vi-sao">Vấn đề</a>
+      <a href="#cach-loc">Cách lựa quán</a>
+      <a href="#minh-bach">Kết quả</a>
     </nav>
     <div class="top-right">
+      <div class="view-switcher header-view-switcher is-compact" role="group" aria-label="Chuyển giao diện Desktop hoặc Mobile">
+        <button type="button" class="vs-btn" data-view="desktop" aria-pressed="true" aria-label="Giao diện Desktop" title="Giao diện Desktop">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </button>
+        <button type="button" class="vs-btn" data-view="mobile" aria-pressed="false" aria-label="Giao diện Mobile" title="Giao diện Mobile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </button>
+      </div>
       <span class="chip"><span class="dot"></span>AI gợi ý, bạn quyết</span>
       <a class="btn" href="./index.html">Mở bản đồ
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg>
@@ -317,14 +346,14 @@
           <path class="ln" d="M80 38l24 4" />
         </svg>
       </div>
-      <p class="scene-note">Rê chuột vào để dừng lại ngắm phố</p>
+      <p class="scene-note"><span class="note-desktop">Rê chuột vào để dừng lại ngắm phố</span><span class="note-mobile">Chạm nhẹ để ngắm phố</span></p>
     </div>
 
     <div class="wrap hero-copy">
       <div>
         <div class="chips reveal">
-          <span class="chip"><span class="dot"></span>Cầu Giấy · Hai Bà Trưng</span>
-          <span class="chip">Hoàng Mai · Gia Lâm</span>
+          <span class="chip"><span class="dot"></span>Gia Lâm · Hoàn Kiếm · Cầu Giấy</span>
+          <span class="chip">Hai Bà Trưng · Hoàng Mai</span>
         </div>
         <h1 class="reveal">
           Quán ăn ngon <span class="scribble">local.</span>
@@ -346,7 +375,7 @@
     <div class="wrap demo">
       <figure class="polaroid reveal" style="--rot:-2deg">
         <img src="./assets/hero-bun-cha.jpg" alt="Mâm bún chả quán ăn local Hà Nội trong nắng sớm" />
-        <figcaption>mâm bún chả nắng sớm · minh hoạ</figcaption>
+        <figcaption>mâm bún chả đầu ngày</figcaption>
       </figure>
       <div class="reveal">
         <p class="eyebrow">Một quán trên bản đồ trông thế này</p>
@@ -363,7 +392,7 @@
           <svg viewBox="0 0 56 34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M52 28C30 32 14 24 8 8M8 8l-1 12M8 8l12 3" /></svg>
           mỗi nhãn đều có lý do để bạn kiểm lại
         </div>
-        <p style="margin-top:22px"><a class="btn btn-ghost" href="./index.html">Vào bản đồ 3D</a></p>
+        <p style="margin-top:22px"><a class="btn btn-ghost" href="./index.html?map=3d">Vào bản đồ 3D</a></p>
       </div>
     </div>
   </section>
@@ -374,14 +403,16 @@
   <section id="vi-sao" class="sec" data-section>
     <div class="wrap why">
       <figure class="polaroid why-img reveal">
-        <img src="./assets/hanoi-corner.jpg" alt="Góc phố Hà Nội cửa chớp xanh nắng sớm" data-parallax="10" />
+        <div class="polaroid-frame">
+          <img src="./assets/hanoi-corner.jpg" alt="Góc phố Hà Nội cửa chớp xanh nắng sớm" data-parallax="10" />
+        </div>
         <figcaption>góc phố cửa chớp xanh</figcaption>
         <div class="stamp-note">Mỗi lần tìm quán: <b>5–10 phút</b> lọc review</div>
       </figure>
       <div>
         <div class="reveal">
-          <p class="eyebrow">01 · Vì sao dùng</p>
-          <h2>Số sao cao không phân biệt được quán local với chuỗi.</h2>
+          <p class="eyebrow">01 · Vấn đề</p>
+          <h2>Điểm đánh giá cao không phân biệt được quán local với chuỗi.</h2>
         </div>
         <div class="points">
           <div class="point reveal" style="transition-delay:80ms">
@@ -406,16 +437,15 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <div>
-          <p class="eyebrow">02 · Cách lọc quán</p>
+          <p class="eyebrow">02 · Cách lựa quán</p>
           <h2>Bốn nhãn rõ ràng, kiểm chứng được.</h2>
         </div>
-        <span class="chip">Hình + chữ + màu</span>
       </div>
 
       <div class="sign-grid">
         <figure class="polaroid pho-img reveal">
           <img src="./assets/pho-local.jpg" alt="Bát phở bò Hà Nội trên bàn gạch hoa cổ" />
-          <figcaption>review trích ≤ 2 câu · ẩn danh · có link nguồn</figcaption>
+          <figcaption>bát phở bò nóng hổi</figcaption>
         </figure>
 
         <div class="signs">
@@ -438,13 +468,12 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <div>
-          <p class="eyebrow">03 · Minh bạch</p>
+          <p class="eyebrow">03 · Kết quả</p>
           <h2>Kiểm chứng công khai, không cảm tính.</h2>
         </div>
-        <span style="font-size:13px;color:var(--muted)">Ngưỡng kiểm thử chất lượng của hệ thống</span>
       </div>
       <div class="stamps">
-        <div class="stamp reveal"><div class="n">4 + 1</div><b>Quận phủ dữ liệu</b><span>Cầu Giấy, HBT, Hoàng Mai, Gia Lâm + Hoàn Kiếm</span></div>
+        <div class="stamp reveal"><div class="n"><span data-count="5">5</span></div><b>Quận phủ dữ liệu</b><span>Cầu Giấy, HBT, Hoàng Mai, Gia Lâm, Hoàn Kiếm</span></div>
         <div class="stamp reveal" style="transition-delay:80ms"><div class="n">≥ <span data-count="75">75</span>%</div><b>Khớp nhãn độc lập</b><span>Hai người chấm chéo đối chứng</span></div>
         <div class="stamp reveal" style="transition-delay:160ms"><div class="n">≥ <span data-count="90">90</span>%</div><b>Chuyển người ca chưa chắc</b><span>Không đoán khi thiếu căn cứ</span></div>
         <div class="stamp reveal" style="transition-delay:240ms"><div class="n"><span data-count="100">100</span>%</div><b>Từ chối ngoài phạm vi</b><span>Không chấm ATTP hay viết review xấu</span></div>
@@ -479,6 +508,36 @@
   <div id="railWalker" class="rail-walker"></div>
 </div>
 
-<script src="./landing.js"></script>
+<!-- Thanh điều hướng đáy cố định đồng bộ với index.html khi ở chế độ Mobile -->
+<nav class="mobile-bottom-nav" aria-label="Điều hướng di động">
+  <a class="bnav-btn is-active" href="#hero" aria-current="page">
+    <span class="bnav-ico" aria-hidden="true">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7"/><path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10"/><path d="M9 21v-6h6v6"/></svg>
+    </span>
+    <span class="bnav-lbl">Trang chủ</span>
+  </a>
+  <a class="bnav-btn" href="./index.html?view=mobile">
+    <span class="bnav-ico" aria-hidden="true">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg>
+    </span>
+    <span class="bnav-lbl">Danh sách</span>
+  </a>
+  <a class="bnav-btn" href="./index.html?view=mobile&amp;tab=map">
+    <span class="bnav-ico" aria-hidden="true">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+    </span>
+    <span class="bnav-lbl">Bản đồ</span>
+  </a>
+  <a class="bnav-btn" href="./index.html?view=mobile&amp;tab=report">
+    <span class="bnav-ico" aria-hidden="true">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+    </span>
+    <span class="bnav-lbl">Báo sai</span>
+  </a>
+</nav>
+<div class="iphone-homebar" aria-hidden="true"><span></span></div>
+</div>
+
+<script src="./landing.js?v=9"></script>
 </body>
 </html>
