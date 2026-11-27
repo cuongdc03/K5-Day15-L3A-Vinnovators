@@ -26,6 +26,7 @@
   --ok: #63C98D; --ok-soft: #173326; --bad: #F08B82; --bad-soft: #3A1C1A;
   --warn: #E5B654; --warn-soft: #3A2E12; --none: #A3B1AE; --none-soft: #243230; color-scheme: dark }
 * { box-sizing: border-box }
+[hidden] { display: none !important }
 body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
 .wrap { max-width: 720px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
@@ -106,7 +107,7 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
   <div class="wrap">
     <div class="brand">
       <h1>Sổ thực địa Ocean Park</h1>
-      <label class="who" for="visitor">Người đi kiểm
+      <label class="who" for="visitor">Người kiểm
         <select id="visitor">
           <option value="">chọn tên</option>
           <option value="cuong">Cường</option>
@@ -116,6 +117,10 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
           <option value="other">Người khác</option>
         </select>
       </label>
+    </div>
+    <div class="tabs" role="group" aria-label="Chế độ">
+      <button class="tab" type="button" data-mode="desk" aria-pressed="false">Kiểm tại bàn</button>
+      <button class="tab" type="button" data-mode="field" aria-pressed="true">Đi thực địa</button>
     </div>
     <div class="tabs" role="group" aria-label="Khu">
       <button class="tab" type="button" data-area="ocean_park_1" aria-pressed="true">Ocean Park 1</button>
@@ -149,9 +154,17 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
   const CATEGORY = { restaurant: "Nhà hàng, quán ăn", cafe: "Cà phê, trà, tráng miệng", fast_food: "Đồ ăn nhanh",
     street_food: "Ăn vặt, vỉa hè", bakery: "Tiệm bánh", other: "Khác" };
   const VISITORS = { cuong: "Cường", duc: "Đức", truong: "Trường", thai: "Thái", other: "Người khác" };
+  // Trạng thái xác thực do crawl/verify.py tính từ kiểm tại bàn, thực địa, Foody, OSM
+  const AUTO = { field_verified: "Đã kiểm thực địa", desk_verified: "Maps còn hoạt động, có review gần đây",
+    closed: "Đã đóng cửa (theo Maps)", auto_verified: "Google xác nhận còn mở", uncertain: "Chưa chắc, cần kiểm",
+    unverified: "Chưa đối chiếu" };
+  // Kiểm tại bàn: người kiểm mở Google Maps của quán rồi ghi lại những gì thấy
+  const MAPS_STATUS = { open: "Còn hoạt động", closed_temporarily: "Tạm đóng cửa", closed_permanently: "Đóng cửa vĩnh viễn", not_found: "Không thấy trên Maps" };
+  const MAPS_PILL = { open: "open", closed_temporarily: "moved", closed_permanently: "closed", not_found: "not_found" };
+  const NEWEST = { lt_1m: "Dưới 1 tháng", lt_6m: "1–6 tháng", older: "Hơn 6 tháng", none: "Chưa có review" };
 
-  const S = { places: new Map(), visits: [], area: "ocean_park_1", filter: "todo", q: "", view: "list", placeId: null,
-    loaded: false, slow: false, error: "", canWrite: true, caps: {} };
+  const S = { places: new Map(), visits: [], deskChecks: [], mode: "field", area: "ocean_park_1", filter: "route", q: "", view: "list",
+    placeId: null, drawnView: "", loaded: false, slow: false, error: "", canWrite: true, caps: {} };
 
   // ---------- tiện ích ----------
   const $ = (s) => document.querySelector(s);
@@ -181,6 +194,10 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
   }
   const fmtTime = (iso) => { try { return new Date(iso).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" }); } catch { return iso; } };
   const mapsLink = (p) => `https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lng}`;
+  // Tìm theo tên + địa chỉ để Maps mở đúng trang quán (có review, ảnh), không chỉ một chấm toạ độ
+  const mapsSearch = (p) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent([p.name, p.address || AREA_NAMES[p.area]].filter(Boolean).join(", "));
+  const doneOf = (p) => S.mode === "desk" ? p.desk_last : p.last;
+  const byName = (a, b) => norm(a.name).localeCompare(norm(b.name));
 
   // ---------- người đi kiểm ----------
   const visitorSel = $("#visitor");
@@ -188,13 +205,20 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
   visitorSel.addEventListener("change", () => store.set("visitor", visitorSel.value));
 
   // ---------- khu ----------
-  document.querySelectorAll(".tab").forEach((b) => b.addEventListener("click", () => {
+  document.querySelectorAll(".tab[data-area]").forEach((b) => b.addEventListener("click", () => {
     S.area = b.dataset.area;
-    document.querySelectorAll(".tab").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    document.querySelectorAll(".tab[data-area]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
     store.set("area", S.area); render();
   }));
-  const savedArea = store.get("area");
-  if (savedArea !== null) document.querySelector(`.tab[data-area="${savedArea}"]`)?.click();
+
+  // ---------- chế độ: kiểm tại bàn (xem Google Maps) hoặc đi thực địa ----------
+  function setMode(m) {
+    S.mode = m; S.filter = m === "desk" ? "desk" : "route"; S.drawnView = "";
+    document.querySelectorAll(".tab[data-mode]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.mode === m)));
+    $("#exportBtn").textContent = m === "desk" ? "Tải kết quả kiểm tại bàn (CSV)" : "Tải phiếu thực địa (CSV)";
+    store.set("mode", m); render();
+  }
+  document.querySelectorAll(".tab[data-mode]").forEach((b) => b.addEventListener("click", () => setMode(b.dataset.mode)));
 
   // ---------- hiển thị ----------
   let raf = 0;
@@ -204,23 +228,33 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
 
   function drawProgress() {
     const all = [...S.places.values()].filter(inArea);
-    const done = all.filter((p) => p.last).length;
-    $("#bar").style.width = all.length ? (100 * done / all.length).toFixed(1) + "%" : "0";
+    const planned = all.filter((p) => p.field_priority);
+    const desk = S.mode === "desk";
+    const base = desk || !planned.length ? all : planned;  // đi thực địa: có lộ trình thì đo trên lộ trình
+    const done = base.filter(doneOf).length;
+    $("#bar").style.width = base.length ? (100 * done / base.length).toFixed(1) + "%" : "0";
     if (!S.loaded) { $("#progressText").textContent = S.slow ? "Chưa kết nối được kho dữ liệu, đang thử lại…" : "Đang tải danh sách quán…"; return; }
-    $("#progressText").textContent = `Đã kiểm ${done}/${all.length} quán ở ${S.area ? AREA_NAMES[S.area] : "hai khu"}`;
+    const where = S.area ? AREA_NAMES[S.area] : "hai khu";
+    const deskDone = all.filter((p) => p.desk_last).length;
+    $("#progressText").textContent = desk ? `Đã kiểm tại bàn ${deskDone}/${all.length} quán ở ${where}`
+      : (planned.length ? `Đã đi ${done}/${planned.length} quán trong lộ trình ở ${where}` : `Đã đi kiểm ${done}/${all.length} quán ở ${where}`)
+        + ` · ${deskDone}/${all.length} quán đã kiểm tại bàn`;
   }
 
-  let drawnView = "";
   function draw() {
     drawProgress();
     const view = $("#view");
-    if (S.view === "list" && drawnView === "list" && document.getElementById("list") && !S.error) { renderListOnly(); return; }
-    drawnView = S.view;
+    if (S.view === "list" && S.drawnView === "list" && document.getElementById("list") && !S.error) { renderListOnly(); return; }
+    S.drawnView = S.view;
     view.replaceChildren(S.view === "place" ? drawPlace() : S.view === "new" ? drawNew() : drawList());
     $("#addBtn").hidden = S.view !== "list" || !S.canWrite;
   }
 
   function pillFor(p) {
+    if (S.mode === "desk") {
+      const ms = p.desk_last?.maps_status;
+      return h("span", { class: "pill " + (MAPS_PILL[ms] || "todo"), text: ms ? MAPS_STATUS[ms] : "Chưa kiểm" });
+    }
     const st = p.last?.status;
     return h("span", { class: "pill " + (st || "todo"), text: st ? STATUS[st] : "Chưa kiểm" });
   }
@@ -230,8 +264,11 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
     if (S.error) frag.append(h("div", { class: "note err", text: S.error }));
     const search = h("input", { type: "search", id: "q", placeholder: "Tìm tên quán, món, địa chỉ", value: S.q, "aria-label": "Tìm quán",
       oninput: (e) => { S.q = e.target.value; clearTimeout(drawList.t); drawList.t = setTimeout(() => { renderListOnly(); }, 120); } });
+    const opts = S.mode === "desk"
+      ? { desk: "Chưa kiểm (quán quan trọng trước)", done: "Đã kiểm", all: "Tất cả" }
+      : { route: "Cần đi kiểm (theo lộ trình)", todo: "Chưa đi kiểm", done: "Đã đi kiểm", all: "Tất cả" };
     const filter = h("select", { id: "filter", "aria-label": "Lọc theo trạng thái", onchange: (e) => { S.filter = e.target.value; renderListOnly(); } },
-      h("option", { value: "todo", text: "Chưa kiểm" }), h("option", { value: "done", text: "Đã kiểm" }), h("option", { value: "all", text: "Tất cả" }));
+      Object.entries(opts).map(([v, t]) => h("option", { value: v, text: t })));
     filter.value = S.filter;
     frag.append(h("div", { class: "filters" }, search, filter), h("div", { class: "list", id: "list" }));
     queueMicrotask(renderListOnly);
@@ -249,16 +286,30 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
     }
     const q = norm(S.q).trim();
     let rows = [...S.places.values()].filter(inArea);
-    if (S.filter === "todo") rows = rows.filter((p) => !p.last);
-    if (S.filter === "done") rows = rows.filter((p) => p.last);
+    if (S.filter === "route") rows = rows.filter((p) => p.field_priority && !p.last);
+    if (S.filter === "desk" || S.filter === "todo") rows = rows.filter((p) => !doneOf(p));
+    if (S.filter === "done") rows = rows.filter(doneOf);
     if (q) rows = rows.filter((p) => norm([p.name, p.address, p.cuisine].join(" ")).includes(q));
-    rows.sort((a, b) => (!!a.last - !!b.last) || norm(a.name).localeCompare(norm(b.name)));
-    if (!rows.length) { list.replaceChildren(h("div", { class: "note", text: "Không có quán nào khớp. Thử bỏ bộ lọc hoặc đổi khu." })); return; }
+    if (S.filter === "route") rows.sort((a, b) => (a.area || "").localeCompare(b.area || "") || (a.route_order || 1e9) - (b.route_order || 1e9));
+    else if (S.filter === "desk") rows.sort(byDeskPriority);
+    else rows.sort((a, b) => (!!doneOf(a) - !!doneOf(b)) || (a.field_priority || 1e9) - (b.field_priority || 1e9) || byName(a, b));
+    if (!rows.length) {
+      list.replaceChildren(h("div", { class: "note", text: S.filter === "route"
+        ? "Không còn quán nào trong lộ trình ở khu này. Đổi khu, hoặc chọn “Chưa đi kiểm” để xem cả danh sách."
+        : S.filter === "desk" && !q ? "Đã kiểm tại bàn hết quán ở khu này. Đổi khu hoặc chuyển sang Đi thực địa."
+        : "Không có quán nào khớp. Thử bỏ bộ lọc hoặc đổi khu." }));
+      return;
+    }
+    const rank = (p) => S.filter === "route" ? p.route_order : S.filter === "desk" ? p.desk_priority : null;
     list.replaceChildren(...rows.slice(0, 300).map((p) => h("button", { class: "card", type: "button", onclick: () => openPlace(p.id) },
-      h("b", { text: p.name }), pillFor(p),
-      h("span", { class: "meta" }, [CATEGORY[p.category] || "Khác", p.address].filter(Boolean).join(" · "), " ", h("span", { class: "src", text: "· " + (p.sources || "") })))));
+      h("b", {}, rank(p) ? h("span", { class: "mono", text: rank(p) + ". " }) : null, p.name), pillFor(p),
+      h("span", { class: "meta" }, [CATEGORY[p.category] || "Khác", p.address].filter(Boolean).join(" · "), " ",
+        h("span", { class: "src", text: "· " + [p.auto_status ? AUTO[p.auto_status] || p.auto_status : "", p.distance_to_hub_m ? Math.round(p.distance_to_hub_m) + " m từ điểm xuất phát" : ""].filter(Boolean).join(" · ") })))));
     if (rows.length > 300) list.append(h("div", { class: "note", text: `Đang hiện 300/${rows.length} quán. Gõ tên để thu hẹp.` }));
   }
+
+  function byDeskPriority(a, b) { return (a.desk_priority || 1e9) - (b.desk_priority || 1e9) || byName(a, b); }
+  const deskQueue = () => [...S.places.values()].filter((p) => inArea(p) && !p.desk_last).sort(byDeskPriority);
 
   function openPlace(id) { S.view = "place"; S.placeId = id; render(); scrollTo(0, 0); }
   function backToList() { S.view = "list"; S.placeId = null; render(); }
@@ -267,7 +318,8 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
   function drawPlace() {
     const p = S.places.get(S.placeId);
     if (!p) return h("div", { class: "sheet" }, h("button", { class: "back", type: "button", onclick: backToList, text: "← Danh sách" }), h("div", { class: "note", text: "Không tìm thấy quán này nữa." }));
-    const links = [h("a", { href: mapsLink(p), target: "_blank", rel: "noopener", text: "Chỉ đường (Google Maps)" })];
+    const links = [h("a", { href: mapsSearch(p), target: "_blank", rel: "noopener", text: "Tìm trên Google Maps" }), " · ",
+      h("a", { href: mapsLink(p), target: "_blank", rel: "noopener", text: "Chỉ đường theo toạ độ" })];
     if (isHttps(p.foody_url)) links.push(" · ", h("a", { href: p.foody_url, target: "_blank", rel: "noopener", text: "Trang Foody" }));
     const facts = h("dl", { class: "facts" },
       h("dt", { text: "Khu" }), h("dd", { text: AREA_NAMES[p.area] || "—" }),
@@ -275,16 +327,89 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
       h("dt", { text: "Địa chỉ" }), h("dd", { text: p.address || "chưa có" }),
       p.cuisine ? [h("dt", { text: "Món" }), h("dd", { text: p.cuisine.replace(/;/g, ", ").replace(/_/g, " ") })] : null,
       h("dt", { text: "Nguồn" }), h("dd", { class: "mono", text: p.sources || "" }),
+      p.auto_status ? [h("dt", { text: "Tự kiểm" }), h("dd", {}, AUTO[p.auto_status] || p.auto_status, p.reasons ? h("small", { style: "display:block;color:var(--muted)", text: p.reasons.replace(/;/g, " · ") }) : null)] : null,
+      p.field_priority ? [h("dt", { text: "Ưu tiên" }), h("dd", { text: `#${p.field_priority} trong danh sách cần đi kiểm` })] : null,
       h("dt", { text: "Mở" }), h("dd", {}, links));
     const past = S.visits.filter((v) => v.place_id === p.id).sort((a, b) => b.visited_at.localeCompare(a.visited_at));
     const history = past.length ? h("div", { class: "history" }, h("strong", { text: `Đã kiểm ${past.length} lần` }), past.map((v) => h("div", {},
       `${fmtTime(v.visited_at)} · ${VISITORS[v.visitor] || v.visitor} · ${STATUS[v.status] || v.status}`,
       v.price_min_k ? ` · ${v.price_min_k}–${v.price_max_k || "?"}k` : "",
       (v.photo_ids || []).length ? ` · ${(v.photo_ids || []).length} ảnh` : "", v.notes ? ` · ${v.notes}` : ""))) : null;
+    const pastDesk = S.deskChecks.filter((c) => c.place_id === p.id).sort((a, b) => b.checked_at.localeCompare(a.checked_at));
+    const deskHistory = pastDesk.length ? h("div", { class: "history" }, h("strong", { text: `Đã kiểm tại bàn ${pastDesk.length} lần` }), pastDesk.map((c) => h("div", {},
+      `${fmtTime(c.checked_at)} · ${VISITORS[c.checker] || c.checker} · ${MAPS_STATUS[c.maps_status] || c.maps_status}`,
+      c.maps_review_count != null ? ` · ${c.maps_review_count} review` : "", c.newest_review ? ` · mới nhất: ${NEWEST[c.newest_review] || c.newest_review}` : "",
+      c.has_menu_photo ? " · có ảnh menu" : "", c.notes ? ` · ${c.notes}` : ""))) : null;
+    const form = !S.canWrite ? h("div", { class: "note", text: "Bạn đang xem ở quyền chỉ đọc nên không ghi phiếu được. Nhờ chủ trang chia sẻ với quyền Contributor." })
+      : S.mode === "desk" ? deskForm(p) : visitForm(p);
     return h("div", { class: "sheet" },
       h("button", { class: "back", type: "button", onclick: backToList, text: "← Danh sách" }),
       h("div", { class: "row" }, h("h2", { text: p.name }), pillFor(p)),
-      facts, history, S.canWrite ? visitForm(p) : h("div", { class: "note", text: "Bạn đang xem ở quyền chỉ đọc nên không ghi phiếu được. Nhờ chủ trang chia sẻ với quyền Contributor." }));
+      facts, S.mode === "desk" ? [deskHistory, history] : [history, deskHistory], form);
+  }
+
+  // ---------- kiểm tại bàn: mở Google Maps, ghi lại 4 điều thấy được ----------
+  function deskForm(p) {
+    const key = "desk:" + p.id;
+    const d = store.get(key) || { maps_status: "", maps_review_count: "", newest_review: "", has_menu_photo: false, notes: "" };
+    const save = () => store.set(key, d);
+    const detail = h("div", { style: "display:grid;gap:12px" });
+    const detailSet = h("fieldset", {}, h("legend", { text: "Thấy gì trên Maps" }), detail);
+    const sync = () => { detailSet.hidden = d.maps_status === "not_found"; };
+    const radios = (name, map, k, label) => h("div", { class: "status", role: "radiogroup", "aria-label": label },
+      Object.entries(map).map(([v, t]) => h("label", {}, h("input", { type: "radio", name, value: v, checked: d[k] === v,
+        onchange: () => { d[k] = v; save(); sync(); } }), t)));
+    const count = h("input", { type: "number", inputmode: "numeric", min: "0", placeholder: "vd 120", id: "rc-" + p.id, value: d.maps_review_count,
+      oninput: (e) => { d.maps_review_count = e.target.value; save(); } });
+    const menu = h("input", { type: "checkbox", checked: !!d.has_menu_photo, onchange: (e) => { d.has_menu_photo = e.target.checked; save(); } });
+    const notes = h("textarea", { placeholder: "vd: Maps ghi tên khác là…, địa chỉ khác, chỉ bán online", id: "dn-" + p.id,
+      oninput: (e) => { d.notes = e.target.value; save(); } });
+    notes.value = d.notes;
+    detail.append(
+      h("label", { class: "f" }, "Số review trên Maps", h("small", { text: "Số trong ngoặc cạnh điểm sao. Không thấy thì để trống." }), count),
+      h("div", { class: "f" }, h("strong", { text: "Review mới nhất cách đây" }),
+        h("small", { style: "color:var(--muted)", text: "Mở mục Đánh giá → Sắp xếp → Mới nhất." }), radios("nr", NEWEST, "newest_review", "Review mới nhất")),
+      h("div", { class: "status" }, h("label", {}, menu, "Có ảnh menu thấy được giá")));
+    sync();
+
+    const errBox = h("p", { class: "err", role: "alert" });
+    const submit = h("button", { class: "btn primary", type: "submit", text: "Lưu, sang quán tiếp" });
+    return h("form", { class: "sheet", novalidate: true, onsubmit: async (e) => {
+      e.preventDefault(); errBox.textContent = "";
+      const problems = [];
+      const nf = d.maps_status === "not_found";
+      const cnt = nf || d.maps_review_count === "" ? null : Number(d.maps_review_count);
+      if (!visitorSel.value) problems.push("chọn tên người kiểm ở đầu trang");
+      if (!d.maps_status) problems.push("chọn trạng thái trên Maps");
+      if (!nf && d.maps_status && !d.newest_review) problems.push("chọn review mới nhất cách đây bao lâu");
+      if (cnt != null && !(Number.isInteger(cnt) && cnt >= 0)) problems.push("số review phải là số nguyên");
+      if (problems.length) { errBox.textContent = "Cần sửa: " + problems.join("; ") + "."; return; }
+      submit.disabled = true; submit.textContent = "Đang lưu…";
+      const cid = rid("c_");
+      const check = { place_id: p.id, checker: visitorSel.value, by: S.uid || null, checked_at: new Date().toISOString(),
+        maps_status: d.maps_status, maps_review_count: cnt, newest_review: nf ? "" : d.newest_review,
+        has_menu_photo: !nf && !!d.has_menu_photo, notes: d.notes.trim() };
+      try {
+        await S.caps.db.collection("desk_checks").doc(cid).set(check);
+        await S.caps.db.collection("places").doc(p.id).update({ desk_last: { check_id: cid, maps_status: check.maps_status,
+          checked_at: check.checked_at, checker: check.checker, maps_review_count: cnt } });
+        store.del(key);
+        const next = deskQueue().find((x) => x.id !== p.id);
+        toast("Đã lưu " + p.name + (next ? ". Quán tiếp: " + next.name : ""));
+        if (next) openPlace(next.id); else backToList();
+      } catch (err) {
+        submit.disabled = false; submit.textContent = "Lưu, sang quán tiếp";
+        errBox.textContent = err?.code === "invalid_argument" ? "Tài khoản này không có quyền ghi. Nhờ chủ trang chia sẻ với quyền Contributor."
+          : "Chưa lưu được (" + (err?.code || "lỗi mạng") + "). Kết quả vẫn giữ trên máy, thử lại.";
+      }
+    } },
+      h("a", { class: "btn primary", href: mapsSearch(p), target: "_blank", rel: "noopener", style: "text-align:center;text-decoration:none",
+        text: "Mở quán này trên Google Maps" }),
+      h("small", { style: "color:var(--muted)", text: "Maps mở sai quán thì thử link “Chỉ đường theo toạ độ” ở trên. Không thấy quán nào khớp thì chọn “Không thấy trên Maps”." }),
+      h("fieldset", {}, h("legend", { text: "Trên Maps, quán đang" }), radios("ms", MAPS_STATUS, "maps_status", "Trạng thái trên Maps")),
+      detailSet,
+      h("fieldset", {}, h("legend", { text: "Ghi chú" }), notes),
+      errBox, h("div", { class: "row" }, submit, h("button", { class: "btn", type: "button", text: "Về danh sách", onclick: backToList })));
   }
 
   function visitForm(p) {
@@ -451,19 +576,24 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
 
   // ---------- xuất CSV ----------
   const csvCell = (v) => { const s = v == null ? "" : String(v); return /[",\n;]/.test(s) || /^[=+\-@]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  // Cột giống hệt data/processed/*.csv mà crawl/field_visits.py ghi
+  const VISIT_COLS = ["visit_id", "place_id", "visitor", "visited_at", "status", "price_min_k", "price_max_k", "dishes", "hours_text", "phone",
+    "facebook_url", "tiktok_url", "photo_urls", "lat", "lng", "notes"];
+  const DESK_COLS = ["check_id", "place_id", "checker", "checked_at", "maps_status", "maps_review_count", "newest_review", "has_menu_photo", "notes"];
   $("#exportBtn").addEventListener("click", async () => {
-    const cols = ["visit_id", "place_id", "visitor", "visited_at", "status", "price_min_k", "price_max_k", "dishes", "hours_text", "phone",
-      "facebook_url", "tiktok_url", "photo_urls", "lat", "lng", "notes"];
-    const lines = [cols.join(",")];
-    for (const v of S.visits) {
-      const row = { ...v, dishes: (v.dishes || []).map((x) => x.name + (x.price_k != null ? ":" + x.price_k : "")).join(";"),
-        photo_urls: [...(v.photo_ids || []).map((id) => "asset:" + id), ...(v.photo_links || [])].join(";"), lat: "", lng: "" };
-      lines.push(cols.map((c) => csvCell(row[c])).join(","));
-    }
+    const desk = S.mode === "desk";
+    const cols = desk ? DESK_COLS : VISIT_COLS;
+    const rows = desk
+      ? S.deskChecks.map((c) => ({ ...c, has_menu_photo: c.has_menu_photo ? 1 : 0 }))
+      : S.visits.map((v) => ({ ...v, dishes: (v.dishes || []).map((x) => x.name + (x.price_k != null ? ":" + x.price_k : "")).join(";"),
+          photo_urls: [...(v.photo_ids || []).map((id) => "asset:" + id), ...(v.photo_links || [])].join(";"), lat: "", lng: "" }));
+    const lines = [cols.join(","), ...rows.map((r) => cols.map((c) => csvCell(r[c])).join(","))];
     const dl = S.caps.downloads;
     if (!dl) { toast("Trang này không tải file xuống được ở đây."); return; }
-    try { await dl.save({ filename: "field_visits.csv", data: "﻿" + lines.join("\n") + "\n" }); toast(`Đã xuất ${S.visits.length} phiếu.`); }
-    catch (err) { if (err?.code !== "declined") toast("Chưa tải được file (" + (err?.code || "lỗi") + ")."); }
+    try {
+      await dl.save({ filename: desk ? "desk_checks.csv" : "field_visits.csv", data: "﻿" + lines.join("\n") + "\n" });
+      toast(`Đã xuất ${rows.length} dòng.`);
+    } catch (err) { if (err?.code !== "declined") toast("Chưa tải được file (" + (err?.code || "lỗi") + ")."); }
   });
 
   // ---------- kết nối dữ liệu ----------
@@ -488,9 +618,16 @@ footer .wrap { padding-block: 0 24px; color: var(--muted); font-size: .82rem; di
       S.visits = snap.docs.map((d) => ({ visit_id: d.id, ...d.data() }));
       if (S.view === "list") render();
     }, () => {});
+    db.collection("desk_checks").onSnapshot((snap) => {
+      S.deskChecks = snap.docs.map((d) => ({ check_id: d.id, ...d.data() }));
+      if (S.view === "list") render();
+    }, () => {});
     render();
   }
-  render();
+  // Khôi phục khu và chế độ đã chọn lần trước (sau khi mọi hàm đã khai báo)
+  const savedArea = store.get("area");
+  if (savedArea !== null) document.querySelector(`.tab[data-area="${savedArea}"]`)?.click();
+  setMode(store.get("mode") || "desk");
   boot();
 })();
 </script>

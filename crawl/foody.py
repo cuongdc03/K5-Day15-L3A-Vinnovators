@@ -5,8 +5,8 @@ Chạy:  python crawl/foody.py
 Mỗi từ khoá Foody chỉ trả tối đa 5 trang × 12 quán, nên chạy nhiều từ khoá rồi gộp theo id Foody,
 cuối cùng chỉ giữ quán có toạ độ nằm trong khu (crawl/areas.geojson).
 
-Chỉ lấy thông tin của quán: tên, địa chỉ, toạ độ, loại, món, link. KHÔNG lấy nội dung review, tên hay
-ảnh người dùng. Nghỉ 2 giây giữa hai request. Foody không có robots.txt (kiểm ngày 27/11/2026).
+Chỉ lấy thông tin của quán: tên, địa chỉ, toạ độ, loại, món, link, URL ảnh bìa (PicturePathLarge),
+trạng thái mở cửa (IsOpening, Status). KHÔNG lấy nội dung review, tên hay ảnh người dùng. Nghỉ 2 giây giữa hai request. Foody không có robots.txt (kiểm ngày 27/11/2026).
 Điểm Foody là thang 10, khác thang 1–5 của cột `rating`, nên không đưa vào `rating`.
 """
 import json
@@ -83,6 +83,10 @@ def to_record(item, area, fetched_at):
         "shopeefood_url": item.get("DeliveryUrl") or "",
         "foody_rating_10": item.get("AvgRatingOriginal") or None,
         "foody_review_count": item.get("TotalReview"),
+        # Ảnh bìa của quán (chỉ giữ URL, không tải ảnh) và trạng thái mở cửa Foody đang hiển thị.
+        "cover_photo_url": item.get("PicturePathLarge") or "",
+        "is_opening": item.get("IsOpening"),
+        "foody_status": item.get("Status"),
         "fetched_at": fetched_at,
     }
 
