@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quán Thật Hà Nội — Quán ăn local, lọc chuỗi &amp; bẫy du lịch</title>
+  <meta name="description" content="Phân loại quán ăn tại Hà Nội (Gia Lâm · VinUni/OCP, Cầu Giấy, Hai Bà Trưng, Hoàng Mai, Hoàn Kiếm) kèm nguồn kiểm chứng." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF8F5',
+            paper: '#F3EEE5',
+            ink: '#1C1917',
+            stoneMuted: '#57534E',
+            terracotta: '#C2410C',
+            olive: '#3F6212',
+          },
+          fontFamily: {
+            serif: ['Lora', 'Georgia', 'serif'],
+            sans: ['"Be Vietnam Pro"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF8F5;
+      color: #1C1917;
+      font-family: "Be Vietnam Pro", system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Hạt giấy kem cổ điển rất mịn tạo chiều sâu chất liệu */
+    .paper-texture {
+      background-image:
+        radial-gradient(rgba(28, 25, 23, 0.032) 1px, transparent 0),
+        radial-gradient(rgba(194, 65, 12, 0.018) 1px, transparent 0);
+      background-size: 24px 24px, 41px 41px;
+      background-position: 0 0, 12px 15px;
+    }
+
+    /* Chuyển cảnh từng mục nhịp nhàng */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px) scale(0.985);
+      transition:
+        opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Sân khấu 3D Tilt mượt mắt */
+    .tilt-stage {
+      perspective: 1200px;
+    }
+    .tilt-card {
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .tilt-float {
+      transform: translateZ(34px);
+    }
+    .tilt-float-sm {
+      transform: translateZ(20px);
+    }
+
+    /* Zoom ảnh cực êm khi hover */
+    .editorial-img {
+      transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    .group:hover .editorial-img {
+      transform: scale(1.035);
+    }
+
+    /* Thanh nhịp cuộn siêu mảnh */
+    #scrollProgress {
+      transform-origin: left;
+      transform: scaleX(0);
+    }
+
+    /* Chấm điều hướng mục bên phải */
+    .rail-dot {
+      transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .rail-dot.active {
+      background-color: #C2410C;
+      height: 22px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .tilt-card, .tilt-float, .tilt-float-sm, .editorial-img { transform: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-cream text-ink paper-texture selection:bg-terracotta/15 selection:text-ink">
+
+  <!-- Thanh tiến độ đọc siêu mảnh ở mép trên -->
+  <div class="fixed top-0 left-0 right-0 h-[2px] z-50 bg-transparent pointer-events-none">
+    <div id="scrollProgress" class="h-full bg-terracotta w-full"></div>
+  </div>
+
+  <!-- Thanh chấm nhịp chuyển mục (Desktop) -->
+  <aside aria-label="Điều hướng mục" class="hidden xl:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col items-center gap-2.5">
+    <a href="#hero" data-rail="hero" title="Mở đầu" class="rail-dot active w-1.5 h-1.5 rounded-full bg-stone-300 hover:bg-stone-500"></a>
+    <a href="#vi-sao" data-rail="vi-sao" title="Vì sao dùng" class="rail-dot w-1.5 h-1.5 rounded-full bg-stone-300 hover:bg-stone-500"></a>
+    <a href="#cach-loc" data-rail="cach-loc" title="Cách lọc quán" class="rail-dot w-1.5 h-1.5 rounded-full bg-stone-300 hover:bg-stone-500"></a>
+    <a href="#minh-bach" data-rail="minh-bach" title="Minh bạch" class="rail-dot w-1.5 h-1.5 rounded-full bg-stone-300 hover:bg-stone-500"></a>
+    <a href="#vao-app" data-rail="vao-app" title="Mở bản đồ" class="rail-dot w-1.5 h-1.5 rounded-full bg-stone-300 hover:bg-stone-500"></a>
+  </aside>
+
+  <!-- =========================================================
+       HEADER TỐI GIẢN
+       ========================================================= -->
+  <header class="sticky top-0 z-40 bg-cream/85 backdrop-blur-md border-b border-stone-200/90">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
+      <a href="#hero" class="flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-md bg-terracotta text-cream flex items-center justify-center font-serif font-semibold text-sm">
+          QT
+        </span>
+        <span class="font-serif font-semibold text-lg tracking-tight text-ink">
+          Quán Thật Hà Nội
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm text-stoneMuted">
+        <a href="#vi-sao" class="hover:text-ink transition-colors">Vì sao dùng</a>
+        <a href="#cach-loc" class="hover:text-ink transition-colors">Cách lọc quán</a>
+        <a href="#minh-bach" class="hover:text-ink transition-colors">Minh bạch</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-stone-200 text-xs font-medium text-stoneMuted">
+          <span class="w-1.5 h-1.5 rounded-full bg-olive"></span>
+          AI gợi ý, bạn quyết
+        </span>
+        <a href="./index.html" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-terracotta text-white text-sm font-medium hover:bg-[#9A3412] transition-colors">
+          Mở bản đồ
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =========================================================
+         01 · HERO — CHIỀU SÂU 3D & ẢNH ẨM THỰC HÀ NỘI
+         ========================================================= -->
+    <section id="hero" data-section="hero" class="max-w-6xl mx-auto px-5 sm:px-8 pt-14 pb-24 md:pt-20 md:pb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+        <div class="lg:col-span-8 space-y-5">
+          <div class="reveal flex flex-wrap gap-2 text-xs font-medium">
+            <span class="px-2.5 py-1 rounded-md bg-white border border-stone-200 text-olive">Gia Lâm · VinUni / OCP</span>
+            <span class="px-2.5 py-1 rounded-md bg-white border border-stone-200 text-stoneMuted">Cầu Giấy · HBT · Hoàng Mai · Hoàn Kiếm</span>
+          </div>
+
+          <h1 class="reveal font-serif font-semibold text-4xl sm:text-5xl lg:text-[56px] leading-[1.14] tracking-tight text-ink" style="transition-delay:80ms">
+            Quán ăn ngon local.<br />
+            <span class="text-stoneMuted font-normal italic text-3xl sm:text-4xl lg:text-[42px] sm:whitespace-nowrap">Không chuỗi. Không <span class="whitespace-nowrap">bẫy du lịch.</span></span>
+          </h1>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col items-start lg:items-end gap-4 reveal" style="transition-delay:160ms">
+          <p class="text-sm text-stoneMuted lg:text-right leading-relaxed">
+            <span class="block sm:whitespace-nowrap">Mỗi quán kèm căn cứ kiểm lại được.</span>
+            <span class="block sm:whitespace-nowrap">Thiếu tín hiệu thì báo <b class="text-ink">Chưa chắc</b>.</span>
+          </p>
+          <a href="./index.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-terracotta text-white text-sm font-medium hover:bg-[#9A3412] transition-colors">
+            Mở bản đồ quán
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- SÂN KHẤU 3D TILT: ẢNH BÚN CHẢ + THẺ PHÁN QUYẾT NỔI TRONG KHÔNG GIAN Z -->
+      <div class="reveal mt-12 tilt-stage" style="transition-delay:220ms">
+        <div data-tilt data-tilt-max="5" class="tilt-card group relative rounded-2xl border border-stone-200 bg-white p-2.5 sm:p-3.5 shadow-sm">
+          <div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-paper">
+            <img src="./assets/hero-bun-cha.jpg" alt="Mâm bún chả quán ăn local Hà Nội trong nắng sớm"
+              class="editorial-img w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/10 to-transparent pointer-events-none"></div>
+
+            <!-- Thẻ nổi 3D góc trên trái -->
+            <div class="tilt-float-sm absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-cream/95 backdrop-blur-sm border border-stone-200 text-xs font-semibold text-olive">
+                ● Local · 1 chi nhánh HN
+              </span>
+              <span class="px-3 py-1 rounded-full bg-cream/95 backdrop-blur-sm border border-stone-200 text-xs font-medium text-ink">
+                0.85× giá trung vị quận
+              </span>
+            </div>
+
+            <!-- Thẻ phán quyết nổi 3D góc dưới -->
+            <div class="tilt-float absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              <div class="px-4 py-3 rounded-xl bg-cream/95 backdrop-blur-md border border-stone-200 max-w-md">
+                <div class="flex items-center justify-between gap-3">
+                  <span class="font-serif font-semibold text-base sm:text-lg text-ink">Bún Chả Quanh Trâu Quỳ <span class="text-xs font-sans font-normal text-stoneMuted">(minh hoạ)</span></span>
+                  <span class="text-xs font-semibold text-terracotta shrink-0">35k–50k</span>
+                </div>
+                <div class="mt-1 text-xs text-stoneMuted">
+                  Mẫu hiển thị thẻ quán local: 1 địa chỉ độc lập · 100% review tiếng Việt · Có nguồn kiểm lại.
+                </div>
+              </div>
+
+              <a href="./index.html" class="self-start sm:self-end px-4 py-2.5 rounded-xl bg-ink/90 text-cream text-xs font-medium backdrop-blur-sm hover:bg-terracotta transition-colors inline-flex items-center gap-1.5">
+                Vào bản đồ 3D
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         02 · VÌ SAO DÙNG — ẢNH PHỐ CỔ PARALLAX + 3 ĐIỂM ĐẮT GIÁ
+         ========================================================= -->
+    <section id="vi-sao" data-section="vi-sao" class="border-t border-stone-200 py-24 md:py-32">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+        <!-- Ảnh góc phố cửa chớp xanh có chiều sâu 3D & Parallax -->
+        <div class="lg:col-span-6 reveal tilt-stage">
+          <div data-tilt data-tilt-max="6" class="tilt-card group relative rounded-2xl bg-white border border-stone-200 p-2.5 shadow-sm">
+            <div class="rounded-xl overflow-hidden aspect-[4/3] bg-paper">
+              <img src="./assets/hanoi-corner.jpg" alt="Góc phố Hà Nội cửa chớp xanh nắng sớm"
+                data-parallax="18"
+                class="editorial-img w-full h-full object-cover scale-105" />
+            </div>
+            <div class="tilt-float absolute -bottom-4 right-5 px-4 py-2.5 rounded-xl bg-white border border-stone-200 shadow-sm text-xs">
+              <span class="text-stoneMuted">Mỗi lần tìm quán:</span>
+              <b class="text-ink ml-1">5–10 phút lọc review</b>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nội dung siêu cô đọng -->
+        <div class="lg:col-span-6 space-y-8">
+          <div class="reveal space-y-3">
+            <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">01 · Vì sao dùng</span>
+            <h2 class="font-serif font-semibold text-3xl sm:text-4xl leading-snug text-ink">
+              Số sao cao không phân biệt được quán ăn local với chuỗi.
+            </h2>
+          </div>
+
+          <div class="space-y-4">
+            <div class="reveal flex items-start gap-4 pb-4 border-b border-stone-200" style="transition-delay:80ms">
+              <span class="w-9 h-9 rounded-lg bg-white border border-stone-200 flex items-center justify-center text-terracotta shrink-0">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              </span>
+              <div>
+                <div class="font-medium text-sm text-ink">Lẫn chuỗi &amp; quán chăng khách</div>
+                <div class="text-xs text-stoneMuted mt-0.5">Bản đồ hiện tại xếp theo độ nổi tiếng, không có bộ lọc quán độc lập.</div>
+              </div>
+            </div>
+
+            <div class="reveal flex items-start gap-4 pb-4 border-b border-stone-200" style="transition-delay:150ms">
+              <span class="w-9 h-9 rounded-lg bg-white border border-stone-200 flex items-center justify-center text-terracotta shrink-0">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </span>
+              <div>
+                <div class="font-medium text-sm text-ink">Mất thời gian chọn quán</div>
+                <div class="text-xs text-stoneMuted mt-0.5">Sinh viên VinUni và người đi làm phải tự mở đọc review từng quán.</div>
+              </div>
+            </div>
+
+            <div class="reveal flex items-start gap-4" style="transition-delay:220ms">
+              <span class="w-9 h-9 rounded-lg bg-white border border-stone-200 flex items-center justify-center text-terracotta shrink-0">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+              </span>
+              <div>
+                <div class="font-medium text-sm text-ink">Không gắn nhãn oan quán nhỏ</div>
+                <div class="text-xs text-stoneMuted mt-0.5">Mọi phán quyết đều kèm tín hiệu có nguồn, thiếu căn cứ thì dừng.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         03 · CÁCH LỌC QUÁN — BENTO 3D + ẢNH PHỞ LOCAL
+         ========================================================= -->
+    <section id="cach-loc" data-section="cach-loc" class="border-t border-stone-200 bg-paper/55 py-24 md:py-32">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="reveal flex flex-wrap items-end justify-between gap-4 mb-12">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">02 · Cách lọc quán</span>
+            <h2 class="font-serif font-semibold text-3xl sm:text-4xl text-ink">Bốn nhãn rõ ràng, kiểm chứng được.</h2>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-white border border-stone-200 text-xs font-medium text-stoneMuted">
+            Hình học + Chữ + Màu
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+          <!-- Cột trái: Ảnh Phở editorial 3D tilt -->
+          <div class="lg:col-span-5 reveal tilt-stage">
+            <div data-tilt data-tilt-max="5" class="tilt-card group h-full rounded-2xl bg-white border border-stone-200 p-2.5 shadow-sm flex flex-col">
+              <div class="relative rounded-xl overflow-hidden aspect-[4/3] lg:flex-1 bg-paper">
+                <img src="./assets/pho-local.jpg" alt="Bát phở bò Hà Nội trên bàn gạch hoa cổ"
+                  data-parallax="14"
+                  class="editorial-img w-full h-full object-cover scale-105" />
+                <div class="tilt-float-sm absolute bottom-3 left-3 right-3 px-3.5 py-2.5 rounded-xl bg-cream/95 backdrop-blur-sm border border-stone-200 flex items-center justify-between text-xs">
+                  <span class="font-medium text-ink">Review trích ≤ 2 câu · Ẩn danh</span>
+                  <span class="text-olive font-semibold">Có link nguồn</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cột phải: 4 thẻ Luật nhãn + Hàng cam kết -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div data-tilt data-tilt-max="6" class="reveal tilt-card p-5 rounded-2xl bg-white border border-stone-200 flex flex-col justify-between gap-4" style="transition-delay:60ms">
+              <span class="self-start px-2.5 py-1 rounded-md bg-olive/10 text-olive text-xs font-semibold">● Local</span>
+              <div>
+                <div class="font-serif font-semibold text-2xl text-ink">≤ 3 địa chỉ</div>
+                <div class="text-xs text-stoneMuted mt-1">Quán độc lập tại Hà Nội, bán món Việt.</div>
+              </div>
+            </div>
+
+            <div data-tilt data-tilt-max="6" class="reveal tilt-card p-5 rounded-2xl bg-white border border-stone-200 flex flex-col justify-between gap-4" style="transition-delay:120ms">
+              <span class="self-start px-2.5 py-1 rounded-md bg-terracotta/10 text-terracotta text-xs font-semibold">■ Chuỗi</span>
+              <div>
+                <div class="font-serif font-semibold text-2xl text-ink">≥ 5 địa chỉ</div>
+                <div class="text-xs text-stoneMuted mt-1">Hoặc nằm trong danh sách chuỗi đã xác thực.</div>
+              </div>
+            </div>
+
+            <div data-tilt data-tilt-max="6" class="reveal tilt-card p-5 rounded-2xl bg-white border border-stone-200 flex flex-col justify-between gap-4" style="transition-delay:180ms">
+              <span class="self-start px-2.5 py-1 rounded-md bg-amber-100 text-amber-800 text-xs font-semibold">◆ Bẫy du lịch</span>
+              <div>
+                <div class="font-serif font-semibold text-2xl text-ink">≥ 2 / 4 tín hiệu</div>
+                <div class="text-xs text-stoneMuted mt-1">Menu song ngữ · Giá ≥ 1.7× · Review ngoại · Chèo kéo.</div>
+              </div>
+            </div>
+
+            <div data-tilt data-tilt-max="6" class="reveal tilt-card p-5 rounded-2xl bg-stone-50 border border-dashed border-slate-400 flex flex-col justify-between gap-4" style="transition-delay:240ms">
+              <span class="self-start px-2.5 py-1 rounded-md bg-slate-200 text-slate-700 text-xs font-semibold">◎ Chưa chắc</span>
+              <div>
+                <div class="font-serif font-semibold text-2xl text-ink">4 địa chỉ / &lt;3 review</div>
+                <div class="text-xs text-stoneMuted mt-1">Chuyển người kiểm, không đoán bừa.</div>
+              </div>
+            </div>
+
+            <div class="reveal sm:col-span-2 p-4 rounded-xl bg-white border border-stone-200 flex flex-wrap items-center justify-between gap-3 text-xs" style="transition-delay:280ms">
+              <span class="inline-flex items-center gap-1.5 font-medium text-ink">
+                <svg class="w-4 h-4 text-terracotta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+                Nút Báo sai chỉ lưu bản nháp
+              </span>
+              <span class="inline-flex items-center gap-1.5 font-medium text-ink">
+                <svg class="w-4 h-4 text-olive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Từ chối chấm ATTP &amp; viết review xấu
+              </span>
+              <span class="text-stoneMuted">Không thu vị trí</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         04 · MINH BẠCH — SỐ LỚN ĐẾM MƯỢT KHI CUỘN TỚI
+         ========================================================= -->
+    <section id="minh-bach" data-section="minh-bach" class="border-t border-stone-200 py-24 md:py-28">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="reveal mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">03 · Minh bạch</span>
+            <h2 class="font-serif font-semibold text-3xl text-ink">Kiểm chứng công khai, không cảm tính.</h2>
+          </div>
+          <span class="text-xs text-stoneMuted">Ngưỡng kiểm thử chất lượng của hệ thống</span>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 border-t border-stone-200 pt-10">
+          <div class="reveal space-y-1">
+            <div class="font-serif font-semibold text-4xl sm:text-5xl text-ink tabular-nums">4 + 1</div>
+            <div class="text-sm font-medium text-ink">Quận phủ dữ liệu</div>
+            <div class="text-xs text-stoneMuted">Gia Lâm, Cầu Giấy, HBT, Hoàng Mai + HK</div>
+          </div>
+
+          <div class="reveal space-y-1" style="transition-delay:80ms">
+            <div class="font-serif font-semibold text-4xl sm:text-5xl text-ink tabular-nums">≥ <span data-count="75">75</span>%</div>
+            <div class="text-sm font-medium text-ink">Khớp nhãn độc lập</div>
+            <div class="text-xs text-stoneMuted">Hai người chấm chéo đối chứng</div>
+          </div>
+
+          <div class="reveal space-y-1" style="transition-delay:160ms">
+            <div class="font-serif font-semibold text-4xl sm:text-5xl text-olive tabular-nums">≥ <span data-count="90">90</span>%</div>
+            <div class="text-sm font-medium text-ink">Chuyển người ca chưa chắc</div>
+            <div class="text-xs text-stoneMuted">Không đoán khi thiếu căn cứ</div>
+          </div>
+
+          <div class="reveal space-y-1" style="transition-delay:240ms">
+            <div class="font-serif font-semibold text-4xl sm:text-5xl text-terracotta tabular-nums"><span data-count="100">100</span>%</div>
+            <div class="text-sm font-medium text-ink">Từ chối ngoài phạm vi</div>
+            <div class="text-xs text-stoneMuted">Không chấm ATTP hay viết review xấu</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         05 · CHUYỂN TIẾP SANG WEB APP (./index.html)
+         ========================================================= -->
+    <footer id="vao-app" data-section="vao-app" class="border-t border-stone-200 bg-paper">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20">
+        <div class="reveal tilt-stage">
+          <a href="./index.html" data-tilt data-tilt-max="3" class="tilt-card group block p-8 sm:p-11 rounded-2xl bg-white border border-stone-200 hover:border-terracotta transition-colors">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <div class="space-y-1.5">
+                <span class="text-xs font-semibold uppercase tracking-widest text-stoneMuted">Tiếp theo</span>
+                <div class="font-serif font-semibold text-2xl sm:text-4xl text-ink group-hover:text-terracotta transition-colors">
+                  Mở bản đồ &amp; danh sách quán ăn →
+                </div>
+              </div>
+              <span class="tilt-float-sm w-14 h-14 rounded-full bg-cream border border-stone-200 flex items-center justify-center text-ink group-hover:bg-terracotta group-hover:text-white group-hover:border-terracotta transition-colors shrink-0">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+        </div>
+
+        <div class="mt-10 flex flex-wrap items-center justify-between gap-4 text-xs text-stoneMuted">
+          <div><span class="text-ink font-medium">Vinnovators</span> · Quán Thật Hà Nội</div>
+          <div class="flex flex-wrap gap-3">
+            <span>OSM · Google Places</span>
+            <span>·</span>
+            <span>AI gợi ý, bạn quyết</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    (function () {
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* 1. Chuyển cảnh nhịp nhàng từng mục (IntersectionObserver) */
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+      /* 2. Đếm số mượt khi cuộn tới mục Minh bạch */
+      if (!reduced) {
+        const numIo = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            const el = e.target, target = +el.dataset.count, dur = 900, t0 = performance.now();
+            const step = (now) => {
+              const p = Math.min(1, (now - t0) / dur);
+              const eased = 1 - Math.pow(1 - p, 3);
+              el.textContent = Math.round(target * eased);
+              if (p < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+            numIo.unobserve(el);
+          });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('[data-count]').forEach((el) => numIo.observe(el));
+      }
+
+      /* 3. Thanh tiến độ cuộn + Chấm nhịp mục + Parallax ảnh nhẹ */
+      const bar = document.getElementById('scrollProgress');
+      const dots = [...document.querySelectorAll('[data-rail]')];
+      const sections = [...document.querySelectorAll('[data-section]')];
+      const parallaxes = [...document.querySelectorAll('[data-parallax]')];
+
+      function onScroll() {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        if (bar && max > 0) bar.style.transform = `scaleX(${Math.min(1, Math.max(0, scrollY / max))})`;
+
+        let current = sections[0]?.dataset.section;
+        for (const s of sections) {
+          if (s.getBoundingClientRect().top <= innerHeight * 0.42) current = s.dataset.section;
+        }
+        dots.forEach((d) => d.classList.toggle('active', d.dataset.rail === current));
+
+        if (!reduced) {
+          for (const img of parallaxes) {
+            const rect = img.getBoundingClientRect();
+            const amt = +img.dataset.parallax || 16;
+            const ratio = (rect.top + rect.height / 2 - innerHeight / 2) / innerHeight;
+            img.style.transform = `scale(1.06) translateY(${(-ratio * amt).toFixed(1)}px)`;
+          }
+        }
+      }
+      addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* 4. Hiệu ứng 3D Tilt mượt theo con trỏ chuột (spring lerp) */
+      if (!reduced && matchMedia('(hover: hover)').matches) {
+        document.querySelectorAll('[data-tilt]').forEach((card) => {
+          const max = +(card.dataset.tiltMax || 5);
+          let rx = 0, ry = 0, tx = 0, ty = 0, raf = 0;
+
+          function animate() {
+            rx += (tx - rx) * 0.12;
+            ry += (ty - ry) * 0.12;
+            card.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+            if (Math.abs(tx - rx) > 0.02 || Math.abs(ty - ry) > 0.02) {
+              raf = requestAnimationFrame(animate);
+            } else {
+              raf = 0;
+            }
+          }
+
+          card.addEventListener('pointermove', (e) => {
+            const r = card.getBoundingClientRect();
+            const px = (e.clientX - r.left) / r.width - 0.5;
+            const py = (e.clientY - r.top) / r.height - 0.5;
+            tx = -py * max * 2;
+            ty = px * max * 2;
+            if (!raf) raf = requestAnimationFrame(animate);
+          });
+
+          card.addEventListener('pointerleave', () => {
+            tx = 0; ty = 0;
+            if (!raf) raf = requestAnimationFrame(animate);
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
