@@ -66,6 +66,50 @@ CREATE TABLE field_visits (
 );
 CREATE INDEX idx_field_visits_place ON field_visits(place_id);
 
+-- Xem tay Google Maps trên trình duyệt (không qua API). Mỗi lần xem một dòng.
+CREATE TABLE desk_checks (
+  check_id           TEXT PRIMARY KEY,
+  place_id           TEXT NOT NULL REFERENCES places(place_id),
+  checker            TEXT NOT NULL,           -- thành viên nhóm đã xem (vd 'duc')
+  checked_at         TEXT NOT NULL,           -- ISO 8601
+  maps_status        TEXT NOT NULL CHECK (maps_status IN ('open','closed_permanently','closed_temporarily','not_found')),
+  maps_review_count  INTEGER,                 -- số review hiện trên Maps, trống nếu không thấy
+  newest_review      TEXT CHECK (newest_review IN ('lt_1m','lt_6m','older','none')),
+  has_menu_photo     INTEGER CHECK (has_menu_photo IN (0,1)),
+  notes              TEXT
+);
+CREATE INDEX idx_desk_checks_place ON desk_checks(place_id);
+
+-- Suy ra bằng crawl/verify.py; không điền tay. Một dòng một quán Ocean Park.
+CREATE TABLE verification (
+  place_id            TEXT PRIMARY KEY REFERENCES places(place_id),
+  auto_status         TEXT NOT NULL CHECK (auto_status IN ('field_verified','closed','desk_verified','auto_verified','uncertain','unverified')),
+  reasons             TEXT NOT NULL,          -- tín hiệu ngắn cách nhau ';'
+  google_place_id     TEXT,                   -- quán Google API khớp, nếu có
+  match_score         REAL CHECK (match_score BETWEEN 0 AND 1),
+  business_status     TEXT CHECK (business_status IN ('OPERATIONAL','CLOSED_TEMPORARILY','CLOSED_PERMANENTLY')),
+  last_review_at      TEXT,                   -- YYYY-MM-DD review Google mới nhất
+  rating_count        INTEGER,                -- số lượt đánh giá Google (API)
+  foody_review_count  INTEGER,
+  distance_to_hub_m   INTEGER NOT NULL,       -- tới trung tâm khu (Vincom Mega Mall OP1, The Empire OP2)
+  field_priority      INTEGER,                -- 1..N quán nên đi thực địa, trống nếu không cần
+  desk_priority       INTEGER,                -- thứ tự xem tay Maps cho quán chưa xem, trống nếu đã xem
+  route_order         INTEGER,                -- thứ tự đi bộ trong khu, chỉ cho quán có field_priority
+  computed_at         TEXT NOT NULL
+);
+
+-- Ảnh của quán: chỉ giữ tham chiếu. Ảnh Google chỉ giữ tên tài nguyên, không tải byte (điều khoản Maps Platform).
+CREATE TABLE photos (
+  photo_id    TEXT PRIMARY KEY,               -- 'ph_' + 8 ký tự đầu sha1(place_id|source|ref)
+  place_id    TEXT NOT NULL REFERENCES places(place_id),
+  source      TEXT NOT NULL CHECK (source IN ('foody','google','field')),
+  ref         TEXT NOT NULL,                  -- URL (foody, field) hoặc tên tài nguyên 'places/…/photos/…' (google)
+  width_px    INTEGER,
+  height_px   INTEGER,
+  fetched_at  TEXT NOT NULL
+);
+CREATE INDEX idx_photos_place ON photos(place_id);
+
 CREATE TABLE chain_registry (
   brand_id        TEXT PRIMARY KEY,           -- vd 'kfc'
   brand_name      TEXT NOT NULL,

@@ -13,7 +13,8 @@ python data/schema/validate.py data/processed     # chạy trước mỗi lần 
 | Tầng | Bảng | Ai ghi | Ghi bằng gì |
 |---|---|---|---|
 | Thu về | `places`, `reviews`, `crawl_log` | Đức, Thái | Script crawl trong `crawl/` |
-| Thực địa | `field_visits` | Cả nhóm khi đi kiểm quán | Form trên điện thoại, xuất về bằng `crawl/field_visits.py` |
+| Thực địa | `field_visits`, `desk_checks` | Cả nhóm khi đi kiểm quán hoặc xem tay Google Maps | Form trên điện thoại, xuất về bằng `crawl/field_visits.py` |
+| Kiểm tự động | `verification`, `photos` | Đức | `crawl/verify.py`, không sửa tay |
 | Danh mục tay | `chain_registry` | Cường (Thái bổ sung nguồn) | Nhập tay, kèm `source_url` |
 | Suy ra và gán nhãn | `features`, `labels` | Pipeline của Cường · Trường và Cường gán nhãn | `features` do script sinh, không sửa tay |
 
@@ -45,6 +46,20 @@ Dữ liệu thô (`data/raw/`) không commit. Chỉ commit CSV đã chuẩn hoá
 `visit_id` · `place_id` (phải có trong `places`) · `visitor` (thành viên nhóm, vd `duc`) · `visited_at` · `status` (`open` · `closed` · `moved` · `not_found`) · `price_min_k`, `price_max_k` (nghìn đồng, theo menu) · `dishes` (`tên món:giá;…`) · `hours_text` · `phone` (số của quán) · `facebook_url` (fanpage quán) · `tiktok_url` (video review công khai) · `photo_urls` (cách nhau `;`) · `lat`, `lng` · `notes`.
 
 Không chụp mặt người, biển số xe; không ghi tên chủ quán hay khách. Lần đến mới nhất của quán ghi đè giá, giờ mở trong `places` khi chạy `crawl/merge.py`.
+
+## desk_checks: mỗi lần xem tay Google Maps một dòng
+
+`check_id` · `place_id` · `checker` (thành viên nhóm) · `checked_at` · `maps_status` (`open` · `closed_permanently` · `closed_temporarily` · `not_found`) · `maps_review_count` (số nguyên, trống nếu không thấy) · `newest_review` (`lt_1m` · `lt_6m` · `older` · `none`) · `has_menu_photo` (`0`/`1`) · `notes`. Mở link Google Maps của quán trên trình duyệt và ghi điều nhìn thấy; không chép review hay tên người viết.
+
+## verification: trạng thái kiểm và hàng đợi, suy ra bằng `crawl/verify.py`
+
+Một dòng một quán Ocean Park, không sửa tay. `auto_status` lấy theo luật đầu tiên đúng: `field_verified` (đã đi thực địa) → `closed` (Google API `CLOSED_PERMANENTLY` hoặc xem tay `closed_permanently`) → `desk_verified` (xem tay thấy mở, review mới nhất dưới 6 tháng) → `auto_verified` (Google API khớp, đang hoạt động, review ≤180 ngày hoặc ≥20 lượt) → `uncertain` (xem tay thấy mở nhưng review cũ/không có, tạm đóng, không tìm thấy; hoặc Google API khớp nhưng cũ) → `unverified`.
+
+Cột: `place_id` · `auto_status` · `reasons` (tín hiệu ngắn cách `;`) · `google_place_id`, `match_score` (0–1), `business_status`, `last_review_at`, `rating_count` (từ Google API, trống khi chưa có) · `foody_review_count` · `distance_to_hub_m` (tới Vincom Mega Mall ở OP1, tới cụm quán dày nhất ở OP2; toạ độ ở `HUBS` trong `crawl/verify.py`) · `field_priority` (1..N quán nên đi thực địa: `uncertain` và quán đã xác nhận nổi bật, không bao giờ `closed`) · `desk_priority` (thứ tự xem tay cho quán chưa xem) · `route_order` (thứ tự đi bộ trong khu) · `computed_at`.
+
+## photos: tham chiếu ảnh, không lưu ảnh
+
+`photo_id` (`ph_` + 8 ký tự đầu sha1 của `place_id|source|ref`) · `place_id` · `source` (`foody` · `google` · `field`) · `ref` (URL ảnh bìa Foody hoặc ảnh thực địa; với Google là tên tài nguyên `places/…/photos/…`) · `width_px`, `height_px` · `fetched_at`. Không tải byte ảnh Google (điều khoản Maps Platform cấm lưu nội dung).
 
 ## reviews: tối đa 5 đoạn rút gọn mỗi quán
 

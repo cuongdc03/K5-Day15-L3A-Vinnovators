@@ -34,6 +34,32 @@ SCHEMA = {
         "int": ["price_min_k", "price_max_k"],
         "float": ["lat", "lng"],
     },
+    "desk_checks": {
+        "cols": ["check_id", "place_id", "checker", "checked_at", "maps_status", "maps_review_count", "newest_review",
+                 "has_menu_photo", "notes"],
+        "req": ["check_id", "place_id", "checker", "checked_at", "maps_status"],
+        "enum": {"maps_status": {"open", "closed_permanently", "closed_temporarily", "not_found"},
+                 "newest_review": {"lt_1m", "lt_6m", "older", "none"}, "has_menu_photo": {"0", "1"}},
+        "int": ["maps_review_count"],
+    },
+    "verification": {
+        "cols": ["place_id", "auto_status", "reasons", "google_place_id", "match_score", "business_status",
+                 "last_review_at", "rating_count", "foody_review_count", "distance_to_hub_m", "field_priority",
+                 "desk_priority", "route_order", "computed_at"],
+        "req": ["place_id", "auto_status", "reasons", "distance_to_hub_m", "computed_at"],
+        "enum": {"auto_status": {"field_verified", "closed", "desk_verified", "auto_verified", "uncertain",
+                                 "unverified"},
+                 "business_status": {"OPERATIONAL", "CLOSED_TEMPORARILY", "CLOSED_PERMANENTLY"}},
+        "int": ["rating_count", "foody_review_count", "distance_to_hub_m", "field_priority", "desk_priority",
+                "route_order"],
+        "float": ["match_score"],
+    },
+    "photos": {
+        "cols": ["photo_id", "place_id", "source", "ref", "width_px", "height_px", "fetched_at"],
+        "req": ["photo_id", "place_id", "source", "ref", "fetched_at"],
+        "enum": {"source": {"foody", "google", "field"}},
+        "int": ["width_px", "height_px"],
+    },
     "reviews": {
         "cols": ["review_id", "place_id", "source", "rating", "text_excerpt", "lang", "published_at", "url", "fetched_at"],
         "req": ["review_id", "place_id", "source", "text_excerpt", "lang", "fetched_at"],
@@ -69,10 +95,12 @@ SCHEMA = {
 RANGE = {("places", "lat"): (20.8, 21.3), ("places", "lng"): (105.6, 106.1),
          ("field_visits", "lat"): (20.8, 21.3), ("field_visits", "lng"): (105.6, 106.1),
          ("places", "price_level"): (0, 4), ("places", "rating"): (1, 5), ("reviews", "rating"): (1, 5),
-         ("features", "foreign_lang_ratio"): (0, 1)}
+         ("features", "foreign_lang_ratio"): (0, 1), ("verification", "match_score"): (0, 1),
+         ("desk_checks", "maps_review_count"): (0, 10 ** 7)}
 FORBIDDEN_REVIEW_COLS = {"author", "author_name", "user", "username", "reviewer", "profile", "avatar", "author_url"}
 FK = [("reviews", "place_id", "places", "place_id"), ("field_visits", "place_id", "places", "place_id"),
-      ("features", "place_id", "places", "place_id"),
+      ("features", "place_id", "places", "place_id"), ("desk_checks", "place_id", "places", "place_id"),
+      ("verification", "place_id", "places", "place_id"), ("photos", "place_id", "places", "place_id"),
       ("labels", "place_id", "places", "place_id"), ("features", "chain_id", "chain_registry", "brand_id")]
 
 
