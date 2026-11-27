@@ -1,5 +1,7 @@
 # Tổng hợp bằng chứng pain
 
+> Cập nhật CP2/CP3 phần Thái (27/11/2026): người dùng xác nhận chưa có khảo sát/phỏng vấn. Review hiện 0; chưa có nguồn bằng chứng pain đạt ngưỡng. Số liệu quán/menu chỉ đo độ phủ dữ liệu và được chạy lại bằng `python evidence/count_data.py`. Chi tiết ở `docs/CP2_CP3_THAI.md`.
+
 > Điền ở guide bước 1.2, xong trước **CP3 10:00 Thứ Bảy 28/11**. Chấm ở rubric R1.
 > Ba nguồn ngang nhau — tối thiểu **≥1 nguồn đạt ngưỡng**. Mạnh nhất: đào data ra insight → hỏi người dùng để kiểm lại (hoặc ngược lại).
 

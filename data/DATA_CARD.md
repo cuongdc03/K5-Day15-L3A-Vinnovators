@@ -51,3 +51,12 @@
 **Chưa có**: cần Google Places API mà nhóm không có key. Khi có, `crawl/verify.py` thêm tối đa 5 review mỗi quán (đoạn trích ≤2 câu, ≤300 ký tự, không tên người viết, `review_id` = `r_` + sha1 tên review Google), giữ nguyên dòng của nguồn khác, chạy lại không sinh dòng trùng. Foody chỉ có 101 review trên 14/391 quán nên không đủ làm nguồn review.
 
 **Data `synthetic` (nhóm tự sinh):** chưa có. Data tự dựng **không phải bằng chứng pain**.
+
+## Bổ sung CP2/CP3 của Thái · 27/11/2026
+
+- Menu ShopeeFood: danh sách 151 URL người dùng cung cấp (150 quán, 1 trang khu vực), chuẩn hoá/bỏ URL trùng. `crawl/shopee_menus.mjs` đọc DOM và cuộn menu ảo; xuất `data/processed/shopee_stores.csv`, `shopee_menu.csv`. Đây là lượt thu lại sau khi vùng tạm phiên cũ bị mất. Số mới kiểm bằng `python evidence/count_data.py`.
+- Giá là **giá đặt online**, có giá gốc nếu trang hiển thị; chưa gồm phí giao/ưu đãi cấp đơn. Giữ nguyên giá nguồn, không ghi đè giá thực địa trong `places.csv`. Có thể có giá khuyến mãi hoặc đơn vị sản phẩm khác nhau; không suy ra giá một bữa từ min/max toàn menu.
+- `crawl/link_shopee.py` chỉ nối `store_id` với `place_id` khi slug nguồn ShopeeFood trùng chính xác, duy nhất với `foody_url`. Quán chưa khớp vẫn giữ ở bảng menu; không tự tạo tọa độ.
+- `chain_registry.csv`: 6 thương hiệu có URL nguồn chính thức. Không suy ra một cửa hàng là chi nhánh chính thức chỉ từ tên giống nhau. Số chi nhánh để trống nếu chưa kiểm đếm.
+- `reviews.csv`: hiện chỉ có header, chưa có review thật. `crawl/reviews.py` nhập review từ nguồn công khai đã bỏ định danh, tối đa 2 câu/300 ký tự, tối đa 5 review/quán. Có kiểm URL và khóa ngoại. Phát hiện ngôn ngữ là heuristic, ưu tiên mã ngôn ngữ nguồn, câu ngắn không rõ trả `other`.
+- Mẫu menu lệch về Gia Lâm và quán giao online; không đại diện 4 quận, không phải bằng chứng pain. Không thu thêm review từ Foody.

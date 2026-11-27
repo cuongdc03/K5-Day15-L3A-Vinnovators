@@ -201,6 +201,7 @@ Nhãn dùng: `local` · `chain` · `tourist` · `unsure`. Định nghĩa chốt 
 | Thời điểm | Đổi gì | Vì sao |
 |---|---|---|
 | 27/11 (trước CP2) | Phạm vi từ Hoàn Kiếm sang 4 quận Cầu Giấy, Hai Bà Trưng, Hoàng Mai, Gia Lâm; Hoàn Kiếm chỉ mẫu bẫy du lịch | Chọn quán cho dân địa phương; ghi để truy vết, chưa tính là đổi sau CP2 |
+| 27/11 (sau CP2) | Thêm importer review, nguồn chuỗi, bộ câu hỏi và dữ liệu menu ShopeeFood thu lại; giữ nguyên §7, metric và expected | Hoàn thiện phần Thái theo main mới; khảo sát/phỏng vấn, review thật và lượt AI thật vẫn chưa có |
 |  |  |  |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)**

@@ -14,5 +14,6 @@ README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt bu�
 | Sinh data `synthetic` (nếu có) | | | Seed __ · kiểm tay __ dòng | |
 | Chấm cột `pass` bằng LLM (nếu có) | | | Kiểm tra thủ công __ câu thử, khớp __/__ | |
 | Slide, văn bản | | | | |
+| Phần Thái CP2/CP3 | Codex | Viết importer review, phát hiện ngôn ngữ, đọc menu công khai, nối slug nguồn và tài liệu bàn giao | Đã kiểm schema và test importer; người trong nhóm chưa duyệt nội dung thực địa/người dùng | Thái |
 
 **Không dùng AI để:** tạo người được phỏng vấn, trích dẫn, câu trả lời khảo sát; sửa kết quả các lượt đã chạy (`eval/run-*.csv`, `cost/simulate-*.csv`, `traces/`).
