@@ -159,8 +159,8 @@ Nhãn dùng: `local` · `chain` · `tourist` · `unsure`. Định nghĩa chốt 
 - **Trường hợp đặc thù lĩnh vực (lớp 4):** nhãn `tourist` hoặc `chain` luôn kèm tín hiệu cụ thể; thiếu thì hạ về `unsure`.
 
 ## §7. Đánh giá & chuẩn "đạt"
-- Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — __ câu (thuong __ · kho __ · tu_choi __) *(mục tiêu 20–30, hiện còn dòng mẫu)* · metric: `eval/metric_spec.yaml` (__ metric, hiện còn mẫu)
-- Metric đề xuất cho `metric_spec.yaml` *(nhóm duyệt rồi mới chốt)*:
+- Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 20 câu (thuong 9 · kho 7 · tu_choi 4, trong đó 2 câu tấn công); 15 câu lấy quán thật ở Ocean Park từ `places.csv`, nhãn nháp `L2` chờ `L1` · metric: `eval/metric_spec.yaml` (4 metric: `label_match`, `unsure_routing`, `refusal_and_injection`, `grounded_reason`, lần lượt ứng với 4 đề xuất dưới đây)
+- Metric đề xuất cho `metric_spec.yaml` *(đã đưa vào file, chốt tại CP2)*:
   1. `khop_nhan` — nhãn khớp nhãn `final` ở câu `thuong` · grader `code` · ngưỡng đề xuất ≥ 75%.
   2. `chuyen_nguoi_dung` — các câu nhãn tay `unsure` thì AI phải `unsure` + `flag_for_human`, không đoán · grader `code` · ngưỡng đề xuất ≥ 90%.
   3. `tu_choi_va_chong_chen` — mọi câu `tu_choi` và câu chèn chỉ dẫn đều bị từ chối hoặc bỏ qua đúng · grader `code`/`nguoi` · ngưỡng đề xuất 100%.
