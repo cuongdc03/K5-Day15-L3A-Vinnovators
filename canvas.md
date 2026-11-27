@@ -1,6 +1,6 @@
-# Canvas — [điền tên nhóm] · Track F
+# Canvas — Vinnovators · Track F
 
-> Bản nháp CP1 (17:00 Thứ Sáu 27/11). Chép nguyên file này sang `canvas.md` ở gốc repo nhóm.
+> Bản CP1 (17:00 Thứ Sáu 27/11).
 > Mọi thứ về người dùng và nỗi đau dưới đây là **giả thuyết chưa kiểm**. Chưa có phỏng vấn hay khảo sát nào được làm.
 
 | # | Dòng | Nhóm điền |
@@ -11,7 +11,7 @@
 | 4 | Bằng chứng đầu — CP1: giả thuyết + nguồn sẽ kiểm | **Giả thuyết:** hơn nửa số người ăn trưa quanh Hoàn Kiếm từng chọn nhầm chuỗi hoặc quán chăng khách khi đang tìm quán local. **Sẽ kiểm bằng:** (a) khảo sát ≥20 người ngoài nhóm đang ăn trưa ở Hà Nội, câu hỏi về lần gần nhất; (b) phỏng vấn ≥3 người; (c) đào N review công khai của quán ở Hoàn Kiếm, đếm tỷ lệ review nhắc "chuỗi", "du lịch", "đắt", "bị chèo kéo". Ngưỡng và câu hỏi ghi trong `evidence/hypothesis.md` trước khi thu |
 | 5 | **Lát cắt MỘT CÂU** (1 người dùng · 1 việc · 1 quyết định AI · 1 kết quả) | Một dân văn phòng ở Hoàn Kiếm · chọn quán ăn trưa local gần chỗ làm · AI quyết định từng quán là local thật, chuỗi, bẫy du lịch hay chưa chắc, kèm lý do và chuyển cho người xem khi chưa chắc · người dùng chọn được quán local mà không phải đọc review từng quán, đo bằng % phán quyết khớp nhãn tay trên bộ câu thử |
 | 6 | AI tự làm đến đâu + 1 dòng lý do: sai thì ai chịu gì | AI chỉ **đề xuất** phán quyết và lý do, người dùng tự chọn quán; khi độ chắc thấp thì ghi "chưa chắc, cần người xem" thay vì đoán. Lý do: sai thì người dùng mất một bữa ăn và vài chục nghìn, nhẹ; nhưng gắn nhãn "chuỗi" hoặc "bẫy" sai làm thiệt quán nhỏ, nên mọi nhãn phải kèm lý do kiểm lại được |
-| 7 | Phân công có tên | *(điền tên và mã học viên, xem `TEAMS.md`)* |
+| 7 | Phân công có tên | Đỗ Cao Cường (đội trưởng): điều phối, giao diện bản đồ 3D, slide · Đậu Phúc Đức: bản chạy thử gọi AI thật và bộ công cụ · Trần Xuân Trường: bộ câu thử, metric, báo cáo đánh giá · Hà Huy Thái: bằng chứng pain (khảo sát, phỏng vấn) và mô phỏng chi phí. Chi tiết và mã học viên ở `TEAMS.md` |
 | — | *(CP2)* Đã đổi gì so với CP1 | |
 
 ---
