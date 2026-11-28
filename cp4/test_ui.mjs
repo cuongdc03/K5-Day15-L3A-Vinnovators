@@ -15,11 +15,11 @@ let videoError='',capturing=false;ffmpeg.stderr.on('data',d=>videoError+=d);ffmp
 const timer=setInterval(async()=>{if(capturing)return;capturing=true;try{const frame=await page.screenshot({type:'jpeg',quality:70});ffmpeg.stdin.write(frame)}catch{}finally{capturing=false}},200);
 const pause=()=>page.waitForTimeout(1600);
 await page.goto('http://127.0.0.1:8765/web-demo/live.html',{waitUntil:'networkidle'});
-await page.waitForFunction(()=>window.PLACES?.length===412);
-assert.equal(await page.locator('#list .card').count(),352);
+await page.waitForFunction(()=>window.PLACES?.length===552);
+assert.equal(await page.locator('#list .card').count(),492);
 await page.getByText('Ẩn chuỗi',{exact:true}).click();
 await pause();
-assert.equal(await page.locator('#list .card').count(),356);
+assert.equal(await page.locator('#list .card').count(),496);
 assert.equal(await page.evaluate(()=>window.PLACES.filter(p=>p.evaluated).length),17);
 await page.screenshot({path:file(new URL('./public/ui-desktop.png',import.meta.url))});
 await page.locator('[data-mode="3d"]').click();await page.waitForFunction(()=>window.Map3D || document.querySelector('#mapwrap').classList.contains('no-gl'),{},{timeout:15000});
@@ -42,7 +42,7 @@ await page.locator('#search').fill('Ruta');assert.equal(await page.locator('#sto
 await pause();
 await page.screenshot({path:file(new URL('./public/menu-desktop.png',import.meta.url))});
 await page.setViewportSize({width:390,height:844});await page.screenshot({path:file(new URL('./public/menu-mobile.png',import.meta.url))});
-await page.goto('http://127.0.0.1:8765/web-demo/live.html?view=mobile',{waitUntil:'networkidle'});await page.waitForFunction(()=>window.PLACES?.length===412);
+await page.goto('http://127.0.0.1:8765/web-demo/live.html?view=mobile',{waitUntil:'networkidle'});await page.waitForFunction(()=>window.PLACES?.length===552);
 await page.screenshot({path:file(new URL('./public/ui-mobile.png',import.meta.url))});
 assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+2),'mobile horizontal overflow');
 for(const path of ['/.env','/.git/config','/data/processed/places.csv','/cp4/ai.py'])assert.equal((await page.request.get('http://127.0.0.1:8765'+path)).status(),404);

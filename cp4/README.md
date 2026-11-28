@@ -26,7 +26,15 @@ python -m cp4.build_ui
 python -m cp4.build_report
 ```
 
-Export lấy các kết quả model thành công trong `eval/run-N.csv`, ưu tiên lượt mới; không suy diễn nhãn `final` thành đầu ra AI. Có 17 địa điểm đã đánh giá, không phải cả 412 địa điểm đã được AI phân loại. 10 điểm hỗ trợ tài xế được tách khỏi danh sách quán. Giá chưa có để trống. Ghép menu bằng liên kết đã xác nhận trong `shopee_place_links.csv`; 140 quán menu còn lại chỉ có link tìm địa chỉ, không tự gán tọa độ.
+Export lấy các kết quả model thành công trong `eval/run-N.csv`, ưu tiên lượt mới; không suy diễn nhãn `final` thành đầu ra AI. Có 17 địa điểm đã đánh giá. 10 điểm hỗ trợ tài xế được tách khỏi danh sách quán. Giá chưa có để trống. Có 10 quán ghép với địa điểm cũ bằng slug; 140 quán còn lại được bổ sung thành bản ghi ShopeeFood riêng, không ghi đè dữ liệu nguồn.
+
+### Cập nhật theo yêu cầu gắn toàn bộ ShopeeFood
+
+Đã đọc metadata công khai: **150/150 quán có tọa độ**, lưu nguồn và thời điểm tại `data/processed/shopee_locations.json`. Link ToCoToCo 100 Cổ Bi ban đầu ở `shopeefood.com.vn` được tìm lại trên danh sách chính thức `shopeefood.vn`; lưu cả link gốc và link đã phân giải. Tổng danh sách hiện tại **552 bản ghi địa điểm**, đủ **4.308 dòng món**; 12 quán vẫn chưa có menu đọc được, không bịa món.
+
+Mốc người dùng đã chọn: **VinUni (20.9889, 105.9447)**. Khoảng cách Haversine đường chim bay, làm tròn khi hiển thị; dùng cùng một mốc cho mọi khu vực, không đổi theo tâm quận. Danh sách chính và menu xếp gần → xa. Có bộ lọc “Chỉ quán ShopeeFood”. Khoảng cách không phải quãng đường chạy xe hoặc phí/thời gian giao.
+
+Để thu lại vị trí bằng Chrome/Playwright có sẵn: chạy `node cp4/collect_locations.mjs`, rồi `node cp4/resolve_missing_location.mjs`; sau đó export/build UI như trên. Kiểm tra: `python -m unittest cp4.test_locations` và `node cp4/test_shopee_ui.mjs`. Các slide/video CP4 trước đó là ảnh chụp của thời điểm trước lần bổ sung này.
 
 3D là mô hình minh họa, dùng 2D để xem vị trí địa lý. Văn Giang chuyển về 2D vì chưa có mô hình riêng; không mượn mô hình Gia Lâm để hiển thị khu vực này.
 
