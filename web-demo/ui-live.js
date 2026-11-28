@@ -63,14 +63,14 @@ function saveQueue() {
 
 function calcDistText(p) {
   if (typeof p.lat !== 'number' || typeof p.lng !== 'number') return '';
-  const ref = (DISTRICT_CENTER[p.district] && DISTRICT_CENTER[p.district][0]) || VINUNI_POS;
+  const ref = VINUNI_POS;
   const R = 6371000;
   const toRad = (deg) => deg * Math.PI / 180;
   const dLat = toRad(p.lat - ref[0]);
   const dLng = toRad(p.lng - ref[1]);
   const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(ref[0])) * Math.cos(toRad(p.lat)) * Math.sin(dLng / 2) ** 2;
   const m = Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
-  if (m < 1000) return `${Math.max(50, Math.round(m / 10) * 10)}m`;
+  if (m < 1000) return `${Math.round(m / 10) * 10}m`;
   return `${(m / 1000).toFixed(1)}km`;
 }
 
@@ -325,10 +325,11 @@ function normalizePlace(raw, idx) {
     dish: raw.dish || raw.cuisine || 'Quán ăn',
     address: raw.address || raw.address_text || DISTRICTS[raw.district] || '',
     district: raw.district || 'gia_lam',
+    store_id: raw.store_id, distance_m: raw.distance_m,
     lat: raw.lat,
     lng: raw.lng,
     price,
-    price_text: price == null ? (raw.menu_count ? 'Có menu giá online' : 'Chưa có giá') : `${raw.price_min_k}k–${raw.price_max_k ?? raw.price_min_k}k`,
+    price_text: price == null ? (raw.menu_count ? 'Có menu giá online' : 'Chưa có giá') : `${raw.price_min_k}k–${raw.price_max_k ?? raw.price_min_k}k${raw.price_basis === 'online' ? ' · online' : ''}`,
     menu: raw.menu || [], evaluated: raw.evaluated, model: raw.model, run_id: raw.run_id, source_urls: raw.source_urls || [],
     v,
     label: v,
@@ -349,9 +350,10 @@ window.hiddenReason = function (p) {
 };
 
 window.matches = function (p) {
+  if (document.querySelector('#shopeeOnly')?.checked && !p.store_id) return false;
   if (p.district !== state.district) return false;
   if (state.q && REFUSE_RE.test(strip(state.q))) return false;
-  if (state.q && !strip(p.name + ' ' + p.dish + ' ' + p.address).includes(strip(state.q))) return false;
+  if (state.q && !strip(p.name + ' ' + p.dish + ' ' + p.address + ' ' + p.menu.map(i => i.name).join(' ')).includes(strip(state.q))) return false;
   if (state.budget !== 'all' && p.price == null) return false;
   if (state.budget === '50' && p.price >= 50) return false;
   if (state.budget === '100' && (p.price < 50 || p.price > 100)) return false;
@@ -524,7 +526,7 @@ function cardHTML(p, idx) {
               <span class="meta-dish">${escapeHTML(p.dish)}</span>
               <span>·</span>
               <span class="meta-price">${escapeHTML(p.price_text)}</span>
-              ${dist ? `<span class="meta-dist" title="Khoảng cách ước tính tới tâm khu vực">~${dist}</span>` : ''}
+              ${dist ? `<span class="meta-dist" title="Khoảng cách đường chim bay xấp xỉ từ VinUni (20.9889, 105.9447)">~${dist}</span>` : ''}
             </div>
             <div class="meta-addr">${escapeHTML(p.address)}</div>
           </div>
@@ -590,7 +592,7 @@ function render() {
   const pool = PLACES.filter(matches);
   const shown = pool
     .filter((p) => !hiddenReason(p))
-    .sort((a, b) => (a.v === 'unsure') - (b.v === 'unsure') || b.confidence - a.confidence);
+    .sort((a, b) => (a.distance_m ?? Infinity) - (b.distance_m ?? Infinity));
   const hid = pool.filter((p) => hiddenReason(p));
   const nChain = hid.filter((p) => p.v === 'chain').length;
   const nT = hid.filter((p) => p.v === 'tourist').length;
@@ -704,6 +706,7 @@ function wireEvents() {
     });
   }
 
+  document.querySelector('#shopeeOnly')?.addEventListener('change', render);
   $('#q').addEventListener('input', (e) => { state.q = e.target.value.trim(); render(); });
 
   document.querySelectorAll('.d-chip').forEach((btn) => {
@@ -790,7 +793,7 @@ function loadMap3D() {
   map3dLoading = true;
   const loadMulti = () => {
     const s = document.createElement('script');
-    s.src = 'map3d-multi.js?v=7';
+    s.src = 'map3d-live.js?v=1';
     s.onload = () => { if (window.Map3D && state.mapMode === '3d') Map3D.sync(); };
     document.body.appendChild(s);
   };

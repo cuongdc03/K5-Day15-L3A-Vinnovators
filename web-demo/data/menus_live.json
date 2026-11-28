@@ -5,6 +5,7 @@
     "name": "Kem Bơ Chè Sầu Đà Nẵng - Ngô Xuân Quảng",
     "address": "291 Ngô Xuân Quảng, TT. Trâu Quý, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/kem-bo-che-sau-da-nang-ngo-xuan-quang",
+    "original_source_url": "https://shopeefood.vn/ha-noi/kem-bo-che-sau-da-nang-ngo-xuan-quang",
     "complete": true,
     "items": [
       {
@@ -71,6 +72,19 @@
         "fetched_at": "2026-11-27T14:23:46.564Z"
       }
     ],
+    "lat": 21.011838,
+    "lng": 105.936422,
+    "distance_m": 2691,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:10.889Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Kem%20B%C6%A1%20Ch%C3%A8%20S%E1%BA%A7u%20%C4%90%C3%A0%20N%E1%BA%B5ng%20-%20Ng%C3%B4%20Xu%C3%A2n%20Qu%E1%BA%A3ng%20291%20Ng%C3%B4%20Xu%C3%A2n%20Qu%E1%BA%A3ng%2C%20TT.%20Tr%C3%A2u%20Qu%C3%BD%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -79,6 +93,7 @@
     "name": "Tiệm Nước Mẹ Chun",
     "address": "S211, KĐT Vinhome Ocean Park, TT. Trâu Quý, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-nuoc-me-chun",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-nuoc-me-chun",
     "complete": true,
     "items": [
       {
@@ -127,6 +142,19 @@
         "fetched_at": "2026-11-27T14:23:45.020Z"
       }
     ],
+    "lat": 20.992516,
+    "lng": 105.943855,
+    "distance_m": 412,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:11.184Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "5đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20N%C6%B0%E1%BB%9Bc%20M%E1%BA%B9%20Chun%20S211%2C%20K%C4%90T%20Vinhome%20Ocean%20Park%2C%20TT.%20Tr%C3%A2u%20Qu%C3%BD%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -135,6 +163,7 @@
     "name": "Bếp Của Nhung - Bánh Mì Sốt Vang & Bột Chiên",
     "address": "Sảnh S1.08 Khu Đô Thị Vinhomes Ocean Park, X. Đa Tồn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bep-cua-nhung-banh-mi-sot-vang-bot-chien",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bep-cua-nhung-banh-mi-sot-vang-bot-chien",
     "complete": true,
     "items": [
       {
@@ -219,6 +248,19 @@
         "fetched_at": "2026-11-27T14:23:48.432Z"
       }
     ],
+    "lat": 20.989859,
+    "lng": 105.94282,
+    "distance_m": 222,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:11.185Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "4đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%E1%BA%BFp%20C%E1%BB%A7a%20Nhung%20-%20B%C3%A1nh%20M%C3%AC%20S%E1%BB%91t%20Vang%20%26%20B%E1%BB%99t%20Chi%C3%AAn%20S%E1%BA%A3nh%20S1.08%20Khu%20%C4%90%C3%B4%20Th%E1%BB%8B%20Vinhomes%20Ocean%20Park%2C%20X.%20%C4%90a%20T%E1%BB%93n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -227,6 +269,7 @@
     "name": "Hoa Béo - Nem Nướng Ninh Hòa - Hà Huy Tập",
     "address": "Số 1 Ngõ 226 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/hoa-beo-nem-nuong-ninh-hoa-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/hoa-beo-nem-nuong-ninh-hoa-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -311,6 +354,19 @@
         "fetched_at": "2026-11-27T14:23:50.682Z"
       }
     ],
+    "lat": 21.082887,
+    "lng": 105.915523,
+    "distance_m": 10881,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:13.330Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "999+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Hoa%20B%C3%A9o%20-%20Nem%20N%C6%B0%E1%BB%9Bng%20Ninh%20H%C3%B2a%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20S%E1%BB%91%201%20Ng%C3%B5%20226%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -319,6 +375,7 @@
     "name": "Cơm Thố Bách Khoa - Hà Huy Tập",
     "address": "417 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/com-tho-bach-khoa-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/com-tho-bach-khoa-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -601,6 +658,19 @@
         "fetched_at": "2026-11-27T14:23:53.148Z"
       }
     ],
+    "lat": 21.088949,
+    "lng": 105.920436,
+    "distance_m": 11406,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:13.201Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "999+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=C%C6%A1m%20Th%C3%B4%CC%81%20Ba%CC%81ch%20Khoa%20-%20Ha%CC%80%20Huy%20T%C3%A2%CC%A3p%20417%20Ha%CC%80%20Huy%20T%C3%A2%CC%A3p%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -609,6 +679,7 @@
     "name": "TH true mart - Hà Huy Tập - 70000453",
     "address": "406 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/th-true-mart-ha-huy-tap-70000453",
+    "original_source_url": "https://shopeefood.vn/ha-noi/th-true-mart-ha-huy-tap-70000453",
     "complete": true,
     "items": [
       {
@@ -3132,6 +3203,19 @@
         "fetched_at": "2026-11-27T14:24:10.255Z"
       }
     ],
+    "lat": 21.086362,
+    "lng": 105.918106,
+    "distance_m": 11183,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:13.975Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=TH%20true%20mart%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20-%2070000453%20406%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -3140,6 +3224,7 @@
     "name": "Bún Bò Huế Ngự Bình - Yên Viên",
     "address": "256 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-bo-hue-ngu-binh-yen-vien",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-bo-hue-ngu-binh-yen-vien",
     "complete": true,
     "items": [
       {
@@ -3278,6 +3363,19 @@
         "fetched_at": "2026-11-27T14:23:56.483Z"
       }
     ],
+    "lat": 21.083623,
+    "lng": 105.915708,
+    "distance_m": 10954,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:15.393Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20Ng%E1%BB%B1%20B%C3%ACnh%20-%20Y%C3%AAn%20Vi%C3%AAn%20256%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -3286,6 +3384,7 @@
     "name": "Lành Tea - Hà Huy Tập",
     "address": "32 Ngõ 484/74 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/lanh-tea-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/lanh-tea-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -3811,6 +3910,19 @@
         "fetched_at": "2026-11-27T14:24:01.703Z"
       }
     ],
+    "lat": 21.085417,
+    "lng": 105.920896,
+    "distance_m": 11013,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:15.738Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=L%C3%A0nh%20Tea%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%2032%20Ng%C3%B5%20484/74%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -3819,6 +3931,7 @@
     "name": "Ăn Đêm - Mỳ Chua Cay & Chân Gà - Hà Huy Tập",
     "address": "1/56 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/an-dem-my-chua-cay-chan-ga-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/an-dem-my-chua-cay-chan-ga-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -3921,6 +4034,19 @@
         "fetched_at": "2026-11-27T14:24:05.112Z"
       }
     ],
+    "lat": 21.081757,
+    "lng": 105.913798,
+    "distance_m": 10812,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:16.429Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=%C4%82n%20%C4%90%C3%AAm%20-%20M%E1%BB%B3%20Chua%20Cay%20%26%20Ch%C3%A2n%20G%C3%A0%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%201/56%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -3929,6 +4055,7 @@
     "name": "98s Food&Drink - Bún, Phở & Mì Trộn Cay Tê - Yên Viên",
     "address": "Số 1 Ngõ 484 Yên Viên, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/98s-food-drink-bun-pho-mi-tron-cay-te-yen-vien",
+    "original_source_url": "https://shopeefood.vn/ha-noi/98s-food-drink-bun-pho-mi-tron-cay-te-yen-vien",
     "complete": true,
     "items": [
       {
@@ -4220,6 +4347,19 @@
         "fetched_at": "2026-11-27T14:24:09.911Z"
       }
     ],
+    "lat": 21.08721,
+    "lng": 105.919868,
+    "distance_m": 11231,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:17.800Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=98s%20Food%26Drink%20-%20B%C3%BAn%2C%20Ph%E1%BB%9F%20%26%20M%C3%AC%20Tr%E1%BB%99n%20Cay%20T%C3%AA%20-%20Y%C3%AAn%20Vi%C3%AAn%20S%E1%BB%91%201%20Ng%C3%B5%20484%20Y%C3%AAn%20Vi%C3%AAn%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -4228,6 +4368,7 @@
     "name": "Phér - Trà Trái Cây Hoa Quả Tươi 100% - Hà Huy Tập",
     "address": "455 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/pher-tra-trai-cay-hoa-qua-tuoi-100-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/pher-tra-trai-cay-hoa-qua-tuoi-100-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -4609,6 +4750,19 @@
         "fetched_at": "2026-11-27T14:24:16.532Z"
       }
     ],
+    "lat": 21.089336,
+    "lng": 105.920869,
+    "distance_m": 11439,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:17.799Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ph%C3%A9r%20-%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20Hoa%20Qu%E1%BA%A3%20T%C6%B0%C6%A1i%20100%25%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20455%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -4617,6 +4771,7 @@
     "name": "Hiệp Huy - Nem Nướng Nha Trang - Hà Huy Tập",
     "address": "560 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/hiep-huy-nem-nuong-nha-trang-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/hiep-huy-nem-nuong-nha-trang-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -4692,6 +4847,19 @@
         "fetched_at": "2026-11-27T14:24:15.683Z"
       }
     ],
+    "lat": 21.090416,
+    "lng": 105.922145,
+    "distance_m": 11528,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:19.235Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Hi%E1%BB%87p%20Huy%20-%20Nem%20N%C6%B0%E1%BB%9Bng%20Nha%20Trang%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20560%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -4700,6 +4868,7 @@
     "name": "Trà Chanh Bụi Phố - Hà Huy Tập",
     "address": "392 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tra-chanh-bui-pho-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tra-chanh-bui-pho-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -5063,6 +5232,19 @@
         "fetched_at": "2026-11-27T14:24:21.610Z"
       }
     ],
+    "lat": 21.085831,
+    "lng": 105.918072,
+    "distance_m": 11127,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:20.174Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tr%C3%A0%20Chanh%20B%E1%BB%A5i%20Ph%E1%BB%91%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20392%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -5071,6 +5253,7 @@
     "name": "Gà Rán Five Star- 404 Hà Huy Tập",
     "address": "Số 404 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/ga-ran-five-star-404-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/ga-ran-five-star-404-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -5461,6 +5644,19 @@
         "fetched_at": "2026-11-27T14:24:23.744Z"
       }
     ],
+    "lat": 21.085961,
+    "lng": 105.918095,
+    "distance_m": 11140,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:20.042Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=G%C3%A0%20R%C3%A1n%20Five%20Star-%20404%20H%C3%A0%20Huy%20T%E1%BA%ADp%20S%E1%BB%91%20404%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -5469,6 +5665,7 @@
     "name": "Tiệm Anh Sò - Mì Trộn Indomie & Ăn Vặt",
     "address": "256 Phan Đăng Lưu, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-anh-so-mi-tron-indomie-an-vat",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-anh-so-mi-tron-indomie-an-vat",
     "complete": true,
     "items": [
       {
@@ -5724,6 +5921,19 @@
         "fetched_at": "2026-11-27T14:24:27.085Z"
       }
     ],
+    "lat": 21.081477,
+    "lng": 105.905387,
+    "distance_m": 11073,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:21.691Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20Anh%20S%C3%B2%20-%20M%C3%AC%20Tr%E1%BB%99n%20Indomie%20%26%20%C4%82n%20V%E1%BA%B7t%20256%20Phan%20%C4%90%C4%83ng%20L%C6%B0u%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -5732,6 +5942,7 @@
     "name": "Bún Chả Chấm Chan - 3 Phan Đăng Lưu",
     "address": "Số 3 Phan Đăng Lưu, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-cha-cham-chan-3-phan-dang-luu",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-cha-cham-chan-3-phan-dang-luu",
     "complete": true,
     "items": [
       {
@@ -5834,6 +6045,19 @@
         "fetched_at": "2026-11-27T14:24:28.612Z"
       }
     ],
+    "lat": 21.080394,
+    "lng": 105.9103,
+    "distance_m": 10782,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:22.725Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20Ch%E1%BA%A3%20Ch%E1%BA%A5m%20Chan%20-%203%20Phan%20%C4%90%C4%83ng%20L%C6%B0u%20S%E1%BB%91%203%20Phan%20%C4%90%C4%83ng%20L%C6%B0u%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -5842,8 +6066,22 @@
     "name": "Trà Bí Đao Mộc An - Trà Bí Đao - Phan Đăng Lưu",
     "address": "266 Phan Đăng Lưu, TT. Yên Viên , Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tra-bi-dao-moc-an-tra-bi-dao-phan-dang-luu",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tra-bi-dao-moc-an-tra-bi-dao-phan-dang-luu",
     "complete": false,
     "items": [],
+    "lat": 21.081589,
+    "lng": 105.905217,
+    "distance_m": 11091,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:23.052Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tr%C3%A0%20B%C3%AD%20%C4%90ao%20M%E1%BB%99c%20An%20-%20Tr%C3%A0%20B%C3%AD%20%C4%90ao%20-%20Phan%20%C4%90%C4%83ng%20L%C6%B0u%20266%20Phan%20%C4%90%C4%83ng%20L%C6%B0u%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%20%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -5852,6 +6090,7 @@
     "name": "Sữa Chua Cô Phượng Hạ Long - Cơ Sở Yên Viên",
     "address": "15 Đặng Công Chất, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/sua-chua-co-phuong-ha-long-co-so-yen-vien",
+    "original_source_url": "https://shopeefood.vn/ha-noi/sua-chua-co-phuong-ha-long-co-so-yen-vien",
     "complete": true,
     "items": [
       {
@@ -6242,6 +6481,19 @@
         "fetched_at": "2026-11-27T14:24:33.893Z"
       }
     ],
+    "lat": 21.088987,
+    "lng": 105.922305,
+    "distance_m": 11369,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:24.276Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=S%E1%BB%AFa%20Chua%20C%C3%B4%20Ph%C6%B0%E1%BB%A3ng%20H%E1%BA%A1%20Long%20-%20C%C6%A1%20S%E1%BB%9F%20Y%C3%AAn%20Vi%C3%AAn%2015%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -6250,6 +6502,7 @@
     "name": "Hoa Quả Bổ Sẵn - Hà Huy Tập",
     "address": "17/448 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/hoa-qua-bo-san-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/hoa-qua-bo-san-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -6406,6 +6659,19 @@
         "fetched_at": "2026-11-27T14:24:37.441Z"
       }
     ],
+    "lat": 21.085741,
+    "lng": 105.920206,
+    "distance_m": 11064,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:25.773Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Hoa%20Qu%E1%BA%A3%20B%E1%BB%95%20S%E1%BA%B5n%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%2017/448%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -6414,6 +6680,7 @@
     "name": "Bếp Quỳnh - Cơm Gà Hội An - Hà Huy Tập",
     "address": "9 Ngõ 56 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bep-quynh-com-ga-hoi-an-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bep-quynh-com-ga-hoi-an-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -6489,6 +6756,19 @@
         "fetched_at": "2026-11-27T14:24:38.130Z"
       }
     ],
+    "lat": 21.080095,
+    "lng": 105.91206,
+    "distance_m": 10691,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:25.869Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%E1%BA%BFp%20Qu%E1%BB%B3nh%20-%20C%C6%A1m%20G%C3%A0%20H%E1%BB%99i%20An%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%209%20Ng%C3%B5%2056%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -6497,8 +6777,22 @@
     "name": "Cháo Sườn Sụn, Bún Trộn & Chân Gà Sả Tắc Đồ Ăn Vặt - Hà Huy Tập",
     "address": "Nhà Số 8 Ngõ 484/64 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/chao-suon-sun-bun-tron-chan-ga-sa-tac-do-an-vat-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/chao-suon-sun-bun-tron-chan-ga-sa-tac-do-an-vat-ha-huy-tap",
     "complete": false,
     "items": [],
+    "lat": 21.086115,
+    "lng": 105.920904,
+    "distance_m": 11088,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:27.165Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ch%C3%A1o%20S%C6%B0%E1%BB%9Dn%20S%E1%BB%A5n%2C%20B%C3%BAn%20Tr%E1%BB%99n%20%26%20Ch%C3%A2n%20G%C3%A0%20S%E1%BA%A3%20T%E1%BA%AFc%20%C4%90%E1%BB%93%20%C4%82n%20V%E1%BA%B7t%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20Nh%C3%A0%20S%E1%BB%91%208%20Ng%C3%B5%20484/64%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -6507,6 +6801,7 @@
     "name": "MIZU - VIÊN CHIÊN",
     "address": "Số 36 Ngõ 670 Đường Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/mizu-vien-chien",
+    "original_source_url": "https://shopeefood.vn/ha-noi/mizu-vien-chien",
     "complete": true,
     "items": [
       {
@@ -6780,6 +7075,19 @@
         "fetched_at": "2026-11-27T14:24:43.831Z"
       }
     ],
+    "lat": 21.090654,
+    "lng": 105.927214,
+    "distance_m": 11459,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:28.794Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=MIZU%20-%20VI%C3%8AN%20CHI%C3%8AN%20S%E1%BB%91%2036%20Ng%C3%B5%20670%20%C4%90%C6%B0%E1%BB%9Dng%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -6788,6 +7096,7 @@
     "name": "Nướng Ngói Số 1",
     "address": "Sân Bóng Yên Viên, Số 564 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/nuong-ngoi-so-1",
+    "original_source_url": "https://shopeefood.vn/ha-noi/nuong-ngoi-so-1",
     "complete": true,
     "items": [
       {
@@ -6935,6 +7244,19 @@
         "fetched_at": "2026-11-27T14:24:47.409Z"
       }
     ],
+    "lat": 21.089973,
+    "lng": 105.921997,
+    "distance_m": 11483,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:28.916Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=N%C6%B0%E1%BB%9Bng%20Ng%C3%B3i%20S%E1%BB%91%201%20S%C3%A2n%20B%C3%B3ng%20Y%C3%AAn%20Vi%C3%AAn%2C%20S%E1%BB%91%20564%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -6943,6 +7265,7 @@
     "name": "ZinZon Quán - Sữa Hạt, Nước Ép & Đồ Ăn Vặt",
     "address": "5/670 Đường Đình Xuyên, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/zinzon-quan-sua-hat-nuoc-ep-do-an-vat",
+    "original_source_url": "https://shopeefood.vn/ha-noi/zinzon-quan-sua-hat-nuoc-ep-do-an-vat",
     "complete": true,
     "items": [
       {
@@ -6991,6 +7314,19 @@
         "fetched_at": "2026-11-27T14:24:49.279Z"
       }
     ],
+    "lat": 21.090752,
+    "lng": 105.927129,
+    "distance_m": 11471,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:30.200Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=ZinZon%20Qu%C3%A1n%20-%20S%E1%BB%AFa%20H%E1%BA%A1t%2C%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20%26%20%C4%90%E1%BB%93%20%C4%82n%20V%E1%BA%B7t%205/670%20%C4%90%C6%B0%E1%BB%9Dng%20%C4%90%C3%ACnh%20Xuy%C3%AAn%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -6999,6 +7335,7 @@
     "name": "LaBoong - Trà Ô Long Làng La Boong - Yên Viên",
     "address": "Số 351 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/laboong-tra-o-long-lang-la-boong-yen-vien",
+    "original_source_url": "https://shopeefood.vn/ha-noi/laboong-tra-o-long-lang-la-boong-yen-vien",
     "complete": true,
     "items": [
       {
@@ -7587,6 +7924,19 @@
         "fetched_at": "2026-11-27T14:24:53.714Z"
       }
     ],
+    "lat": 21.086736,
+    "lng": 105.918498,
+    "distance_m": 11214,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:31.038Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=LaBoong%20-%20Tr%C3%A0%20%C3%94%20Long%20L%C3%A0ng%20La%20Boong%20-%20Y%C3%AAn%20Vi%C3%AAn%20S%E1%BB%91%20351%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -7595,6 +7945,7 @@
     "name": "Pika Lê – Yên Viên",
     "address": "Số 36 Ngõ 670 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/pika-le-yen-vien",
+    "original_source_url": "https://shopeefood.vn/ha-noi/pika-le-yen-vien",
     "complete": true,
     "items": [
       {
@@ -7670,6 +8021,19 @@
         "fetched_at": "2026-11-27T14:24:53.692Z"
       }
     ],
+    "lat": 21.090648,
+    "lng": 105.927199,
+    "distance_m": 11459,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:31.576Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "9đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Pika%20L%C3%AA%20%E2%80%93%20Y%C3%AAn%20Vi%C3%AAn%20S%E1%BB%91%2036%20Ng%C3%B5%20670%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -7678,6 +8042,7 @@
     "name": "Bún Mọc, Bún & Phở Sốt Vang - Moọc Quán - 291 Hà Huy Tập",
     "address": "291 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-moc-bun-pho-sot-vang-mooc-quan-291-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-moc-bun-pho-sot-vang-mooc-quan-291-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -7753,6 +8118,19 @@
         "fetched_at": "2026-11-27T14:24:57.306Z"
       }
     ],
+    "lat": 21.08371,
+    "lng": 105.915318,
+    "distance_m": 10975,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:33.205Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "8đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20M%E1%BB%8Dc%2C%20B%C3%BAn%20%26%20Ph%E1%BB%9F%20S%E1%BB%91t%20Vang%20-%20Mo%E1%BB%8Dc%20Qu%C3%A1n%20-%20291%20H%C3%A0%20Huy%20T%E1%BA%ADp%20291%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -7761,6 +8139,7 @@
     "name": "AN Café - Hà Huy Tập",
     "address": "556 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/an-cafe-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/an-cafe-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -8187,6 +8566,19 @@
         "fetched_at": "2026-11-27T14:24:58.921Z"
       }
     ],
+    "lat": 21.090003,
+    "lng": 105.922065,
+    "distance_m": 11485,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:33.777Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=AN%20Caf%C3%A9%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20556%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -8195,6 +8587,7 @@
     "name": "Dân Chơi Yên Viên Quán - Hà Huy Tập",
     "address": "Số 6 Ngõ 368 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/dan-choi-yen-vien-quan-ha-huy-tap.guhzts",
+    "original_source_url": "https://shopeefood.vn/ha-noi/dan-choi-yen-vien-quan-ha-huy-tap.guhzts",
     "complete": true,
     "items": [
       {
@@ -8252,6 +8645,19 @@
         "fetched_at": "2026-11-27T14:25:01.140Z"
       }
     ],
+    "lat": 21.085609,
+    "lng": 105.917664,
+    "distance_m": 11114,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:34.243Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "5đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=D%C3%A2n%20Ch%C6%A1i%20Y%C3%AAn%20Vi%C3%AAn%20Qu%C3%A1n%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20S%E1%BB%91%206%20Ng%C3%B5%20368%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -8260,6 +8666,7 @@
     "name": "ĂN GÌ - Mì & Đồ Ăn Vặt",
     "address": "17 Ngõ 56 Thiên Đức, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/an-gi-mi-do-an-vat",
+    "original_source_url": "https://shopeefood.vn/ha-noi/an-gi-mi-do-an-vat",
     "complete": true,
     "items": [
       {
@@ -8641,6 +9048,19 @@
         "fetched_at": "2026-11-27T14:25:04.063Z"
       }
     ],
+    "lat": 21.080655,
+    "lng": 105.90775,
+    "distance_m": 10900,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:36.227Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "4đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=%C4%82N%20G%C3%8C%20-%20M%C3%AC%20%26%20%C4%90%E1%BB%93%20%C4%82n%20V%E1%BA%B7t%2017%20Ng%C3%B5%2056%20Thi%C3%AAn%20%C4%90%E1%BB%A9c%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -8649,6 +9069,7 @@
     "name": "Bò Nhúng Dấm 1990 - Lẩu Bún Riêu Cua Bò Tóp Mỡ & Chân Cánh Gà - Hà Huy Tập",
     "address": "19 Ngõ 226 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bo-nhung-dam-1990-lau-bun-rieu-cua-bo-top-mo-chan-canh-ga-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bo-nhung-dam-1990-lau-bun-rieu-cua-bo-top-mo-chan-canh-ga-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -8832,6 +9253,19 @@
         "fetched_at": "2026-11-27T14:25:05.262Z"
       }
     ],
+    "lat": 21.082963,
+    "lng": 105.916348,
+    "distance_m": 10865,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:36.164Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "4đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%B2%20Nh%C3%BAng%20D%E1%BA%A5m%201990%20-%20L%E1%BA%A9u%20B%C3%BAn%20Ri%C3%AAu%20Cua%20B%C3%B2%20T%C3%B3p%20M%E1%BB%A1%20%26%20Ch%C3%A2n%20C%C3%A1nh%20G%C3%A0%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%2019%20Ng%C3%B5%20226%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -8840,6 +9274,7 @@
     "name": "Aloha - Trà Sữa, Matcha & Cafe - Chợ Diêm Gỗ",
     "address": "Số 6, Ngõ 466 Đường Ngô Gia Tự, Long Biên, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/aloha-tra-sua-matcha-cafe-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/aloha-tra-sua-matcha-cafe-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -9041,6 +9476,19 @@
         "fetched_at": "2026-11-27T14:25:07.937Z"
       }
     ],
+    "lat": 21.070039,
+    "lng": 105.906144,
+    "distance_m": 9870,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:36.477Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "4đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Aloha%20-%20Tr%C3%A0%20S%E1%BB%AFa%2C%20Matcha%20%26%20Cafe%20-%20Ch%E1%BB%A3%20Di%C3%AAm%20G%E1%BB%97%20S%E1%BB%91%206%2C%20Ng%C3%B5%20466%20%C4%90%C6%B0%E1%BB%9Dng%20Ng%C3%B4%20Gia%20T%E1%BB%B1%2C%20Long%20Bi%C3%AAn%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -9049,6 +9497,7 @@
     "name": "Trà Chanh Giã Tay Xưởng May Éng",
     "address": "Số Nhà 25, Ngách 99, Ngõ 448 Hà Huy Tập, Thị Trấn Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tra-chanh-gia-tay-xuong-may-eng",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tra-chanh-gia-tay-xuong-may-eng",
     "complete": true,
     "items": [
       {
@@ -9169,6 +9618,19 @@
         "fetched_at": "2026-11-27T14:25:08.607Z"
       }
     ],
+    "lat": 21.084782,
+    "lng": 105.921705,
+    "distance_m": 10925,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:38.613Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tr%C3%A0%20Chanh%20Gi%C3%A3%20Tay%20X%C6%B0%E1%BB%9Fng%20May%20%C3%89ng%20S%E1%BB%91%20Nh%C3%A0%2025%2C%20Ng%C3%A1ch%2099%2C%20Ng%C3%B5%20448%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20Th%E1%BB%8B%20Tr%E1%BA%A5n%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -9177,6 +9639,7 @@
     "name": "Royaltea 590 Hà Huy Tập - Hà Huy Tập",
     "address": "590 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/royaltea-590-ha-huy-tap-yen-vien-ha-huy-tap-yen-vien.kh983e",
+    "original_source_url": "https://shopeefood.vn/ha-noi/royaltea-590-ha-huy-tap-yen-vien-ha-huy-tap-yen-vien.kh983e",
     "complete": true,
     "items": [
       {
@@ -9387,6 +9850,19 @@
         "fetched_at": "2026-11-27T14:25:12.485Z"
       }
     ],
+    "lat": 21.090887,
+    "lng": 105.922773,
+    "distance_m": 11567,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:38.874Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Royaltea%20590%20H%C3%A0%20Huy%20T%E1%BA%ADp%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20590%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -9395,6 +9871,7 @@
     "name": "Bami Sociu - Bánh Mì - Hà Huy Tập",
     "address": "Số 253 Hà Huy Tập, tt. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bami-sociu-banh-mi-ha-huy-tap.ctw9kq",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bami-sociu-banh-mi-ha-huy-tap.ctw9kq",
     "complete": true,
     "items": [
       {
@@ -9605,6 +10082,19 @@
         "fetched_at": "2026-11-27T14:25:12.657Z"
       }
     ],
+    "lat": 21.082838,
+    "lng": 105.914559,
+    "distance_m": 10904,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:39.317Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Bami%20Sociu%20-%20B%C3%A1nh%20M%C3%AC%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20S%E1%BB%91%20253%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20tt.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -9613,8 +10103,22 @@
     "name": "CP Five Star - Hà Huy Tập",
     "address": "404 Hà Huy Tập, TT.  Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/cp-five-star-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/cp-five-star-ha-huy-tap",
     "complete": false,
     "items": [],
+    "lat": 21.0861,
+    "lng": 105.918109,
+    "distance_m": 11155,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:40.957Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=CP%20Five%20Star%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20404%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -9623,6 +10127,7 @@
     "name": "Yến Coffee - Yến Sào Khánh Hòa - Phan Đăng Lưu",
     "address": "192 Phan Đăng Lưu, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/yen-coffee-yen-sao-khanh-hoa-phan-dang-luu.0nu2fp",
+    "original_source_url": "https://shopeefood.vn/ha-noi/yen-coffee-yen-sao-khanh-hoa-phan-dang-luu.0nu2fp",
     "complete": true,
     "items": [
       {
@@ -9653,6 +10158,19 @@
         "fetched_at": "2026-11-27T14:25:16.561Z"
       }
     ],
+    "lat": 21.081433,
+    "lng": 105.906792,
+    "distance_m": 11016,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:41.272Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Y%E1%BA%BFn%20Coffee%20-%20Y%E1%BA%BFn%20S%C3%A0o%20Kh%C3%A1nh%20H%C3%B2a%20-%20Phan%20%C4%90%C4%83ng%20L%C6%B0u%20192%20Phan%20%C4%90%C4%83ng%20L%C6%B0u%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -9661,8 +10179,22 @@
     "name": "Yến Yến - Bánh Cuốn Nóng & Gà Ác Tần - Hà Huy Tập",
     "address": "278 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/yen-yen-banh-cuon-nong-ga-ac-tan-tran-quoc-hoan",
+    "original_source_url": "https://shopeefood.vn/ha-noi/yen-yen-banh-cuon-nong-ga-ac-tan-tran-quoc-hoan",
     "complete": false,
     "items": [],
+    "lat": 21.083874,
+    "lng": 105.916,
+    "distance_m": 10973,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:41.943Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Y%E1%BA%BFn%20Y%E1%BA%BFn%20-%20B%C3%A1nh%20Cu%E1%BB%91n%20N%C3%B3ng%20%26%20G%C3%A0%20%C3%81c%20T%E1%BA%A7n%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20278%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -9671,8 +10203,22 @@
     "name": "Lẩu 334 - Lẩu Hải Sản, Lẩu Chim Kê & Lẩu Đuôi Bò - 334 Hà Huy Tập",
     "address": "334 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/lau-334-lau-hai-san-lau-chim-ke-lau-duoi-bo-334-ha-huy-tap-yen-vien.85r85s",
+    "original_source_url": "https://shopeefood.vn/ha-noi/lau-334-lau-hai-san-lau-chim-ke-lau-duoi-bo-334-ha-huy-tap-yen-vien.85r85s",
     "complete": false,
     "items": [],
+    "lat": 21.08479,
+    "lng": 105.917128,
+    "distance_m": 11040,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:43.786Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=L%E1%BA%A9u%20334%20-%20L%E1%BA%A9u%20H%E1%BA%A3i%20S%E1%BA%A3n%2C%20L%E1%BA%A9u%20Chim%20K%C3%AA%20%26%20L%E1%BA%A9u%20%C4%90u%C3%B4i%20B%C3%B2%20-%20334%20H%C3%A0%20Huy%20T%E1%BA%ADp%20334%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -9681,6 +10227,7 @@
     "name": "Bánh Đúc Nóng Bà Huê Béo - Long Biên",
     "address": "417 Hà Huy Tập, TT. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/banh-duc-nong-ba-hue-beo-long-bien",
+    "original_source_url": "https://shopeefood.vn/ha-noi/banh-duc-nong-ba-hue-beo-long-bien",
     "complete": true,
     "items": [
       {
@@ -9720,6 +10267,19 @@
         "fetched_at": "2026-11-27T14:25:26.173Z"
       }
     ],
+    "lat": 21.088744,
+    "lng": 105.920404,
+    "distance_m": 11385,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:43.915Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20%C4%90%C3%BAc%20N%C3%B3ng%20B%C3%A0%20Hu%C3%AA%20B%C3%A9o%20-%20Long%20Bi%C3%AAn%20417%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20TT.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -9728,6 +10288,7 @@
     "name": "RUTA - Trà Sữa Tươi - Nguyễn Quý Trị",
     "address": "Số 2 Nguyễn Quý Trị, Thôn Trung Dương, X. kiêu Kỵ, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/ruta-tra-sua-tuoi-nguyen-quy-tri.zwd4is",
+    "original_source_url": "https://shopeefood.vn/ha-noi/ruta-tra-sua-tuoi-nguyen-quy-tri.zwd4is",
     "complete": true,
     "items": [
       {
@@ -9992,14 +10553,28 @@
         "fetched_at": "2026-11-27T14:25:30.082Z"
       }
     ],
+    "lat": 20.983414,
+    "lng": 105.960258,
+    "distance_m": 1727,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:44.646Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=RUTA%20-%20Tr%C3%A0%20S%E1%BB%AFa%20T%C6%B0%C6%A1i%20-%20Nguy%E1%BB%85n%20Qu%C3%BD%20Tr%E1%BB%8B%20S%E1%BB%91%202%20Nguy%E1%BB%85n%20Qu%C3%BD%20Tr%E1%BB%8B%2C%20Th%C3%B4n%20Trung%20D%C6%B0%C6%A1ng%2C%20X.%20ki%C3%AAu%20K%E1%BB%B5%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
     "store_id": "sf_0042",
     "place_id": "",
-    "name": "Trà Sữa Cô Khuyên - 14 Ngõ 533 Nguyễn Bình",
+    "name": "Trà Sữa Cô Khuyên - 14 Ngõ 533 Nguyễn Bình ",
     "address": "14 Ngõ 533 Nguyễn Bình, X. Dương Xá, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tra-sua-co-khuyen-14-ngo-533-nguyen-binh",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tra-sua-co-khuyen-14-ngo-533-nguyen-binh",
     "complete": true,
     "items": [
       {
@@ -10390,16 +10965,43 @@
         "fetched_at": "2026-11-27T14:25:31.303Z"
       }
     ],
+    "lat": 21.002414,
+    "lng": 105.964112,
+    "distance_m": 2514,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:46.508Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tr%C3%A0%20S%E1%BB%AFa%20C%C3%B4%20Khuy%C3%AAn%20-%2014%20Ng%C3%B5%20533%20Nguy%E1%BB%85n%20B%C3%ACnh%2014%20Ng%C3%B5%20533%20Nguy%C3%AA%CC%83n%20Bi%CC%80nh%2C%20X.%20D%C6%B0%C6%A1ng%20Xa%CC%81%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
     "store_id": "sf_0043",
     "place_id": "",
-    "name": "",
-    "address": "",
-    "source_url": "https://shopeefood.com.vn/quan/tra-sua-tocotoco-100-co-bi",
+    "name": "Trà Sữa TocoToco - 100 Cổ Bi",
+    "address": "100 Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
+    "source_url": "https://shopeefood.vn/ha-noi/tra-sua-tocotoco-100-co-bi",
+    "original_source_url": "https://shopeefood.com.vn/quan/tra-sua-tocotoco-100-co-bi",
     "complete": false,
     "items": [],
+    "lat": 21.024259,
+    "lng": 105.939461,
+    "distance_m": 3969,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata (resolved official listing)",
+    "coordinate_fetched_at": "2026-11-28T04:57:51.927Z",
+    "status_at_fetch": "",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=%20"
   },
   {
@@ -10408,6 +11010,7 @@
     "name": "Bún Bò Huế - 108 Cổ Bi",
     "address": "108 Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-bo-hue-108-co-bi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-bo-hue-108-co-bi",
     "complete": true,
     "items": [
       {
@@ -10474,6 +11077,19 @@
         "fetched_at": "2026-11-27T14:25:34.634Z"
       }
     ],
+    "lat": 21.024315,
+    "lng": 105.93956,
+    "distance_m": 3974,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:47.016Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20B%C3%B2%20Hu%E1%BA%BF%20-%20108%20C%E1%BB%95%20Bi%20108%20C%E1%BB%95%20Bi%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -10482,6 +11098,7 @@
     "name": "Mixue - Kem & Trà Sữa - Cổ Bi",
     "address": "82 Cổ Bi, Xã Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/mixue-kem-tra-sua-co-bi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/mixue-kem-tra-sua-co-bi",
     "complete": true,
     "items": [
       {
@@ -10755,6 +11372,19 @@
         "fetched_at": "2026-11-27T14:25:39.824Z"
       }
     ],
+    "lat": 21.023974,
+    "lng": 105.939259,
+    "distance_m": 3941,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:48.878Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Mixue%20-%20Kem%20%26%20Tr%C3%A0%20S%E1%BB%AFa%20-%20C%E1%BB%95%20Bi%2082%20C%E1%BB%95%20Bi%2C%20X%C3%A3%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -10763,6 +11393,7 @@
     "name": "Bánh Mì Hai Hai - Bánh Mì Muối Ớt & Sốt Kem Phô Mai - Trâu Quỳ",
     "address": "20 Trâu Quỳ, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/banh-mi-hai-hai-banh-mi-muoi-ot-sot-kem-pho-mai-duong-quang-ham",
+    "original_source_url": "https://shopeefood.vn/ha-noi/banh-mi-hai-hai-banh-mi-muoi-ot-sot-kem-pho-mai-duong-quang-ham",
     "complete": true,
     "items": [
       {
@@ -10982,6 +11613,19 @@
         "fetched_at": "2026-11-27T14:25:44.551Z"
       }
     ],
+    "lat": 21.022496,
+    "lng": 105.936137,
+    "distance_m": 3840,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:49.414Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20M%C3%AC%20Hai%20Hai%20-%20B%C3%A1nh%20M%C3%AC%20Mu%E1%BB%91i%20%E1%BB%9At%20%26%20S%E1%BB%91t%20Kem%20Ph%C3%B4%20Mai%20-%20Tr%C3%A2u%20Qu%E1%BB%B3%2020%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -10990,6 +11634,7 @@
     "name": "Cha Tra Thai - Trà Thái Đường Phố Phong Cách BangKok - Cổ Bi",
     "address": "45 Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/cha-tra-thai-tra-thai-duong-pho-phong-cach-bangkok-co-bi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/cha-tra-thai-tra-thai-duong-pho-phong-cach-bangkok-co-bi",
     "complete": true,
     "items": [
       {
@@ -11686,6 +12331,19 @@
         "fetched_at": "2026-11-27T14:25:50.711Z"
       }
     ],
+    "lat": 21.023182,
+    "lng": 105.938692,
+    "distance_m": 3863,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:50.873Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Cha%20Tra%20Thai%20-%20Tr%C3%A0%20Th%C3%A1i%20%C4%90%C6%B0%E1%BB%9Dng%20Ph%E1%BB%91%20Phong%20C%C3%A1ch%20BangKok%20-%20C%E1%BB%95%20Bi%2045%20C%E1%BB%95%20Bi%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -11694,6 +12352,7 @@
     "name": "Bún Riêu Cua Tóp Mỡ 1992 - Gia Lâm",
     "address": "47 Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-rieu-cua-top-mo-1992-gia-lam",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-rieu-cua-top-mo-1992-gia-lam",
     "complete": true,
     "items": [
       {
@@ -11985,6 +12644,19 @@
         "fetched_at": "2026-11-27T14:25:56.281Z"
       }
     ],
+    "lat": 21.023373,
+    "lng": 105.938731,
+    "distance_m": 3883,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:51.787Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20Ri%C3%AAu%20Cua%20T%C3%B3p%20M%E1%BB%A1%201992%20-%20Gia%20L%C3%A2m%2047%20C%E1%BB%95%20Bi%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -11993,6 +12665,7 @@
     "name": "Homefarm - Thực Phẩm Cao Cấp - Đặng Xá",
     "address": "Khu Tái Định Cư X8, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/homefarm-thuc-pham-cao-cap-dang-xa",
+    "original_source_url": "https://shopeefood.vn/ha-noi/homefarm-thuc-pham-cao-cap-dang-xa",
     "complete": true,
     "items": [
       {
@@ -14732,6 +15405,19 @@
         "fetched_at": "2026-11-27T14:26:06.961Z"
       }
     ],
+    "lat": 21.016919,
+    "lng": 105.946031,
+    "distance_m": 3119,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:53.302Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Homefarm%20-%20Th%E1%BB%B1c%20Ph%E1%BA%A9m%20Cao%20C%E1%BA%A5p%20-%20%C4%90%E1%BA%B7ng%20X%C3%A1%20Khu%20T%C3%A1i%20%C4%90%E1%BB%8Bnh%20C%C6%B0%20X8%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -14740,6 +15426,7 @@
     "name": "Tiệm Ăn Phở Học - Gia Lâm",
     "address": "136 Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-an-pho-hoc-gia-lam",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-an-pho-hoc-gia-lam",
     "complete": true,
     "items": [
       {
@@ -14968,6 +15655,19 @@
         "fetched_at": "2026-11-27T14:26:02.075Z"
       }
     ],
+    "lat": 21.025832,
+    "lng": 105.940078,
+    "distance_m": 4135,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:54.414Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20%C4%82n%20Ph%E1%BB%9F%20H%E1%BB%8Dc%20-%20Gia%20L%C3%A2m%20136%20C%E1%BB%95%20Bi%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -14976,6 +15676,7 @@
     "name": "Phở Gà Thịnh Vượng - Cổ Bi",
     "address": "Số 18 Đ. Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/pho-ga-thinh-vuong-co-bi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/pho-ga-thinh-vuong-co-bi",
     "complete": true,
     "items": [
       {
@@ -15150,6 +15851,19 @@
         "fetched_at": "2026-11-27T14:26:08.869Z"
       }
     ],
+    "lat": 21.022146,
+    "lng": 105.9388,
+    "distance_m": 3747,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:55.692Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ph%E1%BB%9F%20G%C3%A0%20Th%E1%BB%8Bnh%20V%C6%B0%E1%BB%A3ng%20-%20C%E1%BB%95%20Bi%20S%E1%BB%91%2018%20%C4%90.%20C%E1%BB%95%20Bi%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -15158,6 +15872,7 @@
     "name": "TIỆM TRÀ CHANH 1996 - Cổ Bi",
     "address": "Số 71 Đường Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-tra-chanh-1996-co-bi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-tra-chanh-1996-co-bi",
     "complete": true,
     "items": [
       {
@@ -15521,6 +16236,19 @@
         "fetched_at": "2026-11-27T14:26:14.276Z"
       }
     ],
+    "lat": 21.026359,
+    "lng": 105.940216,
+    "distance_m": 4191,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:56.551Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=TI%E1%BB%86M%20TR%C3%80%20CHANH%201996%20-%20C%E1%BB%95%20Bi%20S%E1%BB%91%2071%20%C4%90%C6%B0%E1%BB%9Dng%20C%E1%BB%95%20Bi%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -15529,6 +16257,7 @@
     "name": "Bít Tết - Quán Ăn - 112 Cổ Bi",
     "address": "112 Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bit-tet-quan-an-112-co-bi.dldm1s",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bit-tet-quan-an-112-co-bi.dldm1s",
     "complete": true,
     "items": [
       {
@@ -15676,6 +16405,19 @@
         "fetched_at": "2026-11-27T14:26:14.593Z"
       }
     ],
+    "lat": 21.02441,
+    "lng": 105.939472,
+    "distance_m": 3986,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:58.366Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%ADt%20T%E1%BA%BFt%20-%20Qu%C3%A1n%20%C4%82n%20-%20112%20C%E1%BB%95%20Bi%20112%20C%E1%BB%95%20Bi%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -15684,6 +16426,7 @@
     "name": "Xiao Dimsum - Há Cảo Và Bánh Bao Chuẩn Vị Trung Hoa",
     "address": "D13 Khu Đô Thị Đặng Xá, Xã Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/xiao-dimsum-ha-cao-va-banh-bao-chuan-vi-trung-hoa",
+    "original_source_url": "https://shopeefood.vn/ha-noi/xiao-dimsum-ha-cao-va-banh-bao-chuan-vi-trung-hoa",
     "complete": true,
     "items": [
       {
@@ -15858,6 +16601,19 @@
         "fetched_at": "2026-11-27T14:26:21.321Z"
       }
     ],
+    "lat": 21.021402,
+    "lng": 105.950609,
+    "distance_m": 3666,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:54:58.924Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "7đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Xiao%20Dimsum%20-%20H%C3%A1%20C%E1%BA%A3o%20V%C3%A0%20B%C3%A1nh%20Bao%20Chu%E1%BA%A9n%20V%E1%BB%8B%20Trung%20Hoa%20D13%20Khu%20%C4%90%C3%B4%20Th%E1%BB%8B%20%C4%90%E1%BA%B7ng%20X%C3%A1%2C%20X%C3%A3%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -15866,6 +16622,7 @@
     "name": "Tứ Hải - Bánh Mỳ - KĐT Đăng Xá",
     "address": "29 Lâm Viên, KĐT Đặng Xá, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tu-hai-banh-my-kdt-dang-xa.vopbqi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tu-hai-banh-my-kdt-dang-xa.vopbqi",
     "complete": true,
     "items": [
       {
@@ -16004,6 +16761,19 @@
         "fetched_at": "2026-11-27T14:26:20.061Z"
       }
     ],
+    "lat": 21.019153,
+    "lng": 105.949976,
+    "distance_m": 3408,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:00.744Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "7đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=T%E1%BB%A9%20H%E1%BA%A3i%20-%20B%C3%A1nh%20M%E1%BB%B3%20-%20K%C4%90T%20%C4%90%C4%83ng%20X%C3%A1%2029%20L%C3%A2m%20Vi%C3%AAn%2C%20K%C4%90T%20%C4%90%E1%BA%B7ng%20X%C3%A1%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -16012,6 +16782,7 @@
     "name": "Sisi Coffee - Sữa Lắc - Vinhome Ocean Park",
     "address": "Hải Âu, SP01-18 Vinhome Ocean Park, Xã Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/sisi-coffee-sua-lac-vinhome-ocean-park",
+    "original_source_url": "https://shopeefood.vn/ha-noi/sisi-coffee-sua-lac-vinhome-ocean-park",
     "complete": true,
     "items": [
       {
@@ -16348,6 +17119,19 @@
         "fetched_at": "2026-11-27T14:26:25.407Z"
       }
     ],
+    "lat": 20.992879,
+    "lng": 105.958649,
+    "distance_m": 1514,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:01.278Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "7đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Sisi%20Coffee%20-%20S%E1%BB%AFa%20L%E1%BA%AFc%20-%20Vinhome%20Ocean%20Park%20H%E1%BA%A3i%20%C3%82u%2C%20SP01-18%20Vinhome%20Ocean%20Park%2C%20X%C3%A3%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -16356,6 +17140,7 @@
     "name": "Coffee & Tea - Cà Phê Muối & Trà Chanh - Cổ Bi",
     "address": "37 Ngõ 142 Cổ Bi, X.Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/coffee-tea-ca-phe-muoi-tra-chanh-co-bi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/coffee-tea-ca-phe-muoi-tra-chanh-co-bi",
     "complete": true,
     "items": [
       {
@@ -16503,6 +17288,19 @@
         "fetched_at": "2026-11-27T14:26:26.543Z"
       }
     ],
+    "lat": 21.027654,
+    "lng": 105.941668,
+    "distance_m": 4321,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:03.585Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Coffee%20%26%20Tea%20-%20C%C3%A0%20Ph%C3%AA%20Mu%E1%BB%91i%20%26%20Tr%C3%A0%20Chanh%20-%20C%C3%B4%CC%89%20Bi%2037%20Ng%C3%B5%20142%20C%E1%BB%95%20Bi%2C%20X.C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -16511,6 +17309,7 @@
     "name": "Mộc Trà - Trà Trái Cây & Đồ Ăn - Gia Lâm",
     "address": "24 Đê Vàng - Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/moc-tra-tra-trai-cay-do-an-gia-lam",
+    "original_source_url": "https://shopeefood.vn/ha-noi/moc-tra-tra-trai-cay-do-an-gia-lam",
     "complete": true,
     "items": [
       {
@@ -16739,6 +17538,19 @@
         "fetched_at": "2026-11-27T14:26:31.261Z"
       }
     ],
+    "lat": 21.037063,
+    "lng": 105.938101,
+    "distance_m": 5399,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:04.580Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=M%E1%BB%99c%20Tr%C3%A0%20-%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20%26%20%C4%90%E1%BB%93%20%C4%82n%20-%20Gia%20L%C3%A2m%2024%20%C4%90%C3%AA%20V%C3%A0ng%20-%20C%E1%BB%95%20Bi%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -16747,6 +17559,7 @@
     "name": "Tiệm Xôi Việt",
     "address": "154 Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-xoi-viet",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-xoi-viet",
     "complete": true,
     "items": [
       {
@@ -16786,6 +17599,19 @@
         "fetched_at": "2026-11-27T14:26:30.818Z"
       }
     ],
+    "lat": 21.027984,
+    "lng": 105.940782,
+    "distance_m": 4365,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:04.078Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20X%C3%B4i%20Vi%E1%BB%87t%20154%20C%E1%BB%95%20Bi%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -16794,6 +17620,7 @@
     "name": "Miutea - Cổ Bi",
     "address": "93 Cổ Bi, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/miutea-co-bi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/miutea-co-bi",
     "complete": true,
     "items": [
       {
@@ -17382,6 +18209,19 @@
         "fetched_at": "2026-11-27T14:26:36.482Z"
       }
     ],
+    "lat": 21.028249,
+    "lng": 105.940695,
+    "distance_m": 4395,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:06.476Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Miutea%20-%20C%E1%BB%95%20Bi%2093%20C%E1%BB%95%20Bi%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -17390,6 +18230,7 @@
     "name": "Mamgo Tree - Trà Chanh, Trà Tắc & Khoai Mỡ Lắc - Thôn Cam",
     "address": "34 Ngõ 270, Thôn Cam, X. Cổ Bi, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/mamgo-tree-tra-chanh-tra-tac-khoai-mo-lac-thon-cam",
+    "original_source_url": "https://shopeefood.vn/ha-noi/mamgo-tree-tra-chanh-tra-tac-khoai-mo-lac-thon-cam",
     "complete": true,
     "items": [
       {
@@ -17483,6 +18324,19 @@
         "fetched_at": "2026-11-27T14:26:35.337Z"
       }
     ],
+    "lat": 21.03061,
+    "lng": 105.944325,
+    "distance_m": 4638,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:06.479Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Mamgo%20Tree%20-%20Tr%C3%A0%20Chanh%2C%20Tr%C3%A0%20T%E1%BA%AFc%20%26%20Khoai%20M%E1%BB%A1%20L%E1%BA%AFc%20-%20Th%C3%B4n%20Cam%2034%20Ng%C3%B5%20270%2C%20Th%C3%B4n%20Cam%2C%20X.%20C%E1%BB%95%20Bi%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -17491,6 +18345,7 @@
     "name": "Kona Coffee And Tea - Cà Phê Và Trà Sữa - Đặng Xá",
     "address": "Thang 1 D11 KĐT Đặng Xá, X. Đặng Xá, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/kona-coffee-and-tea-ca-phe-va-tra-sua-dang-xa",
+    "original_source_url": "https://shopeefood.vn/ha-noi/kona-coffee-and-tea-ca-phe-va-tra-sua-dang-xa",
     "complete": true,
     "items": [
       {
@@ -17656,6 +18511,19 @@
         "fetched_at": "2026-11-27T14:26:39.721Z"
       }
     ],
+    "lat": 21.020937,
+    "lng": 105.950003,
+    "distance_m": 3605,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:07.104Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Kona%20Coffee%20And%20Tea%20-%20C%C3%A0%20Ph%C3%AA%20V%C3%A0%20Tr%C3%A0%20S%E1%BB%AFa%20-%20%C4%90%E1%BA%B7ng%20X%C3%A1%20Thang%201%20D11%20K%C4%90T%20%C4%90%E1%BA%B7ng%20X%C3%A1%2C%20X.%20%C4%90%C4%83%CC%A3ng%20Xa%CC%81%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -17664,6 +18532,7 @@
     "name": "Chạo Chân Giò Nam Định Hào Quang - Thức Ăn - Đặng Xá",
     "address": "Toà A2D2 KĐT Đặng Xá, X. Đặng Xá, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/chao-chan-gio-nam-dinh-hao-quang-thuc-an-dang-xa",
+    "original_source_url": "https://shopeefood.vn/ha-noi/chao-chan-gio-nam-dinh-hao-quang-thuc-an-dang-xa",
     "complete": true,
     "items": [
       {
@@ -17712,6 +18581,19 @@
         "fetched_at": "2026-11-27T14:26:39.881Z"
       }
     ],
+    "lat": 21.014048,
+    "lng": 105.951906,
+    "distance_m": 2895,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:09.114Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ch%E1%BA%A1o%20Ch%C3%A2n%20Gi%C3%B2%20Nam%20%C4%90%E1%BB%8Bnh%20H%C3%A0o%20Quang%20-%20Th%E1%BB%A9c%20%C4%82n%20-%20%C4%90%E1%BA%B7ng%20X%C3%A1%20To%C3%A0%20A2D2%20K%C4%90T%20%C4%90%E1%BA%B7ng%20X%C3%A1%2C%20X.%20%C4%90%C4%83%CC%A3ng%20Xa%CC%81%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -17720,8 +18602,22 @@
     "name": "Nhà Hàng Thanh Tú - Vịt Quay - KĐT Đặng Xá",
     "address": "N06 - 201 KĐT Đặng Xá, X. Đặng Xá, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/nha-hang-thanh-tu-vit-quay-kdt-dang-xa",
+    "original_source_url": "https://shopeefood.vn/ha-noi/nha-hang-thanh-tu-vit-quay-kdt-dang-xa",
     "complete": false,
     "items": [],
+    "lat": 21.018491,
+    "lng": 105.948518,
+    "distance_m": 3314,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:09.144Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Nh%C3%A0%20H%C3%A0ng%20Thanh%20T%C3%BA%20-%20V%E1%BB%8Bt%20Quay%20-%20K%C4%90T%20%C4%90%C4%83%CC%A3ng%20Xa%CC%81%20N06%20-%20201%20K%C4%90T%20%C4%90%C4%83%CC%A3ng%20Xa%CC%81%2C%20X.%20%C4%90%C4%83%CC%A3ng%20Xa%CC%81%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -17730,6 +18626,7 @@
     "name": "Bánh Mì Ngon Truyền Thống",
     "address": "Số 7 Ngõ 201 Ngách 155, Đường Đa Tốn, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/banh-mi-ngon-truyen-thong",
+    "original_source_url": "https://shopeefood.vn/ha-noi/banh-mi-ngon-truyen-thong",
     "complete": true,
     "items": [
       {
@@ -17787,6 +18684,19 @@
         "fetched_at": "2026-11-27T14:26:43.508Z"
       }
     ],
+    "lat": 20.991888,
+    "lng": 105.928496,
+    "distance_m": 1715,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:09.485Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "500+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20M%C3%AC%20Ngon%20Truy%E1%BB%81n%20Th%E1%BB%91ng%20S%E1%BB%91%207%20Ng%C3%B5%20201%20Ng%C3%A1ch%20155%2C%20%C4%90%C6%B0%E1%BB%9Dng%20%C4%90a%20T%E1%BB%91n%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -17795,6 +18705,7 @@
     "name": "Tiệm Mỳ Vằn Thắn 36 Phố Hàng - Vinhome Ocean Park",
     "address": "Căn 01S22 Toà P3 PAVILION, Vinhomes Ocenpark, Đường Lý Thánh Tông, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-my-van-than-36-pho-hang-vinhome-ocean-park",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-my-van-than-36-pho-hang-vinhome-ocean-park",
     "complete": true,
     "items": [
       {
@@ -17906,6 +18817,19 @@
         "fetched_at": "2026-11-27T14:26:47.796Z"
       }
     ],
+    "lat": 21.003512,
+    "lng": 105.945738,
+    "distance_m": 1628,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:11.569Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20M%E1%BB%B3%20V%E1%BA%B1n%20Th%E1%BA%AFn%2036%20Ph%E1%BB%91%20H%C3%A0ng%20-%20Vinhome%20Ocean%20Park%20C%C4%83n%2001S22%20To%C3%A0%20P3%20PAVILION%2C%20Vinhomes%20Ocenpark%2C%20%C4%90%C6%B0%E1%BB%9Dng%20L%C3%BD%20Th%C3%A1nh%20T%C3%B4ng%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -17914,6 +18838,7 @@
     "name": "Bếp Hương - Mì Trộn Indomie, Viên Chiên & Ăn Đêm - Vinhome Ocean Park",
     "address": "S109 Vinhome Ocean Park, P.Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bep-huong-mi-tron-indomie-vien-chien-an-dem-vinhome-ocean-park",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bep-huong-mi-tron-indomie-vien-chien-an-dem-vinhome-ocean-park",
     "complete": true,
     "items": [
       {
@@ -18331,6 +19256,19 @@
         "fetched_at": "2026-11-27T14:26:51.730Z"
       }
     ],
+    "lat": 20.99564,
+    "lng": 105.942963,
+    "distance_m": 771,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:11.779Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%E1%BA%BFp%20H%C6%B0%C6%A1ng%20-%20M%C3%AC%20Tr%E1%BB%99n%20Indomie%2C%20Vi%C3%AAn%20Chi%C3%AAn%20%26%20%C4%82n%20%C4%90%C3%AAm%20-%20Vinhome%20Ocean%20Park%20S109%20Vinhome%20Ocean%20Park%2C%20P.%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -18339,6 +19277,7 @@
     "name": "Tiệm Đồ Trộn Phương Thảo - Khoai Trộn Cay Tê - Vinhomes Ocean Park",
     "address": "Sảnh chính toà S1.10 Vinhomes Ocean Park, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-do-tron-phuong-thao-khoai-tron-cay-te-vinhomes-ocean-park",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-do-tron-phuong-thao-khoai-tron-cay-te-vinhomes-ocean-park",
     "complete": true,
     "items": [
       {
@@ -18747,6 +19686,19 @@
         "fetched_at": "2026-11-27T14:26:53.076Z"
       }
     ],
+    "lat": 20.995723,
+    "lng": 105.944271,
+    "distance_m": 760,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:11.776Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20%C4%90%E1%BB%93%20Tr%E1%BB%99n%20Ph%C6%B0%C6%A1ng%20Th%E1%BA%A3o%20-%20Khoai%20Tr%E1%BB%99n%20Cay%20T%C3%AA%20-%20Vinhomes%20Ocean%20Park%20S%E1%BA%A3nh%20ch%C3%ADnh%20to%C3%A0%20S1.10%20Vinhomes%20Ocean%20Park%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -18755,6 +19707,7 @@
     "name": "Làng Chài Hạ Long - Bún Hải Sản & Cơm Văn Phòng - KĐT Vinhomes Ocean Park",
     "address": "Tòa S101 KĐT Vinhomes Ocean Park, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/lang-chai-ha-long-bun-hai-san-com-van-phong-kdt-vinhomes-ocean-park.q3fokk",
+    "original_source_url": "https://shopeefood.vn/ha-noi/lang-chai-ha-long-bun-hai-san-com-van-phong-kdt-vinhomes-ocean-park.q3fokk",
     "complete": true,
     "items": [
       {
@@ -19496,6 +20449,19 @@
         "fetched_at": "2026-11-27T14:26:58.582Z"
       }
     ],
+    "lat": 20.994,
+    "lng": 105.943011,
+    "distance_m": 594,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:14.315Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=L%C3%A0ng%20Ch%C3%A0i%20H%E1%BA%A1%20Long%20-%20B%C3%BAn%20H%E1%BA%A3i%20S%E1%BA%A3n%20%26%20C%C6%A1m%20V%C4%83n%20Ph%C3%B2ng%20-%20K%C4%90T%20Vinhomes%20Ocean%20Park%20T%C3%B2a%20S101%20K%C4%90T%20Vinhomes%20Ocean%20Park%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -19504,6 +20470,7 @@
     "name": "Quán Minh Phúc Đặc Sản Bánh Cuốn Chả Phủ Lý - Bún Chả & Bánh Đa Cá Rô Đồng",
     "address": "Căn 01SH5A Tòa S1 06 KĐT Vinhomes Ocean Park, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/quan-minh-phuc-dac-san-banh-cuon-cha-phu-ly-bun-cha-banh-da-ca-ro-dong",
+    "original_source_url": "https://shopeefood.vn/ha-noi/quan-minh-phuc-dac-san-banh-cuon-cha-phu-ly-bun-cha-banh-da-ca-ro-dong",
     "complete": true,
     "items": [
       {
@@ -19624,6 +20591,19 @@
         "fetched_at": "2026-11-27T14:26:56.746Z"
       }
     ],
+    "lat": 20.995382,
+    "lng": 105.939758,
+    "distance_m": 885,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:14.621Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Qu%C3%A1n%20Minh%20Ph%C3%BAc%20%C4%90%E1%BA%B7c%20S%E1%BA%A3n%20B%C3%A1nh%20Cu%E1%BB%91n%20Ch%E1%BA%A3%20Ph%E1%BB%A7%20L%C3%BD%20-%20B%C3%BAn%20Ch%E1%BA%A3%20%26%20B%C3%A1nh%20%C4%90a%20C%C3%A1%20R%C3%B4%20%C4%90%E1%BB%93ng%20C%C4%83n%2001SH5A%20T%C3%B2a%20S1%2006%20K%C4%90T%20Vinhomes%20Ocean%20Park%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -19632,6 +20612,7 @@
     "name": "Bánh Mì Hội An - Vinhomes Ocean Park",
     "address": "S201. 01S12A Vinhomes Ocean Park, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/banh-mi-hoi-an-vinhomes-ocean-park",
+    "original_source_url": "https://shopeefood.vn/ha-noi/banh-mi-hoi-an-vinhomes-ocean-park",
     "complete": true,
     "items": [
       {
@@ -19653,6 +20634,19 @@
         "fetched_at": "2026-11-27T14:27:03.459Z"
       }
     ],
+    "lat": 20.990503,
+    "lng": 105.940793,
+    "distance_m": 443,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:14.285Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20M%C3%AC%20H%E1%BB%99i%20An%20-%20Vinhomes%20Ocean%20Park%20S201.%2001S12A%20Vinhomes%20Ocean%20Park%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -19661,6 +20655,7 @@
     "name": "Koonbriu Coffee - Cà Phê, Cold Brew & Matcha - Vinhomes Ocean Park 1",
     "address": "Toà Zurich 1 -khu đô thị Vinhome Ocean Park 1, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/koonbriu-coffee-ca-phe-cold-brew-matcha-vinhomes-ocean-park-1",
+    "original_source_url": "https://shopeefood.vn/ha-noi/koonbriu-coffee-ca-phe-cold-brew-matcha-vinhomes-ocean-park-1",
     "complete": true,
     "items": [
       {
@@ -19844,6 +20839,19 @@
         "fetched_at": "2026-11-27T14:27:06.559Z"
       }
     ],
+    "lat": 20.995548,
+    "lng": 105.937455,
+    "distance_m": 1055,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:17.292Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "6đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Koonbriu%20Coffee%20-%20C%C3%A0%20Ph%C3%AA%2C%20Cold%20Brew%20%26%20Matcha%20-%20Vinhomes%20Ocean%20Park%201%20To%C3%A0%20Zurich%201%20-khu%20%C4%91%C3%B4%20th%E1%BB%8B%20Vinhome%20Ocean%20Park%201%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -19852,6 +20860,7 @@
     "name": "Chân Giò Heo Quay - Lực Phát - Đa Tốn",
     "address": "172 Đa Tốn, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/chan-gio-heo-quay-luc-phat-da-ton",
+    "original_source_url": "https://shopeefood.vn/ha-noi/chan-gio-heo-quay-luc-phat-da-ton",
     "complete": true,
     "items": [
       {
@@ -19891,6 +20900,19 @@
         "fetched_at": "2026-11-27T14:27:08.558Z"
       }
     ],
+    "lat": 20.985768,
+    "lng": 105.928122,
+    "distance_m": 1756,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:17.160Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "5đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ch%C3%A2n%20Gi%C3%B2%20Heo%20Quay%20-%20L%E1%BB%B1c%20Ph%C3%A1t%20-%20%C4%90a%20T%E1%BB%91n%20172%20%C4%90a%20T%E1%BB%91n%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -19899,6 +20921,7 @@
     "name": "TIÊU QUÁN - Cơm Gà Chiên Mắm, Cơm Bò Sốt Tiêu Đen & Bánh Mỳ Đĩa",
     "address": "S219-1009 Vinhomes Ocean Park, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tieu-quan-com-ga-chien-mam-com-bo-sot-tieu-den-banh-my-dia",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tieu-quan-com-ga-chien-mam-com-bo-sot-tieu-den-banh-my-dia",
     "complete": true,
     "items": [
       {
@@ -20118,6 +21141,19 @@
         "fetched_at": "2026-11-27T14:27:12.780Z"
       }
     ],
+    "lat": 20.992823,
+    "lng": 105.942065,
+    "distance_m": 515,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:17.060Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=TI%C3%8AU%20QU%C3%81N%20-%20C%C6%A1m%20G%C3%A0%20Chi%C3%AAn%20M%E1%BA%AFm%2C%20C%C6%A1m%20B%C3%B2%20S%E1%BB%91t%20Ti%C3%AAu%20%C4%90en%20%26%20B%C3%A1nh%20M%E1%BB%B3%20%C4%90%C4%A9a%20S219-1009%20Vinhomes%20Ocean%20Park%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -20126,6 +21162,7 @@
     "name": "Bếp Nhà MUM - Xôi Chim & Bún Riêu",
     "address": "S1-06 Vinhome Ocean Park, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bep-nha-mum-xoi-chim-bun-rieu",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bep-nha-mum-xoi-chim-bun-rieu",
     "complete": true,
     "items": [
       {
@@ -20156,6 +21193,19 @@
         "fetched_at": "2026-11-27T14:27:14.323Z"
       }
     ],
+    "lat": 20.99335,
+    "lng": 105.942847,
+    "distance_m": 531,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:19.689Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%E1%BA%BFp%20Nh%C3%A0%20MUM%20-%20X%C3%B4i%20Chim%20%26%20B%C3%BAn%20Ri%C3%AAu%20S1-06%20Vinhome%20Ocean%20Park%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -20164,8 +21214,22 @@
     "name": "Bánh Tráng Trộn Ocean - H3 Masteri OceanPark 1",
     "address": "H3 Masteri Waterfront, Vinhomes OceanPark 1, P. Đa Tốn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/banh-trang-tron-ocean-h3-masteri-oceanpark-1",
+    "original_source_url": "https://shopeefood.vn/ha-noi/banh-trang-tron-ocean-h3-masteri-oceanpark-1",
     "complete": false,
     "items": [],
+    "lat": 20.994268,
+    "lng": 105.945496,
+    "distance_m": 603,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:19.996Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%99n%20Ocean%20-%20H3%20Masteri%20OceanPark%201%20H3%20Masteri%20Waterfront%2C%20Vinhomes%20OceanPark%201%2C%20P.%20%C4%90a%20T%E1%BB%91n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -20174,6 +21238,7 @@
     "name": "Trà Sữa TocoToco - 361 Hà Huy Tập",
     "address": "361 Hà Huy Tập, X. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tra-sua-tocotoco-361-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tra-sua-tocotoco-361-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -20699,6 +21764,19 @@
         "fetched_at": "2026-11-27T14:27:20.816Z"
       }
     ],
+    "lat": 21.08684,
+    "lng": 105.918715,
+    "distance_m": 11219,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:19.115Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "999+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tr%C3%A0%20S%E1%BB%AFa%20TocoToco%20-%20361%20H%C3%A0%20Huy%20T%E1%BA%ADp%20361%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20X.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -20707,6 +21785,7 @@
     "name": "Ngan Việt Hoa - Hà Huy Tập",
     "address": "375 Hà Huy Tập, X. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/ngan-viet-hoa-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/ngan-viet-hoa-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -21160,6 +22239,19 @@
         "fetched_at": "2026-11-27T14:27:24.981Z"
       }
     ],
+    "lat": 21.087078,
+    "lng": 105.918757,
+    "distance_m": 11244,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:21.296Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ngan%20Vi%E1%BB%87t%20Hoa%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20375%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20X.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -21168,6 +22260,7 @@
     "name": "Cơm Tấm Sài Gòn Bảo Nam - Hà Huy Tập",
     "address": "8 ngõ 292 Hà Huy Tập, X. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/com-tam-sai-gon-bao-nam-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/com-tam-sai-gon-bao-nam-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -21405,6 +22498,19 @@
         "fetched_at": "2026-11-27T14:27:27.309Z"
       }
     ],
+    "lat": 21.083617,
+    "lng": 105.917105,
+    "distance_m": 10914,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:22.276Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=C%C6%A1m%20T%E1%BA%A5m%20S%C3%A0i%20G%C3%B2n%20B%E1%BA%A3o%20Nam%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%208%20ng%C3%B5%20292%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20X.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -21413,6 +22519,7 @@
     "name": "Mì Cay SEOUL 7 Cấp Độ - Lẩu Thái & Lẩu Kim Chi Tokbokki",
     "address": "Số 556 Hà Huy Tập, X. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/mi-cay-seoul-7-cap-do-lau-thai-lau-kim-chi-tokbokki",
+    "original_source_url": "https://shopeefood.vn/ha-noi/mi-cay-seoul-7-cap-do-lau-thai-lau-kim-chi-tokbokki",
     "complete": true,
     "items": [
       {
@@ -23207,6 +24314,19 @@
         "fetched_at": "2026-11-27T14:27:35.342Z"
       }
     ],
+    "lat": 21.089868,
+    "lng": 105.921941,
+    "distance_m": 11473,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:22.767Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=M%C3%AC%20Cay%20SEOUL%207%20C%E1%BA%A5p%20%C4%90%E1%BB%99%20-%20L%E1%BA%A9u%20Th%C3%A1i%20%26%20L%E1%BA%A9u%20Kim%20Chi%20Tokbokki%20S%E1%BB%91%20556%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20X.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -23215,6 +24335,7 @@
     "name": "Sữa Chua Trân Châu Hạ Long Quảng Ninh - Hà Huy Tập",
     "address": "313 Hà Huy Tập, X. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/sua-chua-tran-chau-ha-long-quang-ninh-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/sua-chua-tran-chau-ha-long-quang-ninh-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -23416,6 +24537,19 @@
         "fetched_at": "2026-11-27T14:27:31.789Z"
       }
     ],
+    "lat": 21.08399,
+    "lng": 105.915707,
+    "distance_m": 10993,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:23.711Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=S%E1%BB%AFa%20Chua%20Tr%C3%A2n%20Ch%C3%A2u%20H%E1%BA%A1%20Long%20Qu%E1%BA%A3ng%20Ninh%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20313%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20X.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -23424,6 +24558,7 @@
     "name": "Bún Trộn Nam Bộ & Cháo Sườn Sụn Nấm Ruốc Quẩy 918 - Hà Huy Tập",
     "address": "Ngõ 484/64 Nhà Số 6 Hà Huy Tập, Xã Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-tron-nam-bo-chao-suon-sun-nam-ruoc-quay-918-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-tron-nam-bo-chao-suon-sun-nam-ruoc-quay-918-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -23436,6 +24571,19 @@
         "fetched_at": "2026-11-27T14:27:36.768Z"
       }
     ],
+    "lat": 21.086115,
+    "lng": 105.920904,
+    "distance_m": 11088,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:25.294Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20Tr%E1%BB%99n%20Nam%20B%E1%BB%99%20%26%20Ch%C3%A1o%20S%C6%B0%E1%BB%9Dn%20S%E1%BB%A5n%20N%E1%BA%A5m%20Ru%E1%BB%91c%20Qu%E1%BA%A9y%20918%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20Ng%C3%B5%20484/64%20Nh%C3%A0%20S%E1%BB%91%206%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20X%C3%A3%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -23444,6 +24592,7 @@
     "name": "Tiệm Chè VaHi - Tầu Hũ Khoai Tím, Thốt Nốt Dầm Củ Năng, Khúc Bạch - Hà Huy Tập",
     "address": "449 Hà Huy Tập, X. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-che-vahi-tau-hu-khoai-tim-thot-not-dam-cu-nang-khuc-bach-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-che-vahi-tau-hu-khoai-tim-thot-not-dam-cu-nang-khuc-bach-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -23609,6 +24758,19 @@
         "fetched_at": "2026-11-27T14:27:39.594Z"
       }
     ],
+    "lat": 21.089383,
+    "lng": 105.92082,
+    "distance_m": 11445,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:25.663Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20Ch%C3%A8%20VaHi%20-%20T%E1%BA%A7u%20H%C5%A9%20Khoai%20T%C3%ADm%2C%20Th%E1%BB%91t%20N%E1%BB%91t%20D%E1%BA%A7m%20C%E1%BB%A7%20N%C4%83ng%2C%20Kh%C3%BAc%20B%E1%BA%A1ch%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20449%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20X.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -23617,6 +24779,7 @@
     "name": "Bin Bán Mì - Mì Trộn Indomie, Trà Trái Cây & Trà Tắc - Đê Ka",
     "address": "24 Ngách 59/20 Đê Ka, Khu Tập Thể Cơ Khí Yên Viên, X. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bin-ban-mi-mi-tron-indomie-tra-trai-cay-tra-tac-de-ka",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bin-ban-mi-mi-tron-indomie-tra-trai-cay-tra-tac-de-ka",
     "complete": true,
     "items": [
       {
@@ -23701,6 +24864,19 @@
         "fetched_at": "2026-11-27T14:27:40.665Z"
       }
     ],
+    "lat": 21.079519,
+    "lng": 105.925758,
+    "distance_m": 10266,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:25.730Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "8đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Bin%20B%C3%A1n%20M%C3%AC%20-%20M%C3%AC%20Tr%E1%BB%99n%20Indomie%2C%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20%26%20Tr%C3%A0%20T%E1%BA%AFc%20-%20%C4%90%C3%AA%20Ka%2024%20Ng%C3%A1ch%2059/20%20%C4%90%C3%AA%20Ka%2C%20Khu%20T%E1%BA%ADp%20Th%E1%BB%83%20C%C6%A1%20Kh%C3%AD%20Y%C3%AAn%20Vi%C3%AAn%2C%20X.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -23709,8 +24885,22 @@
     "name": "Bo Food",
     "address": "Số 1 Dãy D2, Tổ Dân Phố Cơ Khí Yên Viên, X. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bo-food",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bo-food",
     "complete": false,
     "items": [],
+    "lat": 21.079113,
+    "lng": 105.925011,
+    "distance_m": 10237,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:27.753Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Bo%20Food%20S%E1%BB%91%201%20D%C3%A3y%20D2%2C%20T%E1%BB%95%20D%C3%A2n%20Ph%E1%BB%91%20C%C6%A1%20Kh%C3%AD%20Y%C3%AAn%20Vi%C3%AAn%2C%20X.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -23719,6 +24909,7 @@
     "name": "Trà Sữa Mixue - Đặng Công Chất",
     "address": "Kiốt 16-17 Đường Đặng Công Chất, X. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tra-sua-mixue-dang-cong-chat",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tra-sua-mixue-dang-cong-chat",
     "complete": true,
     "items": [
       {
@@ -24127,6 +25318,19 @@
         "fetched_at": "2026-11-27T14:27:46.059Z"
       }
     ],
+    "lat": 21.089219,
+    "lng": 105.922584,
+    "distance_m": 11389,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:27.643Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tr%C3%A0%20S%E1%BB%AFa%20Mixue%20-%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%20Ki%E1%BB%91t%2016-17%20%C4%90%C6%B0%E1%BB%9Dng%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%2C%20X.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -24135,6 +25339,7 @@
     "name": "GÀ ĐỒI 98 - Mẹt Gà & Lợn Bản",
     "address": "78 Nguyễn Khiêm Ích, Khu 31Ha, TT. Trâu Quý, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/ga-doi-98-met-ga-lon-ban",
+    "original_source_url": "https://shopeefood.vn/ha-noi/ga-doi-98-met-ga-lon-ban",
     "complete": true,
     "items": [
       {
@@ -24543,6 +25748,19 @@
         "fetched_at": "2026-11-27T14:27:50.921Z"
       }
     ],
+    "lat": 21.013261,
+    "lng": 105.939728,
+    "distance_m": 2758,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:28.348Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=G%C3%80%20%C4%90%E1%BB%92I%2098%20-%20M%E1%BA%B9t%20G%C3%A0%20%26%20L%E1%BB%A3n%20B%E1%BA%A3n%2078%20Nguy%E1%BB%85n%20Khi%C3%AAm%20%C3%8Dch%2C%20Khu%2031Ha%2C%20TT.%20Tr%C3%A2u%20Qu%C3%BD%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -24551,6 +25769,7 @@
     "name": "Ngan Huế Thương - Ngan - Đường 379",
     "address": "32 Đường 379, X. Đông Dư, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/ngan-hue-thuong-ngan-duong-379.ravsqi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/ngan-hue-thuong-ngan-duong-379.ravsqi",
     "complete": true,
     "items": [
       {
@@ -24716,6 +25935,19 @@
         "fetched_at": "2026-11-27T14:27:52.622Z"
       }
     ],
+    "lat": 21.003173,
+    "lng": 105.912624,
+    "distance_m": 3689,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:29.880Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ngan%20Hu%E1%BA%BF%20Th%C6%B0%C6%A1ng%20-%20Ngan%20-%20%C4%90%C6%B0%E1%BB%9Dng%20379%2032%20%C4%90%C6%B0%E1%BB%9Dng%20379%2C%20X.%20%C4%90%C3%B4ng%20D%C6%B0%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -24724,6 +25956,7 @@
     "name": "Bún Hải Sản & Bề Bề Tài Ca",
     "address": "24 Giáp Hải, X.Đông Dư, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-hai-san-be-be-tai-ca",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-hai-san-be-be-tai-ca",
     "complete": true,
     "items": [
       {
@@ -24835,6 +26068,19 @@
         "fetched_at": "2026-11-27T14:27:55.340Z"
       }
     ],
+    "lat": 21.003359,
+    "lng": 105.912169,
+    "distance_m": 3740,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:30.192Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20H%E1%BA%A3i%20S%E1%BA%A3n%20%26%20B%E1%BB%81%20B%E1%BB%81%20T%C3%A0i%20Ca%2024%20Gi%C3%A1p%20H%E1%BA%A3i%2C%20X.%C4%90%C3%B4ng%20D%C6%B0%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -24843,6 +26089,7 @@
     "name": "Hapi Bakery - Bánh Kem",
     "address": "831 Thôn 1, X. Đông Dư, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/hapi-bakery-banh-kem",
+    "original_source_url": "https://shopeefood.vn/ha-noi/hapi-bakery-banh-kem",
     "complete": true,
     "items": [
       {
@@ -25386,6 +26633,19 @@
         "fetched_at": "2026-11-27T14:27:58.726Z"
       }
     ],
+    "lat": 21.001375,
+    "lng": 105.910585,
+    "distance_m": 3804,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:30.531Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Hapi%20Bakery%20-%20B%C3%A1nh%20Kem%20831%20Th%C3%B4n%201%2C%20X.%20%C4%90%C3%B4ng%20D%C6%B0%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -25394,6 +26654,7 @@
     "name": "Gà Tươi & Gà Rán - Bảo Hân",
     "address": "Số 54 Đường Giáp Hải, X. Đông Dư, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/ga-tuoi-ga-ran-bao-han",
+    "original_source_url": "https://shopeefood.vn/ha-noi/ga-tuoi-ga-ran-bao-han",
     "complete": true,
     "items": [
       {
@@ -25487,6 +26748,19 @@
         "fetched_at": "2026-11-27T14:28:00.804Z"
       }
     ],
+    "lat": 21.003005,
+    "lng": 105.913314,
+    "distance_m": 3616,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:32.303Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "3đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=G%C3%A0%20T%C6%B0%C6%A1i%20%26%20G%C3%A0%20R%C3%A1n%20-%20B%E1%BA%A3o%20H%C3%A2n%20S%E1%BB%91%2054%20%C4%90%C6%B0%E1%BB%9Dng%20Gi%C3%A1p%20H%E1%BA%A3i%2C%20X.%20%C4%90%C3%B4ng%20D%C6%B0%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -25495,6 +26769,7 @@
     "name": "Quán A Nghĩa - Mỳ Vằn Thắn - 56 Giáp Hải",
     "address": "Số 56 Đường Giáp Hải, X. Đông Dư, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/quan-a-nghia-my-van-than-56-giap-hai",
+    "original_source_url": "https://shopeefood.vn/ha-noi/quan-a-nghia-my-van-than-56-giap-hai",
     "complete": true,
     "items": [
       {
@@ -25507,6 +26782,19 @@
         "fetched_at": "2026-11-27T14:28:04.038Z"
       }
     ],
+    "lat": 21.002674,
+    "lng": 105.913434,
+    "distance_m": 3589,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:33.315Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Qu%C3%A1n%20A%20Ngh%C4%A9a%20-%20M%E1%BB%B3%20V%E1%BA%B1n%20Th%E1%BA%AFn%20-%2056%20Gi%C3%A1p%20H%E1%BA%A3i%20S%E1%BB%91%2056%20%C4%90%C6%B0%E1%BB%9Dng%20Gi%C3%A1p%20H%E1%BA%A3i%2C%20X.%20%C4%90%C3%B4ng%20D%C6%B0%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -25515,6 +26803,7 @@
     "name": "Bếp Ngon - 60 Giáp Hải",
     "address": "60 Giáp Hải, X. Đông Dư, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bep-ngon-60-giap-hai",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bep-ngon-60-giap-hai",
     "complete": true,
     "items": [
       {
@@ -25572,6 +26861,19 @@
         "fetched_at": "2026-11-27T14:28:06.348Z"
       }
     ],
+    "lat": 21.002988,
+    "lng": 105.913779,
+    "distance_m": 3572,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:33.243Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%E1%BA%BFp%20Ngon%20-%2060%20Gi%C3%A1p%20H%E1%BA%A3i%2060%20Gi%C3%A1p%20H%E1%BA%A3i%2C%20X.%20%C4%90%C3%B4ng%20D%C6%B0%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -25580,6 +26882,7 @@
     "name": "Tiệm Cà Phê Giang Cao - Cà Phê, Trà Sữa & Sinh Tố - Ngõ 10 Bát Khối",
     "address": "Ngõ 10 Bát Khối, X. Đông Dư, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-ca-phe-giang-cao-ca-phe-tra-sua-sinh-to-ngo-10-bat-khoi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-ca-phe-giang-cao-ca-phe-tra-sua-sinh-to-ngo-10-bat-khoi",
     "complete": true,
     "items": [
       {
@@ -25781,6 +27084,19 @@
         "fetched_at": "2026-11-27T14:28:10.059Z"
       }
     ],
+    "lat": 20.985543,
+    "lng": 105.91778,
+    "distance_m": 2820,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:34.760Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20C%C3%A0%20Ph%C3%AA%20Giang%20Cao%20-%20C%C3%A0%20Ph%C3%AA%2C%20Tr%C3%A0%20S%E1%BB%AFa%20%26%20Sinh%20T%E1%BB%91%20-%20Ng%C3%B5%2010%20B%C3%A1t%20Kh%E1%BB%91i%20Ng%C3%B5%2010%20B%C3%A1t%20Kh%E1%BB%91i%2C%20X.%20%C4%90%C3%B4ng%20D%C6%B0%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -25789,6 +27105,7 @@
     "name": "Trà Bí Đao Hương Biển - 100% Bí Đao Tươi",
     "address": "Số 11 Ngõ 68/95 Giáp Hải, X. Đông Dư, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tra-bi-dao-huong-bien-100-bi-dao-tuoi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tra-bi-dao-huong-bien-100-bi-dao-tuoi",
     "complete": true,
     "items": [
       {
@@ -25801,6 +27118,19 @@
         "fetched_at": "2026-11-27T14:28:10.896Z"
       }
     ],
+    "lat": 20.99943,
+    "lng": 105.912039,
+    "distance_m": 3587,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:35.626Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tr%C3%A0%20B%C3%AD%20%C4%90ao%20H%C6%B0%C6%A1ng%20Bi%E1%BB%83n%20-%20100%25%20B%C3%AD%20%C4%90ao%20T%C6%B0%C6%A1i%20S%E1%BB%91%2011%20Ng%C3%B5%2068/95%20Gi%C3%A1p%20H%E1%BA%A3i%2C%20X.%20%C4%90%C3%B4ng%20D%C6%B0%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -25809,6 +27139,7 @@
     "name": "Phở Gà Phố Cổ Hải Đăng - Cơm & Phở - Giáp Hải",
     "address": "Số 60 Giáp Hải, X. Đông Dư, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/pho-ga-pho-co-hai-dang-com-pho-giap-hai.rxydti",
+    "original_source_url": "https://shopeefood.vn/ha-noi/pho-ga-pho-co-hai-dang-com-pho-giap-hai.rxydti",
     "complete": true,
     "items": [
       {
@@ -25911,6 +27242,19 @@
         "fetched_at": "2026-11-27T14:28:14.171Z"
       }
     ],
+    "lat": 21.00269,
+    "lng": 105.914,
+    "distance_m": 3537,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:35.895Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ph%E1%BB%9F%20G%C3%A0%20Ph%E1%BB%91%20C%E1%BB%95%20H%E1%BA%A3i%20%C4%90%C4%83ng%20-%20C%C6%A1m%20%26%20Ph%E1%BB%9F%20-%20Gi%C3%A1p%20H%E1%BA%A3i%20S%E1%BB%91%2060%20Gi%C3%A1p%20H%E1%BA%A3i%2C%20X.%20%C4%90%C3%B4ng%20D%C6%B0%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -25919,8 +27263,22 @@
     "name": "Vịt Quay, Chân Giò Bắp Heo Quay Dòn Bì & Thịt Nướng Lá Móc Mật - Kiên Híp",
     "address": "DT379 - Đường Giáp Hải, X. Bát Tràng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/vit-quay-chan-gio-bap-heo-quay-don-bi-thit-nuong-la-moc-mat-kien-hip",
+    "original_source_url": "https://shopeefood.vn/ha-noi/vit-quay-chan-gio-bap-heo-quay-don-bi-thit-nuong-la-moc-mat-kien-hip",
     "complete": false,
     "items": [],
+    "lat": 20.982571,
+    "lng": 105.925837,
+    "distance_m": 2081,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:37.366Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=V%E1%BB%8Bt%20Quay%2C%20Ch%C3%A2n%20Gi%C3%B2%20B%E1%BA%AFp%20Heo%20Quay%20D%C3%B2n%20B%C3%AC%20%26%20Th%E1%BB%8Bt%20N%C6%B0%E1%BB%9Bng%20L%C3%A1%20M%C3%B3c%20M%E1%BA%ADt%20-%20Ki%C3%AAn%20H%C3%ADp%20DT379%20-%20%C4%90%C6%B0%E1%BB%9Dng%20Gi%C3%A1p%20H%E1%BA%A3i%2C%20X.%20B%C3%A1t%20Tr%C3%A0ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -25929,6 +27287,7 @@
     "name": "Qmosaic Garden Coffee - Bát Tràng",
     "address": "Lô B18, Khu Công Nghiệp Bát Tràng, X. Bát Tràng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/qmosaic-garden-coffee-bat-trang",
+    "original_source_url": "https://shopeefood.vn/ha-noi/qmosaic-garden-coffee-bat-trang",
     "complete": true,
     "items": [
       {
@@ -26418,6 +27777,19 @@
         "fetched_at": "2026-11-27T14:28:21.256Z"
       }
     ],
+    "lat": 20.977464,
+    "lng": 105.922615,
+    "distance_m": 2622,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:38.525Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "6đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Qmosaic%20Garden%20Coffee%20-%20B%C3%A1t%20Tr%C3%A0ng%20L%C3%B4%20B18%2C%20Khu%20C%C3%B4ng%20Nghi%E1%BB%87p%20B%C3%A1t%20Tr%C3%A0ng%2C%20X.%20B%C3%A1t%20Tr%C3%A0ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -26426,6 +27798,7 @@
     "name": "LẨU ẾCH VIN HÔM - LẨU RIÊU - ĐA TỐN",
     "address": "Số Nhà 125 Ngõ 262 Đường Đa Tốn, X. Bát Tràng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/lau-ech-vin-hom-lau-rieu-da-ton",
+    "original_source_url": "https://shopeefood.vn/ha-noi/lau-ech-vin-hom-lau-rieu-da-ton",
     "complete": true,
     "items": [
       {
@@ -26699,6 +28072,19 @@
         "fetched_at": "2026-11-27T14:28:23.337Z"
       }
     ],
+    "lat": 20.980578,
+    "lng": 105.928187,
+    "distance_m": 1948,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:38.526Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "6đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=L%E1%BA%A8U%20%E1%BA%BECH%20VIN%20H%C3%94M%20-%20L%E1%BA%A8U%20RI%C3%8AU%20-%20%C4%90A%20T%E1%BB%90N%20S%E1%BB%91%20Nh%C3%A0%20125%20Ng%C3%B5%20262%20%C4%90%C6%B0%E1%BB%9Dng%20%C4%90a%20T%E1%BB%91n%2C%20X.%20B%C3%A1t%20Tr%C3%A0ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -26707,6 +28093,7 @@
     "name": "Bún Riêu - Tuấn Lan",
     "address": "CL4-01 - Chiêm Mai, X. Bát Tràng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-rieu-tuan-lan",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-rieu-tuan-lan",
     "complete": true,
     "items": [
       {
@@ -26989,6 +28376,19 @@
         "fetched_at": "2026-11-27T14:28:27.795Z"
       }
     ],
+    "lat": 20.974422,
+    "lng": 105.914994,
+    "distance_m": 3479,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:39.920Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "6đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20Ri%C3%AAu%20-%20Tu%E1%BA%A5n%20Lan%20CL4-01%20-%20Chi%C3%AAm%20Mai%2C%20X.%20B%C3%A1t%20Tr%C3%A0ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -26997,6 +28397,7 @@
     "name": "Symphony Pizza",
     "address": "Số 32 Ngọc Động, X. Bát Tràng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/symphony-pizza",
+    "original_source_url": "https://shopeefood.vn/ha-noi/symphony-pizza",
     "complete": true,
     "items": [
       {
@@ -27261,6 +28662,19 @@
         "fetched_at": "2026-11-27T14:28:28.488Z"
       }
     ],
+    "lat": 20.98209,
+    "lng": 105.940353,
+    "distance_m": 882,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:40.925Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Symphony%20Pizza%20S%E1%BB%91%2032%20Ng%E1%BB%8Dc%20%C4%90%E1%BB%99ng%2C%20X.%20B%C3%A1t%20Tr%C3%A0ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -27269,6 +28683,7 @@
     "name": "Bình Yên Quán - Tổ Hợp Du Lịch Lò Bầu Cổ",
     "address": "Tổ Hợp Du Lịch Lò Bầu Cổ - Thôn 3, X. Bát Tràng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/binh-yen-quan-to-hop-du-lich-lo-bau-co",
+    "original_source_url": "https://shopeefood.vn/ha-noi/binh-yen-quan-to-hop-du-lich-lo-bau-co",
     "complete": true,
     "items": [
       {
@@ -27596,6 +29011,19 @@
         "fetched_at": "2026-11-27T14:28:35.835Z"
       }
     ],
+    "lat": 20.976299,
+    "lng": 105.911774,
+    "distance_m": 3694,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:40.969Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%ACnh%20Y%C3%AAn%20Qu%C3%A1n%20-%20T%E1%BB%95%20H%E1%BB%A3p%20Du%20L%E1%BB%8Bch%20L%C3%B2%20B%E1%BA%A7u%20C%E1%BB%95%20T%E1%BB%95%20H%E1%BB%A3p%20Du%20L%E1%BB%8Bch%20L%C3%B2%20B%E1%BA%A7u%20C%E1%BB%95%20-%20Th%C3%B4n%203%2C%20X.%20B%C3%A1t%20Tr%C3%A0ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -27604,6 +29032,7 @@
     "name": "Bún Cá Cô Ngà - Bát Tràng",
     "address": "29 Ngõ 8 Ngách 96 Bát Tràng, X. Bát Tràng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-ca-co-nga-bat-trang",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-ca-co-nga-bat-trang",
     "complete": true,
     "items": [
       {
@@ -27634,6 +29063,19 @@
         "fetched_at": "2026-11-27T14:28:33.206Z"
       }
     ],
+    "lat": 20.989381,
+    "lng": 105.914462,
+    "distance_m": 3140,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:42.817Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20C%C3%A1%20C%C3%B4%20Ng%C3%A0%20-%20B%C3%A1t%20Tr%C3%A0ng%2029%20Ng%C3%B5%208%20Ng%C3%A1ch%2096%20B%C3%A1t%20Tr%C3%A0ng%2C%20X.%20B%C3%A1t%20Tr%C3%A0ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -27642,6 +29084,7 @@
     "name": "Bánh Tráng Mập - Vinhomes Ocean Park",
     "address": "S108, Vinhomes Ocean Park, X. Gia Lâm, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/banh-trang-map-vinhomes-ocean-park",
+    "original_source_url": "https://shopeefood.vn/ha-noi/banh-trang-map-vinhomes-ocean-park",
     "complete": true,
     "items": [
       {
@@ -27843,6 +29286,19 @@
         "fetched_at": "2026-11-27T14:28:38.181Z"
       }
     ],
+    "lat": 20.994419,
+    "lng": 105.943275,
+    "distance_m": 631,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:43.630Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20Tr%C3%A1ng%20M%E1%BA%ADp%20-%20Vinhomes%20Ocean%20Park%20S108%2C%20Vinhomes%20Ocean%20Park%2C%20X.%20Gia%20L%C3%A2m%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -27851,6 +29307,7 @@
     "name": "Bánh Mì Ô Môi - Bánh Mì Jambon Long Khánh - KĐT Vinhome Ocean Park 1",
     "address": "Căn 01S02, Tòa P4 Pavilion, KĐT Ocean Park 1 - KĐT Vinhome Ocean Park 1, X. Gia Lâm, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/banh-mi-o-moi-banh-mi-jambon-long-khanh-kdt-vinhome-ocean-park-1",
+    "original_source_url": "https://shopeefood.vn/ha-noi/banh-mi-o-moi-banh-mi-jambon-long-khanh-kdt-vinhome-ocean-park-1",
     "complete": true,
     "items": [
       {
@@ -27971,6 +29428,19 @@
         "fetched_at": "2026-11-27T14:28:40.967Z"
       }
     ],
+    "lat": 21.001974,
+    "lng": 105.946232,
+    "distance_m": 1462,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:43.630Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20M%C3%AC%20%C3%94%20M%C3%B4i%20-%20B%C3%A1nh%20M%C3%AC%20Jambon%20Long%20Kh%C3%A1nh%20-%20K%C4%90T%20Vinhome%20Ocean%20Park%201%20C%C4%83n%2001S02%2C%20T%C3%B2a%20P4%20Pavilion%2C%20K%C4%90T%20Ocean%20Park%201%20-%20K%C4%90T%20Vinhome%20Ocean%20Park%201%2C%20X.%20Gia%20L%C3%A2m%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -27979,6 +29449,7 @@
     "name": "Matcha Club - Gia Lâm",
     "address": "Số Nhà 37, Tập Thể Cầu 12 - Thôn Hội, X. Gia Lâm, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/matcha-club-gia-lam",
+    "original_source_url": "https://shopeefood.vn/ha-noi/matcha-club-gia-lam",
     "complete": true,
     "items": [
       {
@@ -28054,6 +29525,19 @@
         "fetched_at": "2026-11-27T14:28:43.048Z"
       }
     ],
+    "lat": 21.032768,
+    "lng": 105.948243,
+    "distance_m": 4892,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:45.684Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "9đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Matcha%20Club%20-%20Gia%20L%C3%A2m%20S%E1%BB%91%20Nh%C3%A0%2037%2C%20T%E1%BA%ADp%20Th%E1%BB%83%20C%E1%BA%A7u%2012%20-%20Th%C3%B4n%20H%E1%BB%99i%2C%20X.%20Gia%20L%C3%A2m%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -28062,6 +29546,7 @@
     "name": "Tiệm Moon - Sinh Tố, Nước Ép & Trà Trái Cây",
     "address": "112/9 Đoàn Quang Dung, X. Gia Lâm, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-moon-sinh-to-nuoc-ep-tra-trai-cay",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-moon-sinh-to-nuoc-ep-tra-trai-cay",
     "complete": true,
     "items": [
       {
@@ -28317,6 +29802,19 @@
         "fetched_at": "2026-11-27T14:28:45.526Z"
       }
     ],
+    "lat": 21.014559,
+    "lng": 105.945767,
+    "distance_m": 2855,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:46.039Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20Moon%20-%20Sinh%20T%E1%BB%91%2C%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20%26%20Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20112/9%20%C4%90o%C3%A0n%20Quang%20Dung%2C%20X.%20Gia%20L%C3%A2m%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -28325,6 +29823,7 @@
     "name": "Soymel Dessert - Trâu Quỳ",
     "address": "Kiot 4B - Ngõ 86 Trâu Quỳ, X. Gia Lâm, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/soymel-dessert-trau-quy",
+    "original_source_url": "https://shopeefood.vn/ha-noi/soymel-dessert-trau-quy",
     "complete": true,
     "items": [
       {
@@ -28454,6 +29953,19 @@
         "fetched_at": "2026-11-27T14:28:46.348Z"
       }
     ],
+    "lat": 21.005568,
+    "lng": 105.934271,
+    "distance_m": 2146,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:46.258Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Soymel%20Dessert%20-%20Tr%C3%A2u%20Qu%E1%BB%B3%20Kiot%204B%20-%20Ng%C3%B5%2086%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20X.%20Gia%20L%C3%A2m%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -28462,6 +29974,7 @@
     "name": "Tiệm Chè Bao Thỏ - Trâu Quỳ",
     "address": "10 Ngõ 86 Trâu Quỳ, X. Gia Lâm, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-che-bao-tho-trau-quy",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-che-bao-tho-trau-quy",
     "complete": true,
     "items": [
       {
@@ -28753,6 +30266,19 @@
         "fetched_at": "2026-11-27T14:28:52.176Z"
       }
     ],
+    "lat": 21.004953,
+    "lng": 105.937434,
+    "distance_m": 1938,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:48.092Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20Ch%C3%A8%20Bao%20Th%E1%BB%8F%20-%20Tr%C3%A2u%20Qu%E1%BB%B3%2010%20Ng%C3%B5%2086%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20X.%20Gia%20L%C3%A2m%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -28761,6 +30287,7 @@
     "name": "Quán Gà Luộc Gà Rán - Gà Ủ Muối Tiêu - Dốc Lã",
     "address": "63 Dốc Lã, X. Yên Thường, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/quan-ga-luoc-ga-ran-ga-u-muoi-tieu-doc-la",
+    "original_source_url": "https://shopeefood.vn/ha-noi/quan-ga-luoc-ga-ran-ga-u-muoi-tieu-doc-la",
     "complete": true,
     "items": [
       {
@@ -29385,6 +30912,19 @@
         "fetched_at": "2026-11-27T14:28:54.273Z"
       }
     ],
+    "lat": 21.096813,
+    "lng": 105.928299,
+    "distance_m": 12119,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:48.221Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "999+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Qu%C3%A1n%20G%C3%A0%20Lu%E1%BB%99c%20G%C3%A0%20R%C3%A1n%20-%20G%C3%A0%20%E1%BB%A6%20Mu%E1%BB%91i%20Ti%C3%AAu%20-%20D%E1%BB%91c%20L%C3%A3%2063%20D%E1%BB%91c%20L%C3%A3%2C%20X.%20Y%C3%AAn%20Th%C6%B0%E1%BB%9Dng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -29393,6 +30933,7 @@
     "name": "Cơm Rang & Phở Cồ Chí - 65 Yên Thường",
     "address": "Số 65 Đường Yên Thường - Đối Diện Cổng Trường Cao Đẳng Xây Dựng Công Trình Đô Thị, Thôn Xuân Dục, X. Yên Thường, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/com-rang-pho-co-chi-65-yen-thuong",
+    "original_source_url": "https://shopeefood.vn/ha-noi/com-rang-pho-co-chi-65-yen-thuong",
     "complete": true,
     "items": [
       {
@@ -29711,6 +31252,19 @@
         "fetched_at": "2026-11-27T14:29:03.609Z"
       }
     ],
+    "lat": 21.090022,
+    "lng": 105.905017,
+    "distance_m": 11975,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:48.677Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=C%C6%A1m%20Rang%20%26%20Ph%E1%BB%9F%20C%E1%BB%93%20Ch%C3%AD%20-%2065%20Y%C3%AAn%20Th%C6%B0%E1%BB%9Dng%20S%E1%BB%91%2065%20%C4%90%C6%B0%E1%BB%9Dng%20Y%C3%AAn%20Th%C6%B0%E1%BB%9Dng%20-%20%C4%90%E1%BB%91i%20Di%E1%BB%87n%20C%E1%BB%95ng%20Tr%C6%B0%E1%BB%9Dng%20Cao%20%C4%90%E1%BA%B3ng%20X%C3%A2y%20D%E1%BB%B1ng%20C%C3%B4ng%20Tr%C3%ACnh%20%C4%90%C3%B4%20Th%E1%BB%8B%2C%20Th%C3%B4n%20Xu%C3%A2n%20D%E1%BB%A5c%2C%20X.%20Y%C3%AAn%20Th%C6%B0%E1%BB%9Dng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -29719,6 +31273,7 @@
     "name": "Tiệm Trà Thuỳ Linh - 99 Đặng Phúc Thông",
     "address": "Số 99 Đặng Phúc Thông, X. Yên Thường, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-tra-thuy-linh-99-dang-phuc-thong",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-tra-thuy-linh-99-dang-phuc-thong",
     "complete": true,
     "items": [
       {
@@ -29929,6 +31484,19 @@
         "fetched_at": "2026-11-27T14:29:03.958Z"
       }
     ],
+    "lat": 21.097473,
+    "lng": 105.929138,
+    "distance_m": 12180,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:50.728Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "5đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20Tr%C3%A0%20Thu%E1%BB%B3%20Linh%20-%2099%20%C4%90%E1%BA%B7ng%20Ph%C3%BAc%20Th%C3%B4ng%20S%E1%BB%91%2099%20%C4%90%E1%BA%B7ng%20Ph%C3%BAc%20Th%C3%B4ng%2C%20X.%20Y%C3%AAn%20Th%C6%B0%E1%BB%9Dng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -29937,6 +31505,7 @@
     "name": "Bún Đậu Mắm Tôm - Yên Thường",
     "address": "296A Yên Thường, X. Yên Thường, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-dau-mam-tom-yen-thuong",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-dau-mam-tom-yen-thuong",
     "complete": true,
     "items": [
       {
@@ -30138,6 +31707,19 @@
         "fetched_at": "2026-11-27T14:29:11.193Z"
       }
     ],
+    "lat": 21.090826,
+    "lng": 105.905682,
+    "distance_m": 12035,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:50.844Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "4đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20%C4%90%E1%BA%ADu%20M%E1%BA%AFm%20T%C3%B4m%20-%20Y%C3%AAn%20Th%C6%B0%E1%BB%9Dng%20296A%20Y%C3%AAn%20Th%C6%B0%E1%BB%9Dng%2C%20X.%20Y%C3%AAn%20Th%C6%B0%E1%BB%9Dng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -30146,6 +31728,7 @@
     "name": "Linh Nhi Quán Bánh Tráng Trộn & Trà Sữa - Đồ Ăn & Đồ Uống - Trâu Quỳ",
     "address": "18 Ngõ 68 Trâu Quỳ, X. Yên Thường, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/linh-nhi-quan-banh-trang-tron-tra-sua-do-an-do-uong-yen-thuong",
+    "original_source_url": "https://shopeefood.vn/ha-noi/linh-nhi-quan-banh-trang-tron-tra-sua-do-an-do-uong-yen-thuong",
     "complete": true,
     "items": [
       {
@@ -30329,6 +31912,19 @@
         "fetched_at": "2026-11-27T14:29:11.257Z"
       }
     ],
+    "lat": 21.005922,
+    "lng": 105.934586,
+    "distance_m": 2164,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:51.071Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "3đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Linh%20Nhi%20Qu%C3%A1n%20B%C3%A1nh%20Tr%C3%A1ng%20Tr%E1%BB%99n%20%26%20Tr%C3%A0%20S%E1%BB%AFa%20-%20%C4%90%E1%BB%93%20%C4%82n%20%26%20%C4%90%E1%BB%93%20U%E1%BB%91ng%20-%20Tr%C3%A2u%20Qu%E1%BB%B3%2018%20Ng%C3%B5%2068%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20X.%20Y%C3%AAn%20Th%C6%B0%E1%BB%9Dng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -30337,6 +31933,7 @@
     "name": "Gà Rán Five Star - Chợ Dân Sinh Xóm 2",
     "address": "Chợ Dân Sinh Xóm 2, X. Ninh Hiệp, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/ga-ran-five-star-cho-dan-sinh-xom-2",
+    "original_source_url": "https://shopeefood.vn/ha-noi/ga-ran-five-star-cho-dan-sinh-xom-2",
     "complete": true,
     "items": [
       {
@@ -30817,6 +32414,19 @@
         "fetched_at": "2026-11-27T14:29:17.610Z"
       }
     ],
+    "lat": 21.083206,
+    "lng": 105.947029,
+    "distance_m": 10489,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:52.959Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=G%C3%A0%20R%C3%A1n%20Five%20Star%20-%20Ch%E1%BB%A3%20D%C3%A2n%20Sinh%20X%C3%B3m%202%20Ch%E1%BB%A3%20D%C3%A2n%20Sinh%20X%C3%B3m%202%2C%20X.%20Ninh%20Hi%E1%BB%87p%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -30825,6 +32435,7 @@
     "name": "Trà Sữa Mixue - Ninh Hiệp Gia Lâm",
     "address": "Chợ Dân Sinh Xóm 8, X. Ninh Hiệp, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tra-sua-mixue-ninh-hiep-gia-lam",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tra-sua-mixue-ninh-hiep-gia-lam",
     "complete": true,
     "items": [
       {
@@ -31530,6 +33141,19 @@
         "fetched_at": "2026-11-27T14:29:18.323Z"
       }
     ],
+    "lat": 21.078234,
+    "lng": 105.940911,
+    "distance_m": 9941,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:53.261Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tr%C3%A0%20S%E1%BB%AFa%20Mixue%20-%20Ninh%20Hi%E1%BB%87p%20Gia%20L%C3%A2m%20Ch%E1%BB%A3%20D%C3%A2n%20Sinh%20X%C3%B3m%208%2C%20X.%20Ninh%20Hi%E1%BB%87p%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -31538,6 +33162,7 @@
     "name": "Phở Cồ Gia Truyền Nam Định - 498 Ninh Hiệp",
     "address": "Số 498 Ninh Hiệp, X. Ninh Hiệp, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/pho-co-gia-truyen-nam-dinh-498-ninh-hiep",
+    "original_source_url": "https://shopeefood.vn/ha-noi/pho-co-gia-truyen-nam-dinh-498-ninh-hiep",
     "complete": true,
     "items": [
       {
@@ -31739,6 +33364,19 @@
         "fetched_at": "2026-11-27T14:29:23.180Z"
       }
     ],
+    "lat": 21.080485,
+    "lng": 105.939558,
+    "distance_m": 10198,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:53.709Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "4đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ph%E1%BB%9F%20C%E1%BB%93%20Gia%20Truy%E1%BB%81n%20Nam%20%C4%90%E1%BB%8Bnh%20-%20498%20Ninh%20Hi%E1%BB%87p%20S%E1%BB%91%20498%20Ninh%20Hi%E1%BB%87p%2C%20X.%20Ninh%20Hi%E1%BB%87p%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -31747,6 +33385,7 @@
     "name": "KaKi - Coffee & Drinks - Ninh Hiệp",
     "address": "Bt2-08 Ninh Hiệp, X. Ninh Hiệp, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/kaki-coffee-drinks-ninh-hiep",
+    "original_source_url": "https://shopeefood.vn/ha-noi/kaki-coffee-drinks-ninh-hiep",
     "complete": true,
     "items": [
       {
@@ -32146,6 +33785,19 @@
         "fetched_at": "2026-11-27T14:29:24.042Z"
       }
     ],
+    "lat": 20.973679,
+    "lng": 105.762991,
+    "distance_m": 18941,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:55.539Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=KaKi%20-%20Coffee%20%26%20Drinks%20-%20Ninh%20Hi%E1%BB%87p%20Bt2-08%20Ninh%20Hi%E1%BB%87p%2C%20X.%20Ninh%20Hi%E1%BB%87p%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -32154,6 +33806,7 @@
     "name": "Trà Trái Cây Tươi Ninh Hiệp - Gia Lâm",
     "address": "Xóm 2 Ninh Hiệp, X. Ninh Hiệp, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tra-trai-cay-tuoi-ninh-hiep-gia-lam",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tra-trai-cay-tuoi-ninh-hiep-gia-lam",
     "complete": true,
     "items": [
       {
@@ -32337,6 +33990,19 @@
         "fetched_at": "2026-11-27T14:29:28.133Z"
       }
     ],
+    "lat": 21.08353,
+    "lng": 105.9471,
+    "distance_m": 10525,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:56.129Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tr%C3%A0%20Tr%C3%A1i%20C%C3%A2y%20T%C6%B0%C6%A1i%20Ninh%20Hi%E1%BB%87p%20-%20Gia%20L%C3%A2m%20X%C3%B3m%202%20Ninh%20Hi%E1%BB%87p%2C%20X.%20Ninh%20Hi%E1%BB%87p%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -32345,6 +34011,7 @@
     "name": "DAMI - CARAMEN - Ỷ LAN",
     "address": "4 Ngõ 90 Ỷ Lan, Thôn Phú Thị, X. Phú Thị, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/dami-caramen-y-lan",
+    "original_source_url": "https://shopeefood.vn/ha-noi/dami-caramen-y-lan",
     "complete": true,
     "items": [
       {
@@ -32384,6 +34051,19 @@
         "fetched_at": "2026-11-27T14:29:28.505Z"
       }
     ],
+    "lat": 21.025005,
+    "lng": 105.961862,
+    "distance_m": 4392,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:56.173Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=DAMI%20-%20CARAMEN%20-%20%E1%BB%B6%20LAN%204%20Ng%C3%B5%2090%20%E1%BB%B6%20Lan%2C%20Th%C3%B4n%20Ph%C3%BA%20Th%E1%BB%8B%2C%20X.%20Phu%CC%81%20Thi%CC%A3%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -32392,6 +34072,7 @@
     "name": "Cơm Tấm Như Ý - Hà Huy Tập",
     "address": "610 Hà Huy Tập, X. Phù Đổng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/com-tam-nhu-y-ha-huy-tap",
+    "original_source_url": "https://shopeefood.vn/ha-noi/com-tam-nhu-y-ha-huy-tap",
     "complete": true,
     "items": [
       {
@@ -32566,6 +34247,19 @@
         "fetched_at": "2026-11-27T14:29:32.374Z"
       }
     ],
+    "lat": 21.091283,
+    "lng": 105.923042,
+    "distance_m": 11604,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:57.810Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=C%C6%A1m%20T%E1%BA%A5m%20Nh%C6%B0%20%C3%9D%20-%20H%C3%A0%20Huy%20T%E1%BA%ADp%20610%20H%C3%A0%20Huy%20T%E1%BA%ADp%2C%20X.%20Ph%C3%B9%20%C4%90%E1%BB%95ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -32574,6 +34268,7 @@
     "name": "GA GA - Mỳ Cay & Đồ Ăn Vặt",
     "address": "Sát UBND Xã Phù Đổng Mới, X. Phù Đổng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/ga-ga-my-cay-do-an-vat",
+    "original_source_url": "https://shopeefood.vn/ha-noi/ga-ga-my-cay-do-an-vat",
     "complete": true,
     "items": [
       {
@@ -32730,6 +34425,19 @@
         "fetched_at": "2026-11-27T14:29:31.915Z"
       }
     ],
+    "lat": 21.074017,
+    "lng": 105.926404,
+    "distance_m": 9653,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:58.771Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=GA%20GA%20-%20M%E1%BB%B3%20Cay%20%26%20%C4%90%E1%BB%93%20%C4%82n%20V%E1%BA%B7t%20S%C3%A1t%20UBND%20X%C3%A3%20Ph%C3%B9%20%C4%90%E1%BB%95ng%20M%E1%BB%9Bi%2C%20X.%20Ph%C3%B9%20%C4%90%E1%BB%95ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -32738,6 +34446,7 @@
     "name": "Phúc Cafe - Đặng Công Chất",
     "address": "Biệt Thự Trắng, Đường Đặng Công Chất, X. Phù Đổng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/phuc-cafe-dang-cong-chat",
+    "original_source_url": "https://shopeefood.vn/ha-noi/phuc-cafe-dang-cong-chat",
     "complete": true,
     "items": [
       {
@@ -33047,6 +34756,19 @@
         "fetched_at": "2026-11-27T14:29:37.156Z"
       }
     ],
+    "lat": 21.087195,
+    "lng": 105.924914,
+    "distance_m": 11121,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:55:58.570Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "8đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ph%C3%BAc%20Cafe%20-%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%20Bi%E1%BB%87t%20Th%E1%BB%B1%20Tr%E1%BA%AFng%2C%20%C4%90%C6%B0%E1%BB%9Dng%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%2C%20X.%20Ph%C3%B9%20%C4%90%E1%BB%95ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -33055,8 +34777,22 @@
     "name": "Phù Đổng Camping - Trà, Sinh Tố & Nước Ép - Xóm Mới",
     "address": "Đường X15, Xóm Mới, X. Phù Đổng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/phu-dong-camping-tra-sinh-to-nuoc-ep-xom-moi",
+    "original_source_url": "https://shopeefood.vn/ha-noi/phu-dong-camping-tra-sinh-to-nuoc-ep-xom-moi",
     "complete": false,
     "items": [],
+    "lat": 21.061791,
+    "lng": 105.946911,
+    "distance_m": 8108,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:00.469Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ph%C3%B9%20%C4%90%E1%BB%95ng%20Camping%20-%20Tr%C3%A0%2C%20Sinh%20T%E1%BB%91%20%26%20N%C6%B0%E1%BB%9Bc%20%C3%89p%20-%20X%C3%B3m%20M%E1%BB%9Bi%20%C4%90%C6%B0%E1%BB%9Dng%20X15%2C%20X%C3%B3m%20M%E1%BB%9Bi%2C%20X.%20Ph%C3%B9%20%C4%90%E1%BB%95ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -33065,6 +34801,7 @@
     "name": "Xiem - Chè Thái Lan Cổ Truyền - Phù Đổng",
     "address": "Số 130 Xóm Ban, Thôn Phù Đổng, X. Phù Đổng, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/xiem-che-thai-lan-co-truyen-phu-dong",
+    "original_source_url": "https://shopeefood.vn/ha-noi/xiem-che-thai-lan-co-truyen-phu-dong",
     "complete": true,
     "items": [
       {
@@ -33275,6 +35012,19 @@
         "fetched_at": "2026-11-27T14:29:40.868Z"
       }
     ],
+    "lat": 21.053304,
+    "lng": 105.95996,
+    "distance_m": 7334,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:01.665Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Xiem%20-%20Ch%C3%A8%20Th%C3%A1i%20Lan%20C%E1%BB%95%20Truy%E1%BB%81n%20-%20Ph%C3%B9%20%C4%90%E1%BB%95ng%20S%E1%BB%91%20130%20X%C3%B3m%20Ban%2C%20Th%C3%B4n%20Ph%C3%B9%20%C4%90%E1%BB%95ng%2C%20X.%20Ph%C3%B9%20%C4%90%E1%BB%95ng%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -33283,6 +35033,7 @@
     "name": "Tiệm Mì Minh Anh - Mì Trộn & Viên Chiên",
     "address": "Số Nhà 31 Ngõ 363 Đường Dương Đức Hiền, X. Kim Sơn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-mi-minh-anh-mi-tron-vien-chien",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-mi-minh-anh-mi-tron-vien-chien",
     "complete": true,
     "items": [
       {
@@ -33430,6 +35181,19 @@
         "fetched_at": "2026-11-27T14:29:43.760Z"
       }
     ],
+    "lat": 21.027207,
+    "lng": 105.992502,
+    "distance_m": 6540,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:01.258Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20M%C3%AC%20Minh%20Anh%20-%20M%C3%AC%20Tr%E1%BB%99n%20%26%20Vi%C3%AAn%20Chi%C3%AAn%20S%E1%BB%91%20Nh%C3%A0%2031%20Ng%C3%B5%20363%20%C4%90%C6%B0%E1%BB%9Dng%20D%C6%B0%C6%A1ng%20%C4%90%E1%BB%A9c%20Hi%E1%BB%81n%2C%20X.%20Kim%20S%C6%A1n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -33438,6 +35202,7 @@
     "name": "Tiệm Trà Phố Keo",
     "address": "Kiot 22 Chợ Keo, X. Kim Sơn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tiem-tra-pho-keo",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tiem-tra-pho-keo",
     "complete": true,
     "items": [
       {
@@ -33819,6 +35584,19 @@
         "fetched_at": "2026-11-27T14:29:47.472Z"
       }
     ],
+    "lat": 21.024254,
+    "lng": 105.991249,
+    "distance_m": 6229,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:03.429Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ti%E1%BB%87m%20Tr%C3%A0%20Ph%E1%BB%91%20Keo%20Kiot%2022%20Ch%E1%BB%A3%20Keo%2C%20X.%20Kim%20S%C6%A1n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -33827,6 +35605,7 @@
     "name": "Anh Béo - Bún Chả, Bún Dọc Mùng & Cơm Tấm",
     "address": "Số 140 Đường Dương Đức Hiền, X. Kim Sơn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/anh-beo-bun-cha-bun-doc-mung-com-tam",
+    "original_source_url": "https://shopeefood.vn/ha-noi/anh-beo-bun-cha-bun-doc-mung-com-tam",
     "complete": true,
     "items": [
       {
@@ -33992,6 +35771,19 @@
         "fetched_at": "2026-11-27T14:29:50.273Z"
       }
     ],
+    "lat": 21.022373,
+    "lng": 105.971359,
+    "distance_m": 4638,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:03.874Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Anh%20B%C3%A9o%20-%20B%C3%BAn%20Ch%E1%BA%A3%2C%20B%C3%BAn%20D%E1%BB%8Dc%20M%C3%B9ng%20%26%20C%C6%A1m%20T%E1%BA%A5m%20S%E1%BB%91%20140%20%C4%90%C6%B0%E1%BB%9Dng%20D%C6%B0%C6%A1ng%20%C4%90%E1%BB%A9c%20Hi%E1%BB%81n%2C%20X.%20Kim%20S%C6%A1n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -34000,6 +35792,7 @@
     "name": "Tré Trộn Nhà Sam",
     "address": "Số 458 Đường Dương Đức Hiền, X. Kim Sơn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/tre-tron-nha-sam",
+    "original_source_url": "https://shopeefood.vn/ha-noi/tre-tron-nha-sam",
     "complete": true,
     "items": [
       {
@@ -34228,6 +36021,19 @@
         "fetched_at": "2026-11-27T14:29:53.866Z"
       }
     ],
+    "lat": 21.027618,
+    "lng": 106.001389,
+    "distance_m": 7291,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:04.559Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Tr%C3%A9%20Tr%E1%BB%99n%20Nh%C3%A0%20Sam%20S%E1%BB%91%20458%20%C4%90%C6%B0%E1%BB%9Dng%20D%C6%B0%C6%A1ng%20%C4%90%E1%BB%A9c%20Hi%E1%BB%81n%2C%20X.%20Kim%20S%C6%A1n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -34236,6 +36042,7 @@
     "name": "Libofood - Sản Phẩm Sữa - Đường 181",
     "address": "Thôn Giao Tất A Phố Keo, X. Kim Sơn, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/libofood-san-pham-sua-duong-181.dwfzvs",
+    "original_source_url": "https://shopeefood.vn/ha-noi/libofood-san-pham-sua-duong-181.dwfzvs",
     "complete": true,
     "items": [
       {
@@ -34518,6 +36325,19 @@
         "fetched_at": "2026-11-27T14:29:56.269Z"
       }
     ],
+    "lat": 21.022307,
+    "lng": 105.992612,
+    "distance_m": 6208,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:05.625Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Libofood%20-%20S%E1%BA%A3n%20Ph%E1%BA%A9m%20S%E1%BB%AFa%20-%20%C4%90%C6%B0%E1%BB%9Dng%20181%20Th%C3%B4n%20Giao%20T%E1%BA%A5t%20A%20Ph%E1%BB%91%20Keo%2C%20X.%20Kim%20S%C6%A1n%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -34526,6 +36346,7 @@
     "name": "PHIÊNG LƠI Café - Thuận An",
     "address": "Số 2 Ngõ 27 Phố Thuận An, X. Trâu Quỳ, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/phieng-loi-cafe-thuan-an",
+    "original_source_url": "https://shopeefood.vn/ha-noi/phieng-loi-cafe-thuan-an",
     "complete": true,
     "items": [
       {
@@ -34916,6 +36737,19 @@
         "fetched_at": "2026-11-27T14:29:59.111Z"
       }
     ],
+    "lat": 21.012138,
+    "lng": 105.941054,
+    "distance_m": 2612,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:06.321Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=PHI%C3%8ANG%20L%C6%A0I%20Caf%C3%A9%20-%20Thu%E1%BA%ADn%20An%20S%E1%BB%91%202%20Ng%C3%B5%2027%20Ph%E1%BB%91%20Thu%E1%BA%ADn%20An%2C%20X.%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -34924,6 +36758,7 @@
     "name": "Bún Chả Phất Lộc - Vinhomes Ocean Park",
     "address": "SP09.75 Hải Đăng 09 Vinhomes Ocean Park, X. Trâu Quỳ, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bun-cha-phat-loc-vinhomes-ocean-park",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bun-cha-phat-loc-vinhomes-ocean-park",
     "complete": true,
     "items": [
       {
@@ -35134,6 +36969,19 @@
         "fetched_at": "2026-11-27T14:30:05.074Z"
       }
     ],
+    "lat": 21.000409,
+    "lng": 105.942257,
+    "distance_m": 1305,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:06.975Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "7đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%BAn%20Ch%E1%BA%A3%20Ph%E1%BA%A5t%20L%E1%BB%99c%20-%20Vinhomes%20Ocean%20Park%20SP09.75%20H%E1%BA%A3i%20%C4%90%C4%83ng%2009%20Vinhomes%20Ocean%20Park%2C%20X.%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -35142,6 +36990,7 @@
     "name": "Phở Cuốn Hello Ocean Park",
     "address": "Số 21 Ngách 147 Ngõ 208 Kiên Thành, X. Trâu Quỳ, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/pho-cuon-hello-ocean-park",
+    "original_source_url": "https://shopeefood.vn/ha-noi/pho-cuon-hello-ocean-park",
     "complete": true,
     "items": [
       {
@@ -35154,6 +37003,19 @@
         "fetched_at": "2026-11-27T14:30:05.938Z"
       }
     ],
+    "lat": 21.006721,
+    "lng": 105.949589,
+    "distance_m": 2046,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:08.428Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "1đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ph%E1%BB%9F%20Cu%E1%BB%91n%20Hello%20Ocean%20Park%20S%E1%BB%91%2021%20Ng%C3%A1ch%20147%20Ng%C3%B5%20208%20Ki%C3%AAn%20Th%C3%A0nh%2C%20X.%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -35162,6 +37024,7 @@
     "name": "Nhân Cà Phê - Thuận An",
     "address": "27 Phố Thuận An, X. Trâu Quỳ, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/nhan-ca-phe-thuan-an",
+    "original_source_url": "https://shopeefood.vn/ha-noi/nhan-ca-phe-thuan-an",
     "complete": true,
     "items": [
       {
@@ -35579,14 +37442,28 @@
         "fetched_at": "2026-11-27T14:30:12.536Z"
       }
     ],
+    "lat": 21.012052,
+    "lng": 105.941255,
+    "distance_m": 2599,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:08.794Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Nh%C3%A2n%20C%C3%A0%20Ph%C3%AA%20-%20Thu%E1%BA%ADn%20An%2027%20Ph%E1%BB%91%20Thu%E1%BA%ADn%20An%2C%20X.%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
     "store_id": "sf_0135",
     "place_id": "",
-    "name": "Cafe Thu - Cafe & Trà Sữa - Kiot 34 Đặng Công Chất",
+    "name": "Cafe Thu - Cafe & Trà Sữa - Kiot 34 Đặng Công Chất ",
     "address": "Kiot 34 - 35 Đặng Công Chất, X. Đình Xuyên , Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/cafe-thu-cafe-tra-sua-kiot-34-dang-cong-chat",
+    "original_source_url": "https://shopeefood.vn/ha-noi/cafe-thu-cafe-tra-sua-kiot-34-dang-cong-chat",
     "complete": true,
     "items": [
       {
@@ -35815,6 +37692,19 @@
         "fetched_at": "2026-11-27T14:30:12.925Z"
       }
     ],
+    "lat": 21.08838,
+    "lng": 105.9229,
+    "distance_m": 11291,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:09.438Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "5đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20Thu%20-%20Cafe%20%26%20Tr%C3%A0%20S%E1%BB%AFa%20-%20Kiot%2034%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%20Kiot%2034%20-%2035%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%2C%20X.%20%C4%90%C3%ACnh%20Xuy%C3%AAn%20%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -35823,6 +37713,7 @@
     "name": "Chè Suu - Đình Tế Xuyên",
     "address": "Đình Tế Xuyên, X. Đình Xuyên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/che-suu-dinh-te-xuyen",
+    "original_source_url": "https://shopeefood.vn/ha-noi/che-suu-dinh-te-xuyen",
     "complete": true,
     "items": [
       {
@@ -36069,6 +37960,19 @@
         "fetched_at": "2026-11-27T14:30:59.160Z"
       }
     ],
+    "lat": 21.080773,
+    "lng": 105.93738,
+    "distance_m": 10244,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:11.067Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ch%C3%A8%20Suu%20-%20%C4%90i%CC%80nh%20T%E1%BA%BF%20Xuy%C3%AAn%20%C4%90%C3%ACnh%20T%E1%BA%BF%20Xuy%C3%AAn%2C%20X.%20%C4%90%C3%ACnh%20Xuy%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -36077,6 +37981,7 @@
     "name": "Canh Cá Rô Thái Bình, Bún & Bánh Đa - Đặng Công Chất",
     "address": "Kiot 24 Đặng Công Chất, X. Đình Xuyên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/canh-ca-thai-binh-bun-banh-da-dang-cong-chat.r6udjm",
+    "original_source_url": "https://shopeefood.vn/ha-noi/canh-ca-thai-binh-bun-banh-da-dang-cong-chat.r6udjm",
     "complete": true,
     "items": [
       {
@@ -36125,6 +38030,19 @@
         "fetched_at": "2026-11-27T14:31:03.768Z"
       }
     ],
+    "lat": 21.088669,
+    "lng": 105.922628,
+    "distance_m": 11328,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:11.596Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "2đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Canh%20C%C3%A1%20R%C3%B4%20Th%C3%A1i%20B%C3%ACnh%2C%20B%C3%BAn%20%26%20B%C3%A1nh%20%C4%90a%20-%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%20Kiot%2024%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%2C%20X.%20%C4%90%C3%ACnh%20Xuy%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -36133,6 +38051,7 @@
     "name": "Đô Đô - Đặng Công Chất",
     "address": "20 Đặng Công Chất, P. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/do-do-dang-cong-chat",
+    "original_source_url": "https://shopeefood.vn/ha-noi/do-do-dang-cong-chat",
     "complete": true,
     "items": [
       {
@@ -36298,6 +38217,19 @@
         "fetched_at": "2026-11-27T14:31:08.894Z"
       }
     ],
+    "lat": 21.089054,
+    "lng": 105.922498,
+    "distance_m": 11372,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:12.254Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "500+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=%C4%90%C3%B4%20%C4%90%C3%B4%20-%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%2020%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%2C%20P.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -36306,6 +38238,7 @@
     "name": "Ngọc Thạch Quán - Sữa Chua & Caramen - Đặng Công Chất",
     "address": "Số 19 Đặng Công Chất, P. Yên Viên, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/ngoc-thach-quan-sua-chua-caramen-dang-cong-chat",
+    "original_source_url": "https://shopeefood.vn/ha-noi/ngoc-thach-quan-sua-chua-caramen-dang-cong-chat",
     "complete": true,
     "items": [
       {
@@ -36786,6 +38719,19 @@
         "fetched_at": "2026-11-27T14:31:14.743Z"
       }
     ],
+    "lat": 21.089389,
+    "lng": 105.921823,
+    "distance_m": 11423,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:13.323Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "100+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Ng%E1%BB%8Dc%20Th%E1%BA%A1ch%20Qu%C3%A1n%20-%20S%E1%BB%AFa%20Chua%20%26%20Caramen%20-%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%20S%E1%BB%91%2019%20%C4%90%E1%BA%B7ng%20C%C3%B4ng%20Ch%E1%BA%A5t%2C%20P.%20Y%C3%AAn%20Vi%C3%AAn%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -36794,6 +38740,7 @@
     "name": "Olala Coffee & Tea",
     "address": "99 Đường Trâu Quỳ, P. Trâu Quỳ, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/olala-coffee-tea",
+    "original_source_url": "https://shopeefood.vn/ha-noi/olala-coffee-tea",
     "complete": true,
     "items": [
       {
@@ -37076,6 +39023,19 @@
         "fetched_at": "2026-11-27T14:31:20.316Z"
       }
     ],
+    "lat": 21.008671,
+    "lng": 105.93633,
+    "distance_m": 2364,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:14.262Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Olala%20Coffee%20%26%20Tea%2099%20%C4%90%C6%B0%E1%BB%9Dng%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20P.%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -37084,6 +39044,7 @@
     "name": "Hợp Tác Xã Mía - Thành Trung",
     "address": "2 Thành Trung, P. Trâu Quỳ, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/hop-tac-xa-mia-thanh-trung",
+    "original_source_url": "https://shopeefood.vn/ha-noi/hop-tac-xa-mia-thanh-trung",
     "complete": true,
     "items": [
       {
@@ -37222,6 +39183,19 @@
         "fetched_at": "2026-11-27T14:31:19.570Z"
       }
     ],
+    "lat": 21.011112,
+    "lng": 105.93577,
+    "distance_m": 2638,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:14.878Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=H%E1%BB%A3p%20T%C3%A1c%20X%C3%A3%20M%C3%ADa%20-%20Th%C3%A0nh%20Trung%202%20Th%C3%A0nh%20Trung%2C%20P.%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -37230,6 +39204,7 @@
     "name": "Bánh Đa Cua Hoàn Hương - Hải Phòng",
     "address": "Số 80, P. Thành Trung, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/banh-da-cua-hoan-huong-hai-phong",
+    "original_source_url": "https://shopeefood.vn/ha-noi/banh-da-cua-hoan-huong-hai-phong",
     "complete": true,
     "items": [
       {
@@ -37764,6 +39739,19 @@
         "fetched_at": "2026-11-27T14:31:27.481Z"
       }
     ],
+    "lat": 21.010035,
+    "lng": 105.939331,
+    "distance_m": 2415,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:15.785Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20%C4%90a%20Cua%20Ho%C3%A0n%20H%C6%B0%C6%A1ng%20-%20H%E1%BA%A3i%20Ph%C3%B2ng%20S%E1%BB%91%2080%2C%20P.%20Th%C3%A0nh%20Trung%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -37772,6 +39760,7 @@
     "name": "Bánh Đa Cua Hải Phòng - Thành Trung",
     "address": "Số 80, P. Thành Trung, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/banh-da-cua-hai-phong-hoan-huong",
+    "original_source_url": "https://shopeefood.vn/ha-noi/banh-da-cua-hai-phong-hoan-huong",
     "complete": true,
     "items": [
       {
@@ -37829,6 +39818,19 @@
         "fetched_at": "2026-11-27T14:31:25.006Z"
       }
     ],
+    "lat": 21.010035,
+    "lng": 105.939331,
+    "distance_m": 2415,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:16.724Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20%C4%90a%20Cua%20H%E1%BA%A3i%20Ph%C3%B2ng%20-%20Th%C3%A0nh%20Trung%20S%E1%BB%91%2080%2C%20P.%20Th%C3%A0nh%20Trung%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -37837,6 +39839,7 @@
     "name": "DINGTEA - NGÔ XUÂN QUẢNG",
     "address": "Số 279 Ngô Xuân Quảng, TT. Trấn Trâu Quỳ, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/dingtea-ngo-xuan-quang",
+    "original_source_url": "https://shopeefood.vn/ha-noi/dingtea-ngo-xuan-quang",
     "complete": true,
     "items": [
       {
@@ -38281,6 +40284,19 @@
         "fetched_at": "2026-11-27T14:31:31.133Z"
       }
     ],
+    "lat": 21.012989,
+    "lng": 105.936391,
+    "distance_m": 2814,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:16.910Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "500+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=DINGTEA%20-%20NG%C3%94%20XU%C3%82N%20QU%E1%BA%A2NG%20S%E1%BB%91%20279%20Ng%C3%B4%20Xu%C3%A2n%20Qu%E1%BA%A3ng%2C%20TT.%20Tr%E1%BA%A5n%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -38289,6 +40305,7 @@
     "name": "Bánh Gà Hiệp Gà - An Đào",
     "address": "273 An Đào, TT. Trâu Quì, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/banh-ga-hiep-ga-an-dao",
+    "original_source_url": "https://shopeefood.vn/ha-noi/banh-ga-hiep-ga-an-dao",
     "complete": true,
     "items": [
       {
@@ -38688,6 +40705,19 @@
         "fetched_at": "2026-11-27T14:31:33.481Z"
       }
     ],
+    "lat": 21.003252,
+    "lng": 105.937123,
+    "distance_m": 1779,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:17.924Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "500+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%C3%A1nh%20G%C3%A0%20Hi%E1%BB%87p%20G%C3%A0%20-%20An%20%C4%90%C3%A0o%20273%20An%20%C4%90%C3%A0o%2C%20TT.%20Tr%C3%A2u%20Qu%C3%AC%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -38696,6 +40726,7 @@
     "name": "Cơm Gà Hội An Dì Tư An - Cơm Gà & Phở Gà - Vinhomes OceanPark",
     "address": "SH30 Toà S2.08 Vinhome Ocean Park, P. Đặng Xá, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/com-ga-hoi-an-di-tu-an-com-ga-pho-ga-vinhomes-oceanpark",
+    "original_source_url": "https://shopeefood.vn/ha-noi/com-ga-hoi-an-di-tu-an-com-ga-pho-ga-vinhomes-oceanpark",
     "complete": true,
     "items": [
       {
@@ -39239,6 +41270,19 @@
         "fetched_at": "2026-11-27T14:31:38.567Z"
       }
     ],
+    "lat": 20.993458,
+    "lng": 105.941765,
+    "distance_m": 591,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:19.109Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "500+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=C%C6%A1m%20G%C3%A0%20H%E1%BB%99i%20An%20D%C3%AC%20T%C6%B0%20An%20-%20C%C6%A1m%20G%C3%A0%20%26%20Ph%E1%BB%9F%20G%C3%A0%20-%20Vinhomes%20OceanPark%20SH30%20To%C3%A0%20S2.08%20Vinhome%20Ocean%20Park%2C%20P.%20%C4%90%E1%BA%B7ng%20X%C3%A1%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -39247,6 +41291,7 @@
     "name": "Bếp Mèo - Bún Đậu, Lẩu Cô Đơn & Đồ Ăn Vặt - 48 An Đào A",
     "address": "48 An Đào A, Thị Trấn Gia Lâm, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/bep-meo-bun-dau-lau-co-don-do-an-vat-48-an-dao-a",
+    "original_source_url": "https://shopeefood.vn/ha-noi/bep-meo-bun-dau-lau-co-don-do-an-vat-48-an-dao-a",
     "complete": true,
     "items": [
       {
@@ -39646,6 +41691,19 @@
         "fetched_at": "2026-11-27T14:31:39.947Z"
       }
     ],
+    "lat": 21.002619,
+    "lng": 105.939627,
+    "distance_m": 1614,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:19.298Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "500+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=B%E1%BA%BFp%20M%C3%A8o%20-%20B%C3%BAn%20%C4%90%E1%BA%ADu%2C%20L%E1%BA%A9u%20C%C3%B4%20%C4%90%C6%A1n%20%26%20%C4%90%E1%BB%93%20%C4%82n%20V%E1%BA%B7t%20-%2048%20An%20%C4%90%C3%A0o%20A%2048%20An%20%C4%90%C3%A0o%20A%2C%20Th%E1%BB%8B%20Tr%E1%BA%A5n%20Gia%20L%C3%A2m%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -39654,8 +41712,22 @@
     "name": "Kafa Cafe - Trâu Quỳ",
     "address": "110 Lô L1 Khu 31 HA Cửu Việt, P. Nguyễn Khiêm Ích, TT. Trâu Quỳ, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/kafa-cafe-trau-quy",
+    "original_source_url": "https://shopeefood.vn/ha-noi/kafa-cafe-trau-quy",
     "complete": false,
     "items": [],
+    "lat": 21.013022,
+    "lng": 105.939337,
+    "distance_m": 2739,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:20.041Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "50+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=Kafa%20Cafe%20-%20Tr%C3%A2u%20Qu%E1%BB%B3%20110%20L%C3%B4%20L1%20Khu%2031%20HA%20C%E1%BB%ADu%20Vi%E1%BB%87t%2C%20P.%20Nguy%E1%BB%85n%20Khi%C3%AAm%20%C3%8Dch%2C%20TT.%20Tr%C3%A2u%20Qu%E1%BB%B3%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -39664,6 +41736,7 @@
     "name": "An Viên - Chân Gà Rang Muối Hải Sản - Thành Trung",
     "address": "32 Thành Trung, P. Cửu Việt, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/an-vien-chan-ga-rang-muoi-hai-san-thanh-trung",
+    "original_source_url": "https://shopeefood.vn/ha-noi/an-vien-chan-ga-rang-muoi-hai-san-thanh-trung",
     "complete": true,
     "items": [
       {
@@ -39991,6 +42064,19 @@
         "fetched_at": "2026-11-27T14:31:45.307Z"
       }
     ],
+    "lat": 21.010632,
+    "lng": 105.936646,
+    "distance_m": 2557,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:20.928Z",
+    "status_at_fetch": "Mở cửa",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=An%20Vi%C3%AAn%20-%20Ch%C3%A2n%20G%C3%A0%20Rang%20Mu%E1%BB%91i%20H%E1%BA%A3i%20S%E1%BA%A3n%20-%20Th%C3%A0nh%20Trung%2032%20Th%C3%A0nh%20Trung%2C%20P.%20C%E1%BB%ADu%20Vi%E1%BB%87t%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   },
   {
@@ -39999,6 +42085,7 @@
     "name": "Mì Cay, Mì Trộn - Tiệm Nhà Hann",
     "address": "Số 39 Ngách 367/100 Ngô Xuân Quảng, P. Cửu Việt 2, TT. Trâu Qùy, Gia Lâm, Hà Nội",
     "source_url": "https://shopeefood.vn/ha-noi/mi-cay-mi-tron-tiem-nha-hann",
+    "original_source_url": "https://shopeefood.vn/ha-noi/mi-cay-mi-tron-tiem-nha-hann",
     "complete": true,
     "items": [
       {
@@ -40407,6 +42494,19 @@
         "fetched_at": "2026-11-27T14:31:51.861Z"
       }
     ],
+    "lat": 21.007295,
+    "lng": 105.937955,
+    "distance_m": 2162,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "coordinate_source": "ShopeeFood public store metadata",
+    "coordinate_fetched_at": "2026-11-28T04:56:21.543Z",
+    "status_at_fetch": "Đã đóng",
+    "rating_text": "10+đánh giá trên ShopeeFood",
     "map_search_url": "https://www.google.com/maps/search/?api=1&query=M%C3%AC%20Cay%2C%20M%C3%AC%20Tr%E1%BB%99n%20-%20Ti%E1%BB%87m%20Nh%C3%A0%20Hann%20S%E1%BB%91%2039%20Ng%C3%A1ch%20367/100%20Ng%C3%B4%20Xu%C3%A2n%20Qu%E1%BA%A3ng%2C%20P.%20C%E1%BB%ADu%20Vi%E1%BB%87t%202%2C%20TT.%20Tr%C3%A2u%20Q%C3%B9y%2C%20Gia%20L%C3%A2m%2C%20H%C3%A0%20N%E1%BB%99i"
   }
 ]

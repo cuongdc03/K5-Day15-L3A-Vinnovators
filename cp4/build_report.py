@@ -30,6 +30,9 @@ def main():
 <h2>Video dự phòng</h2><video src="demo-backup.webm" controls preload="metadata"></video><p>Ghi thao tác thật trên UI local bằng Playwright. UI hiển thị đầu ra đã lưu; video không phải quay chat gọi API trực tiếp.</p>
 <h2>Phần cần người thật</h2><p>Khảo sát 22 lượt gửi, 19 hợp lệ; pain 11/19 = 58% &lt; 60%, phỏng vấn 0/3. Chưa xác nhận vai và khu vực, chưa đo số phút. Review thật 0/450 mục tiêu. Cần chấm độc lập, xác nhận nhãn chuẩn, bổ sung dữ liệu cho quận còn thiếu, điền phòng/zone, phân công nói, reflection và chạy trên máy khác. Không bịa dữ kiện để đánh dấu hoàn thành.</p>
 <h2>Chạy lại từ repo</h2><p><code>python -m cp4.server</code> để xem UI. Kiểm tra: <code>python -m cp4.audit</code>, <code>python -m cp4.run check</code>. File khung gốc, metric, benchmark và các lượt cũ giữ nguyên. Chi tiết lệnh và giới hạn ở <code>cp4/README.md</code>.</p></body></html>'''
+    manifest=f['manifest']
+    note='<aside class="box"><b>Cập nhật UI mới:</b> '+str(manifest.get('listed_places',manifest['mapped_places']))+' bản ghi địa điểm; '+str(manifest.get('shopee_stores_with_coordinates',10))+'/150 quán ShopeeFood có tọa độ công khai. Khoảng cách đường chim bay xấp xỉ từ VinUni (20.9889, 105.9447), xếp gần đến xa. Các số 412 địa điểm/10 menu ghép bên dưới là ảnh chụp CP4 trước lần bổ sung này.</aside>'
+    status=status.replace('<h2>Dữ liệu nối vào UI</h2>',note+'<h2>Ảnh chụp dữ liệu ở lần chạy CP4</h2>',1)
     (OUT/'status.html').write_text(status,encoding='utf8')
     (ROOT/'cp4/results/audit.json').write_text(json.dumps(f,ensure_ascii=False,indent=2),encoding='utf8')
     print('Generated status.html, slides.html and results/audit.json')

@@ -1,0 +1,14 @@
+import {chromium} from 'playwright';import assert from 'node:assert/strict';import {fileURLToPath} from 'node:url';
+const browser=await chromium.launch({channel:'chrome',headless:true});const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto('http://127.0.0.1:8765/web-demo/live.html',{waitUntil:'networkidle'});await page.waitForFunction(()=>window.PLACES?.length===552);
+assert.equal(await page.evaluate(()=>PLACES.filter(p=>p.store_id).length),150);
+await page.locator('#shopeeOnly').check();assert.equal(await page.locator('#list .card').count(),150);
+assert.equal(await page.evaluate(()=>PLACES.reduce((n,p)=>n+p.menu.length,0)),4308);
+const distances=await page.locator('#list .card').evaluateAll(nodes=>nodes.map(n=>window.PLACES.find(p=>p.id===n.dataset.id).distance_m));assert.deepEqual(distances,[...distances].sort((a,b)=>(a??Infinity)-(b??Infinity)));
+assert.ok(await page.evaluate(()=>Math.abs(calcDistText(PLACES.find(p=>p.district==='van_giang')).replace(/[^\d.]/g,'')-PLACES.find(p=>p.district==='van_giang').distance_m/1000)<0.1));
+await page.locator('#q').fill('Ruta');await page.locator('.card-toggle').first().click();assert.equal(await page.locator('.live-menu tbody tr').count(),29);
+await page.waitForTimeout(700);await page.screenshot({path:fileURLToPath(new URL('./public/shopee-map.png',import.meta.url))});
+await page.goto('http://127.0.0.1:8765/web-demo/menu.html',{waitUntil:'networkidle'});assert.equal(await page.locator('#stores details').count(),150);assert.equal(await page.locator('tbody tr').count(),4308);
+await page.locator('#search').fill('Ruta');assert.match(await page.locator('summary').innerText(),/từ VinUni/);await page.locator('summary').click();
+await page.setViewportSize({width:390,height:844});await page.screenshot({path:fileURLToPath(new URL('./public/shopee-distance-mobile.png',import.meta.url))});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2));
+assert.deepEqual(errors,[]);console.log('PASS: 150 Shopee stores on main UI, 4308 rows, nearest ordering, fixed VinUni origin across districts, Ruta 29 rows, mobile.');await browser.close();

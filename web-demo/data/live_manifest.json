@@ -1,6 +1,7 @@
 {
   "source_places": 422,
-  "mapped_places": 412,
+  "listed_places": 552,
+  "mapped_places": 552,
   "excluded": [
     {
       "place_id": "p_8b08f241",
@@ -54,17 +55,24 @@
     }
   ],
   "districts": {
-    "gia_lam": 356,
+    "gia_lam": 496,
     "van_giang": 56
   },
   "evaluated_places": 17,
   "labels": {
-    "unsure": 406,
+    "unsure": 546,
     "chain": 6
   },
   "menu_stores": 150,
   "menu_rows": 4308,
   "linked_stores": 10,
+  "shopee_stores_with_coordinates": 150,
+  "distance_origin": {
+    "name": "VinUni",
+    "lat": 20.9889,
+    "lng": 105.9447,
+    "method": "straight_line_haversine"
+  },
   "run_sources": [
     "run-1.csv",
     "run-2.csv",
