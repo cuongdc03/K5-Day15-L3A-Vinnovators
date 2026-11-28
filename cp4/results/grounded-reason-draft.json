@@ -1,0 +1,178 @@
+{
+  "status": "draft_pending_human_review",
+  "metric": "grounded_reason",
+  "pass": 15,
+  "total": 15,
+  "cases": [
+    {
+      "id": "B01",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_c00a0447",
+          "pass": true,
+          "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_5d4bf1c5",
+          "pass": true,
+          "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B03",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_c6e2fcfb",
+          "pass": true,
+          "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B04",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_ac753177",
+          "pass": true,
+          "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B05",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_5b65fd97",
+          "pass": true,
+          "proof": "brand_id và nguồn chuỗi khớp lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B06",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_a9c4ad8e",
+          "pass": true,
+          "proof": "brand_id và nguồn chuỗi khớp lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B07",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_231f1c9e",
+          "pass": true,
+          "proof": "brand_id và nguồn chuỗi khớp lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B08",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_a32f6af4",
+          "pass": true,
+          "proof": "brand_id và nguồn chuỗi khớp lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B09",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_746fa96e",
+          "pass": true,
+          "proof": "brand_id và nguồn chuỗi khớp lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B10",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_23a6b3cb",
+          "pass": true,
+          "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B11",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_87d68fc9",
+          "pass": true,
+          "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B12",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_8b08f241",
+          "pass": true,
+          "proof": "Tên danh mục Trạm Tiếp Sức có trong get_place; reason ghi rõ suy luận từ tên."
+        }
+      ]
+    },
+    {
+      "id": "B13",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_9c1277dc",
+          "pass": true,
+          "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+        },
+        {
+          "place_id": "p_560e10f0",
+          "pass": true,
+          "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B14",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_a40a401f",
+          "pass": true,
+          "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+        }
+      ]
+    },
+    {
+      "id": "B15",
+      "pass": true,
+      "verdicts": [
+        {
+          "place_id": "p_9d7bb2fe",
+          "pass": true,
+          "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+        }
+      ]
+    }
+  ]
+}
