@@ -1,0 +1,12 @@
+# Reflection — Đỗ Cao Cường
+
+> Làm ở guide bước 5.3. Hạn: 23:59 Thứ Bảy 28/11.
+
+1. **Vai trò + phần mình làm (trỏ tới file / commit):**
+   Mình là đội trưởng nhóm Vinnovators (Track F), phụ trách điều phối, schema, agent và slide. Việc chính: thiết kế schema dữ liệu 4 quận và validator (`data/SCHEMA.md`, `data/schema/validate.py`, commit `3d1d3eb`); viết `spec.md` và `canvas.md` CP1–CP2 (`688c1e3`, `b069db4`, chốt chuẩn "đạt" ở §7); làm form khảo sát 5 câu và tổng hợp kết quả vào `evidence/summary.md`; chấm lượt 1 và viết báo cáo `eval/report.md` (`c810c96`); duyệt tay nhãn cuối `data/processed/labels.csv`. Mình cũng làm lại trang giới thiệu `web-demo/landing.html` (`d6a2c48`) và điều phối việc deploy web lên Netlify (PR #12–#14). Phần crawl là Đức và Thái, giao diện bản đồ là Trường.
+
+2. **AI hỗ trợ mình thế nào (việc gì, công cụ gì, chỗ nào phải sửa lại output AI):**
+   Mình dùng Claude Code cho phần lớn việc: soạn spec, viết Apps Script tạo form, phân tích file khảo sát, soạn nhãn L1 và nháp cột `pass` của bộ câu thử, thiết kế lại landing. Agent trong repo gọi model thật (`claude-haiku-5-5` ở run-2, `gpt-6-luna` ở run-3). Chỗ phải sửa lại: script form báo "Biểu mẫu cập nhật dữ liệu không hợp lệ" nên phải thêm trang ngắt; `.env` bị ghi sai `antropic` và `haiku-5.5`; font tiếng Việt lỗi dấu ở landing nên đổi font. Nhãn L1 và cột `pass` là do AI làm nên **không phải bản chấm độc lập**. Mình đã tự kiểm và chốt nhãn cuối bằng tay, nhưng cột `pass` vẫn chưa có người thứ hai duyệt (đã ghi rõ trong `docs/ai-usage.md` và `eval/run-3.csv`).
+
+3. **Một câu thử trượt của nhóm và mình học được gì từ nó:**
+   Câu B01 ("Quán Bún Bò Huế Cố Đô có phải quán local không?"): đáp án là `local` vì quán có 1 địa chỉ, bán món Việt, không thuộc chuỗi nào, nhưng agent trả `unsure` (độ chắc 49) vì chưa thu được review nào. Cùng lỗi này làm trượt B02, B03, B04, B13, nên câu thuong chỉ đạt 5/9 (56%), thấp hơn ngưỡng 75% mình đã đặt trong spec. Mình học được hai điều. Một, luật "thiếu review thì hạ về chưa chắc" an toàn cho quán nhỏ nhưng làm người dùng vẫn phải tự đọc review, đúng nỗi đau ban đầu; chỉ sửa prompt hay thêm model thì không đổi được, vì nhãn do luật quyết định chứ không phải model (run-1 và run-2 cho nhãn y hệt). Hai, mình không hạ ngưỡng hay sửa `expected` cho khớp, mà ghi thẳng trong báo cáo rằng 15/20 sau cải tiến vẫn chưa đạt chuẩn. Khảo sát cũng tương tự: 11/19 (58%) dưới ngưỡng 60%, nên mình không tích mục "đủ bằng chứng pain".
