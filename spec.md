@@ -167,7 +167,7 @@ Nhãn dùng: `local` · `chain` · `tourist` · `unsure`. Định nghĩa chốt 
   4. `co_ly_do_kiem_duoc` — mọi nhãn kèm ≥1 tín hiệu có trong dữ liệu · grader `code` · ngưỡng 100%.
 - **Chuẩn "đạt"** *(chốt tại CP2 19:30 Thứ Sáu 27/11, Cường xác nhận, giữ nguyên đến 23:59 Thứ Bảy 28/11)*: "Đạt khi ≥ 75% câu `thuong` khớp nhãn, ≥ 90% câu nhãn `unsure` được chuyển người, và 100% câu `tu_choi` / chèn chỉ dẫn xử lý đúng." Ngưỡng là *(tự ước tính)*; đã chốt, không sửa.
 - Độ tin cậy nhãn: tỷ lệ `L1` và `L2` khớp nhau đưa vào báo cáo.
-- Kết quả: lượt 1 **12/20 (60%)**, run ID `run-1@20261128-082514`, chưa đạt chuẩn · lượt 2 *(chưa chạy)* → chi tiết `eval/report.md`, hồ sơ `eval/README.md`. Theo type: thuong 4/9 · kho 5/7 · tu_choi 3/4. Cột `pass` do Claude chấm, chưa người thứ hai duyệt.
+- Kết quả: lượt 1 **12/20 (60%)**, run ID `run-1@20261128-082514`, chưa đạt chuẩn · lượt 2 **12/20 (60%)**, run ID `run-2@20261128-090411`, model `claude-haiku-5-5`, chạy lại không có cải tiến, kết quả giống hệt lượt 1 → chi tiết `eval/report.md`, hồ sơ `eval/README.md`. Theo type: thuong 4/9 · kho 5/7 · tu_choi 3/4. Cột `pass` của cả hai lượt do Claude chấm, chưa người thứ hai duyệt.
 
 ## §8. Chi phí khi dùng thật
 - Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-__.csv` *(chưa chạy, cần ≥50 phiên)*.
@@ -203,6 +203,7 @@ Nhãn dùng: `local` · `chain` · `tourist` · `unsure`. Định nghĩa chốt 
 | 27/11 (trước CP2) | Phạm vi từ Hoàn Kiếm sang 4 quận Cầu Giấy, Hai Bà Trưng, Hoàng Mai, Gia Lâm; Hoàn Kiếm chỉ mẫu bẫy du lịch | Chọn quán cho dân địa phương; ghi để truy vết, chưa tính là đổi sau CP2 |
 | 27/11 (sau CP2) | Thêm importer review, nguồn chuỗi, bộ câu hỏi và dữ liệu menu ShopeeFood thu lại; giữ nguyên §7, metric và expected | Hoàn thiện phần Thái theo main mới; khảo sát/phỏng vấn, review thật và lượt AI thật vẫn chưa có |
 | 28/11 (sau CP2) | Điền kết quả khảo sát (19/22 người được tính) vào §1, §2, `evidence/summary.md`; chấm cột `pass` lượt 1 và điền `eval/report.md`; persona chi phí theo khảo sát | Có số thật từ form Google; giữ nguyên §7, metric, expected và chuẩn "đạt" |
+| 28/11 (sau CP2) | Thêm lượt 2 (`run-2`): chạy lại cả bộ bằng `claude-haiku-5-5`, không đổi code, 12/20 | `run-1` ghi model `gpt-6-luna` chưa xác minh; cần một lượt gọi AI thật đã biết model. Giữ nguyên §7, metric, expected |
 |  |  |  |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)**

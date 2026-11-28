@@ -35,7 +35,7 @@ Dataset nào, xử lý gì: tóm 2–3 dòng từ `data/DATA_CARD.md`.
 | Lượt | Run ID | Model | Cấu hình (prompt / công cụ / thay đổi) | Đạt / tổng | % | Đạt chuẩn? |
 |---|---|---|---|---|---|---|
 | 1 | run-1@20261128-082514 | gpt-6-luna *(cần xác nhận)* | `cp3/` workflow cố định: `search_places` → `get_place` → `lookup_chain` → `get_reviews` → model chọn nhãn → luật chặn → `flag_for_human` | 12/20 | 60% | Chưa (cần ≥75% thuong khớp nhãn) |
-| 2 | | | | __/__ | | |
+| 2 | run-2@20261128-090411 | claude-haiku-5-5 | Giữ nguyên `cp3/` như lượt 1, chỉ đổi model; **không phải lượt cải tiến** | 12/20 | 60% | Chưa |
 
 Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, không sửa dòng cũ.
 
