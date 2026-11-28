@@ -113,17 +113,23 @@ const DISTRICTS = {
   hoan_kiem: 'Hoàn Kiếm',
   cau_giay: 'Cầu Giấy',
   hai_ba_trung: 'Hai Bà Trưng',
-  hoang_mai: 'Hoàng Mai'
+  hoang_mai: 'Hoàng Mai',
+  van_giang: 'Ocean Park 2 · Hưng Yên'
 };
 
+const SUPPORTED_3D = new Set(['gia_lam', 'van_giang', 'hoan_kiem', 'cau_giay', 'hai_ba_trung', 'hoang_mai']);
+const DISTANCE_ORIGIN = { gia_lam: 'VinUni', van_giang: 'VinUni' };
+
 const VINUNI_POS = [20.9889, 105.9447];
+const OCP2_CENTER_POS = [20.9468, 105.9752];
 
 const DISTRICT_CENTER = {
   gia_lam: [VINUNI_POS, 15],
   hoan_kiem: [[21.0315, 105.8505], 15],
   cau_giay: [[21.0335, 105.7850], 15],
   hai_ba_trung: [[21.0055, 105.8475], 15],
-  hoang_mai: [[20.9685, 105.8300], 14]
+  hoang_mai: [[20.9685, 105.8300], 14],
+  van_giang: [[20.9516, 105.9764], 15]
 };
 
 const PIN_COLOR = {
@@ -165,15 +171,20 @@ function saveQueue() {
 
 function calcDistText(p) {
   if (typeof p.lat !== 'number' || typeof p.lng !== 'number') return '';
-  const ref = (DISTRICT_CENTER[p.district] && DISTRICT_CENTER[p.district][0]) || VINUNI_POS;
+  const m = Number.isFinite(p.distance_m) ? p.distance_m : distanceFromVinUni(p.lat, p.lng);
+  if (m < 1000) return `${Math.round(m / 10) * 10}m`;
+  return `${(m / 1000).toFixed(1)}km`;
+}
+
+function distanceFromVinUni(lat, lng) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return Infinity;
+  const ref = VINUNI_POS;
   const R = 6371000;
   const toRad = (deg) => deg * Math.PI / 180;
-  const dLat = toRad(p.lat - ref[0]);
-  const dLng = toRad(p.lng - ref[1]);
-  const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(ref[0])) * Math.cos(toRad(p.lat)) * Math.sin(dLng / 2) ** 2;
-  const m = Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
-  if (m < 1000) return `${Math.max(50, Math.round(m / 10) * 10)}m`;
-  return `${(m / 1000).toFixed(1)}km`;
+  const dLat = toRad(lat - ref[0]);
+  const dLng = toRad(lng - ref[1]);
+  const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(ref[0])) * Math.cos(toRad(lat)) * Math.sin(dLng / 2) ** 2;
+  return Math.round(R * 2 * Math.asin(Math.sqrt(Math.min(1, a))));
 }
 
 /* Minh hoạ ký họa món ăn theo phong cách "Nét bút phố cổ" */
@@ -196,6 +207,7 @@ function dishThumbSVG(dish) {
 
 let usingFallbackData = false;
 let map3dLoading = false;
+let liveDataMeta = null;
 
 const $ = (s) => document.querySelector(s);
 
@@ -208,17 +220,23 @@ window.state = {
   mobileTab: 'list',
   q: '',
   budget: 'all',
+  shopeeOnly: false,
+  sort: 'nearest',
+  showPOI: true,
   hideChain: true,
   hideTourist: true,
   sel: null,
   flagQueue: loadSavedQueue(),
-  reportTarget: null
+  reportTarget: null,
+  visibleCount: 40
 };
 
 let realMap = null;
 let markerLayer = null;
+let areaBoundaryLayer = null;
 let lastMapDistrict = null;
 let lastShownPlaces = [];
+let mapZoomFrame = null;
 
 function isMobileLayout() {
   return document.body.classList.contains('mobile-mode') || window.innerWidth <= 768;
@@ -228,7 +246,7 @@ function refreshMaps(refit) {
   const run = () => {
     const mapWrap = $('#mapwrap');
     const isVisible = mapWrap && mapWrap.offsetWidth > 0 && mapWrap.offsetHeight > 0;
-    if (realMap && isVisible) {
+    if (realMap && isVisible && state.mapMode === 'real') {
       realMap.invalidateSize(true);
       if (refit) {
         lastMapDistrict = null;
@@ -237,6 +255,7 @@ function refreshMaps(refit) {
     }
     window.dispatchEvent(new Event('resize'));
     if (window.Map3D) Map3D.sync();
+    if (window.OCP2Map) OCP2Map.resize();
   };
   requestAnimationFrame(() => setTimeout(run, 50));
   setTimeout(run, 220);
@@ -312,6 +331,8 @@ function setMobileTab(tab) {
   setBottomNavSelected(state.mobileTab);
   if (state.mobileTab === 'map') {
     refreshMaps(true);
+  } else if (state.sel) {
+    requestAnimationFrame(() => scrollToPlaceCard(state.sel, 'auto'));
   }
 }
 
@@ -324,10 +345,27 @@ function initRealMap() {
     maxZoom: 19
   }).addTo(realMap);
   markerLayer = L.layerGroup().addTo(realMap);
+  fetch('./data/areas.geojson').then((response) => {
+    if (!response.ok) throw new Error('Area boundaries unavailable');
+    return response.json();
+  }).then((data) => {
+    areaBoundaryLayer = L.geoJSON(data, { interactive: false, style: (feature) => ({
+      color: feature.properties.district === state.district ? '#c2410c' : '#8c806e',
+      weight: 2, dashArray: '6 5', fillOpacity: 0.025,
+    }) }).addTo(realMap);
+  }).catch(() => { /* Base map and sourced restaurant coordinates remain usable. */ });
+  realMap.on('zoomend', () => {
+    cancelAnimationFrame(mapZoomFrame);
+    mapZoomFrame = requestAnimationFrame(() => syncRealMap(lastShownPlaces));
+  });
   lastMapDistrict = null;
 }
 
 function setMapMode(mode) {
+  if (mode === '3d' && !SUPPORTED_3D.has(state.district)) {
+    showToast('Khu vực này chưa có bản đồ 3D.');
+    return;
+  }
   state.mapMode = mode;
   $('#mapwrap').dataset.mapmode = mode;
   document.querySelectorAll('.ms-btn').forEach((b) => {
@@ -341,7 +379,14 @@ function setMapMode(mode) {
 function syncRealMap(shown) {
   lastShownPlaces = shown;
   if (!realMap || !markerLayer) return;
+  const mapWrap = $('#mapwrap');
+  const mapVisible = state.mapMode === 'real' && mapWrap && mapWrap.offsetWidth > 0 && mapWrap.offsetHeight > 0;
+  realMap.stop();
   markerLayer.clearLayers();
+  if (areaBoundaryLayer) areaBoundaryLayer.setStyle((feature) => ({
+    color: feature.properties.district === state.district ? '#c2410c' : '#8c806e',
+    weight: 2, dashArray: '6 5', fillOpacity: 0.025,
+  }));
 
   const pts = [];
   if (state.district === 'gia_lam') {
@@ -355,14 +400,41 @@ function syncRealMap(shown) {
       .addTo(markerLayer)
       .bindTooltip('<b>Đại học VinUni</b><br>Tâm khu vực Gia Lâm · Ocean Park 1', { direction: 'top', offset: [0, -14] });
     pts.push(VINUNI_POS);
+  } else if (state.district === 'van_giang') {
+    const ocp2Icon = L.divIcon({
+      className: '',
+      html: '<div class="vinuni-pin">Kinh Đô Ánh Sáng</div>',
+      iconSize: [130, 26],
+      iconAnchor: [65, 13]
+    });
+    L.marker(OCP2_CENTER_POS, { icon: ocp2Icon, zIndexOffset: 600 })
+      .addTo(markerLayer)
+      .bindTooltip('<b>Quảng trường Kinh Đô Ánh Sáng</b><br>Tâm Vinhomes Ocean Park 2', { direction: 'top', offset: [0, -14] });
+    pts.push(OCP2_CENTER_POS);
   }
-  const placesToDraw = state.sel != null
-    ? shown.filter((p) => p.id === state.sel)
-    : shown;
-
-  placesToDraw.forEach((p) => {
-    if (typeof p.lat !== 'number' || typeof p.lng !== 'number') return;
-    pts.push([p.lat, p.lng]);
+  const located = shown.filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lng));
+  located.forEach((p) => pts.push([p.lat, p.lng]));
+  const groups = new Map();
+  const zoom = realMap.getZoom();
+  located.forEach((p) => {
+    const point = realMap.project([p.lat, p.lng], zoom);
+    const key = zoom >= 18 || p.id === state.sel ? p.id : `${Math.floor(point.x / 44)}:${Math.floor(point.y / 44)}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(p);
+  });
+  groups.forEach((group) => {
+    if (group.length > 1) {
+      const center = [group.reduce((sum, p) => sum + p.lat, 0) / group.length,
+        group.reduce((sum, p) => sum + p.lng, 0) / group.length];
+      const icon = L.divIcon({ className: '', iconSize: [38, 38], iconAnchor: [19, 19],
+        html: `<div class="map-cluster" aria-label="${group.length} địa điểm">${group.length}</div>` });
+      const marker = L.marker(center, { icon, title: `${group.length} địa điểm · bấm để phóng to` }).addTo(markerLayer);
+      marker.placeCount = group.length;
+      marker.bindTooltip(`${group.length} địa điểm · bấm để phóng to`);
+      marker.on('click', () => realMap.fitBounds(group.map((p) => [p.lat, p.lng]), { padding: [48, 48], maxZoom: Math.min(zoom + 2, 18), animate: false }));
+      return;
+    }
+    const p = group[0];
     const sel = state.sel === p.id;
     const icon = L.divIcon({
       className: '',
@@ -371,16 +443,20 @@ function syncRealMap(shown) {
       iconAnchor: [15, 15]
     });
     const m = L.marker([p.lat, p.lng], { icon }).addTo(markerLayer);
+    m.placeCount = 1;
     m.bindTooltip(`<b>${escapeHTML(p.name)}</b><br>${LABEL_VI[p.v]} · ${escapeHTML(p.price_text)}`, { direction: 'top', offset: [0, -14] });
     m.on('click', () => select(p.id));
-    if (sel) {
-      realMap.flyTo([p.lat, p.lng], Math.max(realMap.getZoom(), 16), { animate: true, duration: 0.45 });
+    if (sel && mapVisible) {
+      // Leaflet flyTo cannot calculate a path while the mobile map is hidden.
+      realMap.setView([p.lat, p.lng], Math.max(realMap.getZoom(), 16), { animate: false });
       m.openTooltip();
     }
   });
 
-  const mapWrap = $('#mapwrap');
-  const mapVisible = mapWrap && mapWrap.offsetWidth > 0 && mapWrap.offsetHeight > 0;
+  if (state.sel && mapVisible) {
+    lastMapDistrict = state.district;
+    return;
+  }
   if (lastMapDistrict !== state.district && mapVisible) {
     if (state.district === 'gia_lam') {
       realMap.setView(VINUNI_POS, 14, { animate: true });
@@ -397,7 +473,7 @@ function syncRealMap(shown) {
 }
 
 function strip(s) {
-  return (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').toLowerCase();
+  return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
 }
 
 function escapeHTML(s) {
@@ -407,9 +483,17 @@ function escapeHTML(s) {
 /* Chuẩn hoá 1 quán ăn để chạy khớp cả UI lẫn map3d-multi.js */
 function normalizePlace(raw, idx) {
   const v = raw.label || raw.v || 'unsure';
-  const price = raw.price || (raw.price_min_k && raw.price_max_k
-    ? Math.round((raw.price_min_k + raw.price_max_k) / 2)
-    : (raw.price_min_k || 50));
+  const positive = (value) => Number.isFinite(Number(value)) && Number(value) > 0 ? Number(value) : null;
+  const minPrice = positive(raw.price_min_k);
+  const maxPrice = positive(raw.price_max_k);
+  const mealPrice = positive(raw.price) || (minPrice && maxPrice
+    ? Math.round((minPrice + maxPrice) / 2) : (minPrice || maxPrice));
+  const onlineMin = positive(raw.online_price_min_vnd);
+  const onlineMax = positive(raw.online_price_max_vnd);
+  const price = mealPrice || (onlineMin ? onlineMin / 1000 : null);
+  const priceText = minPrice && maxPrice ? `${minPrice}k–${maxPrice}k`
+    : minPrice ? `Từ ${minPrice}k` : maxPrice ? `Đến ${maxPrice}k`
+      : mealPrice ? `~${mealPrice}k` : onlineMin ? `Menu online từ ${onlineMin.toLocaleString('vi-VN')}đ` : 'Chưa có giá tại quán';
   const x = typeof raw.x === 'number' ? raw.x : (140 + ((idx * 97) % 380));
   const y = typeof raw.y === 'number' ? raw.y : (130 + ((idx * 73) % 300));
   const signals = (raw.signals || []).map((s) =>
@@ -420,6 +504,13 @@ function normalizePlace(raw, idx) {
       ? { source: 'Nguồn', lang: '', published_at: '', text_excerpt: 'Xem nguồn đánh giá', url: r }
       : r
   );
+  const onlineMenu = raw.online_menu || [];
+  const sourceLinks = [...(raw.shopee_source_urls || []).map((url) => ({ source: 'ShopeeFood · menu & giá online', url })), ...onlineMenu.filter((item) => isShopeeFoodURL(item.url)).map((item) =>
+    ({ source: 'ShopeeFood · menu & giá online', url: safeURL(item.url) })), ...(raw.source_links || [])]
+    .filter((source) => safeURL(source.url));
+  const uniqueSources = [...new Map(sourceLinks.map((source) => [safeURL(source.url), source])).values()]
+    .sort((a, b) => Number(isShopeeFoodURL(b.url)) - Number(isShopeeFoodURL(a.url)));
+  const hasShopeeFood = uniqueSources.some((source) => isShopeeFoodURL(source.url));
   return {
     id: raw.place_id || String(raw.id || idx + 1),
     place_id: raw.place_id || String(raw.id || idx + 1),
@@ -430,11 +521,33 @@ function normalizePlace(raw, idx) {
     lat: raw.lat,
     lng: raw.lng,
     price,
-    price_text: raw.price_min_k && raw.price_max_k ? `${raw.price_min_k}k–${raw.price_max_k}k` : `~${price}k`,
+    price_basis: mealPrice ? 'at_store' : onlineMin ? 'online' : 'unknown',
+    online_price_min_vnd: onlineMin,
+    online_price_max_vnd: onlineMax,
+    price_text: priceText,
     v,
     label: v,
     reason: raw.reason || 'Chưa có lý do chi tiết.',
-    confidence: typeof raw.confidence === 'number' ? raw.confidence : 50,
+    confidence: typeof raw.confidence === 'number' && Number.isFinite(raw.confidence) ? raw.confidence : null,
+    label_source: raw.label_source || '',
+    labeled_at: raw.labeled_at || '',
+    evaluated: raw.evaluated === true,
+    model: raw.model || '',
+    run_id: raw.run_id || '',
+    human_label: raw.human_label || null,
+    source_links: uniqueSources.filter((source) => !hasShopeeFood || !isFoodySource(source)),
+    has_shopee_food: hasShopeeFood,
+    store_id: raw.store_id || '',
+    distance_m: Number.isFinite(raw.distance_m) ? raw.distance_m : distanceFromVinUni(raw.lat, raw.lng),
+    coordinate_source: raw.coordinate_source || '',
+    coordinate_fetched_at: raw.coordinate_fetched_at || '',
+    photo_url: safeURL(raw.photo_url),
+    photo_source: raw.photo_source || '',
+    online_menu: onlineMenu,
+    fetched_at: raw.fetched_at || '',
+    hours_text: raw.hours_text || '',
+    search_text: strip([raw.name, raw.dish, raw.cuisine, raw.address, raw.address_text,
+      ...(raw.online_menu || []).map((item) => item.name)].filter(Boolean).join(' ')),
     signals,
     review_links: reviews,
     x,
@@ -449,10 +562,16 @@ window.hiddenReason = function (p) {
   return null;
 };
 
+function matchesQuery(p) {
+  return !state.q || p.search_text.includes(strip(state.q));
+}
+
 window.matches = function (p) {
   if (p.district !== state.district) return false;
+  if (state.shopeeOnly && !p.has_shopee_food) return false;
   if (state.q && REFUSE_RE.test(strip(state.q))) return false;
-  if (state.q && !strip(p.name + ' ' + p.dish + ' ' + p.address).includes(strip(state.q))) return false;
+  if (!matchesQuery(p)) return false;
+  if (state.budget !== 'all' && p.price == null) return false;
   if (state.budget === '50' && p.price >= 50) return false;
   if (state.budget === '100' && (p.price < 50 || p.price > 100)) return false;
   return true;
@@ -460,11 +579,17 @@ window.matches = function (p) {
 
 window.select = function (id) {
   state.sel = state.sel === id ? null : id;
+  if (state.sel) toggleFilterPanel(false);
   render();
-  if (state.sel) {
-    const el = document.querySelector(`.card[data-id="${CSS.escape(String(id))}"]`);
-    if (el) el.scrollIntoView({ block: 'nearest', behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth' });
-  }
+  if (state.sel) scrollToPlaceCard(id);
+};
+
+window.scrollToPlaceCard = function (id, behavior) {
+  const card = document.querySelector(`.card[data-id="${CSS.escape(String(id))}"]`);
+  const side = document.querySelector('.side');
+  if (!card || !side || !side.clientHeight) return;
+  const top = side.scrollTop + card.getBoundingClientRect().top - side.getBoundingClientRect().top - 12;
+  side.scrollTo({ top: Math.max(0, top), behavior: behavior || (matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth') });
 };
 
 function showToast(msg) {
@@ -475,6 +600,52 @@ function showToast(msg) {
   showToast._tid = setTimeout(() => { t.hidden = true; }, 2800);
 }
 
+function safeURL(value) {
+  if (!value) return '';
+  try {
+    const url = new URL(value);
+    return ['https:', 'http:'].includes(url.protocol) && !url.username && !url.password ? url.href : '';
+  } catch (e) { return ''; }
+}
+
+function isShopeeFoodURL(value) {
+  const url = safeURL(value);
+  if (!url) return false;
+  const host = new URL(url).hostname.toLowerCase();
+  return host === 'shopeefood.vn' || host.endsWith('.shopeefood.vn');
+}
+
+function isFoodySource(source) {
+  const url = safeURL(source.url);
+  const host = url ? new URL(url).hostname.toLowerCase() : '';
+  return host === 'foody.vn' || host.endsWith('.foody.vn') || /\bfoody\b/i.test(source.source || '');
+}
+
+function dateText(value) {
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? '' : date.toLocaleDateString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
+}
+
+function configureDataUI() {
+  if (!liveDataMeta) return;
+  (liveDataMeta.areas || []).forEach((area) => { DISTRICTS[area.district] = area.name; });
+  const districts = [...new Set(PLACES.map((p) => p.district))];
+  if (!districts.includes(state.district)) state.district = districts[0];
+  $('.district-tabs').innerHTML = districts.map((key) =>
+    `<button type="button" class="d-chip" data-d="${escapeHTML(key)}" aria-pressed="${key === state.district}">${escapeHTML(DISTRICTS[key] || key)}</button>`
+  ).join('');
+  const notice = $('#dataNotice');
+  if (notice) {
+    notice.hidden = false;
+    const countText = liveDataMeta.evaluated_place_count != null
+      ? `${liveDataMeta.evaluated_place_count} có kết quả AI đã lưu`
+      : `${liveDataMeta.final_label_count} nhãn nhóm duyệt`;
+    notice.textContent = `${PLACES.length} địa điểm · ${countText}. Chưa kiểm thực địa; giá tại quán còn thiếu. `;
+  }
+  const scope = $('.mts-sub');
+  if (scope) scope.textContent = 'Ocean Park 1 & 2';
+}
+
 function updateFilterBadge() {
   const badge = $('#filterBadge');
   if (!badge) return;
@@ -482,6 +653,7 @@ function updateFilterBadge() {
   if (state.budget !== 'all') count++;
   if (!state.hideChain) count++;
   if (!state.hideTourist) count++;
+  if (state.shopeeOnly) count++;
   badge.textContent = String(count);
   badge.hidden = count === 0;
 }
@@ -491,8 +663,17 @@ function toggleFilterPanel(forceOpen) {
   const btn = $('#filterToggle');
   if (!panel || !btn) return;
   const open = typeof forceOpen === 'boolean' ? forceOpen : !panel.classList.contains('is-open');
+  panel.hidden = !open;
   panel.classList.toggle('is-open', open);
   btn.setAttribute('aria-expanded', String(open));
+  if (open) fitFilterPanel();
+}
+
+function fitFilterPanel() {
+  const panel = $('#filterPanel');
+  if (!panel || panel.hidden) return;
+  const bottom = Math.min($('.side').getBoundingClientRect().bottom, innerHeight);
+  panel.style.maxHeight = `${Math.max(80, Math.min(440, bottom - panel.getBoundingClientRect().top - 12))}px`;
 }
 
 function updateQueueBadges() {
@@ -582,18 +763,32 @@ function cardHTML(p, idx) {
   const open = state.sel === p.id;
   const queued = state.flagQueue.some((q) => q.place_id === p.place_id);
   const dist = calcDistText(p);
-  const sigHTML = p.signals.map((s) =>
+  const reviewCount = p.signals.find((s) => /review/i.test(s.key));
+  const sigHTML = p.signals.filter((s) => !/review/i.test(s.key)
+    && !(p.has_shopee_food && /\bfoody\b/i.test(`${s.key} ${s.value}`))).map((s) =>
     `<span class="sig-pill"><span>${escapeHTML(s.key)}:</span> ${escapeHTML(s.value)}</span>`
   ).join('');
-  const realReviews = p.review_links.filter((r) => !isPlaceholderExcerpt(r.text_excerpt));
-  const linkOnly = p.review_links.find((r) => isPlaceholderExcerpt(r.text_excerpt));
+  const sourceHTML = p.source_links.length ? `<div class="data-sources">${p.source_links.map((s) =>
+    `<a class="place-source-link ${isShopeeFoodURL(s.url) ? 'is-shopee' : ''}" href="${escapeHTML(safeURL(s.url))}" target="_blank" rel="noopener noreferrer">${escapeHTML(isShopeeFoodURL(s.url) ? 'ShopeeFood · Menu & giá online' : s.source)} ↗</a>`
+  ).join('')}</div>` : '';
+  const menuHTML = p.online_menu.length || p.has_shopee_food ? `<details class="online-menu">
+    <summary>Menu online <span>${p.online_menu.length ? `${p.online_menu.length} món` : 'Chưa đọc được món'}</span></summary>
+    <div class="online-menu-body">
+    <p>Giá đặt online, chưa gồm phí giao; không phải giá tại quán.</p>
+    ${p.online_menu.slice(0, 8).map((item) => `<div class="menu-row"><span>${escapeHTML(item.name)}</span><b>${typeof item.price_vnd === 'number' && item.price_vnd > 0 ? escapeHTML(item.price_vnd.toLocaleString('vi-VN')) + 'đ' : 'Chưa có giá'}</b></div>`).join('')}
+    ${liveDataMeta && liveDataMeta.menu_store_count ? `<a class="rev-link menu-full-link" href="./menu.html?place=${encodeURIComponent(p.id)}">${p.online_menu.length ? `Xem đầy đủ ${p.online_menu.length} món &amp; giá gốc` : 'Xem nguồn và trạng thái menu'} ↗</a>` : ''}
+    </div>
+  </details>` : '';
+  const visibleReviews = p.review_links.filter((r) => !p.has_shopee_food || !isFoodySource(r));
+  const realReviews = visibleReviews.filter((r) => !isPlaceholderExcerpt(r.text_excerpt));
+  const linkOnly = visibleReviews.find((r) => isPlaceholderExcerpt(r.text_excerpt));
   const revHTML = realReviews.length
     ? `<div class="reviews">${realReviews.map((r) => `
         <div class="rev-box">
           “${escapeHTML(r.text_excerpt)}”
           <div class="rev-meta">
             <span>${escapeHTML([r.source, r.lang, r.published_at].filter(Boolean).join(' · '))}</span>
-            <a class="rev-link" href="${escapeHTML(r.url)}" target="_blank" rel="noopener noreferrer">Xem nguồn ↗</a>
+            <a class="rev-link" href="${escapeHTML(safeURL(r.url))}" target="_blank" rel="noopener noreferrer">Xem nguồn ↗</a>
           </div>
         </div>`).join('')}</div>`
     : (linkOnly
@@ -603,8 +798,10 @@ function cardHTML(p, idx) {
         </div>`
       : '');
   const unsureBox = p.v === 'unsure'
-    ? '<div class="unsure-banner">Chưa chắc — AI chuyển người kiểm, mời bạn tự quyết định.</div>'
+    ? `<div class="unsure-banner">${p.label_source === 'unclassified' ? 'Chưa có kết quả AI đã lưu cho địa điểm này.' : 'Chưa chắc — cần bổ sung căn cứ.'}</div>`
     : '';
+  const provenanceHTML = p.evaluated ? `<div class="ai-provenance"><b>Kết quả AI đã lưu</b><span>${escapeHTML(p.model)} · ${escapeHTML(p.run_id)}</span></div>` : '';
+  const humanHTML = p.human_label ? `<details class="human-verdict"><summary>Nhãn nhóm duyệt: ${escapeHTML(LABEL_VI[p.human_label.label] || p.human_label.label)}</summary><p>${escapeHTML(p.human_label.reason)}</p><p class="data-caption">Ngày chốt: ${escapeHTML(dateText(p.human_label.labeled_at))}. Đây là nhãn đối chiếu riêng, không phải đầu ra AI.</p></details>` : '';
   const flagSvg = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>';
   const dirUrl = (typeof p.lat === 'number' && typeof p.lng === 'number')
     ? `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lng}`
@@ -614,7 +811,7 @@ function cardHTML(p, idx) {
     <article class="card ${p.v === 'unsure' ? 'is-unsure' : ''} ${open ? 'is-open' : ''}" style="animation-delay:${Math.min(idx * 40, 200)}ms" data-id="${escapeHTML(p.id)}">
       <button type="button" class="card-toggle" data-toggle-id="${escapeHTML(p.id)}" aria-expanded="${open}">
         <div class="row1">
-          <div class="dish-thumb" aria-hidden="true">${dishThumbSVG(p.dish)}</div>
+          <div class="dish-thumb" aria-hidden="true">${dishThumbSVG(p.dish)}${p.photo_url ? `<img src="${escapeHTML(p.photo_url)}" alt="" loading="lazy" referrerpolicy="no-referrer" data-place-photo />` : ''}</div>
           <div class="card-head-main">
             <div class="card-title-row">
               <h3 class="name">${escapeHTML(p.name)}</h3>
@@ -624,7 +821,7 @@ function cardHTML(p, idx) {
               <span class="meta-dish">${escapeHTML(p.dish)}</span>
               <span>·</span>
               <span class="meta-price">${escapeHTML(p.price_text)}</span>
-              ${dist ? `<span class="meta-dist" title="Khoảng cách ước tính tới tâm khu vực">~${dist}</span>` : ''}
+              ${dist ? `<span class="meta-dist" title="Khoảng cách đường chim bay từ VinUni, không phải quãng đường chạy xe">~${dist} từ VinUni</span>` : ''}
             </div>
             <div class="meta-addr">${escapeHTML(p.address)}</div>
           </div>
@@ -634,14 +831,30 @@ function cardHTML(p, idx) {
       </button>
       <div class="detail">
         <div class="detail-inner">
+          ${sourceHTML}
+          <dl class="place-facts">
+            <div><dt>Giờ mở cửa</dt><dd>${escapeHTML(p.hours_text || 'Chưa có thông tin')}</dd></div>
+            <div><dt>Review đã thu</dt><dd>${escapeHTML(reviewCount ? reviewCount.value : String(realReviews.length))}${realReviews.length ? '' : ' · Chưa có nội dung đánh giá'}</dd></div>
+          </dl>
+          ${menuHTML}
+          ${realReviews.length ? revHTML : ''}
+          <details class="data-details">
+            <summary>Thông tin dữ liệu &amp; đánh giá</summary>
+            <div class="data-details-body">
           ${sigHTML ? `<div class="sig-grid">${sigHTML}</div>` : ''}
-          ${revHTML}
+          ${!realReviews.length ? revHTML : ''}
+          ${p.photo_url ? `<p class="data-caption">${p.has_shopee_food && /\bfoody\b/i.test(p.photo_source) ? 'Ảnh tham khảo' : `Ảnh bìa từ ${escapeHTML(p.photo_source || 'nguồn thu thập')}`} · chưa kiểm thực địa</p>` : ''}
+          ${p.fetched_at ? `<p class="data-caption">Dữ liệu địa điểm thu thập ngày ${escapeHTML(dateText(p.fetched_at))}.</p>` : ''}
+          ${p.coordinate_source ? `<p class="data-caption">Tọa độ: ${escapeHTML(p.coordinate_source)} · ${escapeHTML(dateText(p.coordinate_fetched_at))}. Khoảng cách đường chim bay từ VinUni.</p>` : ''}
+          ${provenanceHTML}
+          ${humanHTML}
           <div class="detail-foot">
             <span class="conf">
-              <span>Độ chắc ${p.confidence}%</span>
-              <span class="bar"><span style="width:${p.confidence}%"></span></span>
+              ${p.confidence != null ? `<span>Độ chắc ${p.confidence}%</span><span class="bar"><span style="width:${Math.max(0, Math.min(100, p.confidence))}%"></span></span>` : `<span>${p.label_source === 'final' ? `Nhãn final do nhóm chốt · ${escapeHTML(dateText(p.labeled_at))}` : 'Chưa có độ chắc từ AI'}</span>`}
             </span>
           </div>
+            </div>
+          </details>
           <div class="card-actions">
             <a class="dir-btn" href="${escapeHTML(dirUrl)}" target="_blank" rel="noopener noreferrer">Chỉ đường ↗</a>
             <button type="button" class="map-jump-btn" data-map-id="${escapeHTML(p.id)}">Xem bản đồ</button>
@@ -655,10 +868,27 @@ function cardHTML(p, idx) {
 }
 
 function render() {
+  const has3D = SUPPORTED_3D.has(state.district);
+  const geographic3D = false;
+  $('#mapwrap').dataset.mapengine = 'three';
+  if (!has3D && state.mapMode === '3d') {
+    state.mapMode = 'real';
+    $('#mapwrap').dataset.mapmode = 'real';
+  }
+  document.querySelectorAll('.ms-btn').forEach((button) => {
+    button.disabled = button.dataset.mode === '3d' && !has3D;
+    button.title = '';
+    button.setAttribute('aria-pressed', String(button.dataset.mode === state.mapMode));
+  });
+  const hasPrices = PLACES.some((p) => p.district === state.district && p.price != null);
+  document.querySelectorAll('.chip[data-b]').forEach((button) => {
+    button.disabled = button.dataset.b !== 'all' && !hasPrices;
+    button.title = button.disabled ? 'Chưa có giá tại quán trong dữ liệu khu vực này' : '';
+  });
   const pill = $('#mapDistrictPill');
   if (pill) {
     pill.textContent = state.mapMode === '3d'
-      ? `Mô hình 3D · ${DISTRICTS[state.district]}`
+      ? `${geographic3D ? 'MapLibre 3D · Bản thử' : 'Mô hình 3D'} · ${DISTRICTS[state.district]}`
       : `Bản đồ 2D · ${DISTRICTS[state.district]}`;
   }
 
@@ -682,6 +912,7 @@ function render() {
         <button type="button" class="notice-reset" data-quick="">Quay lại danh sách</button>
       </div>`;
     syncRealMap([]);
+    if (window.OCP2Map) OCP2Map.sync([], null);
     if (window.Map3D) Map3D.sync();
     return;
   }
@@ -689,12 +920,15 @@ function render() {
   const pool = PLACES.filter(matches);
   const shown = pool
     .filter((p) => !hiddenReason(p))
-    .sort((a, b) => (a.v === 'unsure') - (b.v === 'unsure') || b.confidence - a.confidence);
+    .sort((a, b) => Number(b.has_shopee_food) - Number(a.has_shopee_food)
+      || (state.sort === 'name' ? a.name.localeCompare(b.name, 'vi')
+        : a.distance_m - b.distance_m || a.name.localeCompare(b.name, 'vi')));
+  if (state.sel && !shown.some((p) => p.id === state.sel)) state.sel = null;
   const hid = pool.filter((p) => hiddenReason(p));
   const nChain = hid.filter((p) => p.v === 'chain').length;
   const nT = hid.filter((p) => p.v === 'tourist').length;
 
-  $('#summary').innerHTML = `Hiện <b>${shown.length}</b> quán ăn` +
+  $('#summary').innerHTML = `Hiện <b>${shown.length}</b> ${liveDataMeta ? 'địa điểm' : 'quán ăn'}` +
     (hid.length ? `, đã ẩn <b>${nChain}</b> chuỗi và <b>${nT}</b> bẫy du lịch` : '');
 
   let html = '';
@@ -703,10 +937,17 @@ function render() {
   }
   // Màn hình 5b: Chưa có dữ liệu
   if (!shown.length && state.q) {
-    html += `
+    const queryMatches = PLACES.filter((p) => p.district === state.district && matchesQuery(p));
+    const elsewhere = PLACES.find((p) => p.district !== state.district && matchesQuery(p));
+    html += queryMatches.length ? `
+      <div class="empty-box"><strong>Có quán khớp tên, nhưng đang bị bộ lọc loại</strong>
+        <div>Giá chưa rõ hoặc nhãn đang bị ẩn. Hãy đặt lại bộ lọc để xem.</div>
+        <button type="button" class="notice-reset" data-reset-filters="1">Đặt lại bộ lọc</button></div>` : elsewhere ? `
+      <div class="empty-box"><strong>Có kết quả tại ${escapeHTML(DISTRICTS[elsewhere.district])}</strong>
+        <button type="button" class="notice-reset" data-switch-district="${escapeHTML(elsewhere.district)}">Xem khu vực này</button></div>` : `
       <div class="notice-box nodata">
         <h3 class="notice-title">Chưa có dữ liệu về “${escapeHTML(state.q)}”</h3>
-        <div>Quán ăn chưa nằm trong dữ liệu đã xác thực của quận <b>${escapeHTML(DISTRICTS[state.district])}</b>. AI không tự đoán khi thiếu căn cứ.</div>
+        <div>Không tìm thấy địa điểm trong dữ liệu hiện có của khu vực <b>${escapeHTML(DISTRICTS[state.district])}</b>. Bạn có thể đổi khu vực hoặc từ khoá.</div>
         <div class="notice-tags">
           <span>Thử đổi quận khác</span>
           <span>AI không bịa dữ liệu</span>
@@ -723,7 +964,12 @@ function render() {
         </div>
       </div>`;
   } else {
-    html += shown.map((p, idx) => cardHTML(p, idx)).join('');
+    const selected = shown.find((p) => p.id === state.sel);
+    if (selected) state.visibleCount = Math.max(state.visibleCount, shown.indexOf(selected) + 1);
+    html += shown.slice(0, state.visibleCount).map((p, idx) => cardHTML(p, idx)).join('');
+    if (shown.length > state.visibleCount) {
+      html += `<button type="button" class="notice-reset load-more" data-load-more="1">Xem thêm ${Math.min(40, shown.length - state.visibleCount)} địa điểm (${state.visibleCount}/${shown.length})</button>`;
+    }
   }
 
   if (hid.length) {
@@ -735,10 +981,13 @@ function render() {
 
   $('#list').innerHTML = html;
   syncRealMap(shown);
-  if (window.Map3D) Map3D.sync();
+  if (window.OCP2Map) OCP2Map.sync(shown, state.sel);
+  if (state.mapMode === '3d' && SUPPORTED_3D.has(state.district)) loadMap3D();
+  if (window.Map3D && has3D) Map3D.sync();
 }
 
 function wireEvents() {
+  window.addEventListener('resize', fitFilterPanel);
   document.querySelectorAll('.vs-btn[data-view]').forEach((btn) => {
     btn.addEventListener('click', () => {
       setViewMode(btn.dataset.view, { persist: true, updateUrl: true });
@@ -757,15 +1006,30 @@ function wireEvents() {
   else if (mqMobile.addListener) mqMobile.addListener(onViewportChange);
 
   $('#list').addEventListener('click', (e) => {
+    if (e.target.closest('[data-load-more]')) {
+      const side = $('.side');
+      const top = side.scrollTop;
+      state.visibleCount += 40;
+      render();
+      side.scrollTop = top;
+      return;
+    }
+    const switchDistrict = e.target.closest('[data-switch-district]');
+    if (switchDistrict) {
+      document.querySelector(`.d-chip[data-d="${CSS.escape(switchDistrict.dataset.switchDistrict)}"]`).click();
+      return;
+    }
     const resetFilterBtn = e.target.closest('[data-reset-filters]');
     if (resetFilterBtn) {
       state.budget = 'all';
       state.q = '';
       state.hideChain = false;
       state.hideTourist = false;
+      state.shopeeOnly = false;
       $('#q').value = '';
       $('#hideChain').checked = false;
       $('#hideTourist').checked = false;
+      $('#shopeeOnly').checked = false;
       document.querySelectorAll('.chip').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.b === 'all')));
       render();
       return;
@@ -803,12 +1067,18 @@ function wireEvents() {
     });
   }
 
-  $('#q').addEventListener('input', (e) => { state.q = e.target.value.trim(); render(); });
+  $('#q').addEventListener('input', (e) => { state.q = e.target.value.trim(); state.visibleCount = 40; render(); });
+
+  // Broken remote photos keep the existing illustrated thumbnail visible.
+  $('#list').addEventListener('error', (e) => {
+    if (e.target.matches('[data-place-photo]')) e.target.remove();
+  }, true);
 
   document.querySelectorAll('.d-chip').forEach((btn) => {
     btn.addEventListener('click', () => {
       state.district = btn.dataset.d;
       state.sel = null;
+      state.visibleCount = 40;
       document.querySelectorAll('.d-chip').forEach((x) => x.setAttribute('aria-pressed', String(x === btn)));
       if (isMobileLayout()) {
         btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
@@ -832,6 +1102,14 @@ function wireEvents() {
   if ($('#filterToggle')) {
     $('#filterToggle').addEventListener('click', () => toggleFilterPanel());
   }
+  $('#filterApply').addEventListener('click', () => {
+    toggleFilterPanel(false);
+    $('.side').scrollTo({ top: 0, behavior: 'auto' });
+    $('#filterToggle').focus();
+  });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('#filterPanel, #filterToggle')) toggleFilterPanel(false);
+  });
 
   document.querySelectorAll('[data-quick]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -845,6 +1123,15 @@ function wireEvents() {
 
   $('#hideChain').addEventListener('change', (e) => { state.hideChain = e.target.checked; render(); });
   $('#hideTourist').addEventListener('change', (e) => { state.hideTourist = e.target.checked; render(); });
+  $('#shopeeOnly').addEventListener('change', (e) => { state.shopeeOnly = e.target.checked; state.visibleCount = 40; render(); });
+  $('#sortPlaces').addEventListener('change', (e) => { state.sort = e.target.value; state.visibleCount = 40; render(); });
+  $('#mapPoiToggle').addEventListener('click', () => {
+    state.showPOI = !state.showPOI;
+    $('#mapPoiToggle').setAttribute('aria-pressed', String(state.showPOI));
+    $('#mapPoiToggle').textContent = state.showPOI ? 'Ẩn quán' : 'Hiện quán';
+    $('#mapwrap').dataset.showpois = String(state.showPOI);
+    render();
+  });
 
   $('#queueToggle').addEventListener('click', () => {
     if ($('#queueDrawer').hidden) openQueueDrawer();
@@ -875,6 +1162,10 @@ function wireEvents() {
     if (e.key === 'Escape') {
       if (!$('#reportModal').hidden) closeReportModal();
       else if (!$('#queueDrawer').hidden) closeQueueDrawer();
+      else if ($('#filterPanel').classList.contains('is-open')) {
+        toggleFilterPanel(false);
+        $('#filterToggle').focus();
+      }
     }
   });
 
@@ -888,7 +1179,7 @@ function loadMap3D() {
   map3dLoading = true;
   const loadMulti = () => {
     const s = document.createElement('script');
-    s.src = 'map3d-multi.js?v=7';
+    s.src = 'map3d-multi.js?v=11';
     s.onload = () => { if (window.Map3D) Map3D.sync(); };
     document.body.appendChild(s);
   };
@@ -924,25 +1215,42 @@ async function init() {
   renderLoadingSkeleton();
   let raw = FALLBACK_PLACES;
   try {
-    const res = await fetch('./data/places_verdicts.json');
-    if (res.ok) {
-      const data = await res.json();
-      if (Array.isArray(data) && data.length) {
-        raw = data;
-        usingFallbackData = false;
-      } else {
-        usingFallbackData = true;
-      }
-    } else {
-      usingFallbackData = true;
-    }
+    const liveRes = await fetch('./data/places_live.json');
+    if (liveRes.ok) {
+      const live = await liveRes.json();
+      if (!live.meta || !Array.isArray(live.places) || !live.places.length) throw new Error('Invalid live dataset');
+      liveDataMeta = live.meta;
+      raw = live.places;
+    } else throw new Error('Live dataset unavailable');
   } catch (e) {
+    try {
+      const res = await fetch('./data/places_verdicts.json');
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length) raw = data;
+      }
+    } catch (legacyError) {
+      // The built-in sample is the last fallback if both JSON files fail.
+    }
+    // The old JSON remains intact as the visibly labelled demo fallback.
     usingFallbackData = true;
   }
   window.PLACES = raw.map(normalizePlace);
   const params = (() => {
     try { return new URLSearchParams(window.location.search); } catch (e) { return new URLSearchParams(); }
   })();
+  const requestedDistrict = params.get('district');
+  if (requestedDistrict && PLACES.some((p) => p.district === requestedDistrict)) state.district = requestedDistrict;
+  const requestedPlace = PLACES.find((p) => p.id === params.get('place'));
+  if (requestedPlace) {
+    state.district = requestedPlace.district;
+    state.sel = requestedPlace.id;
+    if (requestedPlace.v === 'chain') state.hideChain = false;
+    if (requestedPlace.v === 'tourist') state.hideTourist = false;
+    $('#hideChain').checked = state.hideChain;
+    $('#hideTourist').checked = state.hideTourist;
+  }
+  configureDataUI();
   const initialUrlView = params.get('view');
   setViewMode(getInitialViewMode(), {
     persist: initialUrlView === 'mobile' || initialUrlView === 'desktop',
@@ -959,6 +1267,9 @@ async function init() {
   } else {
     render();
   }
+  if (requestedPlace) requestAnimationFrame(() => {
+    scrollToPlaceCard(requestedPlace.id, 'auto');
+  });
 }
 
 init();

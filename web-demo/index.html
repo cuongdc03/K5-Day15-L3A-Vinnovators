@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Quán Thật Hà Nội — Bản đồ &amp; danh sách quán ăn local</title>
-  <meta name="description" content="Phân loại quán ăn local tại 4 quận Hà Nội (Gia Lâm · VinUni/OCP, Cầu Giấy, Hai Bà Trưng, Hoàng Mai) và Hoàn Kiếm kèm nguồn kiểm chứng." />
+  <title>Quán Thật Hà Nội — Địa điểm ăn uống Ocean Park 1 &amp; 2</title>
+  <meta name="description" content="Tra địa điểm ăn uống Ocean Park 1 và Ocean Park 2, xem nguồn dữ liệu, nhãn đã chốt và menu online khi có." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Patrick+Hand&family=Lora:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
-  <link rel="stylesheet" href="styles.css?v=23" />
+  <link rel="stylesheet" href="styles.css?v=33" />
+  <link rel="stylesheet" href="./header.css?v=5" />
+  <link rel="stylesheet" href="./mobile.css?v=2" />
 </head>
 <body>
   <a class="skip" href="#list">Bỏ qua tới danh sách quán</a>
@@ -40,7 +42,7 @@
     </div>
   </div>
 
-  <div class="app-shell" id="appShell">
+  <div class="app-shell phone-shell" id="appShell">
     <!-- Thanh trạng thái & Dynamic Island (chỉ hiện trong khung iPhone 18 Pro Max trên Desktop) -->
     <div class="iphone-statusbar" aria-hidden="true">
       <span class="sb-time">9:41</span>
@@ -48,40 +50,34 @@
       <span class="sb-icons">5G · 100%</span>
     </div>
     <!-- HEADER Y HỆT landing.html -->
-    <header class="top">
-      <div class="top-wrap">
-        <a href="./landing.html" class="brand" aria-label="Quán Thật Hà Nội — về trang giới thiệu">
-          <svg viewBox="0 0 120 70" aria-hidden="true"><use href="#nonla" /></svg>
-          <span>Quán Thật Hà Nội</span>
-        </a>
-        <nav class="nav" aria-label="Mục chính">
-          <a href="./landing.html#vi-sao">Vấn đề</a>
-          <a href="./landing.html#cach-loc">Cách lựa quán</a>
-          <a href="./landing.html#minh-bach">Kết quả</a>
-        </nav>
-        <div class="top-right">
-          <div class="view-switcher header-view-switcher is-compact" role="group" aria-label="Chuyển giao diện Desktop hoặc Mobile">
-            <button type="button" class="vs-btn" data-view="desktop" aria-pressed="true" aria-label="Giao diện Desktop" title="Giao diện Desktop">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </button>
-            <button type="button" class="vs-btn" data-view="mobile" aria-pressed="false" aria-label="Giao diện Mobile" title="Giao diện Mobile">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            </button>
+    <header class="top site-header" data-page="map">
+    <div class="header-inner top-wrap wrap">
+      <a href="./landing.html#hero" class="brand" aria-label="Quán Thật Hà Nội — về đầu trang"><svg viewBox="0 0 120 70" aria-hidden="true"><path class="ln f-sand" d="M4 58Q60 -6 116 58z"/><path class="ln thin" d="M30 44 22 58M44 34 40 58M60 28V58M76 34 80 58M90 44 98 58M14 52 106 52M26 42 94 42"/></svg><span>Quán Thật Hà Nội</span></a>
+      <nav class="nav site-nav" aria-label="Mục chính">
+        <details class="nav-overview">
+          <summary>Tổng quan <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
+          <div class="overview-links">
+            <a href="./landing.html#vi-sao">Vấn đề</a>
+            <a href="./landing.html#cach-loc">Cách lựa quán</a>
+            <a href="./landing.html#minh-bach">Kết quả &amp; mục tiêu</a>
           </div>
-          <span class="top-chip"><span class="dot"></span>AI gợi ý, bạn quyết</span>
-          <a class="btn-sketch btn-ghost top-back" href="./landing.html">← Giới thiệu</a>
+        </details>
+        <a href="./index.html?tab=map" data-open-map aria-current="page">Bản đồ</a>
+        <a href="./menu.html">Menu</a>
+      </nav>
+      <div class="site-actions">
+        <a id="quickMap" class="header-map-cta" href="./index.html?tab=map" data-open-map>Mở bản đồ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a>
+        <div class="view-switcher header-view-switcher is-compact" role="group" aria-label="Chuyển giao diện Desktop hoặc Mobile">
+          <button type="button" class="vs-btn" data-view="desktop" aria-pressed="true" aria-label="Giao diện Desktop" title="Giao diện Desktop"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button>
+          <button type="button" class="vs-btn" data-view="mobile" aria-pressed="false" aria-label="Giao diện Mobile" title="Giao diện Mobile"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M12 18h.01"/></svg></button>
         </div>
       </div>
-      <!-- Dải tin cậy gọn gàng trên giao diện di động -->
-      <div class="mobile-trust-strip" aria-label="Cam kết minh bạch">
-        <span class="mts-pill"><span class="dot"></span>AI gợi ý, bạn quyết</span>
-        <span class="mts-sub">4 quận Hà Nội &amp; Hoàn Kiếm</span>
-      </div>
-    </header>
+    </div>
+  </header>
 
     <div class="app" id="demo" data-mtab="list">
       <section class="side" aria-label="Danh sách quán ăn">
-        <!-- Thanh chọn 5 khu vực: underline tabs trên Desktop, pill bar cuộn ngang 1 ngón trên Mobile -->
+        <!-- Các tab được cập nhật theo vùng có trong dữ liệu khi UI khởi tạo. -->
         <div class="district-tabs" role="group" aria-label="Chọn quận">
           <button type="button" class="d-chip" data-d="gia_lam" aria-pressed="true">Gia Lâm · VinUni</button>
           <button type="button" class="d-chip" data-d="hoan_kiem" aria-pressed="false">Hoàn Kiếm</button>
@@ -91,7 +87,7 @@
         </div>
 
         <div class="side-top">
-          <!-- Hàng tìm kiếm gọn + nút mở bộ lọc trên Mobile -->
+          <!-- Tìm kiếm và bộ lọc thu gọn -->
           <div class="search-bar-row">
             <form class="ask" role="search" onsubmit="return false">
               <svg class="ask-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -105,7 +101,7 @@
             </button>
           </div>
 
-          <div id="filterPanel" class="filter-panel">
+          <div id="filterPanel" class="filter-panel" hidden>
             <!-- Gợi ý thử nhanh gọn nhẹ -->
             <div class="quick-tests">
               <span>Thử nhanh:</span>
@@ -126,6 +122,15 @@
                 <label class="tg"><input type="checkbox" id="hideTourist" checked /><i></i>Ẩn bẫy</label>
               </div>
             </div>
+            <div class="filter-preferences">
+              <label class="tg"><input type="checkbox" id="shopeeOnly" /><i></i>Chỉ ShopeeFood</label>
+              <label class="sort-control" for="sortPlaces">Sắp xếp
+                <select id="sortPlaces"><option value="nearest">Gần VinUni nhất</option><option value="name">Tên quán A–Z</option></select>
+              </label>
+            </div>
+            <p class="filter-caption">Ưu tiên ShopeeFood. Khoảng cách đường chim bay từ VinUni; ngân sách dùng giá menu online khi chưa có giá tại quán.</p>
+            <p id="dataNotice" class="data-notice" hidden></p>
+            <div class="filter-panel-actions"><button id="filterApply" class="filter-apply" type="button">Xem kết quả</button></div>
           </div>
         </div>
 
@@ -161,16 +166,22 @@
         <div class="list" id="list" tabindex="-1"></div>
       </section>
 
-      <!-- Cột phải: Bản đồ 2D (Leaflet) + Mô hình 3D 5 quận -->
+      <!-- Leaflet 2D, mô hình Three.js ở OP1, và bản thử MapLibre 3D ở OCP2. -->
       <section class="mapwrap" id="mapwrap" data-mapmode="real" aria-label="Bản đồ quán ăn Hà Nội">
         <div id="realMap" class="real-map" aria-label="Bản đồ 2D các quận Hà Nội"></div>
+        <div id="geo3dMap" class="geo3d-map" aria-label="Bản đồ 3D Ocean Park 2 theo dữ liệu địa lý"></div>
+        <details id="mapSourceInfo" class="map-source-info"><summary>Thông tin bản đồ</summary><div id="geo3dStatus" class="geo3d-status" role="status" aria-live="polite" hidden></div></details>
+        <button id="geo3dOverview" class="geo3d-overview" type="button">Toàn khu OCP2</button>
         <canvas id="gl" role="img" aria-label="Bản đồ 3D minh hoạ các khu vực Hà Nội."></canvas>
         <div class="zonecard" id="zonecard" aria-hidden="true"></div>
-        <div class="hint" id="hint">Rê chuột vào một khu để nâng lên và xem quán. Kéo để xoay.</div>
+        <div class="hint" id="hint">Bấm cụm để chọn quán · Kéo xoay · Cuộn phóng to</div>
 
+        <div class="map-toolbar">
+        <button id="mapPoiToggle" class="map-poi-toggle" type="button" aria-pressed="true">Ẩn quán</button>
         <div class="map-switcher" role="group" aria-label="Chế độ bản đồ">
-          <button type="button" class="ms-btn" data-mode="real" aria-pressed="true">Bản đồ 2D</button>
-          <button type="button" class="ms-btn" data-mode="3d" aria-pressed="false">Bản đồ 3D</button>
+          <button type="button" class="ms-btn" data-mode="real" aria-label="Bản đồ 2D" aria-pressed="true"><span class="map-mode-prefix">Bản đồ </span>2D</button>
+          <button type="button" class="ms-btn" data-mode="3d" aria-label="Bản đồ 3D" aria-pressed="false"><span class="map-mode-prefix">Bản đồ </span>3D</button>
+        </div>
         </div>
 
         <div class="legend" aria-label="Chú giải">
@@ -183,7 +194,7 @@
       </section>
     </div>
 
-    <!-- Thanh điều hướng đáy cố định cho Mobile (4 tab đồng bộ landing.html, icon SVG đồng nhất) -->
+    <!-- Mobile giữ các mục cũ, bổ sung Menu ở thanh dưới. -->
     <nav class="mobile-bottom-nav" id="mobileBottomNav" role="tablist" aria-label="Điều hướng di động">
       <a class="bnav-btn bnav-link" href="./landing.html?view=mobile">
         <span class="bnav-ico" aria-hidden="true">
@@ -203,6 +214,10 @@
         </span>
         <span class="bnav-lbl">Bản đồ</span>
       </button>
+      <a class="bnav-btn bnav-link bnav-menu" href="./menu.html?view=mobile">
+        <span class="bnav-ico" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h6a3 3 0 0 1 3 3v15a4 4 0 0 0-4-3H4zM20 3h-4a3 3 0 0 0-3 3M20 3v15h-3a4 4 0 0 0-4 3"/></svg></span>
+        <span class="bnav-lbl">Menu</span>
+      </a>
       <button type="button" class="bnav-btn" data-mtab="report" role="tab" aria-selected="false">
         <span class="bnav-ico-wrap" aria-hidden="true">
           <span class="bnav-ico">
@@ -220,7 +235,7 @@
       <div class="scallop-bar" aria-hidden="true"></div>
       <div class="foot-wrap">
         <div><b>Vinnovators</b> · Quán Thật Hà Nội</div>
-        <div>OSM · Google Places · AI gợi ý, bạn quyết</div>
+        <div>OSM · Foody · ShopeeFood · Nhãn đã chốt khi có</div>
       </div>
     </footer>
 
@@ -251,6 +266,9 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-  <script src="ui.js?v=14"></script>
+  <script src="./header.js?v=1"></script>
+  <script src="map-ocp2.js?v=4"></script>
+  <script src="map-density.js?v=2"></script>
+  <script src="ui.js?v=24"></script>
 </body>
 </html>

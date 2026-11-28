@@ -15,8 +15,14 @@
     "reason": "Quán bún chả độc lập trong khu Hải Đăng 09 (Trâu Quỳ), không thuộc chuỗi lớn.",
     "confidence": 88,
     "signals": [
-      { "key": "Nguồn dữ liệu", "value": "Crawl OSM / Foody (Ocean Park 1)" },
-      { "key": "Khu vực", "value": "Trâu Quỳ · gần VinUni" }
+      {
+        "key": "Nguồn dữ liệu",
+        "value": "Crawl OSM / Foody (Ocean Park 1)"
+      },
+      {
+        "key": "Khu vực",
+        "value": "Trâu Quỳ · gần VinUni"
+      }
     ],
     "review_links": [
       {
@@ -44,8 +50,14 @@
     "reason": "Quán độc lập khu An Đào – Trâu Quỳ, phục vụ sinh viên & cư dân quanh khu.",
     "confidence": 89,
     "signals": [
-      { "key": "Nguồn dữ liệu", "value": "Crawl OSM / Foody (Ocean Park 1)" },
-      { "key": "Chi nhánh", "value": "1 địa chỉ tại Gia Lâm" }
+      {
+        "key": "Nguồn dữ liệu",
+        "value": "Crawl OSM / Foody (Ocean Park 1)"
+      },
+      {
+        "key": "Chi nhánh",
+        "value": "1 địa chỉ tại Gia Lâm"
+      }
     ],
     "review_links": [
       {
@@ -73,8 +85,14 @@
     "reason": "Quán phở gà độc lập tại San Hô 6 (Đa Tốn), không thuộc danh sách chuỗi.",
     "confidence": 86,
     "signals": [
-      { "key": "Nguồn dữ liệu", "value": "Crawl OSM / Foody (Ocean Park 1)" },
-      { "key": "Chi nhánh", "value": "1 địa chỉ tại Gia Lâm" }
+      {
+        "key": "Nguồn dữ liệu",
+        "value": "Crawl OSM / Foody (Ocean Park 1)"
+      },
+      {
+        "key": "Chi nhánh",
+        "value": "1 địa chỉ tại Gia Lâm"
+      }
     ],
     "review_links": [
       {
@@ -102,8 +120,14 @@
     "reason": "Quán bánh cuốn đặc sản độc lập khu Hải Âu 3B, giá bình dân.",
     "confidence": 87,
     "signals": [
-      { "key": "Nguồn dữ liệu", "value": "Crawl OSM / Foody (Ocean Park 1)" },
-      { "key": "Chi nhánh", "value": "1 địa chỉ tại Gia Lâm" }
+      {
+        "key": "Nguồn dữ liệu",
+        "value": "Crawl OSM / Foody (Ocean Park 1)"
+      },
+      {
+        "key": "Chi nhánh",
+        "value": "1 địa chỉ tại Gia Lâm"
+      }
     ],
     "review_links": [
       {
@@ -131,8 +155,14 @@
     "reason": "Thương hiệu nhượng quyền gốc Hà Nội, xuất hiện ở cả OP1 & OP2 — ca xám cần người xem.",
     "confidence": 52,
     "signals": [
-      { "key": "Nguồn dữ liệu", "value": "Crawl OSM / Foody (OP1 & OP2)" },
-      { "key": "Trạng thái", "value": "Ca xám nhượng quyền · Chuyển người kiểm" }
+      {
+        "key": "Nguồn dữ liệu",
+        "value": "Crawl OSM / Foody (OP1 & OP2)"
+      },
+      {
+        "key": "Trạng thái",
+        "value": "Ca xám nhượng quyền · Chuyển người kiểm"
+      }
     ],
     "review_links": [
       {
@@ -160,8 +190,14 @@
     "reason": "Chuỗi cà phê toàn quốc (>60 địa chỉ tại Hà Nội, 2 cơ sở ngay trong OCP1).",
     "confidence": 99,
     "signals": [
-      { "key": "Danh mục chuỗi", "value": "Chuỗi toàn quốc xác thực" },
-      { "key": "Chi nhánh HN", "value": ">60 địa chỉ" }
+      {
+        "key": "Danh mục chuỗi",
+        "value": "Chuỗi toàn quốc xác thực"
+      },
+      {
+        "key": "Chi nhánh HN",
+        "value": ">60 địa chỉ"
+      }
     ],
     "review_links": []
   },
@@ -181,7 +217,10 @@
     "reason": "Chuỗi gốc Hà Nội đã mở rộng trên 15 địa chỉ toàn thành phố.",
     "confidence": 95,
     "signals": [
-      { "key": "Danh mục chuỗi", "value": "Chuỗi gốc Hà Nội đã mở rộng" }
+      {
+        "key": "Danh mục chuỗi",
+        "value": "Chuỗi gốc Hà Nội đã mở rộng"
+      }
     ],
     "review_links": []
   },
@@ -201,7 +240,10 @@
     "reason": "Chuỗi thức ăn nhanh quốc tế.",
     "confidence": 99,
     "signals": [
-      { "key": "Danh mục chuỗi", "value": "Chuỗi quốc tế xác thực" }
+      {
+        "key": "Danh mục chuỗi",
+        "value": "Chuỗi quốc tế xác thực"
+      }
     ],
     "review_links": []
   },
@@ -221,8 +263,14 @@
     "reason": "Quán bún chả lâu năm chỉ có 1 địa chỉ duy nhất trong ngõ 74 Hàng Quạt.",
     "confidence": 94,
     "signals": [
-      { "key": "Chi nhánh HN", "value": "1 địa chỉ duy nhất" },
-      { "key": "Giá vs quận", "value": "45k–55k (ngang trung vị)" }
+      {
+        "key": "Chi nhánh HN",
+        "value": "1 địa chỉ duy nhất"
+      },
+      {
+        "key": "Giá vs quận",
+        "value": "45k–55k (ngang trung vị)"
+      }
     ],
     "review_links": [
       {
@@ -250,8 +298,14 @@
     "reason": "1 địa chỉ truyền thống tại 49 Bát Đàn, khách Việt và khách du lịch cùng xếp hàng.",
     "confidence": 91,
     "signals": [
-      { "key": "Chi nhánh HN", "value": "1 địa chỉ gốc" },
-      { "key": "Giá vs quận", "value": "55k–70k" }
+      {
+        "key": "Chi nhánh HN",
+        "value": "1 địa chỉ gốc"
+      },
+      {
+        "key": "Giá vs quận",
+        "value": "55k–70k"
+      }
     ],
     "review_links": [
       {
@@ -279,7 +333,10 @@
     "reason": "Thương hiệu gốc phố cổ nhưng xuất hiện thêm nhiều cơ sở cùng tên — ca xám cần xem lại.",
     "confidence": 54,
     "signals": [
-      { "key": "Trạng thái", "value": "Ca xám thương hiệu phố cổ · Chuyển người kiểm" }
+      {
+        "key": "Trạng thái",
+        "value": "Ca xám thương hiệu phố cổ · Chuyển người kiểm"
+      }
     ],
     "review_links": [
       {
@@ -307,7 +364,10 @@
     "reason": "Chuỗi gốc Hà Nội, xuất hiện trên 15 địa chỉ toàn thành phố.",
     "confidence": 96,
     "signals": [
-      { "key": "Danh mục chuỗi", "value": "Chuỗi gốc Hà Nội đã mở rộng" }
+      {
+        "key": "Danh mục chuỗi",
+        "value": "Chuỗi gốc Hà Nội đã mở rộng"
+      }
     ],
     "review_links": []
   },
@@ -327,8 +387,14 @@
     "reason": "Đủ 3/4 tín hiệu: menu song ngữ, giá 2.0× trung vị quận, phần lớn review tiếng nước ngoài.",
     "confidence": 87,
     "signals": [
-      { "key": "Tín hiệu du lịch", "value": "Menu song ngữ · Giá 2.0× · Review ngoại" },
-      { "key": "Ghi chú", "value": "Mẫu đối chứng lớp tourist (spec.md §4)" }
+      {
+        "key": "Tín hiệu du lịch",
+        "value": "Menu song ngữ · Giá 2.0× · Review ngoại"
+      },
+      {
+        "key": "Ghi chú",
+        "value": "Mẫu đối chứng lớp tourist (spec.md §4)"
+      }
     ],
     "review_links": [
       {
@@ -356,8 +422,14 @@
     "reason": "Quán khu tập thể Nghĩa Tân, giá sinh viên, 1 địa chỉ độc lập.",
     "confidence": 90,
     "signals": [
-      { "key": "Chi nhánh HN", "value": "1 địa chỉ độc lập" },
-      { "key": "Khu vực", "value": "Khu tập thể Nghĩa Tân" }
+      {
+        "key": "Chi nhánh HN",
+        "value": "1 địa chỉ độc lập"
+      },
+      {
+        "key": "Khu vực",
+        "value": "Khu tập thể Nghĩa Tân"
+      }
     ],
     "review_links": [
       {
@@ -385,8 +457,14 @@
     "reason": "Quán bún bò độc lập trục ăn uống Tô Hiệu, giá ngang trung vị Cầu Giấy.",
     "confidence": 87,
     "signals": [
-      { "key": "Chi nhánh HN", "value": "1 địa chỉ tại Cầu Giấy" },
-      { "key": "Khu vực", "value": "Trục ẩm thực Tô Hiệu" }
+      {
+        "key": "Chi nhánh HN",
+        "value": "1 địa chỉ tại Cầu Giấy"
+      },
+      {
+        "key": "Khu vực",
+        "value": "Trục ẩm thực Tô Hiệu"
+      }
     ],
     "review_links": [
       {
@@ -414,7 +492,10 @@
     "reason": "Thương hiệu gốc Ngũ Xã có nhiều cơ sở tại Hà Nội — ca xám cần người xem.",
     "confidence": 53,
     "signals": [
-      { "key": "Trạng thái", "value": "Ca xám chuỗi gốc Hà Nội · Chuyển người kiểm" }
+      {
+        "key": "Trạng thái",
+        "value": "Ca xám chuỗi gốc Hà Nội · Chuyển người kiểm"
+      }
     ],
     "review_links": [
       {
@@ -442,7 +523,10 @@
     "reason": "Chuỗi bún chả gốc Hà Nội có trên 10 chi nhánh khắp các quận.",
     "confidence": 95,
     "signals": [
-      { "key": "Danh mục chuỗi", "value": "Chuỗi gốc Hà Nội (>10 chi nhánh)" }
+      {
+        "key": "Danh mục chuỗi",
+        "value": "Chuỗi gốc Hà Nội (>10 chi nhánh)"
+      }
     ],
     "review_links": []
   },
@@ -462,7 +546,10 @@
     "reason": "Quán gia đình Hà Nội có 2 cơ sở (≤3 theo luật local).",
     "confidence": 90,
     "signals": [
-      { "key": "Chi nhánh HN", "value": "2 địa chỉ (≤3 là local)" }
+      {
+        "key": "Chi nhánh HN",
+        "value": "2 địa chỉ (≤3 là local)"
+      }
     ],
     "review_links": [
       {
@@ -490,7 +577,10 @@
     "reason": "Địa chỉ gốc 13 Lò Đúc nhưng thương hiệu đã nhượng quyền nhiều nơi — ca xám cần người xem.",
     "confidence": 51,
     "signals": [
-      { "key": "Trạng thái", "value": "Địa chỉ gốc · Nhiều điểm nhượng quyền" }
+      {
+        "key": "Trạng thái",
+        "value": "Địa chỉ gốc · Nhiều điểm nhượng quyền"
+      }
     ],
     "review_links": [
       {
@@ -518,7 +608,10 @@
     "reason": "Chuỗi cà phê toàn quốc (>60 địa chỉ tại Hà Nội).",
     "confidence": 99,
     "signals": [
-      { "key": "Danh mục chuỗi", "value": "Chuỗi toàn quốc xác thực" }
+      {
+        "key": "Danh mục chuỗi",
+        "value": "Chuỗi toàn quốc xác thực"
+      }
     ],
     "review_links": []
   },
@@ -538,7 +631,10 @@
     "reason": "Quán bình dân phục vụ cư dân Linh Đàm, giá 35k–45k.",
     "confidence": 84,
     "signals": [
-      { "key": "Chi nhánh HN", "value": "1 địa chỉ tại Linh Đàm" }
+      {
+        "key": "Chi nhánh HN",
+        "value": "1 địa chỉ tại Linh Đàm"
+      }
     ],
     "review_links": [
       {
@@ -566,7 +662,10 @@
     "reason": "Quán độc lập khu Bắc Linh Đàm, khách cư dân và văn phòng ăn quen.",
     "confidence": 86,
     "signals": [
-      { "key": "Chi nhánh HN", "value": "1 địa chỉ tại Hoàng Mai" }
+      {
+        "key": "Chi nhánh HN",
+        "value": "1 địa chỉ tại Hoàng Mai"
+      }
     ],
     "review_links": [
       {
@@ -594,7 +693,10 @@
     "reason": "Thương hiệu nhượng quyền gốc Hà Nội — ca xám cần người xem lại.",
     "confidence": 50,
     "signals": [
-      { "key": "Trạng thái", "value": "Ca xám nhượng quyền · Chuyển người kiểm" }
+      {
+        "key": "Trạng thái",
+        "value": "Ca xám nhượng quyền · Chuyển người kiểm"
+      }
     ],
     "review_links": [
       {
