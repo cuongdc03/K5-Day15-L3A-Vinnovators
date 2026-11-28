@@ -2,6 +2,53 @@
 (function () {
   'use strict';
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const VIEW_STORAGE_KEY = 'qthn_view_mode';
+
+  function getInitialViewMode() {
+    try {
+      const urlView = new URLSearchParams(window.location.search).get('view');
+      if (urlView === 'mobile' || urlView === 'desktop') return urlView;
+    } catch (e) { /* noop */ }
+    try {
+      const saved = localStorage.getItem(VIEW_STORAGE_KEY);
+      if (saved === 'mobile' || saved === 'desktop') return saved;
+    } catch (e) { /* noop */ }
+    return window.innerWidth <= 768 ? 'mobile' : 'desktop';
+  }
+
+  function setViewMode(mode, persist, updateUrl) {
+    const next = mode === 'mobile' ? 'mobile' : 'desktop';
+    document.body.classList.toggle('mobile-mode', next === 'mobile');
+    document.querySelectorAll('.vs-btn[data-view]').forEach((btn) => {
+      btn.setAttribute('aria-pressed', String(btn.dataset.view === next));
+    });
+    if (persist) {
+      try { localStorage.setItem(VIEW_STORAGE_KEY, next); } catch (e) { /* noop */ }
+    }
+    if (updateUrl) {
+      try {
+        const url = new URL(window.location.href);
+        if (next === 'mobile') url.searchParams.set('view', 'mobile');
+        else url.searchParams.delete('view');
+        window.history.replaceState({}, '', url);
+      } catch (e) { /* noop */ }
+    }
+    // Đảm bảo các khối .reveal trong khung mobile hiện ngay khi chuyển chế độ
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+  }
+
+  const initialUrlView = (() => {
+    try { return new URLSearchParams(window.location.search).get('view'); } catch (e) { return null; }
+  })();
+  setViewMode(getInitialViewMode(), initialUrlView === 'mobile' || initialUrlView === 'desktop', false);
+  document.querySelectorAll('.vs-btn[data-view]').forEach((btn) => {
+    btn.addEventListener('click', () => setViewMode(btn.dataset.view, true, true));
+  });
+
+  const sceneEl = document.querySelector('.scene');
+  if (sceneEl) {
+    sceneEl.addEventListener('click', () => sceneEl.classList.toggle('is-paused'));
+  }
 
   /* 1. Đặt người gánh hàng rong (từ <template>) vào hero và thanh cuộn */
   const tpl = document.getElementById('tpl-walker');
