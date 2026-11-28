@@ -24,6 +24,8 @@
 
 **Insight từ người dùng thật.** **Chưa có.** Đến CP1 nhóm chưa phỏng vấn hay khảo sát ai. Kế hoạch thu: khảo sát ≥20 người và phỏng vấn ≥3 người ngoài nhóm trong tối nay và sáng mai, ghi ở `evidence/`.
 
+**Cập nhật phần Thái sau CP2 (27/11/2026).** Đã có importer review, phát hiện ngôn ngữ, 6 nguồn thương hiệu và bộ câu hỏi/hướng dẫn phỏng vấn. Dữ liệu menu ShopeeFood Gia Lâm được thu lại và nối vào quán hiện có theo URL nguồn. Người dùng xác nhận chưa có khảo sát/phỏng vấn hoặc API key; chưa xác nhận pain, chưa hoàn thành mục tiêu review của CP3. Chi tiết và lệnh kiểm ở `docs/CP2_CP3_THAI.md`.
+
 **Người dùng.** Dân văn phòng hoặc sinh viên đang ở Hà Nội, ăn ngoài quanh chỗ làm hoặc chỗ học ở 4 quận. Gặp họ ở: bạn cùng lớp AI20K đang sống ở Hà Nội, đồng nghiệp và bạn bè của các thành viên *(cần xác nhận nhóm có bao nhiêu người ở Hà Nội)*.
 
 **Data.**

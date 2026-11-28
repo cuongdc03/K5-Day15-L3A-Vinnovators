@@ -1,0 +1,3 @@
+# Optional Node dependency for crawl/shopee_menus.mjs:
+# npm install playwright
+# Use an installed Google Chrome (channel chrome). Python scripts use stdlib only.
