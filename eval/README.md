@@ -34,11 +34,11 @@ Dataset nào, xử lý gì: tóm 2–3 dòng từ `data/DATA_CARD.md`.
 
 | Lượt | Run ID | Model | Cấu hình (prompt / công cụ / thay đổi) | Đạt / tổng | % | Đạt chuẩn? |
 |---|---|---|---|---|---|---|
-| 1 | | | | __/__ | | |
+| 1 | run-1@20261128-082514 | gpt-6-luna *(cần xác nhận)* | `cp3/` workflow cố định: `search_places` → `get_place` → `lookup_chain` → `get_reviews` → model chọn nhãn → luật chặn → `flag_for_human` | 12/20 | 60% | Chưa (cần ≥75% thuong khớp nhãn) |
 | 2 | | | | __/__ | | |
 
 Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, không sửa dòng cũ.
 
 ## 6. Lỗi chính
 
-Tóm 2–3 dòng từ `eval/report.md`: nhóm lỗi lớn nhất · đã sửa gì · còn lại gì.
+Nhóm lỗi lớn nhất lượt 1: quán local rõ ràng vẫn ra `unsure` vì chưa có review nào (5/8 câu trượt). Chưa sửa; lượt 2 chưa chạy. Còn lại: Haidilao chưa có trong `chain_registry` (B08), quán không phải quán ăn bị gắn `chain` (B12), thiếu câu từ chối rõ ở B20.
