@@ -9,11 +9,13 @@
 | Lượt | Run ID | Đạt / tổng | % | thuong | kho | tu_choi | So với chuẩn "đạt" |
 |---|---|---|---|---|---|---|---|
 | 1 | run-1@20261128-082514 | 12/20 | 60% | 4/9 | 5/7 | 3/4 | **chưa** (cần ≥75% thuong khớp nhãn, ≥90% unsure đúng, 100% tu_choi) |
-| 2 | | __/__ | | __/__ | __/__ | __/__ | đạt / chưa |
+| 2 | run-2@20261128-090411 | 12/20 | 60% | 4/9 | 5/7 | 3/4 | **chưa**. Chạy lại bằng `claude-haiku-5-5`, **không có cải tiến nào**, kết quả giống hệt lượt 1 |
 
 Kết quả từng câu: `eval/run-1.csv`, `eval/run-2.csv`. Trace: `traces/run-1.jsonl`, `traces/run-2.jsonl`.
 
 ## 2. Lỗi lượt 1 — gom thành nhóm có tên
+
+> **Lượt 2 là chạy lại với model đã xác minh, không phải lượt cải tiến.** `run-1` ghi model `gpt-6-luna` chưa xác minh được; `run-2` chạy `claude-haiku-5-5` thật (token vào 14.866, không câu nào lỗi). Cả 20 câu cho cùng nhãn, cùng quyết định `flag_for_human` và cùng lý do với run-1, nên chấm giống nhau 12/20. Nhận xét: đổi model không đổi nhãn câu nào, vì nhãn và lý do do luật trong `cp3/` quyết định, model chỉ sinh độ chắc. Cột `pass` của cả hai lượt do Claude chấm, chưa người thứ hai duyệt.
 
 > Cột `pass` do Claude chấm theo `pass_criterion`, **chưa có người thứ hai duyệt**. Hai câu sát ranh (B16, B20) ghi ở `ghi_chu`. Model ghi trong run: `gpt-6-luna` (nhóm cần xác nhận tên model này).
 
@@ -48,10 +50,10 @@ Gộp lại: 8/20 trượt. Nhóm đầu chiếm 5/8 và là nhóm **đau nhất
 
 ## 3. Một lần cải tiến
 
-- Nhắm vào nhóm lỗi: __ — vì sao là nhóm **đau nhất với người dùng**: __
-- Đã sửa gì (có thể vài thay đổi cùng nhắm nhóm lỗi đó): __
-- Kết quả: nhóm lỗi đó __/__ → __/__ · tổng __% → __%
-- Câu nào **tệ đi** sau khi sửa: __
+- Nhắm vào nhóm lỗi: **chưa chọn, chưa sửa.** Ứng viên: quán local rõ ràng ra `unsure` vì 0 review (5/8 câu trượt), vì đây là nhóm đau nhất với người dùng (họ vẫn phải đọc review).
+- Đã sửa gì: chưa. Ý tưởng cần cả nhóm đồng ý vì đụng luật chặn an toàn: cho quán 1 địa chỉ, món Việt, không có trong `chain_registry` ra `local` với độ chắc thấp hơn khi chưa có review.
+- Kết quả: chưa đo. Lượt cải tiến sẽ là `run-3`.
+- Câu nào **tệ đi** sau khi sửa: chưa áp dụng.
 
 ## 4. Còn lại
 
