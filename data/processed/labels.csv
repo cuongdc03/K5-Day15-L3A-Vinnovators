@@ -1,0 +1,55 @@
+﻿place_id,labeler,label,reason,labeled_at
+p_c00a0447,L1,local,"Rule SCHEMA: 1 địa chỉ trong places.csv, món Việt (mon_viet;mon_bac), không có trong chain_registry",2026-11-28T08:47:33+07:00
+p_c00a0447,L2,local,"Nhãn nháp L2 của Đức (benchmark B01): 1 địa chỉ, bún bò Huế",2026-11-28T08:48:33+07:00
+p_c00a0447,final,local,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_5d4bf1c5,L1,local,"Rule SCHEMA: 1 địa chỉ, món Việt (mon_viet;mon_bac), không có trong chain_registry",2026-11-28T08:47:33+07:00
+p_5d4bf1c5,L2,local,"Nhãn nháp L2 (B02): 1 địa chỉ, chả cá",2026-11-28T08:48:33+07:00
+p_5d4bf1c5,final,local,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_c6e2fcfb,L1,local,"Rule SCHEMA: 1 địa chỉ, món Việt (mon_viet;mon_bac), không có trong chain_registry",2026-11-28T08:47:33+07:00
+p_c6e2fcfb,L2,local,"Nhãn nháp L2 (B03): 1 địa chỉ, món Việt miền Bắc",2026-11-28T08:48:33+07:00
+p_c6e2fcfb,final,local,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_ac753177,L1,local,"Rule SCHEMA: 1 địa chỉ, món Việt (mon_viet;mon_mien_nam), không có trong chain_registry",2026-11-28T08:47:33+07:00
+p_ac753177,L2,local,"Nhãn nháp L2 (B04): 1 địa chỉ, cơm",2026-11-28T08:48:33+07:00
+p_ac753177,final,local,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_5b65fd97,L1,chain,Có trong chain_registry (highlands): https://order.highlandscoffee.com.vn/he-thong-cua-hang,2026-11-28T08:47:33+07:00
+p_5b65fd97,L2,chain,Nhãn nháp L2 (B05): có trong chain_registry,2026-11-28T08:48:33+07:00
+p_5b65fd97,final,chain,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_72da4106,L1,chain,Có trong chain_registry (highlands): https://order.highlandscoffee.com.vn/he-thong-cua-hang,2026-11-28T08:47:33+07:00
+p_72da4106,L2,chain,Nhãn nháp L2 (B19): có trong chain_registry,2026-11-28T08:48:33+07:00
+p_72da4106,final,chain,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_a9c4ad8e,L1,chain,Có trong chain_registry (kfc): https://kfcvietnam.com.vn/store-selection,2026-11-28T08:47:33+07:00
+p_a9c4ad8e,L2,chain,Nhãn nháp L2 (B06): chuỗi quốc tế trong registry,2026-11-28T08:48:33+07:00
+p_a9c4ad8e,final,chain,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_231f1c9e,L1,chain,Có trong chain_registry (jollibee): https://help.jollibee.com.vn/hc/vi/articles/14378093877775,2026-11-28T08:47:33+07:00
+p_231f1c9e,L2,chain,Nhãn nháp L2 (B07): chuỗi quốc tế trong registry,2026-11-28T08:48:33+07:00
+p_231f1c9e,final,chain,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_746fa96e,L1,chain,"Có trong chain_registry (mixue), nguồn trong registry",2026-11-28T08:47:33+07:00
+p_746fa96e,L2,chain,Nhãn nháp L2 (B09): có trong chain_registry,2026-11-28T08:48:33+07:00
+p_746fa96e,final,chain,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_a32f6af4,L1,unsure,"Rule SCHEMA: không có trong chain_registry, chỉ 1 địa chỉ trong dữ liệu nên chưa đủ căn cứ chain theo luật",2026-11-28T08:47:33+07:00
+p_a32f6af4,L2,chain,Nhãn nháp L2 (B08): chuỗi lẩu quốc tế,2026-11-28T08:48:33+07:00
+p_a32f6af4,final,chain,"L1 và L2 lệch. Chọn chain vì nguồn thứ cấp ghi Haidilao Lotte Mall Tây Hồ là chi nhánh thứ 17 tại Việt Nam, khai trương 27/11/2023 (https://www.greensm.com/vn-vi/news/haidilao-lotte-mall-tay-ho). Cần thêm Haidilao vào chain_registry bằng trang cửa hàng chính thức",2026-11-28T08:49:33+07:00
+p_23a6b3cb,L1,unsure,"Rule SCHEMA: không có trong chain_registry, 2 địa chỉ trong dữ liệu; chuỗi gốc Hà Nội chưa vào registry là ca xám",2026-11-28T08:47:33+07:00
+p_23a6b3cb,L2,unsure,"Nhãn nháp L2 (B10), nhánh điều kiện hiện tại: registry chưa có nên unsure",2026-11-28T08:48:33+07:00
+p_23a6b3cb,final,unsure,"Cùng nhãn. Nguồn thứ cấp liệt kê 3 cơ sở tại Hà Nội (https://mia.vn/cam-nang-du-lich/pho-10-ly-quoc-su-13909), chưa đủ 5 địa chỉ và chưa vào registry nên giữ ca xám",2026-11-28T08:49:33+07:00
+p_87d68fc9,L1,unsure,"Foody xếp Shop Online (bếp nhà bán online), chưa rõ có mặt tiền, 0 review",2026-11-28T08:47:33+07:00
+p_87d68fc9,L2,unsure,"Nhãn nháp L2 (B11): Shop Online, 0 review",2026-11-28T08:48:33+07:00
+p_87d68fc9,final,unsure,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_8b08f241,L1,unsure,"Tên trùng 10 mục trong places.csv nên rule đếm sẽ cho chain, nhưng đây là điểm nghỉ tài xế, không phải quán ăn; không phán local hay chain",2026-11-28T08:47:33+07:00
+p_8b08f241,L2,unsure,"Nhãn nháp L2 (B12): không phải quán ăn, cần loại khỏi dữ liệu",2026-11-28T08:48:33+07:00
+p_8b08f241,final,unsure,L1 và L2 cùng nhãn; đề xuất loại khỏi dữ liệu quán ăn,2026-11-28T08:49:33+07:00
+p_9c1277dc,L1,local,"Rule SCHEMA: 2 địa chỉ cùng tên (≤3), món Việt (bánh cuốn, phở), không có trong registry",2026-11-28T08:47:33+07:00
+p_9c1277dc,L2,local,"Nhãn nháp L2 (B13): 2 địa chỉ, dưới ngưỡng chain",2026-11-28T08:48:33+07:00
+p_9c1277dc,final,local,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_560e10f0,L1,local,"Rule SCHEMA: 2 địa chỉ cùng tên (≤3), món Việt (bánh cuốn, phở), không có trong registry",2026-11-28T08:47:33+07:00
+p_560e10f0,L2,local,"Nhãn nháp L2 (B13): 2 địa chỉ, dưới ngưỡng chain",2026-11-28T08:48:33+07:00
+p_560e10f0,final,local,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_a40a401f,L1,unsure,"Foody xếp Ăn vặt và Shop Online, 0 review, chưa rõ có mặt tiền nên chưa đủ tín hiệu để gắn local",2026-11-28T08:47:33+07:00
+p_a40a401f,L2,unsure,"Nhãn nháp L2 (B14): Shop Online, 0 review",2026-11-28T08:48:33+07:00
+p_a40a401f,final,unsure,L1 và L2 cùng nhãn,2026-11-28T08:49:33+07:00
+p_9d7bb2fe,L1,unsure,"Rule SCHEMA: không có trong chain_registry, 1 địa chỉ trong dữ liệu",2026-11-28T08:47:33+07:00
+p_9d7bb2fe,L2,unsure,"Nhãn nháp L2 (B15), nhánh điều kiện hiện tại: registry chưa có nên unsure",2026-11-28T08:48:33+07:00
+p_9d7bb2fe,final,chain,"Đổi sau khi có thêm nguồn: E-Coffee là mô hình nhượng quyền của Trung Nguyên Legend, ra mắt 8/2019, gần 800 cửa hàng theo https://www.sapo.vn/blog/nhuong-quyen-trung-nguyen-e-coffee (nguồn thứ cấp). Cần thêm vào chain_registry bằng nguồn chính thức",2026-11-28T08:49:33+07:00
+p_4c0fa498,L1,local,"Rule SCHEMA: 1 địa chỉ, món Việt, không có trong registry",2026-11-28T08:47:33+07:00
+p_636487c5,L1,local,"Rule SCHEMA: 1 địa chỉ trong dữ liệu, món Việt; tên nghe như thương hiệu nhiều chi nhánh nhưng dữ liệu chưa cho thấy",2026-11-28T08:47:33+07:00
+p_ada71de1,L1,local,"Rule SCHEMA: 1 địa chỉ, món Việt (nhiều nhóm món), không có trong registry",2026-11-28T08:47:33+07:00

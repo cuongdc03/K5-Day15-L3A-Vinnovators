@@ -78,7 +78,5 @@
     "run-2.csv",
     "run-3.csv"
   ],
-  "generated_by": "python -m cp4.export_data",
-  "source": "origin/main",
-  "source_commit": "4f7393edcd3164b09a259dea9fba57b1232e108c"
+  "generated_by": "python -m cp4.export_data"
 }

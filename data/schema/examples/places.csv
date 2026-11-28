@@ -1,3 +1,3 @@
-place_id,osm_id,google_place_id,name,name_norm,district,address_text,lat,lng,category,cuisine,price_level,price_min_k,price_max_k,rating,rating_count,hours_text,brand,brand_wikidata,sources,fetched_at
-p_00000001,node/1,,VÍ DỤ Bún chả A,vi du bun cha a,cau_giay,Phố ví dụ Cầu Giấy,21.0333,105.7900,restaurant,bun_cha,1,40,60,4.4,120,07:00-14:00,,,osm;google,2026-11-27T10:00:00+07:00
-p_00000002,node/2,,VÍ DỤ Gà rán B,vi du ga ran b,hai_ba_trung,Phố ví dụ Hai Bà Trưng,21.0100,105.8500,fast_food,fried_chicken,2,60,90,4.0,800,,VÍ DỤ B,,osm,2026-11-27T10:00:00+07:00
+place_id,osm_id,google_place_id,name,name_norm,district,address_text,lat,lng,category,cuisine,price_level,price_min_k,price_max_k,rating,rating_count,hours_text,brand,brand_wikidata,sources,fetched_at,area,foody_url
+p_00000001,node/1,,VÍ DỤ Bún chả A,vi du bun cha a,cau_giay,Phố ví dụ Cầu Giấy,21.0333,105.7900,restaurant,bun_cha,1,40,60,4.4,120,07:00-14:00,,,osm;google,2026-11-27T10:00:00+07:00,,
+p_00000002,node/2,,VÍ DỤ Gà rán B,vi du ga ran b,hai_ba_trung,Phố ví dụ Hai Bà Trưng,21.0100,105.8500,fast_food,fried_chicken,2,60,90,4.0,800,,VÍ DỤ B,,osm,2026-11-27T10:00:00+07:00,,

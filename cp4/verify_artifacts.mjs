@@ -1,0 +1,14 @@
+import {chromium} from 'playwright';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+const browser=await chromium.launch({headless:true,channel:'chrome'});const page=await browser.newPage();
+await page.goto('http://127.0.0.1:8765/cp4/public/status.html');
+await page.locator('video').evaluate(v=>v.load());
+await page.waitForFunction(()=>document.querySelector('video').readyState>=1);
+const metadata=await page.locator('video').evaluate(v=>({duration:v.duration,width:v.videoWidth,height:v.videoHeight,error:v.error?.message}));
+assert.ok(metadata.duration>5);assert.ok(metadata.width>0);assert.equal(metadata.error,undefined);
+await page.locator('video').evaluate(v=>{v.currentTime=Math.min(v.duration/2,5)});await page.waitForTimeout(300);
+await page.locator('video').screenshot({path:fileURLToPath(new URL('./public/video-preview.png',import.meta.url))});
+assert.equal((await page.request.get('http://127.0.0.1:8765/cp4/public/demo-slides.pdf')).status(),200);
+assert.equal((await page.request.get('http://127.0.0.1:8765/web-demo/data/menus_live.json')).status(),200);
+console.log('PASS: video decodes',JSON.stringify(metadata),'PDF and menu download');await browser.close();

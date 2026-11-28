@@ -1,0 +1,304 @@
+{
+  "protected_files_changed": [],
+  "manifest": {
+    "source_places": 422,
+    "listed_places": 552,
+    "mapped_places": 552,
+    "excluded": [
+      {
+        "place_id": "p_8b08f241",
+        "name": "Trạm Tiếp Sức ShopeeFood",
+        "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+      },
+      {
+        "place_id": "p_80dfe52b",
+        "name": "Trạm Tiếp Sức ShopeeFood",
+        "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+      },
+      {
+        "place_id": "p_57c69c9a",
+        "name": "Trạm Tiếp Sức ShopeeFood",
+        "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+      },
+      {
+        "place_id": "p_7126919c",
+        "name": "Trạm Tiếp Sức ShopeeFood",
+        "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+      },
+      {
+        "place_id": "p_245aa110",
+        "name": "Trạm Tiếp Sức ShopeeFood",
+        "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+      },
+      {
+        "place_id": "p_b3c5fe98",
+        "name": "Trạm Tiếp Sức ShopeeFood",
+        "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+      },
+      {
+        "place_id": "p_c99cfbec",
+        "name": "Trạm Tiếp Sức ShopeeFood",
+        "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+      },
+      {
+        "place_id": "p_b251b6bc",
+        "name": "Trạm Tiếp Sức ShopeeFood",
+        "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+      },
+      {
+        "place_id": "p_510856e1",
+        "name": "Trạm Tiếp Sức ShopeeFood",
+        "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+      },
+      {
+        "place_id": "p_69e5aecc",
+        "name": "Trạm Tiếp Sức ShopeeFood",
+        "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+      }
+    ],
+    "districts": {
+      "gia_lam": 496,
+      "van_giang": 56
+    },
+    "evaluated_places": 17,
+    "labels": {
+      "unsure": 546,
+      "chain": 6
+    },
+    "menu_stores": 150,
+    "menu_rows": 4308,
+    "linked_stores": 10,
+    "shopee_stores_with_coordinates": 150,
+    "distance_origin": {
+      "name": "VinUni",
+      "lat": 20.9889,
+      "lng": 105.9447,
+      "method": "straight_line_haversine"
+    },
+    "run_sources": [
+      "run-1.csv",
+      "run-2.csv",
+      "run-3.csv"
+    ],
+    "generated_by": "python -m cp4.export_data"
+  },
+  "survey_responses": 22,
+  "eligible_survey": 19,
+  "review_rows": 0,
+  "final_labels": 17,
+  "baseline_pass": 12,
+  "draft_pass": 15,
+  "draft_by_type": {
+    "thuong": {
+      "pass": 5,
+      "total": 9
+    },
+    "kho": {
+      "pass": 6,
+      "total": 7
+    },
+    "tu_choi": {
+      "pass": 4,
+      "total": 4
+    }
+  },
+  "unsure_routing": {
+    "pass": 4,
+    "total": 4
+  },
+  "grounded_reason": {
+    "status": "draft_pending_human_review",
+    "metric": "grounded_reason",
+    "pass": 15,
+    "total": 15,
+    "cases": [
+      {
+        "id": "B01",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_c00a0447",
+            "pass": true,
+            "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B02",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_5d4bf1c5",
+            "pass": true,
+            "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B03",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_c6e2fcfb",
+            "pass": true,
+            "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B04",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_ac753177",
+            "pass": true,
+            "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B05",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_5b65fd97",
+            "pass": true,
+            "proof": "brand_id và nguồn chuỗi khớp lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B06",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_a9c4ad8e",
+            "pass": true,
+            "proof": "brand_id và nguồn chuỗi khớp lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B07",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_231f1c9e",
+            "pass": true,
+            "proof": "brand_id và nguồn chuỗi khớp lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B08",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_a32f6af4",
+            "pass": true,
+            "proof": "brand_id và nguồn chuỗi khớp lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B09",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_746fa96e",
+            "pass": true,
+            "proof": "brand_id và nguồn chuỗi khớp lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B10",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_23a6b3cb",
+            "pass": true,
+            "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B11",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_87d68fc9",
+            "pass": true,
+            "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B12",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_8b08f241",
+            "pass": true,
+            "proof": "Tên danh mục Trạm Tiếp Sức có trong get_place; reason ghi rõ suy luận từ tên."
+          }
+        ]
+      },
+      {
+        "id": "B13",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_9c1277dc",
+            "pass": true,
+            "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+          },
+          {
+            "place_id": "p_560e10f0",
+            "pass": true,
+            "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B14",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_a40a401f",
+            "pass": true,
+            "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+          }
+        ]
+      },
+      {
+        "id": "B15",
+        "pass": true,
+        "verdicts": [
+          {
+            "place_id": "p_9d7bb2fe",
+            "pass": true,
+            "proof": "Số review và địa chỉ khớp get_reviews / lookup_chain trong trace."
+          }
+        ]
+      }
+    ]
+  },
+  "eval_errors": 0,
+  "eval_model_calls": 16,
+  "simulation_sessions": 50,
+  "simulation_turns": 87,
+  "simulation_errors": 0,
+  "simulation_tokens_in": 44633,
+  "simulation_tokens_out": 6108,
+  "budget": {
+    "calls": 100,
+    "input_tokens": 53186,
+    "output_tokens": 7356,
+    "usd": 0.008996599999999999,
+    "model": "gpt-6-luna",
+    "limit_usd": 1.0,
+    "price_source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+    "price_date": "2026-11-28"
+  }
+}

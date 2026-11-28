@@ -17,20 +17,20 @@ users:              # số người dùng thật nếu đưa vào dùng — 3 k�
 
 personas:           # ≥3 kiểu người dùng; share cộng lại = 1
   - name: dung_it
-    share: 0.5              # tỉ lệ người dùng kiểu này
-    uses_per_month: 4       # số phiên / người / tháng
+    share: 0.32             # tỉ lệ người dùng kiểu này
+    uses_per_month: 6       # số phiên / người / tháng
     turns_per_session: 1    # số lượt hỏi trong một phiên
-    source: "(ví dụ) phỏng vấn P1, P3 — thay bằng nguồn của nhóm"
+    source: "Khảo sát evidence/survey/results.csv câu 1: 6/19 ăn ngoài 1–2 buổi/tuần (≈1,5 × 4,3 ≈ 6 bữa/tháng). Giả định mỗi bữa là một phiên, 1 lượt hỏi (tự ước tính)"
   - name: dung_vua
-    share: 0.3
-    uses_per_month: 10
-    turns_per_session: 3
-    source: "(ví dụ) khảo sát n = 24, câu 3"
+    share: 0.21
+    uses_per_month: 15
+    turns_per_session: 2
+    source: "Khảo sát câu 1: 4/19 ăn 3–4 buổi/tuần (≈3,5 × 4,3 ≈ 15 bữa/tháng). Số lượt hỏi/phiên là (tự ước tính)"
   - name: dung_nhieu
-    share: 0.2
-    uses_per_month: 20
-    turns_per_session: 5
-    source: "(ví dụ) data/preclass: đếm số lượt / người — cách đếm ở evidence/data-mining.md"
+    share: 0.47
+    uses_per_month: 22
+    turns_per_session: 2
+    source: "Khảo sát câu 1: 9/19 ăn 5 buổi trở lên/tuần (≈5 × 4,3 ≈ 22 bữa/tháng). Số lượt hỏi/phiên là (tự ước tính)"
 # Mỗi lượt hỏi lấy ngẫu nhiên một đầu vào trong eval/benchmark.csv (type thuong và kho).
 # Persona hỏi kiểu riêng: thêm vào persona đó
 #     types: [thuong, kho, tu_choi]

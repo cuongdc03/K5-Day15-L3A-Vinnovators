@@ -10,7 +10,7 @@ CREATE TABLE places (
   google_place_id  TEXT,                      -- chỉ giữ id, không giữ nội dung Google ngoài các trường dưới
   name             TEXT NOT NULL,
   name_norm        TEXT NOT NULL,             -- chữ thường, bỏ dấu, bỏ ký tự thừa, gộp khoảng trắng
-  district         TEXT NOT NULL CHECK (district IN ('cau_giay','hai_ba_trung','hoang_mai','gia_lam','hoan_kiem')),
+  district         TEXT NOT NULL CHECK (district IN ('cau_giay','hai_ba_trung','hoang_mai','gia_lam','hoan_kiem','van_giang')),
   address_text     TEXT,
   lat              REAL NOT NULL,
   lng              REAL NOT NULL,
@@ -24,8 +24,10 @@ CREATE TABLE places (
   hours_text       TEXT,
   brand            TEXT,                      -- thẻ brand của OSM nếu có
   brand_wikidata   TEXT,
-  sources          TEXT NOT NULL,             -- một hoặc nhiều của 'osm;google;manual'
-  fetched_at       TEXT NOT NULL              -- ISO 8601
+  sources          TEXT NOT NULL,             -- một hoặc nhiều của 'osm;google;manual;foody;field'
+  fetched_at       TEXT NOT NULL,             -- ISO 8601
+  area             TEXT CHECK (area IN ('ocean_park_1','ocean_park_2')),  -- khu đô thị, trống nếu ngoài Ocean Park
+  foody_url        TEXT                       -- link trang quán trên Foody nếu có
 );
 CREATE INDEX idx_places_name_norm ON places(name_norm);
 CREATE INDEX idx_places_district ON places(district);
@@ -42,6 +44,71 @@ CREATE TABLE reviews (
   fetched_at    TEXT NOT NULL
 );
 CREATE INDEX idx_reviews_place ON reviews(place_id);
+
+-- Dữ liệu đội đi thực địa ghi bằng form trên điện thoại. Mỗi lần đến quán một dòng.
+CREATE TABLE field_visits (
+  visit_id      TEXT PRIMARY KEY,
+  place_id      TEXT NOT NULL REFERENCES places(place_id),
+  visitor       TEXT NOT NULL,                -- thành viên nhóm đi kiểm (vd 'duc'), không phải khách
+  visited_at    TEXT NOT NULL,                -- ISO 8601
+  status        TEXT NOT NULL CHECK (status IN ('open','closed','moved','not_found')),
+  price_min_k   INTEGER,                      -- nghìn đồng, theo menu tại quán
+  price_max_k   INTEGER,
+  dishes        TEXT,                         -- 'tên món:giá k;tên món:giá k'
+  hours_text    TEXT,
+  phone         TEXT,                         -- số của quán (in trên biển / menu), không phải số cá nhân
+  facebook_url  TEXT,                         -- fanpage của quán
+  tiktok_url    TEXT,                         -- video review công khai
+  photo_urls    TEXT,                         -- link ảnh, cách nhau ';'
+  lat           REAL,                         -- vị trí đứng trước quán, nếu có
+  lng           REAL,
+  notes         TEXT
+);
+CREATE INDEX idx_field_visits_place ON field_visits(place_id);
+
+-- Xem tay Google Maps trên trình duyệt (không qua API). Mỗi lần xem một dòng.
+CREATE TABLE desk_checks (
+  check_id           TEXT PRIMARY KEY,
+  place_id           TEXT NOT NULL REFERENCES places(place_id),
+  checker            TEXT NOT NULL,           -- thành viên nhóm đã xem (vd 'duc')
+  checked_at         TEXT NOT NULL,           -- ISO 8601
+  maps_status        TEXT NOT NULL CHECK (maps_status IN ('open','closed_permanently','not_found','needs_field_check')),
+  maps_review_count  INTEGER,                 -- số review hiện trên Maps, trống nếu không thấy
+  newest_review      TEXT CHECK (newest_review IN ('lt_1m','lt_6m','older','none')),
+  has_menu_photo     INTEGER CHECK (has_menu_photo IN (0,1)),
+  notes              TEXT
+);
+CREATE INDEX idx_desk_checks_place ON desk_checks(place_id);
+
+-- Suy ra bằng crawl/verify.py; không điền tay. Một dòng một quán Ocean Park.
+CREATE TABLE verification (
+  place_id            TEXT PRIMARY KEY REFERENCES places(place_id),
+  auto_status         TEXT NOT NULL CHECK (auto_status IN ('field_verified','closed','desk_verified','auto_verified','uncertain','unverified')),
+  reasons             TEXT NOT NULL,          -- tín hiệu ngắn cách nhau ';'
+  google_place_id     TEXT,                   -- quán Google API khớp, nếu có
+  match_score         REAL CHECK (match_score BETWEEN 0 AND 1),
+  business_status     TEXT CHECK (business_status IN ('OPERATIONAL','CLOSED_TEMPORARILY','CLOSED_PERMANENTLY')),
+  last_review_at      TEXT,                   -- YYYY-MM-DD review Google mới nhất
+  rating_count        INTEGER,                -- số lượt đánh giá Google (API)
+  foody_review_count  INTEGER,
+  distance_to_hub_m   INTEGER NOT NULL,       -- tới trung tâm khu (Vincom Mega Mall OP1, The Empire OP2)
+  field_priority      INTEGER,                -- 1..N quán nên đi thực địa, trống nếu không cần
+  desk_priority       INTEGER,                -- thứ tự xem tay Maps cho quán chưa xem, trống nếu đã xem
+  route_order         INTEGER,                -- thứ tự đi bộ trong khu, chỉ cho quán có field_priority
+  computed_at         TEXT NOT NULL
+);
+
+-- Ảnh của quán: chỉ giữ tham chiếu. Ảnh Google chỉ giữ tên tài nguyên, không tải byte (điều khoản Maps Platform).
+CREATE TABLE photos (
+  photo_id    TEXT PRIMARY KEY,               -- 'ph_' + 8 ký tự đầu sha1(place_id|source|ref)
+  place_id    TEXT NOT NULL REFERENCES places(place_id),
+  source      TEXT NOT NULL CHECK (source IN ('foody','google','field')),
+  ref         TEXT NOT NULL,                  -- URL (foody, field) hoặc tên tài nguyên 'places/…/photos/…' (google)
+  width_px    INTEGER,
+  height_px   INTEGER,
+  fetched_at  TEXT NOT NULL
+);
+CREATE INDEX idx_photos_place ON photos(place_id);
 
 CREATE TABLE chain_registry (
   brand_id        TEXT PRIMARY KEY,           -- vd 'kfc'

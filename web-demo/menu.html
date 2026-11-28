@@ -1,110 +1,13 @@
-<!doctype html>
-<html lang="vi">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Menu online — Quán Thật Hà Nội</title>
-  <meta name="description" content="Tra menu và giá đặt online có nguồn. Quán chưa ghép đúng địa chỉ không được tự đặt ghim lên bản đồ." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=33" />
-  <link rel="stylesheet" href="./header.css?v=5" />
-  <link rel="stylesheet" href="./mobile.css?v=2" />
-</head>
-<body class="menu-page">
-  <a class="skip" href="#menuSearch">Bỏ qua tới tìm menu</a>
-  <div class="mobile-preview-bar" role="region" aria-label="Chuyển chế độ hiển thị"><span class="mpb-label">Giao diện di động</span><div class="view-switcher" role="group" aria-label="Chuyển giao diện"><button class="vs-btn" type="button" data-view="desktop" aria-pressed="true">Desktop</button><button class="vs-btn" type="button" data-view="mobile" aria-pressed="false">Mobile</button></div></div>
-  <div class="catalog-shell app-shell phone-shell">
-    <div class="iphone-statusbar" aria-hidden="true">
-      <span class="sb-time">9:41</span>
-      <span class="sb-island"><i class="sb-cam"></i></span>
-      <span class="sb-icons">5G · 100%</span>
-    </div>
-  <header class="top site-header" data-page="menu">
-    <div class="header-inner top-wrap wrap">
-      <a href="./landing.html#hero" class="brand" aria-label="Quán Thật Hà Nội — về đầu trang"><svg viewBox="0 0 120 70" aria-hidden="true"><path class="ln f-sand" d="M4 58Q60 -6 116 58z"/><path class="ln thin" d="M30 44 22 58M44 34 40 58M60 28V58M76 34 80 58M90 44 98 58M14 52 106 52M26 42 94 42"/></svg><span>Quán Thật Hà Nội</span></a>
-      <nav class="nav site-nav" aria-label="Mục chính">
-        <details class="nav-overview">
-          <summary>Tổng quan <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
-          <div class="overview-links">
-            <a href="./landing.html#vi-sao">Vấn đề</a>
-            <a href="./landing.html#cach-loc">Cách lựa quán</a>
-            <a href="./landing.html#minh-bach">Kết quả &amp; mục tiêu</a>
-          </div>
-        </details>
-        <a href="./index.html?tab=map" data-open-map>Bản đồ</a>
-        <a href="./menu.html" aria-current="page">Menu</a>
-      </nav>
-      <div class="site-actions">
-        <a id="menuBack" class="header-map-cta" href="./index.html?tab=map" data-open-map>Mở bản đồ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7h10v10M7 17 17 7"/></svg></a>
-        <div class="view-switcher header-view-switcher is-compact" role="group" aria-label="Chuyển giao diện Desktop hoặc Mobile">
-          <button type="button" class="vs-btn" data-view="desktop" aria-pressed="true" aria-label="Giao diện Desktop" title="Giao diện Desktop"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button>
-          <button type="button" class="vs-btn" data-view="mobile" aria-pressed="false" aria-label="Giao diện Mobile" title="Giao diện Mobile"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M12 18h.01"/></svg></button>
-        </div>
-      </div>
-    </div>
-  </header>
-  <main class="catalog-main">
-    <div class="catalog-intro">
-      <p class="catalog-eyebrow">Menu có nguồn · Ocean Park &amp; khu vực lân cận</p>
-      <h1>Hôm nay ăn món gì?</h1>
-      <p>Tra tên quán, địa chỉ hoặc món ăn. Giá đặt online tại thời điểm thu thập, chưa gồm phí giao và ưu đãi theo đơn; không phải giá tại quán.</p>
-      <p class="catalog-distance-note">Mốc khoảng cách: VinUni · đường chim bay, không phải quãng đường giao hàng.</p>
-      <p id="catalogScope" class="catalog-scope" hidden></p>
-    </div>
-    <form class="catalog-search" role="search" onsubmit="return false">
-      <label for="menuSearch">Tìm trong menu</label>
-      <div><input id="menuSearch" type="search" placeholder="Ví dụ: kem bơ, cơm gà, Bếp Của Nhung…" autocomplete="off" /><button id="menuClear" type="button" hidden>Xoá</button></div>
-    </form>
-    <label class="sort-control catalog-sort" for="menuSort">Sắp xếp <select id="menuSort"><option value="nearest">Gần VinUni nhất</option><option value="name">Tên quán A–Z</option></select></label>
-    <p id="catalogCount" class="catalog-count" role="status" aria-live="polite">Đang tải danh mục…</p>
-    <div id="catalogError" class="notice-box" hidden><p>Không tải được danh mục menu. Bạn có thể thử lại hoặc quay về bản đồ.</p><button id="catalogRetry" class="notice-reset" type="button">Thử lại</button></div>
-    <section id="catalogStores" aria-label="Danh sách quán có menu online"></section>
-    <button id="catalogMore" class="notice-reset catalog-more" type="button" hidden>Xem thêm</button>
-    <p class="catalog-footnote">Tọa độ từ metadata ShopeeFood có ghi nguồn và thời điểm thu thập. Một món có thể xuất hiện trong nhiều nhóm menu; số dòng món giữ nguyên theo nguồn.</p>
-  </main>
-    <footer class="app-foot">
-      <div class="awning-bar" aria-hidden="true"></div>
-      <div class="scallop-bar" aria-hidden="true"></div>
-      <div class="foot-wrap">
-        <div><b>Vinnovators</b> · Quán Thật Hà Nội</div>
-        <div>OSM · Foody · ShopeeFood · Nhãn đã chốt khi có</div>
-      </div>
-    </footer>
-<nav class="mobile-bottom-nav menu-bottom-nav" aria-label="Điều hướng di động">
-  <a class="bnav-btn" href="./landing.html?view=mobile">
-    <span class="bnav-ico" aria-hidden="true">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7"/><path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10"/><path d="M9 21v-6h6v6"/></svg>
-    </span>
-    <span class="bnav-lbl">Trang chủ</span>
-  </a>
-  <a class="bnav-btn" href="./index.html?view=mobile">
-    <span class="bnav-ico" aria-hidden="true">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg>
-    </span>
-    <span class="bnav-lbl">Danh sách</span>
-  </a>
-  <a class="bnav-btn" href="./index.html?view=mobile&amp;tab=map">
-    <span class="bnav-ico" aria-hidden="true">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
-    </span>
-    <span class="bnav-lbl">Bản đồ</span>
-  </a>
-  <a class="bnav-btn bnav-menu is-active" aria-current="page" href="./menu.html?view=mobile">
-    <span class="bnav-ico" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3h6a3 3 0 0 1 3 3v15a4 4 0 0 0-4-3H4zM20 3h-4a3 3 0 0 0-3 3M20 3v15h-3a4 4 0 0 0-4 3"/></svg></span>
-    <span class="bnav-lbl">Menu</span>
-  </a>
-  <a class="bnav-btn" href="./index.html?view=mobile&amp;tab=report">
-    <span class="bnav-ico" aria-hidden="true">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
-    </span>
-    <span class="bnav-lbl">Báo sai</span>
-  </a>
-</nav>
-    <div class="iphone-homebar" aria-hidden="true"><span></span></div>
-  </div>
-  <script src="./header.js?v=1"></script>
-  <script src="menu.js?v=5"></script>
-</body>
-</html>
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Menu online · Gia Lâm</title>
+<style>:root{font-family:Arial,sans-serif;color:#243727;background:#f7f5ee}body{max-width:1100px;margin:auto;padding:24px}a{color:#315b2c}h1{font-size:36px;margin-bottom:12px}.intro{max-width:850px;line-height:1.6}input{box-sizing:border-box;width:100%;padding:16px;font:inherit;border:1px solid #82917e;border-radius:10px;margin:16px 0}details{background:white;border:1px solid #d7dfd3;border-radius:12px;margin:12px 0;padding:18px}summary{cursor:pointer;font-size:19px;font-weight:bold}small{display:block;font-size:13px;color:#63715e;margin-top:5px}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:12px 7px;border-bottom:1px solid #e4e7de}td:first-child{width:60%}.address{line-height:1.5}.scroll{overflow:auto;max-height:600px}.count{font-weight:bold}.warning{color:#8c441e}@media(max-width:600px){body{padding:16px}h1{font-size:28px}td:first-child{width:50%}td,th{padding:10px 4px}}</style></head><body>
+<a href="live.html">← Bản đồ quán ăn</a><h1>Menu & giá đặt online</h1>
+<p class="intro"><b>Mốc của bạn: VinUni (20.9889, 105.9447).</b> Khoảng cách đường chim bay xấp xỉ, danh sách gần → xa; không phải quãng đường chạy xe/giao hàng. Toàn bộ menu đã thu từ các link ShopeeFood trong repo. Giá đặt online tại thời điểm thu, chưa gồm phí giao và ưu đãi theo đơn. Quán thiếu tọa độ không được đoán khoảng cách.</p>
+<label for="search">Tìm tên quán, địa chỉ hoặc tên món</label><input id="search" type="search" placeholder="Ví dụ: Bếp Của Nhung, matcha, cơm gà…"><p id="count" class="count" role="status">Đang tải dữ liệu…</p><main id="stores"></main>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money=n=>n==null?'—':Number(n).toLocaleString('vi-VN')+' đ';let stores=[];
+const distance=s=>s.distance_m==null?'Chưa có tọa độ để tính khoảng cách':(s.distance_m<1000?'~'+Math.round(s.distance_m/10)*10+' m':'~'+(s.distance_m/1000).toFixed(1)+' km')+' từ VinUni · đường chim bay';
+function render(){const q=document.querySelector('#search').value.toLocaleLowerCase('vi').trim();const found=stores.filter(s=>(s.name+' '+s.address+' '+s.items.map(i=>i.name).join(' ')).toLocaleLowerCase('vi').includes(q));document.querySelector('#count').textContent=`${found.length}/${stores.length} quán · ${found.reduce((n,s)=>n+s.items.length,0).toLocaleString('vi-VN')} dòng món · ${stores.filter(s=>!s.complete).length} quán chưa lấy được menu đầy đủ`;
+document.querySelector('#stores').innerHTML=found.map(s=>`<details data-store="${esc(s.store_id)}"><summary>${esc(s.name)} <small>${distance(s)} · ${s.items.length} dòng món · ${s.complete?'Đã đọc menu':'Menu chưa đầy đủ'}</small></summary><p class="address">${esc(s.address)||'Chưa có địa chỉ'}<br><a href="${esc(s.source_url)}" target="_blank" rel="noopener">Mở ShopeeFood ↗</a> · <a href="${esc(s.lat!=null?`https://www.google.com/maps/search/?api=1&query=${s.lat},${s.lng}`:s.map_search_url)}" target="_blank" rel="noopener">Xem vị trí trên bản đồ ↗</a><br><small>${s.lat!=null?`Tọa độ: ${s.lat}, ${s.lng} · ${esc(s.coordinate_source)} · ${esc(s.coordinate_fetched_at)}`:'Chưa có tọa độ từ nguồn.'}</small></p>${s.items.length?`<p><small>Thời điểm thu: ${esc(s.items[0].fetched_at)}. Cùng món có thể xuất hiện ở nhiều nhóm menu.</small></p><div class="scroll"><table><thead><tr><th>Món / mô tả</th><th>Giá online</th><th>Giá gốc hiển thị</th></tr></thead><tbody>${s.items.map(i=>`<tr><td>${esc(i.name)}<small>${esc(i.group)}${i.description?' · '+esc(i.description):''}</small></td><td>${money(i.online_price_vnd)}</td><td>${money(i.original_price_vnd)}</td></tr>`).join('')}</tbody></table></div>`:'<p class="warning">Trang nguồn chưa trả menu đọc được; không suy đoán món hoặc giá.</p>'}</details>`).join('');}
+document.querySelector('#search').addEventListener('input',render);fetch('./data/menus_live.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{stores=data.sort((a,b)=>(a.distance_m??Infinity)-(b.distance_m??Infinity));render()}).catch(()=>document.querySelector('#count').textContent='Không tải được dữ liệu. Chạy python -m cp4.server rồi mở lại trang.');
+</script></body></html>

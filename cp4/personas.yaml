@@ -1,0 +1,32 @@
+sessions: 50
+seed: 42
+users:
+  low: 100
+  base: 300
+  high: 1000
+  source: "Ba kịch bản thử nghiệm sản phẩm, toàn bộ số người dùng là (tự ước tính), không phải quy mô thị trường đã đo."
+personas:
+  - name: dung_it
+    share: 0.32
+    uses_per_month: 6
+    turns_per_session: 1
+    source: "Khảo sát results.csv: 6/19 ăn ngoài 1-2 buổi/tuần; 6 phiên/tháng và 1 lượt/phiên là (tự ước tính), tần suất ăn không đồng nghĩa tần suất dùng app."
+  - name: dung_vua
+    share: 0.21
+    uses_per_month: 15
+    turns_per_session: 2
+    source: "Khảo sát: 4/19 ăn 3-4 buổi/tuần; 15 phiên/tháng và 2 lượt/phiên là (tự ước tính)."
+  - name: dung_nhieu
+    share: 0.47
+    uses_per_month: 22
+    turns_per_session: 2
+    source: "Khảo sát: 9/19 ăn >=5 buổi/tuần; 22 phiên/tháng và 2 lượt/phiên là (tự ước tính)."
+prices:
+  - model: gpt-6-luna
+    input: 0.10
+    output: 0.50
+    source: "https://developers.openai.com/api/docs/models/gpt-6-luna - xem 28/11/2026, Standard, text tokens"
+  - model: gpt-6.1-sol
+    input: 2.00
+    output: 10.00
+    source: "https://developers.openai.com/api/docs/pricing - xem 28/11/2026, Standard; chỉ tính kịch bản trên token Luna đã đo"

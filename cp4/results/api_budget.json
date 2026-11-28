@@ -1,0 +1,10 @@
+{
+  "calls": 100,
+  "input_tokens": 53186,
+  "output_tokens": 7356,
+  "usd": 0.008996599999999999,
+  "model": "gpt-6-luna",
+  "limit_usd": 1.0,
+  "price_source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+  "price_date": "2026-11-28"
+}
