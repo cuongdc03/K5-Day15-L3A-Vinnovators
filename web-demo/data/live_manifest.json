@@ -1,0 +1,84 @@
+{
+  "source_places": 422,
+  "listed_places": 552,
+  "mapped_places": 552,
+  "excluded": [
+    {
+      "place_id": "p_8b08f241",
+      "name": "Trạm Tiếp Sức ShopeeFood",
+      "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+    },
+    {
+      "place_id": "p_80dfe52b",
+      "name": "Trạm Tiếp Sức ShopeeFood",
+      "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+    },
+    {
+      "place_id": "p_57c69c9a",
+      "name": "Trạm Tiếp Sức ShopeeFood",
+      "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+    },
+    {
+      "place_id": "p_7126919c",
+      "name": "Trạm Tiếp Sức ShopeeFood",
+      "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+    },
+    {
+      "place_id": "p_245aa110",
+      "name": "Trạm Tiếp Sức ShopeeFood",
+      "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+    },
+    {
+      "place_id": "p_b3c5fe98",
+      "name": "Trạm Tiếp Sức ShopeeFood",
+      "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+    },
+    {
+      "place_id": "p_c99cfbec",
+      "name": "Trạm Tiếp Sức ShopeeFood",
+      "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+    },
+    {
+      "place_id": "p_b251b6bc",
+      "name": "Trạm Tiếp Sức ShopeeFood",
+      "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+    },
+    {
+      "place_id": "p_510856e1",
+      "name": "Trạm Tiếp Sức ShopeeFood",
+      "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+    },
+    {
+      "place_id": "p_69e5aecc",
+      "name": "Trạm Tiếp Sức ShopeeFood",
+      "reason": "Điểm hỗ trợ tài xế, không đưa vào danh sách quán ăn"
+    }
+  ],
+  "districts": {
+    "gia_lam": 496,
+    "van_giang": 56
+  },
+  "evaluated_places": 17,
+  "labels": {
+    "unsure": 546,
+    "chain": 6
+  },
+  "menu_stores": 150,
+  "menu_rows": 4308,
+  "linked_stores": 10,
+  "shopee_stores_with_coordinates": 150,
+  "distance_origin": {
+    "name": "VinUni",
+    "lat": 20.9889,
+    "lng": 105.9447,
+    "method": "straight_line_haversine"
+  },
+  "run_sources": [
+    "run-1.csv",
+    "run-2.csv",
+    "run-3.csv"
+  ],
+  "generated_by": "python -m cp4.export_data",
+  "source": "origin/main",
+  "source_commit": "4f7393edcd3164b09a259dea9fba57b1232e108c"
+}

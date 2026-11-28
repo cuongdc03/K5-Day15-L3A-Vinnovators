@@ -23,6 +23,15 @@
 
   const scene = new T.Scene();
   const cam = new T.PerspectiveCamera(32, 1, 0.5, 220);
+  const density = window.createMapDensityLayer(wrap, {
+    select: (id) => window.select(id),
+    focus: (members) => {
+      goal.tx = members.reduce((n, p) => n + p.x, 0) / members.length;
+      goal.tz = members.reduce((n, p) => n + p.z, 0) / members.length;
+      goal.zoom = Math.max(0.4, goal.zoom * 0.76); dirty = true;
+    },
+  });
+  const projectedPoint = new T.Vector3();
 
   scene.add(new T.HemisphereLight(0xfffaf0, 0xb9c9b0, 0.72));
   const sun = new T.DirectionalLight(0xffe7bd, 0.92);
@@ -238,6 +247,105 @@
         addBox(g, 2.4, 1.25, 1.9, 10.1, 0.62, -1.2, new T.MeshStandardMaterial({ color: 0xE8D8BC, roughness: 0.65 }));
         addBox(g, 2.5, 0.16, 2.0, 10.1, 1.3, -1.2, mats.red);
         g.add(landmarkTag('Vincom & Biển hồ mặn', 10.0, 2.35, -1.6));
+      }
+    },
+
+    van_giang: {
+      seed: 37,
+      // Khớp địa lý thực tế Vinhomes Ocean Park 2 — The Empire (Nghĩa Trụ, Văn Giang)
+      bounds: [20.9370, 20.9570, 105.9630, 105.9875],
+      groundCol: '#CAD8BA',
+      roadCol: '#F3EDE0',
+      walls: [0xF6F0E4, 0xEFE4CE, 0xE8DFCC, 0xE2D6BE],
+      roofs: [0x586B7A, 0x8F533B, 0x6F7E8A, 0x9C6B4E],
+      roadsX: [-8.8, -3.6, 2.6, 8.6],
+      roadsZ: [-6.6, -2.0, 2.8, 7.2],
+      // Công viên Biển Tạo Sóng VinWonders Wave Park (18ha) nằm đúng phía Đông-Nam Kinh Đô Ánh Sáng
+      lake: { x: 4.8, z: 2.3, rx: 3.1, rz: 2.3, color: 0x3FB8CC, beach: true },
+      zones: [
+        { name: 'Quảng trường Kinh Đô Ánh Sáng', sub: 'Tâm đại đô thị · Tháp Thần Ánh Sáng & phố đi bộ Pháp', c: [0.0, -0.3], kind: 'mid' },
+        { name: 'K-Town · Mega Grand World', sub: 'Phố thương mại Hàn Quốc dọc Đại lộ San Hô', c: [1.8, -5.0], kind: 'big' },
+        { name: 'VinWonders Wave Park · San Hô', sub: 'Biển tạo sóng 18ha, bãi cát trắng & phân khu San Hô', c: [5.4, 1.2], kind: 'villa' },
+        { name: 'Sao Biển · Kênh Venice', sub: 'Dãy shophouse & cầu Đông Tây nối OCP3', c: [-2.6, -2.2], kind: 'mid' },
+        { name: 'Cọ Xanh · Công viên Silk Park', sub: 'Khu dân cư phía Tây & công viên ven kênh', c: [-6.4, 0.5], kind: 'old' }
+      ],
+      isReserved(x, z) {
+        // 1. Quảng trường Kinh Đô Ánh Sáng ngay trung tâm (0, -0.3)
+        if (x > -2.0 && x < 2.0 && z > -2.1 && z < 1.6) return true;
+        // 2. Kênh Venice & Cầu Đông Tây phía Bắc-Tây
+        if (x > -5.2 && x < -1.0 && z > -7.2 && z < -4.2) return true;
+        // 3. Cụm cổng & mái Hanok K-Town phía Bắc-Đông
+        if (x > 0.6 && x < 4.2 && z > -7.2 && z < -4.6) return true;
+        // 4. Dải Công viên Silk Park phía Tây-Nam
+        if (x > -10.8 && x < -6.8 && z > 2.2 && z < 7.6) return true;
+        return false;
+      },
+      paintGround(gg) {
+        // Quảng trường đá lát sáng Kinh Đô Ánh Sáng ngay trung tâm (0, -0.3)
+        gg.fillStyle = '#F2E7CF';
+        gg.beginPath(); gg.arc(tx2(0), tz2(-0.3), 1.65 * S, 0, Math.PI * 2); gg.fill();
+        gg.strokeStyle = '#D4B782'; gg.lineWidth = 6;
+        gg.beginPath(); gg.arc(tx2(0), tz2(-0.3), 1.2 * S, 0, Math.PI * 2); gg.stroke();
+        // Dải Kênh Venice xanh phía Bắc-Tây (Mega Grand World)
+        gg.fillStyle = '#5BBBD0';
+        gg.fillRect(tx2(-5.0), tz2(-6.2), 3.8 * S, 1.15 * S);
+        // Dải Công viên Silk Park xanh mát góc Tây-Nam
+        gg.fillStyle = '#A4C592';
+        gg.beginPath();
+        gg.roundRect ? gg.roundRect(tx2(-10.5), tz2(2.4), 3.4 * S, 5.0 * S, 24) : gg.rect(tx2(-10.5), tz2(2.4), 3.4 * S, 5.0 * S);
+        gg.fill();
+      },
+      landmark(g, mats) {
+        // 1. QUẢNG TRƯỜNG KINH ĐÔ ÁNH SÁNG NGAY TRUNG TÂM (0, -0.3) — Tháp Thần Ánh Sáng + 2 dãy nhà mái vòm kiểu Pháp
+        const stone = new T.MeshStandardMaterial({ color: 0xF5EFE0, roughness: 0.78 });
+        const gold = new T.MeshStandardMaterial({ color: 0xE0A526, roughness: 0.4, metalness: 0.3 });
+        const mansard = new T.MeshStandardMaterial({ color: 0x4B5C6B, roughness: 0.7 });
+        // Bệ đài tròn 2 bậc + Tháp tượng Thần Ánh Sáng
+        const base1 = new T.Mesh(new T.CylinderGeometry(0.95, 1.08, 0.22, 24), stone);
+        base1.position.set(0, 0.11, -0.3); base1.castShadow = base1.receiveShadow = true; g.add(base1);
+        const obelisk = new T.Mesh(new T.CylinderGeometry(0.18, 0.34, 2.75, 4), stone);
+        obelisk.rotation.y = Math.PI / 4; obelisk.position.set(0, 1.55, -0.3); obelisk.castShadow = true; g.add(obelisk);
+        const torch = new T.Mesh(new T.OctahedronGeometry(0.28), gold);
+        torch.position.set(0, 3.1, -0.3); torch.castShadow = true; g.add(torch);
+        // Hai dãy shophouse mái Mansard Pháp hai bên trục đại lộ
+        [-1.45, 1.45].forEach((ox) => {
+          addBox(g, 0.65, 0.95, 2.2, ox, 0.48, -0.3, stone);
+          addBox(g, 0.7, 0.3, 2.26, ox, 1.08, -0.3, mansard);
+        });
+        g.add(landmarkTag('Kinh Đô Ánh Sáng', 0, 4.15, -0.3));
+
+        // 2. VINWONDERS WAVE PARK (Biển Tạo Sóng 18ha phía Đông-Nam) — Đỉnh núi nhân tạo biểu tượng giữa hồ sóng
+        const rock1 = new T.MeshStandardMaterial({ color: 0xA89B84, roughness: 0.95, flatShading: true });
+        const rock2 = new T.MeshStandardMaterial({ color: 0x8F826C, roughness: 0.95, flatShading: true });
+        [[4.8, 2.3, 1.05, 1.95, rock1], [5.7, 2.0, 0.72, 1.35, rock2], [4.0, 2.7, 0.65, 1.15, rock2]].forEach(([x, z, r, h, mat]) => {
+          const peak = new T.Mesh(new T.ConeGeometry(r, h, 7), mat);
+          peak.position.set(x, h / 2 + 0.04, z); peak.castShadow = true; g.add(peak);
+        });
+        g.add(landmarkTag('Biển Tạo Sóng Wave Park', 4.8, 2.85, 2.3));
+
+        // 3. PHỐ K-TOWN (Mega Grand World phía Bắc-Đông) — Cụm nhà mái ngói Hanok cong đặc trưng
+        const hanokWall = new T.MeshStandardMaterial({ color: 0xF7EFE0, roughness: 0.82 });
+        const hanokRoof = new T.MeshStandardMaterial({ color: 0x3E4C59, roughness: 0.72 });
+        [[1.4, -5.8, 1.2], [2.8, -5.8, 1.35], [2.1, -6.7, 1.1]].forEach(([x, z, w]) => {
+          addBox(g, w, 0.85, 0.95, x, 0.42, z, hanokWall);
+          addGableRoof(g, 1.15, 0.42, w + 0.25, x, 0.85, z, hanokRoof, Math.PI / 2);
+        });
+        g.add(landmarkTag('Phố K-Town · OCP 2', 2.2, 2.25, -5.9));
+
+        // 4. CẦU ĐÔNG TÂY & KÊNH VENICE (phía Bắc-Tây)
+        const bridge = new T.Mesh(
+          new T.TubeGeometry(new T.QuadraticBezierCurve3(
+            new T.Vector3(-3.1, 0.08, -6.3),
+            new T.Vector3(-3.1, 0.78, -5.6),
+            new T.Vector3(-3.1, 0.08, -4.9)
+          ), 16, 0.14, 8),
+          stone
+        );
+        bridge.castShadow = true; g.add(bridge);
+        g.add(landmarkTag('Kênh Venice · Cầu Đông Tây', -3.1, 1.95, -5.6));
+
+        // 5. Công viên Silk Park (Tây-Nam)
+        g.add(landmarkTag('Công viên Silk Park', -8.8, 1.9, 4.8));
       }
     },
 
@@ -621,7 +729,7 @@
     const isRoadZ = (z) => cfg.roadsZ.some((r) => Math.abs(z - r) < 0.62);
 
     /* Chiếu các quán thật theo tọa độ lat/lng thực tế */
-    const districtPlaces = (window.PLACES || []).filter((p) => p.district === districtKey);
+    const districtPlaces = (window.PLACES || []).filter((p) => p.district === districtKey && inModel(p, cfg));
     const used = [];
     const pushClear = (x, z) => {
       for (let tries = 0; tries < 6; tries++) {
@@ -665,7 +773,7 @@
         : px(p.x || 320, p.y || 320);
       [x, z] = pushClear(x, z);
       // Tránh chồng nhãn giữa 2 quán quá sát nhau nhưng vẫn giữ vị trí tương đối thật & không đẩy ngược vào hồ/nhà
-      for (const u of used) {
+      for (const u of districtPlaces.length <= 20 ? used : []) {
         const dx = x - u[0], dz = z - u[1];
         if (dx * dx + dz * dz < 2.2) {
           [x, z] = pushClear(x + (dx >= 0 ? 1.25 : -1.25), z + (dz >= 0 ? 1.05 : -1.05));
@@ -893,10 +1001,10 @@
       P.head.castShadow = true;
       P.dot = new T.Mesh(new T.CylinderGeometry(0.32, 0.32, 0.06, 24), new T.MeshStandardMaterial({ color: c, roughness: 0.5, transparent: true }));
       P.dot.position.set(P.x, 0.05, P.z);
-      P.label = labelSprite(P.p);
+      P.label = null;
       P.hit = new T.Mesh(hitG, hitM); P.hit.userData.pin = P;
-      P.stem.position.set(P.x, 0, P.z); P.head.position.set(P.x, 0, P.z); P.label.position.set(P.x, 0, P.z); P.hit.position.set(P.x, 0.3, P.z);
-      [P.stem, P.head, P.dot, P.label, P.hit].forEach((o) => districtGroup.add(o));
+      P.stem.position.set(P.x, 0, P.z); P.head.position.set(P.x, 0, P.z); P.hit.position.set(P.x, 0.3, P.z);
+      [P.stem, P.head, P.dot, P.hit].forEach((o) => districtGroup.add(o));
     });
 
     const NZ = ZONES.length;
@@ -908,6 +1016,7 @@
     moveBikes(0);
     goal.tx = 0; goal.tz = OZ; goal.zoom = 1;
     shownZone = -1; sticky = null; hoverZone = null; hoverPin = null; lastSel = undefined;
+    density.close();
     dirty = true;
   }
 
@@ -983,6 +1092,11 @@
   const ray = new T.Raycaster(), ndc = new T.Vector2();
   let ptr = null, drag = null, hoverZone = null, hoverPin = null, sticky = null, pickDirty = false, lastSel = undefined;
   const okPin = (P) => window.matches(P.p) && !window.hiddenReason(P.p);
+  function inModel(p, cfg) {
+    const [south, north, west, east] = cfg.bounds;
+    return Number.isFinite(p.lat) && Number.isFinite(p.lng)
+      && p.lat >= south && p.lat <= north && p.lng >= west && p.lng <= east;
+  }
 
   function doPick() {
     pickDirty = false; hoverPin = null; hoverZone = null;
@@ -991,7 +1105,7 @@
     if (!r.width || !r.height) return;
     ndc.set(((ptr.x - r.left) / r.width) * 2 - 1, -((ptr.y - r.top) / r.height) * 2 + 1);
     ray.setFromCamera(ndc, cam);
-    const ph = ray.intersectObjects(pins.filter(okPin).map((P) => P.hit), false);
+    const ph = ray.intersectObjects(pins.filter((P) => okPin(P) && P.head.visible).map((P) => P.hit), false);
     if (ph.length) { hoverPin = ph[0].object.userData.pin; hoverZone = hoverPin.zone; return; }
     if (walls) {
       const wh = ray.intersectObject(walls, false);
@@ -1048,7 +1162,7 @@
     const selPin = state.sel != null ? pins.find((P) => P.p.id === state.sel) : null;
     if (state.sel !== lastSel) {
       lastSel = state.sel;
-      if (selPin) {
+      if (selPin && state.showPOI !== false) {
         goal.tx = selPin.x * 0.72;
         goal.tz = OZ + (selPin.z - OZ) * 0.72;
         goal.zoom = Math.min(goal.zoom, 0.66);
@@ -1062,7 +1176,10 @@
     if (selPin) {
       if (card && shownZone !== 'sel:' + selPin.p.id) {
         shownZone = 'sel:' + selPin.p.id;
-        card.innerHTML = '<b>' + selPin.p.name + '</b><span>' + (selPin.p.dish || '') + ' · ' + (selPin.p.price_text || '') + '</span><span>' + (selPin.p.address || '') + '</span>';
+        card.replaceChildren();
+        for (const [tag, value] of [['b', selPin.p.name], ['span', (selPin.p.dish || '') + ' · ' + (selPin.p.price_text || '')], ['span', selPin.p.address || '']]) {
+          const line = document.createElement(tag); line.textContent = value; card.appendChild(line);
+        }
         card.classList.add('on');
       }
     } else {
@@ -1085,26 +1202,27 @@
     const zoomBoost = clamp(0.85 + cur.zoom * 0.22, 0.88, 1.18);
     pins.forEach((P) => {
       const ok = okPin(P), isSel = state.sel === P.p.id;
-      const vt = selPin
-        ? (isSel && ok ? 1 : 0)
-        : (ok && (P.zone === active || active == null) ? (P.zone === active ? 1 : 0.85) : 0);
+      const focused = state.showPOI !== false && isSel && ok;
+      const vt = focused ? 1 : 0;
       P.v += (vt - P.v) * sp;
       const hv = hoverPin === P ? 1 : 0; P.hover += (hv - P.hover) * sp;
-      const v = P.v, hh = PIN_H * v;
+      const v = P.v, hh = 1.65 * v;
       P.stem.visible = v > 0.01; P.stem.scale.set(1, Math.max(hh, 0.001), 1); P.stem.position.y = hh / 2;
       const bob = reduce ? 0 : Math.sin(t * 2 + P.x) * 0.06 * v;
       P.head.position.y = hh + 0.22 + bob; P.head.visible = v > 0.01;
       const hs = (0.5 + 0.5 * v) * (1 + 0.25 * P.hover + (isSel ? 0.22 : 0)); P.head.scale.setScalar(hs);
       P.head.rotation.y += dt * 0.9; if (P.p.v === 'unsure') P.head.rotation.x = Math.PI / 2 + Math.sin(t) * 0.2;
-      P.label.position.y = hh + 1.18;
-      // Khi đã chọn 1 quán: CHỈ hiện nhãn của đúng quán đó; khi chưa chọn: hiện rõ các quán đang lọc
-      P.label.material.opacity = selPin
-        ? (isSel && ok ? 1 : 0)
-        : (ok ? ((P.zone === active || P.hover > 0.2) ? 1 : (active == null ? 0.94 : 0.18)) : 0);
-      P.label.visible = P.label.material.opacity > 0.03;
-      const ls = (0.84 + 0.16 * v + 0.08 * P.hover + (isSel ? 0.08 : 0)) * zoomBoost;
-      P.label.scale.set(4.3 * ls, 1.07 * ls, 1);
-      P.dot.visible = selPin ? (isSel && ok) : true;
+      if (focused && !P.label) {
+        P.label = labelSprite(P.p); districtGroup.add(P.label);
+      }
+      if (P.label) {
+        P.label.position.set(P.x, hh + 0.95, P.z);
+        P.label.visible = focused;
+        P.label.material.opacity = focused ? 1 : 0;
+        const ls = 0.88 * zoomBoost;
+        P.label.scale.set(4.3 * ls, 1.07 * ls, 1);
+      }
+      P.dot.visible = focused;
       P.dot.material.opacity = ok ? (1 - v * 0.6) : 0.18; P.dot.scale.setScalar(1 - v * 0.35 + 0.2 * P.hover);
       P.hit.position.y = hh + 0.25;
       if (Math.abs(vt - v) > 0.003) busy = true;
@@ -1114,6 +1232,16 @@
     const cs = reduce ? 1 : Math.min(1, dt * 4.5);
     ['az', 'el', 'zoom', 'tx', 'tz'].forEach((k) => { const d = goal[k] - cur[k]; cur[k] += d * cs; if (Math.abs(d) > 0.002) busy = true; });
     placeCam(t);
+    const projected = [];
+    if (state.showPOI !== false && !state.sel) for (const pin of pins) {
+      if (!okPin(pin)) continue;
+      projectedPoint.set(pin.x, 0.45, pin.z).project(cam);
+      const x = (projectedPoint.x + 1) * lastW / 2, y = (1 - projectedPoint.y) * lastH / 2;
+      if (projectedPoint.z > -1 && projectedPoint.z < 1 && x > 18 && x < lastW - 18 && y > 35 && y < lastH - 45) projected.push({ x, y, pin });
+    }
+    const cfg = DISTRICT_3D[builtDistrict];
+    const outside = (window.PLACES || []).filter((p) => window.matches(p) && !window.hiddenReason(p) && !inModel(p, cfg)).length;
+    density.update(projected, lastW, state.sel, state.showPOI !== false, outside, !!state.sel && !selPin);
 
     if (!reduce) {
       if (waterTex) { waterTex.offset.x += dt * 0.012; waterTex.offset.y += dt * 0.006; }
@@ -1125,7 +1253,7 @@
     raf = requestAnimationFrame(tick);
   }
 
-  function start() { if (running || !visible || document.hidden) return; running = true; last = performance.now(); raf = requestAnimationFrame(tick); }
+  function start() { if (running || !visible || document.hidden || wrap.dataset.mapmode !== '3d' || wrap.dataset.mapengine === 'maplibre') return; running = true; last = performance.now(); raf = requestAnimationFrame(tick); }
   function stop() { running = false; cancelAnimationFrame(raf); }
   new IntersectionObserver((es) => { visible = es[0].isIntersecting; visible ? start() : stop(); }, { threshold: 0.02 }).observe(wrap);
   document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
@@ -1135,6 +1263,7 @@
 
   window.Map3D = {
     sync() {
+      if (wrap.dataset.mapmode !== '3d' || wrap.dataset.mapengine === 'maplibre' || (window.state && !DISTRICT_3D[state.district])) { stop(); return; }
       if (window.state && builtDistrict !== state.district) {
         buildDistrict(state.district);
       }
@@ -1143,10 +1272,16 @@
       }
       dirty = true;
       shownZone = -1;
+      density.close();
+      start();
     },
     resize() {
       size();
       dirty = true;
-    }
+    },
+    diagnostics: () => ({ district: builtDistrict, pinCount: pins.length,
+      visibleHeads: pins.filter((p) => p.head.visible).length,
+      visibleLabels: pins.filter((p) => p.label && p.label.visible).length,
+      running, ...density.diagnostics() }),
   };
 })();
