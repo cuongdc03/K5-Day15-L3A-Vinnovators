@@ -1,0 +1,5 @@
+brand_id,brand_name,aliases,scope,origin,known_branches,source_url,note
+highlands,Highlands Coffee,highlands coffee;highlands,national,vietnam,,https://order.highlandscoffee.com.vn/he-thong-cua-hang,Official store directory checked 2026-11-28; no branch count inferred
+kfc,KFC,kfc,international,usa,,https://kfcvietnam.com.vn/store-selection,Official restaurant selector checked 2026-11-28
+jollibee,Jollibee,jollibee,international,philippines,,https://help.jollibee.com.vn/hc/vi/articles/14378093877775-Danh-s%C3%A1ch-c%E1%BB%ADa-h%C3%A0ng,Official store directory checked 2026-11-28
+cong,Cộng Cà Phê,cong ca phe;cong caphe;cong cafe,local_origin,hanoi,,https://international.congcaphe.com/,Official international store site checked 2026-11-28
